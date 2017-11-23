@@ -1,0 +1,54 @@
+.validated-input {
+  position: relative;
+  padding-bottom: rem-calc(12);
+}
+
+.validated-input .valid-input {
+  position: absolute;
+  right: 15px;
+  top: 11px;
+  font-size: 12px;
+  color: #646262;
+}
+
+.validated-input .input-error {
+  font-size: 12px;
+  margin-top: -18px;
+  margin-bottom: 5px;
+}
+
+.validated-input .input-error .error,
+.validated-input .input-error .warning {
+  padding: 8px 5px 0 0;
+  text-align: left;
+}
+
+.validated-input .input-error .error {
+  color: rgb(255, 65, 31);
+}
+
+.validated-input .input-error .warning {
+  color: rgb(255, 165, 31);
+}
+
+.validated-input textarea {
+  width: 100%;
+
+  margin-bottom: 15px;
+
+  min-height: rem-calc(120);
+}
+
+.ember-power-select-trigger {
+  min-height: 2.25em;
+  line-height: 2.15;
+}
+
+.ember-power-select-search-input {
+  height: auto;
+  margin: auto;
+}
+
+.ember-basic-dropdown {
+  margin-bottom: rem-calc(15);
+}

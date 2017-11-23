@@ -1,3 +1,52 @@
-<h2 id="title">Welcome to Ember</h2>
+{{#if isHomepage}}
+  <div class="home-first--container">
+    {{main-navigation rootURL=rootURL}}
+    {{first-container}}
+  </div>
+{{else}}
+  {{main-navigation}}
+{{/if}}
 
 {{outlet}}
+
+<footer>
+  <div class="grid-container">
+    <div class="grid-x footer--navigation clearfix">
+      <div class="medium-3 cell">
+        <div class="footer--organizedby">Organized by</div>
+        <a href="http://www.oeconsortium.org">
+          <img src="/assets/images/oec-logo.svg" alt="Open Education Consortium"/>
+        </a>
+      </div>
+      <div class="medium-3 cell end">
+        <span class="footer--navigation--title">About</span>
+        <ul class="no-bullet footer--navigation--menu">
+          <li>{{#link-to "page" "what-is-open-education"}}What is Open Education{{/link-to}}</li>
+          <li>{{#link-to "page" "what-is-open-education-week"}}What is Open Education Week{{/link-to}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="grid-container">
+    <div class="grid-x">
+      <div class="medium-12 cell">
+        <div class="footer--byline">Open Education Week is a celebration of the global Open Education Movement. Its
+          purpose is to raise awareness about the movement and its impact on teaching and learning worldwide.
+          Participation in all events and use of all resources are free and open to everyone.
+        </div>
+        <div class="footer--license grid-x grid-margin-x">
+          <div class="shrink cell">
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License"
+                                                                                     style="border-width:0"
+                                                                                     src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a>
+          </div>
+          <div class="auto cell">
+            Except where otherwise noted, content on openeducationweek.org is licensed under a <a rel="license"
+                                                                                                  href="http://creativecommons.org/licenses/by/4.0/">Creative
+            Commons Attribution 4.0 International License</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

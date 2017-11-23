@@ -7,6 +7,12 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('events');
+  this.route('resources');
+
+  this.route('page', {
+    path: ':page_slug'
+  });
 });
 
 export default Router;

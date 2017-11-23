@@ -1,7 +1,7 @@
 /* eslint-env node */
 'use strict';
 
-module.exports = function(environment) {
+module.exports = function (environment) {
   let ENV = {
     modulePrefix: 'frontend',
     environment,
@@ -21,15 +21,33 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+
+    typekit: {
+      options: {
+        kitId: 'nyd6mie',
+        async: true
+      }
+    },
+
+    fastboot: {
+      hostWhitelist: [/^localhost:\d+$/, 'www.openeducationweek.org']
+    },
+
+    metricsAdapters: [
+      {
+        name: 'GoogleAnalytics',
+        environments: ['all'],
+        config: {
+          id: 'UA-4248822-6'
+        }
+      },
+    ]
   };
 
   if (environment === 'development') {
-    // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.API_HOST = 'https://api.openeducationweek.org';
+    ENV.APP.API_NAMESPACE = 'api';
   }
 
   if (environment === 'test') {
