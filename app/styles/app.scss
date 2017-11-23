@@ -45,8 +45,11 @@
 @include foundation-visibility-classes;
 @include foundation-float-classes;
 
+@import "ember-power-select";
 
 @import '_fontello';
 @import '_type';
 @import '_components';
 @import '_form';
+
+

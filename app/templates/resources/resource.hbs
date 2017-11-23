@@ -1,0 +1,59 @@
+<div class="grid-x grid-margin-x title--container">
+  <div class="small-12 cell">
+    <h1>{{uc-words model.post_type}}</h1>
+    {{!-- <span class="breadcrumbs"><a href="#">Main</a>  >  <a href="#">Events</a>  >  Flipping it: Teaching and Learning in an Inverted Classroom</span> --}}
+  </div>
+</div>
+
+<div class="grid-x grid-margin-x content--container">
+  <div class="small-4 cell">
+    <div class="box">
+      <dl class="box--meta">
+        <dd><i class="icon-flag"></i> Language</dd>
+        <dt>{{model.form_language}}</dt>
+
+        <dd><i class="icon-user"></i> Submitter</dd>
+        <dt>{{model.contact}}</dt>
+
+        <dd><i class="icon-info-circled"></i> Institution</dd>
+        <dt>{{model.institution}}</dt>
+      </dl>
+    </div>
+
+    {{#if model.country}}
+      <div class="box">
+        <dl class="box--meta">
+          <dd><i class="icon-location"></i> Location</dd>
+          <dt>
+            {{#if model.city}}
+              {{model.city}},
+            {{/if}}
+
+            {{model.country}}
+          </dt>
+        </dl>
+      </div>
+    {{/if}}
+  </div>
+
+  <div class="small-8 cell">
+    <div class="box--image">
+      {{#if model.image_url}}
+        <img src="{{{model.image_url}}}" alt="{{model.title}}" />
+      {{/if}}
+    </div>
+    <div class="box box--with-image">
+      <h2 class="box--title">{{{model.title}}}</h2>
+      <div class="box--divider"></div>
+      <div class="box--content">
+        {{{model.content}}}
+      </div>
+      <div class="box--divider"></div>
+      <div class="box--content">
+        <a class="button" href="{{model.link}}" target="_blank">View site</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{outlet}}
