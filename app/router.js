@@ -11,8 +11,9 @@ Router.map(function() {
   this.route('resources');
 
   this.route('page', {
-    path: ':page_slug'
+    path: '/page/:page_slug'
   });
+  this.route('not-found');
 });
 
 export default Router;
