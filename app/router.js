@@ -1,6 +1,5 @@
 import EmberRouter from '@ember/routing/router';
 import config from './config/environment';
-import {htmlSafe} from '@ember/string';
 import RouterScroll from 'ember-router-scroll';
 
 
@@ -10,7 +9,12 @@ const Router = EmberRouter.extend(RouterScroll, {
 });
 
 Router.map(function () {
-  this.route('events');
+  this.route('events', function() {
+    this.route('event', {
+      path: ':event_slug'
+    });
+  });
+
   this.route('resources', function () {
     this.route('resource', {
       path: ':resource_slug'

@@ -34,6 +34,10 @@ module.exports = function (environment) {
       hostWhitelist: [/^localhost:\d+$/, 'www.openeducationweek.org']
     },
 
+    moment: {
+      includeTimezone: 'subset'
+    },
+
     metricsAdapters: [
       {
         name: 'GoogleAnalytics',
@@ -62,7 +66,8 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
-    // here you can enable a production-specific feature
+    ENV.APP.API_HOST = 'https://api.openeducationweek.org';
+    ENV.APP.API_NAMESPACE = 'api';
   }
 
   return ENV;

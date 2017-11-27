@@ -1,0 +1,7 @@
+{{#each resources as |event index|}}
+  {{event-card resource=event}}
+
+  {{#if (divisible-by index 3)}}
+    <div class="medium-12 cell"></div>
+  {{/if}}
+{{/each}}

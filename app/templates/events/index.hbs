@@ -1,0 +1,40 @@
+<div class="grid-x grid-margin-x title--container">
+  <div class="cell auto text-center">
+    <h1>Events</h1>
+  </div>
+</div>
+
+<div class="grid-x grid-margin-x">
+  <div class="medium-3 medium-offset-9 cell">
+    <label>Filter by year</label>
+    {{#power-select
+      options=years
+      selected=yearselected
+      searchEnabled=false
+      onchange=(action "selectYear") as |year|}}
+      {{year}}
+    {{/power-select}}
+  </div>
+</div>
+
+<div class="grid-x grid-margin-x">
+  {{resource-pagination
+    page=page
+    pageCount=pageCount
+    previousPage=(action "previousPage")
+    nextPage=(action "nextPage")
+  }}
+
+  {{event-browser resources=filteredResources}}
+
+  {{#if filteredResources}}
+    {{resource-pagination
+      page=page
+      pageCount=pageCount
+      previousPage=(action "previousPage")
+      nextPage=(action "nextPage")
+    }}
+  {{/if}}
+</div>
+
+{{outlet}}

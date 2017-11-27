@@ -1,0 +1,54 @@
+<div class="medium-4 cell">
+  <div class="box--image">
+    {{#if resource.image_url}}
+      {{#link-to "events.event" resource.slug}}
+        <img src="{{{resource.image_url}}}" alt="{{resource.title}}" />
+      {{/link-to}}
+    {{/if}}
+  </div>
+  <div class="box box--with-image">
+    <h2 class="box--title">
+      {{#link-to "events.event" resource.slug}}{{{resource.title}}}{{/link-to}}
+    </h2>
+    <div class="box--divider"></div>
+    <div class="box--meta">
+      <div>
+        <span class="box--meta--icon"><i class="icon-calendar"></i></span>
+        {{#if (or (eq model.event_type 'webinar') (eq model.event_type 'online'))}}
+          {{moment-format resource.event_time 'YYYY-MM-DD HH:mm a'}}
+        {{else}}
+          <span class="box--meta--text">{{moment-format resource.event_time 'YYYY-MM-DD HH:mm a'}}</span>
+        {{/if}}
+
+      </div>
+      <div>
+        {{#if (eq resource.even_type "local") }}
+          <span class="box--meta--icon"><i class="icon-globe"></i></span>
+          <span class="box--meta--text">{{resource.city}}, {{resource.country}}</span>
+        {{else}}
+          <span class="box--meta--icon"><i class="icon-globe"></i></span>
+          <span class="box--meta--text">{{uc-words resource.event_type}}</span>
+        {{/if}}
+      </div>
+    </div>
+    <div class="box--divider"></div>
+    <div class="box--content">
+      {{{resource.content_excerpt}}}
+    </div>
+    <div class="box--divider"></div>
+    <div class="box--meta box--meta--small">
+      {{#if resource.form_language}}
+        <div>
+          <span class="box--meta--icon"><i class="icon-flag"></i></span>
+          <span class="box--meta--text">{{{resource.form_language}}}</span>
+        </div>
+      {{/if}}
+      <div>
+        <span class="box--meta--icon"><i class="icon-building"></i></span>
+        <span class="box--meta--text">{{{resource.institution}}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{yield}}
