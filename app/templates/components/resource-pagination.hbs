@@ -2,7 +2,7 @@
   <ul class="pagination text-center" role="navigation" aria-label="Pagination">
     {{#if hasPreviousPage}}
       <li class="pagination-previous disabled">
-        <button {{action "previousPage"}} aria-label="Previous page">« Previous <span class="show-for-sr">page</span></button>
+        <button {{action previousPage}} aria-label="Previous page">« Previous <span class="show-for-sr">page</span></button>
       </li>
     {{else}}
       <li class="pagination-previous disabled">Previous <span class="show-for-sr">page</span></li>
@@ -30,7 +30,7 @@
 
     {{#if hasNextPage}}
       <li class="pagination-next">
-        <button {{action "nextPage"}} aria-label="Next page">Next <span class="show-for-sr">page</span> »</button>
+        <button {{action nextPage}} aria-label="Next page">Next <span class="show-for-sr">page</span> »</button>
       </li>
     {{else}}
       <li class="pagination-next disabled">Next <span class="show-for-sr">page</span></li>

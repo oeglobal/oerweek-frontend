@@ -41,14 +41,5 @@ export default Component.extend({
 
     return range(page+1, min([page+showNumPages, pageCount+1]));
   }),
-
-  actions: {
-    previousPage: function() {
-      this.sendAction('previousPage');
-    },
-    nextPage: function() {
-      this.sendAction('nextPage');
-    }
-
-  }
+  
 });
