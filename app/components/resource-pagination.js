@@ -41,5 +41,5 @@ export default Component.extend({
 
     return range(page+1, min([page+showNumPages, pageCount+1]));
   }),
-  
+
 });

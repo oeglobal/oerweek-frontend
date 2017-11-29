@@ -1,0 +1,61 @@
+<div class="form-group">
+  {{#if (and
+          label
+          (not-eq type 'checkbox')
+        )
+  }}
+    <label for="{{concat elementId '-name'}}">{{label}}</label>
+  {{/if}}
+
+  {{#if (eq type 'textarea') }}
+    {{textarea type=type value=value placeholder=placeholder class="form-control" name=valuePath id=(concat elementId '-name')}}
+  {{else if (eq type 'checkbox') }}
+    <label>
+      {{input type=type checked=value class="form-control" name=valuePath id=(concat elementId '-name')}}
+      {{label}}
+    </label>
+  {{else if (eq type 'power-select') }}
+    {{#power-select
+      options=options
+      onchange=(action 'valueChanged')
+      selected=selected
+      placeholder=placeholder
+      renderInPlace=true
+    as |option|
+    }}
+      {{option}}
+    {{/power-select}}
+  {{else if (eq type 'radio') }}
+    {{#each values as |radio|}}
+
+      {{#radio-button
+        value=radio.value
+        groupValue=radioValue
+        changed=(action 'radioChanged')
+        radioClass=radio.value
+      }}
+        {{radio.label}}
+      {{/radio-button}}
+    {{/each}}
+  {{else}}
+    {{input type=type value=value placeholder=placeholder class="form-control" name=valuePath id=(concat elementId '-name')}}
+  {{/if}}
+
+  {{#if isValid}}
+    <span class="valid-input fa fa-check"></span>
+  {{/if}}
+
+  <div class="input-error">
+    {{#if showErrorMessage}}
+      <div class="error">
+        {{v-get model valuePath 'message'}}
+      </div>
+    {{/if}}
+
+    {{#if showWarningMessage}}
+      <div class="warning">
+        {{v-get model valuePath 'warningMessage'}}
+      </div>
+    {{/if}}
+  </div>
+</div>

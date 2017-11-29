@@ -1,0 +1,43 @@
+<h1>General Information (Step 1/2)</h1>
+
+{{log didValidate}}
+
+<div class="grid-x grid-margin-x">
+  <div class="medium-6 cell">
+    {{validated-input model=model valuePath='firstname' label='First Name *' didValidate=didValidate}}
+  </div>
+  <div class="medium-6 cell">
+    {{validated-input model=model valuePath='lastname' label='Last Name *' didValidate=didValidate}}
+  </div>
+</div>
+
+{{validated-input model=model valuePath='email' label='Email *' didValidate=didValidate}}
+{{validated-input model=model valuePath='institution' label='Institution or Organization' didValidate=didValidate}}
+{{validated-input model=model valuePath='institutionurl' label='Website of institution or organization' didValidate=didValidate}}
+
+{{validated-input model=model options=countries valuePath='country' placeholder="Select your country ..."
+                  label='Country *' type='power-select' didValidate=didValidate}}
+
+{{validated-input model=model valuePath='city' label='City, State *' didValidate=didValidate}}
+
+{{validated-input
+  label='Type of Contribution *'
+  model=model
+  valuePath='contributiontype'
+  values=(array
+    (hash value='event' label='Event')
+    (hash value='resource' label='Resource')
+  )
+  type='radio'
+  didValidate=didValidate
+}}
+
+{{#if (eq model.contributiontype 'event')}}
+  <button class="button" {{action 'validateForm' 'submit.event'}}>Next Page</button>
+{{else if (eq model.contributiontype 'resource')}}
+  {{#link-to 'submit.resource' class='button'}}Next Page{{/link-to}}
+{{else}}
+  <a class="button" disabled>Next Page</a>
+{{/if}}
+
+

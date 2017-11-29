@@ -9,7 +9,7 @@ const Router = EmberRouter.extend(RouterScroll, {
 });
 
 Router.map(function () {
-  this.route('events', function() {
+  this.route('events', function () {
     this.route('event', {
       path: ':event_slug'
     });
@@ -24,7 +24,16 @@ Router.map(function () {
   this.route('page', {
     path: '/page/:page_slug'
   });
+
   this.route('not-found');
+
+  this.route('submit', function () {
+    this.route('general');
+    this.route('event');
+    this.route('preview');
+    this.route('confirmation');
+    this.route('resource');
+  });
 });
 
 export default Router;
