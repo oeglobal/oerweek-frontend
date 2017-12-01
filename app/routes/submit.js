@@ -5,7 +5,7 @@ export default Route.extend({
 
   model() {
     return this.store.createRecord('submission', {
-      'datetime': new Date(2018, 3, 5) // also update date in controller.resetSubmission();
+      'datetime': new Date(2018, 2, 5, 9, 0) // also update date in controller.resetSubmission();
     });
   },
 });

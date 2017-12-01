@@ -1,7 +1,4 @@
-import {oneWay, alias, not, notEmpty, and} from '@ember/object/computed';
-
 import Component from '@ember/component';
-import {isEmpty} from '@ember/utils';
 import {defineProperty, computed} from '@ember/object';
 
 export default Component.extend({

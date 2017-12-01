@@ -13,7 +13,8 @@
 
 {{validated-input model=model valuePath='email' label='Email *' didValidate=didValidate}}
 {{validated-input model=model valuePath='institution' label='Institution or Organization' didValidate=didValidate}}
-{{validated-input model=model valuePath='institutionurl' label='Website of institution or organization' didValidate=didValidate}}
+{{validated-input model=model valuePath='institutionurl' label='Website of institution or organization'
+                  didValidate=didValidate}}
 
 {{validated-input model=model options=countries valuePath='country' placeholder="Select your country ..."
                   label='Country *' type='power-select' didValidate=didValidate}}
@@ -32,12 +33,16 @@
   didValidate=didValidate
 }}
 
-{{#if (eq model.contributiontype 'event')}}
-  <button class="button" {{action 'validateForm' 'submit.event'}}>Next Page</button>
-{{else if (eq model.contributiontype 'resource')}}
-  {{#link-to 'submit.resource' class='button'}}Next Page{{/link-to}}
-{{else}}
-  <a class="button" disabled>Next Page</a>
-{{/if}}
+<div class="grid-x grid-margin-x align-justify">
+  <div class="cell shrink">
+    {{#if (eq model.contributiontype 'event')}}
+      <button class="button" {{action 'validateForm' 'submit.event'}}>Next Page</button>
+    {{else if (eq model.contributiontype 'resource')}}
+      <button class="button" {{action 'validateForm' 'submit.resource'}}>Next Page</button>
+    {{else}}
+      <button class="button" {{action 'validateForm'}}>Next Page</button>
+    {{/if}}
+  </div>
+</div>
 
 

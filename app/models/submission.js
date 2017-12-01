@@ -24,9 +24,11 @@ var Validations = buildValidations({
     validator('presence', true),
   ],
   link: [
-    validator('presence', true)
+    validator('presence', true),
+    validator('format', {
+      type: 'url'
+    })
   ],
-
   title: [
     validator('presence', true),
   ],
@@ -40,6 +42,12 @@ var Validations = buildValidations({
     validator('presence', true),
   ],
   license: [
+    validator('presence', true),
+  ],
+  opentags: [
+    validator('presence', true),
+  ],
+  eventtype: [
     validator('presence', true),
   ]
 }, {
@@ -57,8 +65,7 @@ export default DS.Model.extend(Validations, {
   language: DS.attr('string'),
   contributiontype: DS.attr('string'),
 
-  localeventtype: DS.attr('string'),
-  eventother: DS.attr('string'),
+  eventtype: DS.attr('string'),
   title: DS.attr('string'),
   description: DS.attr('string'),
   datetime: DS.attr('string'),
@@ -66,11 +73,8 @@ export default DS.Model.extend(Validations, {
   facilitator: DS.attr('string'),
   directions: DS.attr('string'),
   link: DS.attr('string'),
-  archive: DS.attr('boolean'),
 
-  is_primary: DS.attr('boolean'),
-  is_higher: DS.attr('boolean'),
-  is_community: DS.attr('boolean'),
+  opentags: DS.attr(),
 
   license: DS.attr('string'),
   postStatus: DS.attr('string'),

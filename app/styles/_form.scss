@@ -49,6 +49,29 @@
   margin: auto;
 }
 
-.ember-basic-dropdown {
+.ember-basic-dropdown,
+.ember-power-select-trigger {
   margin-bottom: rem-calc(15);
+}
+
+.ember-power-select-trigger-multiple-input {
+  margin-bottom: 0;
+  height: 30px;
+  margin-left: 5px;
+
+  box-shadow: none;
+
+  &:focus {
+    box-shadow: none;
+    transition: none;
+    border: none;
+  }
+}
+
+.submit dt {
+  margin-bottom: 0;
+}
+
+.submit dd {
+  margin-bottom: 15px;
 }

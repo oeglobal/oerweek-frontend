@@ -1,1 +1,52 @@
-{{outlet}}
+<h1>Event Information (Step 2/2)</h1>
+
+{{validated-input
+  label='Type of Event *'
+  model=model
+  valuePath='eventtype'
+  values=(array
+    (hash value='local' label='Local')
+    (hash value='online' label='Online')
+  )
+  type='radio'
+  didValidate=didValidate
+}}
+
+{{validated-input model=model valuePath='title' label='Title of Event *' didValidate=didValidate}}
+{{validated-input model=model valuePath='facilitator' label='Facilitator' didValidate=didValidate}}
+{{validated-input model=model valuePath='description' label='Short description of the event *' type='textarea'
+                  didValidate=didValidate}}
+
+<label>Event starts at *</label>
+{{ember-flatpickr
+  date=(readonly model.datetime)
+  enableTime=true
+  dateFormat='Y-m-d h:i K'
+  onChange=(action 'updateDatetime')
+}}
+
+{{#if model.datetime}}
+  <p>Event will be submitted using your local timezone at the time: {{timezone}}</p>
+{{/if}}
+
+{{validated-input model=model valuePath='link' label='Link to the event *' didValidate=didValidate}}
+{{validated-input model=model valuePath='linkwebroom' label='Link to the webroom (if applicable)'
+                  didValidate=didValidate}}
+
+{{validated-input model=model options=languages valuePath='language' label='Primary Language *'
+                  placeholder='Select language ...' type='power-select' didValidate=didValidate}}
+
+{{validated-input model=model options=openTags valuePath='opentags'
+                  label='Please select primary open content(s) of the event *'
+                  type='power-select-multiple' didValidate=didValidate}}
+
+<br />
+<div class="grid-x grid-margin-x align-justify">
+  <div class="cell shrink">
+    <button class="button" {{action 'validateForm'}}>Previous Page</button>
+  </div>
+  <div class="cell shrink">
+    <button class="button" {{action 'validateForm' 'submit.preview'}}>Preview Submission</button>
+  </div>
+</div>
+

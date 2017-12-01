@@ -1,1 +1,60 @@
-{{outlet}}
+<h1>Preview Submission</h1>
+
+
+<h4>General Information</h4>
+<dl>
+  <dt>Name</dt>
+  <dd>{{model.firstname}} {{model.lastname}}</dd>
+
+  <dt>Email</dt>
+  <dd>{{model.email}}</dd>
+
+  <dt>City and Country</dt>
+  <dd>{{model.city}}, {{model.country}}</dd>
+</dl>
+
+{{#if (eq model.contributiontype 'event')}}
+  <h4>Event Information</h4>
+
+  <dl>
+    <dt>Type of Event</dt>
+    <dd>{{uc-words model.eventtype}}</dd>
+
+    <dt>Title</dt>
+    <dd>{{model.title}}</dd>
+
+    <dt>Facilitator</dt>
+    <dd>{{model.facilitator}}</dd>
+
+    <dt>Description</dt>
+    <dd>{{model.description}}</dd>
+
+    <dt>Event starts at</dt>
+    <dd>{{moment-format model.datetime 'YYYY-MM-DD HH:mm a'}}</dd>
+
+    <dt>Link to the Event Page</dt>
+    <dd>{{model.link}}</dd>
+
+    <dt>Optional link to the Web room of the event</dt>
+    <dd>{{model.linkwebroom}}</dd>
+
+    <dt>Language</dt>
+    <dd>{{model.language}}</dd>
+
+    <dt>Primary open content(s) of the event</dt>
+    <dd>{{join ', ' model.opentags}}</dd>
+  </dl>
+{{/if}}
+
+<div class="grid-x grid-margin-x align-justify">
+  <div class="cell shrink">
+    {{#if (eq model.contributiontype 'event')}}
+      {{#link-to 'submit.event' class="button"}}Previous Page{{/link-to}}
+    {{else}}
+      {{#link-to 'submit.resource' class="button"}}Previous Page{{/link-to}}
+    {{/if}}
+  </div>
+  <div class="cell shrink">
+    <button class="button" {{action 'submitForm'}}>Submit</button>
+  </div>
+</div>

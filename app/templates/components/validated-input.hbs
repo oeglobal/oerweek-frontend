@@ -25,6 +25,16 @@
     }}
       {{option}}
     {{/power-select}}
+  {{else if (eq type 'power-select-multiple') }}
+    {{#power-select-multiple
+      options=options
+      selected=selected
+      onchange=(action 'valueChanged')
+
+    as |option|
+    }}
+      {{option}}
+    {{/power-select-multiple}}
   {{else if (eq type 'radio') }}
     {{#each values as |radio|}}
 
