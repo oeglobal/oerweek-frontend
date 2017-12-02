@@ -16,8 +16,15 @@
 {{validated-input model=model valuePath='institutionurl' label='Website of institution or organization'
                   didValidate=didValidate}}
 
-{{validated-input model=model options=countries valuePath='country' placeholder="Select your country ..."
-                  label='Country *' type='power-select' didValidate=didValidate}}
+{{validated-input
+  model=model
+  options=countries
+  valuePath='country'
+  placeholder="Select your country ..."
+  label='Country *'
+  type='power-select'
+  didValidate=didValidate
+}}
 
 {{validated-input model=model valuePath='city' label='City, State *' didValidate=didValidate}}
 

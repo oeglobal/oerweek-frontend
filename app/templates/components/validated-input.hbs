@@ -18,7 +18,7 @@
     {{#power-select
       options=options
       onchange=(action 'valueChanged')
-      selected=selected
+      selected=(readonly (get model valuePath))
       placeholder=placeholder
       renderInPlace=true
     as |option|
@@ -28,9 +28,8 @@
   {{else if (eq type 'power-select-multiple') }}
     {{#power-select-multiple
       options=options
-      selected=selected
+      selected=(readonly (get model valuePath))
       onchange=(action 'valueChanged')
-
     as |option|
     }}
       {{option}}
@@ -40,7 +39,7 @@
 
       {{#radio-button
         value=radio.value
-        groupValue=radioValue
+        groupValue=(readonly (get model valuePath))
         changed=(action 'radioChanged')
         radioClass=radio.value
       }}

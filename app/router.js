@@ -33,6 +33,7 @@ Router.map(function () {
     this.route('preview');
     this.route('confirmation');
     this.route('resource');
+    this.route('error');
   });
 });
 

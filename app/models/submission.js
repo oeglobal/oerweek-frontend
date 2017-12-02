@@ -73,6 +73,7 @@ export default DS.Model.extend(Validations, {
   facilitator: DS.attr('string'),
   directions: DS.attr('string'),
   link: DS.attr('string'),
+  linkwebroom: DS.attr('string'),
 
   opentags: DS.attr(),
 

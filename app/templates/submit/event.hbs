@@ -43,7 +43,7 @@
 <br />
 <div class="grid-x grid-margin-x align-justify">
   <div class="cell shrink">
-    <button class="button" {{action 'validateForm'}}>Previous Page</button>
+    {{#link-to 'submit.general' class="button"}}Previous Page{{/link-to}}
   </div>
   <div class="cell shrink">
     <button class="button" {{action 'validateForm' 'submit.preview'}}>Preview Submission</button>
