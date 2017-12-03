@@ -49,7 +49,12 @@ var Validations = buildValidations({
   ],
   eventtype: [
     validator('presence', true),
-  ]
+  ],
+  institutionurl: [
+    validator('format', {
+      type: 'url'
+    })
+  ],
 }, {
   debounce: 500
 });

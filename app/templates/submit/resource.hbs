@@ -1,1 +1,32 @@
-{{outlet}}
+<h1>Resource Information (Step 2/2)</h1>
+
+{{validated-input model=model valuePath='title' label='Title *' didValidate=didValidate}}
+{{validated-input model=model valuePath='description' label='Short description *' type='textarea'
+                  didValidate=didValidate}}
+{{validated-input model=model valuePath='link' label='Link to Resource *' didValidate=didValidate}}
+{{validated-input
+  model=model
+  options=licenses
+  valuePath='license'
+  label='License *'
+  type='power-select'
+  didValidate=didValidate
+}}
+
+{{validated-input model=model options=languages valuePath='language' label='Primary Language *'
+                  placeholder='Select language ...' type='power-select' didValidate=didValidate}}
+
+{{validated-input model=model options=openTags valuePath='opentags'
+                  label='Please select all that apply *'
+                  type='power-select-multiple' didValidate=didValidate}}
+
+<br />
+<div class="grid-x grid-margin-x align-justify">
+  <div class="cell shrink">
+    {{#link-to 'submit.general' class="button"}}Previous Page{{/link-to}}
+  </div>
+  <div class="cell shrink">
+    <button class="button" {{action 'validateForm' 'submit.preview'}}>Preview Submission</button>
+  </div>
+</div>
+

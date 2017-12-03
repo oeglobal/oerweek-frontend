@@ -11,6 +11,12 @@
 
   <dt>City and Country</dt>
   <dd>{{model.city}}, {{model.country}}</dd>
+
+  <dt>Institution or Organization</dt>
+  <dd>{{model.institution}}</dd>
+
+  <dt>Website of Institution or Organization</dt>
+  <dd>{{model.institutionurl}}</dd>
 </dl>
 
 {{#if (eq model.contributiontype 'event')}}
@@ -42,6 +48,27 @@
     <dd>{{model.language}}</dd>
 
     <dt>Primary open content(s) of the event</dt>
+    <dd>{{join ', ' model.opentags}}</dd>
+  </dl>
+{{else if (eq model.contributiontype 'resource')}}
+  <h4>Resource Information</h4>
+  <dl>
+    <dt>Title</dt>
+    <dd>{{model.title}}</dd>
+
+    <dt>Description</dt>
+    <dd>{{model.description}}</dd>
+
+    <dt>Link to the Resource</dt>
+    <dd>{{model.link}}</dd>
+
+    <dt>License</dt>
+    <dd>{{model.license}}</dd>
+
+    <dt>Primary Language</dt>
+    <dd>{{model.language}}</dd>
+
+    <dt>Open Tags that apply to the Resource</dt>
     <dd>{{join ', ' model.opentags}}</dd>
   </dl>
 {{/if}}

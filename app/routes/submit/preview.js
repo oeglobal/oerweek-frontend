@@ -24,5 +24,11 @@ export default Route.extend({
     // model.title = 'Intro workshop to OER and Open Culture';
 
     return model;
+  },
+
+  afterModel(model) {
+    if ( ! model.get('firstname') ) {
+      this.transitionTo('submit');
+    }
   }
 });

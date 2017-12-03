@@ -1,16 +1,14 @@
 import Controller from '@ember/controller';
-import moment from 'moment';
 import getLanguages from 'frontend/utils/get-languages';
 import getOpenTags from 'frontend/utils/get-open-tags';
 
 export default Controller.extend({
   init() {
     this._super(...arguments);
-
-    this.set('didValidate', null);
     this.set('languages', getLanguages());
     this.set('openTags', getOpenTags());
-    this.set('fields', ['eventtype', 'title', 'facilitator', 'description', 'datetime', 'link', 'linkwebroom', 'language', 'openags'])
+    this.set('licenses', ['CC-BY', 'CC-BY-SA', 'CC-BY-NC', 'CC-BY-NC-SA', 'Freely accessible', 'Other']);
+    this.set('fields', ['title', 'description', 'link', 'license', 'language', 'opentags']);
   },
 
   actions: {
@@ -24,12 +22,6 @@ export default Controller.extend({
           this.transitionToRoute(route);
         }
       });
-    },
-
-    updateDatetime(val) {
-      let newDateTime = moment(val[0]);
-      this.set('model.datetime', newDateTime.toISOString());
-      this.set('timezone', 'GMT' + newDateTime.format('Z'));
-    },
+    }
   }
 });
