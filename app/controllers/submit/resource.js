@@ -7,7 +7,7 @@ export default Controller.extend({
     this._super(...arguments);
     this.set('languages', getLanguages());
     this.set('openTags', getOpenTags());
-    this.set('licenses', ['CC-BY', 'CC-BY-SA', 'CC-BY-NC', 'CC-BY-NC-SA', 'Freely accessible', 'Other']);
+    this.set('licenses', ['CC-BY', 'CC-BY-SA', 'CC-BY-NC', 'CC-BY-NC-SA', 'Other']);
     this.set('fields', ['title', 'description', 'link', 'license', 'language', 'opentags']);
   },
 
