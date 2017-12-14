@@ -1,4 +1,5 @@
 import Controller from '@ember/controller';
+import { getOwner } from '@ember/application';
 
 export default Controller.extend({
   actions: {
