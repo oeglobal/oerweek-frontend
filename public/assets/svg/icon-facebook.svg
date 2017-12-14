@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="45px" height="43px" viewBox="0 0 45 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 42.9999522 0 0.115622222 44.8789 0.115622222 44.8789 42.9999522"></polygon>
+    </defs>
+    <g id="Desktop-HD" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-548.000000, -1196.000000)">
+        <g id="Group" transform="translate(548.000000, 1196.000000)">
+            <g id="icon-facebook">
+                <g id="Group-3">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <path d="M44.8789,21.5577633 C44.8789,33.3994856 34.8319,42.9999522 22.4394,42.9999522 C10.0469,42.9999522 -0.0001,33.3994856 -0.0001,21.5577633 C-0.0001,9.71604111 10.0469,0.115574444 22.4394,0.115574444 C34.8319,0.115574444 44.8789,9.71604111 44.8789,21.5577633" id="Fill-1" fill="#3B5998" mask="url(#mask-2)"></path>
+                </g>
+                <path d="M27.3569195,23.8223605 L23.3523263,23.8223605 L23.3523263,38.7 L17.2854275,38.7 L17.2854275,23.8223605 L14.4,23.8223605 L14.4,18.5921623 L17.2854275,18.5921623 L17.2854275,15.2089903 C17.2854275,12.7899032 18.4180953,9 23.4073344,9 L27.9,9.02028585 L27.9,14.0952974 L24.639517,14.0952974 C24.1044377,14.0952974 23.3523263,14.3666206 23.3523263,15.5198709 L23.3523263,18.598248 L27.8879982,18.598248 L27.3569195,23.8223605 Z" id="Fill-4" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

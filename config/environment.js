@@ -46,7 +46,15 @@ module.exports = function (environment) {
           id: 'UA-4248822-6'
         }
       },
-    ]
+    ],
+
+    svgJar: {
+      strategy: 'symbol',
+      sourceDirs: [
+        'public/svg'
+      ],
+      optimizer: false
+    }
   };
 
   if (environment === 'development') {

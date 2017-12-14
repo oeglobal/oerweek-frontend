@@ -100,6 +100,7 @@ footer {
   color: #989898;
   font-size: rem-calc(13);
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 .footer--navigation--menu a {
@@ -309,9 +310,10 @@ footer {
 
 .home-third--title {
   margin-top: rem-calc(36);
+  margin-bottom: 0;
   color: $white;
   font-weight: 300;
-  text-align: center;
+  //text-align: center;
 }
 
 .home-third--youtube {
@@ -325,39 +327,19 @@ footer {
   padding-bottom: rem-calc(16);
 }
 
-.home-third--social i {
-  margin: rem-calc(20) rem-calc(30) rem-calc(30);
-  font-size: rem-calc(24);
+.home-third--social .social-icon {
+  display: inline-block;
+
+  margin-right: 15px;
+
+  &:first-child {
+    margin-right: 30px;
+  }
 
   &:last-child {
     margin-right: 0;
   }
-}
 
-.home-third--p {
-  font-size: rem-calc(16);
-  padding-top: rem-calc(11);
-  padding-bottom: rem-calc(0);
-}
-
-.home-third--social i {
-  color: $white;
-  border-radius: rem-calc(60);
-  padding: rem-calc(10);
-}
-
-.home-third--container .tw i {
-  background-color: #55acee;
-}
-
-.home-third--container .fb i {
-  background-color: #3b5998;
-  width: rem-calc(50);
-}
-
-.home-third--container .yt i {
-  background-color: #cd201f;
-  width: rem-calc(50);
 }
 
 .home-third--downloadables {
@@ -622,4 +604,8 @@ footer {
 
 .home-initiativies--title {
   margin-top: rem-calc(0);
+}
+
+.footer--logo {
+  margin-right: 30px;
 }
