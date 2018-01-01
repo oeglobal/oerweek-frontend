@@ -1,19 +1,28 @@
 <div class="grid-container box">
   <div class="grid-x grid-margin-x">
-    <div class="cell small-12 text-center">
+    <div class="small-12 columns text-center">
       <h1>Submissions</h1>
     </div>
 
-    <table class="table table-bordered table-striped">
-      <thead class="text-left">
-      <tr>
+    <div class="small-12 columns">
+      <ul class="breadcrumbs">
+        <li>{{#link-to "submissions.index" (query-params postStatus=null)}}All{{/link-to}}</li>
+        <li>{{#link-to "submissions.index" (query-params postStatus="draft")}}Draft{{/link-to}}</li>
+        <li>{{#link-to "submissions.index" (query-params postStatus="publish")}}Published{{/link-to}}</li>
+        <li>{{#link-to "submissions.index" (query-params postStatus="trash")}}Trash{{/link-to}}</li>
+      </ul>
+    </div>
+
+    <table class="table table--submissions">
+      <thead>
+      <tr class="text-left">
         <th>ID</th>
         <th>Title</th>
         <th>Status</th>
       </tr>
       </thead>
       <tbody>
-      {{#each model as |submission|}}
+      {{#each filteredSubmissions as |submission|}}
         <tr>
           <td>{{submission.id}}</td>
           <td>{{#link-to 'submissions.detail' submission.id}}{{submission.title}}{{/link-to}}</td>

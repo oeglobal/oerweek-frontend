@@ -18,7 +18,6 @@ export default Controller.extend({
           this.set('errorMessage', resp['non_field_errors']);
         } else {
           this.set('errorMessage', resp);
-          console.log(resp);
         }
       });
     },

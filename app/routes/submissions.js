@@ -3,6 +3,6 @@ import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-rout
 
 export default Route.extend(AuthenticatedRouteMixin, {
   model() {
-    return this.get('store').findAll('submission');
+    return this.get('store').query('submission', {'page_size': 200});
   }
 });

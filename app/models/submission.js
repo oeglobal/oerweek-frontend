@@ -52,6 +52,7 @@ var Validations = buildValidations({
   ],
   institutionurl: [
     validator('format', {
+      allowBlank: true,
       type: 'url'
     })
   ],
@@ -84,4 +85,5 @@ export default DS.Model.extend(Validations, {
 
   license: DS.attr('string'),
   postStatus: DS.attr('string'),
+  imageUrl: DS.attr('string')
 });
