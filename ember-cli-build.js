@@ -16,6 +16,7 @@ module.exports = function(defaults) {
         'images/marker-icon.png',
         'images/marker-shadow.png',
         'assets/badges/*.png',
+        'assets/images/oew2018-facebook-opengraph.png',
         'assets/svg/*.svg'
       ]
     }

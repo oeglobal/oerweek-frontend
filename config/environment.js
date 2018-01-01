@@ -19,8 +19,7 @@ module.exports = function (environment) {
     },
 
     APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
+      API_NAMESPACE: 'api'
     },
 
     typekit: {
@@ -54,13 +53,27 @@ module.exports = function (environment) {
         'public/svg'
       ],
       optimizer: false
+    },
+
+    'ember-simple-auth-token': {
+      serverTokenEndpoint: 'http://localhost:8000/api-token-auth/',
+      serverTokenRefreshEndpoint: 'http://localhost:8000/api-token-refresh/',
+      refreshTokenPropertyName: 'token',
+      refreshAccessTokens: true,
+      refreshLeeway: 300,
+
+      // timeFactor: 7200,
+
+      // tokenPropertyName: 'token',
+      authorizationPrefix: 'JWT ',
+      authorizationHeaderName: 'Authorization',
     }
   };
 
   if (environment === 'development') {
-    // ENV.APP.API_HOST = 'http://localhost:8000';
-    ENV.APP.API_HOST = 'https://api.openeducationweek.org';
-    ENV.APP.API_NAMESPACE = 'api';
+    ENV.APP.API_HOST = 'http://localhost:8000';
+    // ENV.APP.API_HOST = 'https://api.openeducationweek.org';
+
   }
 
   if (environment === 'test') {
@@ -76,8 +89,14 @@ module.exports = function (environment) {
 
   if (environment === 'production') {
     ENV.APP.API_HOST = 'https://api.openeducationweek.org';
-    ENV.APP.API_NAMESPACE = 'api';
+    ENV['ember-simple-auth-token']['serverTokenEndpoint'] = 'https://api.openeducationweek.org/api-token-auth/';
+    ENV['ember-simple-auth-token']['serverTokenRefreshEndpoint'] = 'https://api.openeducationweek.org/api-token-refresh/';
   }
+
+  ENV['ember-simple-auth'] = {
+    authorizer: 'authorizer:token',
+    crossOriginWhitelist: [process.env.API_HOST],
+  };
 
   return ENV;
 };

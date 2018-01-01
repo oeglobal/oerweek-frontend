@@ -1,8 +1,8 @@
 {
   "name": "frontend",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
-  "description": "Small description for frontend goes here",
+  "description": "Open Education Week Fronteed",
   "license": "MIT",
   "author": "",
   "directories": {
@@ -53,6 +53,8 @@
     "ember-radio-button": "^1.2.0",
     "ember-resolver": "^4.0.0",
     "ember-router-scroll": "^0.4.0",
+    "ember-simple-auth": "^1.4.2",
+    "ember-simple-auth-token": "^3.0.0",
     "ember-source": "~2.16.0",
     "ember-string-helpers": "^1.0.2",
     "ember-svg-jar": "^0.11.1",

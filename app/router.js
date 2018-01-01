@@ -35,6 +35,12 @@ Router.map(function () {
     this.route('resource');
     this.route('error');
   });
+  this.route('login');
+  this.route('submissions', function() {
+    this.route('detail', {
+      path: 'detail/:id'
+    });
+  });
 });
 
 export default Router;
