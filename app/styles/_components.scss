@@ -612,4 +612,13 @@ footer {
 
 .footer--logo {
   margin-right: 30px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.footer--logo img {
+  height: 100px;
+  width: auto;
 }
