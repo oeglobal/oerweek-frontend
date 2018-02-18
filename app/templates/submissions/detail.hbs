@@ -7,7 +7,8 @@
             Back to submissions{{/link-to}}
         </div>
         <div class="small-3 cell text-right">
-          <a href="https://api.openeducationweek.org/admin/web/resource/{{model.id}}/change/" target="_blank" class='button secondary'>Edit</a>
+          <a href="https://api.openeducationweek.org/admin/web/resource/{{model.id}}/change/" target="_blank"
+             class='button secondary'>Edit</a>
         </div>
 
       </div>
@@ -60,6 +61,25 @@
             {{else}}
               <button class="button secondary disabled">Trash</button>
             {{/if}}
+          </dt>
+          <dd>Email Templates</dd>
+          <dt>
+            {{#each templates as |template|}}
+              <a href="mailto:test@example.com?subject={{simple-template
+                templateString=template.subject
+                props=(hash
+                  title=model.title
+                  link=model.permalink
+                  name=model.firstname)
+              }}&body={{simple-template
+                templateString=template.body
+                props=(hash
+                  title=model.title
+                  link=model.permalink
+                  name=model.firstname)
+              }}"
+                 class="button primary">{{template.name}}</a><br/>
+            {{/each}}
           </dt>
         </div>
 

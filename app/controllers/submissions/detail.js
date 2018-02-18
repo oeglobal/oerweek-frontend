@@ -6,5 +6,5 @@ export default Controller.extend({
       model.set('postStatus', postStatus);
       model.save();
     }
-  }
+  },
 });

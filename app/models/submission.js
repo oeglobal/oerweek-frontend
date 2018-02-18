@@ -1,5 +1,6 @@
 import DS from 'ember-data';
 import { validator, buildValidations } from 'ember-cp-validations';
+import { computed } from '@ember/object';
 
 var Validations = buildValidations({
   firstname: [
@@ -85,5 +86,15 @@ export default DS.Model.extend(Validations, {
 
   license: DS.attr('string'),
   postStatus: DS.attr('string'),
-  imageUrl: DS.attr('string')
+  imageUrl: DS.attr('string'),
+
+  slug: DS.attr('string'),
+
+  permalink: computed('slug', function() {
+    if (this.get('eventtype') === 'event') {
+      return `https://www.openeducationweek.org/events/${this.get('slug')}`;
+    } else {
+      return `https://www.openeducationweek.org/resources/${this.get('slug')}`;
+    }
+  })
 });
