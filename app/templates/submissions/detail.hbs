@@ -65,7 +65,7 @@
           <dd>Email Templates</dd>
           <dt>
             {{#each templates as |template|}}
-              <a href="mailto:test@example.com?subject={{simple-template
+              <a href="mailto:{{model.email}}?subject={{simple-template
                 templateString=template.subject
                 props=(hash
                   title=model.title
