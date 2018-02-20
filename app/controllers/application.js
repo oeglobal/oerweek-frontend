@@ -5,6 +5,8 @@ import {inject as service} from '@ember/service';
 export default Controller.extend({
   session: service('session'),
   isHomepage: equal('currentRouteName', 'index'),
+  isSchedule: equal('currentRouteName', 'schedule'),
+
   actions: {
     logout() {
       this.get('session').invalidate();

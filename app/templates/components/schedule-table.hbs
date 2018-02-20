@@ -1,0 +1,18 @@
+<div class="row">
+  <table class="schedule--table">
+    <thead>
+    <th>Location</th>
+    <th>Organizer</th>
+    <th>Event</th>
+    </thead>
+    <tbody>
+    {{#each filteredEvent as |event index|}}
+      <tr>
+        <td>{{#if event.city}}{{event.city}}, {{/if}}{{event.country}}</td>
+        <td>{{event.institution}}</td>
+        <td>{{#link-to 'events.event' event.slug}}{{{event.title}}}{{/link-to}}</td>
+      </tr>
+    {{/each}}
+    </tbody>
+  </table>
+</div>

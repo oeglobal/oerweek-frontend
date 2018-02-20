@@ -41,6 +41,7 @@ Router.map(function () {
       path: 'detail/:id'
     });
   });
+  this.route('schedule');
 });
 
 export default Router;

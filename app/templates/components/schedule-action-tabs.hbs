@@ -1,0 +1,9 @@
+<div class="row">
+  <ul class="menu schedule--menu">
+    {{#each dates as |date index|}}
+      <li class="{{if date.isActive 'active'}}">
+        <a href="#" {{action 'selectDate' date}}>{{date.text}}</a>
+      </li>
+    {{/each}}
+  </ul>
+</div>

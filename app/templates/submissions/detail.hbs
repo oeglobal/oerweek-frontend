@@ -9,8 +9,14 @@
         <div class="small-3 cell text-right">
           <a href="https://api.openeducationweek.org/admin/web/resource/{{model.id}}/change/" target="_blank"
              class='button secondary'>Edit</a>
+          {{#if (eq model.postStatus 'publish')}}
+            {{#if (eq model.contributiontype 'resource')}}
+              {{#link-to 'resources.resource' model.slug class='button primary'}}View{{/link-to}}
+            {{else}}
+              {{#link-to 'events.event' model.slug class='button primary'}}View{{/link-to}}
+            {{/if}}
+          {{/if}}
         </div>
-
       </div>
 
       <div class="grid-x grid-margin-x">
