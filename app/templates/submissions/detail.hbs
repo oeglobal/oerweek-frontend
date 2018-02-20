@@ -144,6 +144,14 @@
             </dl>
           {{/if}}
         </div>
+        <div class="small-6 cell">
+          {{#if model.imageUrl}}
+            <h4>Image</h4>
+            <img src="{{{model.imageUrl}}}" alt="{{model.title}}" />
+          {{else}}
+            <h4>No Image 😔</h4>
+          {{/if}}
+        </div>
       </div>
     </div>
   </div>
