@@ -1,10 +1,13 @@
-<div class="grid-container">
-  <div class="grid-x grid-margin-x">
-    <div class="small-12 cell text-center">
-      <h1>Schedule of Online Events</h1>
-    </div>
+<div class="schedule__container online">
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x">
+      {{schedule-action-tabs selectDate='selectDate' event_type='online'}}
 
-    {{schedule-action-tabs selectDate='selectDate' event_type='online'}}
-    {{schedule-table filteredEvent=filteredOnlineEvent}}
+      <div class="small-12 cell">
+        <h1 class="schedule-header__online">{{svg-jar 'online'}} Online Events</h1>
+      </div>
+
+      {{schedule-table filteredEvent=filteredOnlineEvent}}
+    </div>
   </div>
 </div>

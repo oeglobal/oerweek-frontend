@@ -1,9 +1,10 @@
-<div class="row">
-  <ul class="menu schedule--menu">
-    {{#each dates as |date index|}}
-      <li class="{{if date.isActive 'active'}}">
-        <a href="#" {{action 'selectDate' date}}>{{date.text}}</a>
-      </li>
-    {{/each}}
-  </ul>
+<div class="cell auto text-center schedule--menu {{event_type}} grid-x">
+  {{#each dates as |date index|}}
+    <div class="schedule--menu__button cell auto">
+      <button {{action 'selectDate' date}} class="{{if date.isActive 'active'}}">
+        <span class="schedule--menu__day1">{{moment-format date.value 'ddd'}}</span>
+        <span class="schedule--menu__day2">{{moment-format date.value 'DD'}}</span>
+      </button>
+    </div>
+  {{/each}}
 </div>

@@ -41,7 +41,7 @@ header  .dropdown.menu li {
 }
 
 .menu.is-dropdown-submenu {
-  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.16)
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16)
 }
 
 .menu.is-dropdown-submenu li a {
@@ -132,7 +132,7 @@ footer {
   padding: rem-calc(25) rem-calc(25) rem-calc(5) rem-calc(25);
 
   background: $white;
-  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.23);
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.23);
   border-radius: rem-calc(8);
 }
 
@@ -145,7 +145,7 @@ footer {
 }
 
 .box--image {
-  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.23);
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.23);
 }
 
 .box--meta dt {
@@ -377,7 +377,7 @@ footer {
   font-size: rem-calc(35);
   font-weight: 300;
 
-  text-shadow: 0px 2px 4px rgba(0,0,0,0.50);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.50);
 }
 
 .home-fourth--subtitle {
@@ -385,7 +385,7 @@ footer {
   font-size: rem-calc(16);
   font-weight: 300;
 
-  text-shadow: 0px 2px 4px rgba(0,0,0,0.50);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.50);
 }
 
 .home-fourth--stat-number {
@@ -394,7 +394,7 @@ footer {
   font-size: rem-calc(50);
   font-weight: 700;
 
-  text-shadow: 0px 2px 4px rgba(0,0,0,0.50);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.50);
 }
 
 .home-fourth--stat-name {
@@ -402,7 +402,7 @@ footer {
   font-size: rem-calc(25);
   font-weight: 300;
 
-  text-shadow: 0px 2px 4px rgba(0,0,0,0.50);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.50);
 }
 
 .home-fifth--container,
@@ -472,27 +472,97 @@ footer {
 }
 
 /* Schedule */
+.schedule__container {
+  padding: 35px 0 70px;
+}
+
+.schedule__container.online {
+  background-color: #F4F4F4;
+}
+
+.schedule-header__online {
+  margin-bottom: 20px;
+  color: #1FB9A5;
+  font-size: 20px;
+  font-weight: bold;
+
+  line-height: 60px;
+
+  > svg {
+    margin-right: 17px;
+    vertical-align: middle;
+  }
+}
+
+.schedule-action-tabs {
+  margin: auto 20px;
+}
+
 .schedule--menu {
-  margin-top: rem-calc(40);
+  margin-bottom: 26px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-.schedule--menu li {
-  padding: rem-calc(3) rem-calc(20);
-  background-color: $cyan;
+
+.schedule--menu__button {
+
+}
+.schedule--menu button {
+  position: relative;
 }
 
-.schedule--menu li:hover,
-.schedule--menu li.active {
-  background-color: $white;
+.schedule--menu.online button {
+  color: #888888;
+  border-bottom: 3px solid transparent;
+
+  &.active,
+  &:hover,
+  &:focus {
+    color: $blue;
+    border-bottom:: 3px solid $blue;
+    cursor: pointer;
+  }
 }
 
-.schedule--menu li a {
-  color: $white;
+.schedule--menu__button {
+  position: relative;
 }
 
-.schedule--menu li:hover a,
-.schedule--menu li.active a {
-  color: $cyan;
+.schedule--menu__button::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  bottom: 5px;
+  left: 0px;
+  border-left: 2px solid #d3d3d3;
+  width: 2px;
+  pointer-events: none;
+}
+
+//
+.schedule--menu__button:last-child::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  bottom: 5px;
+  right: 0px;
+  border-right: 2px solid #d3d3d3;
+  width: 2px;
+}
+
+
+.schedule--menu__day1 {
+  display: block;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.schedule--menu__day2 {
+  display: block;
+  font-size: 40px;
+  font-weight: bold;
 }
 
 .schedule--table {
@@ -580,7 +650,7 @@ footer {
   padding: rem-calc(0) rem-calc(25) rem-calc(5) rem-calc(25);
 
   background: $white;
-  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.23);
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.23);
   border-radius: rem-calc(8);
 }
 
@@ -627,9 +697,45 @@ footer {
 .card-event-small {
   padding: 12px;
   color: $black;
+  margin-bottom: 30px;
+  margin-top: 5px;
 
   border-left: 10px solid $blue;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
   border-radius: 8px;
   background-color: $white;
+
+  min-height: 150px;
+  font-size: 18px;
+}
+
+.card-event-small__language {
+  font-size: 15px;
+  color: $dark-gray;
+}
+
+.card-event-small__language svg {
+  height: 8px;
+  vertical-align: middle;
+}
+
+.event-upcoming {
+  padding-bottom: 30px;
+}
+
+.card-event-long {
+  @extend .card-event-small;
+
+  padding: 0 12px;
+  min-height: 110px;
+}
+
+.card-event-long__desc {
+  padding: 12px 0;
+  border-right: 1px solid $medium-gray;
+  margin-right: 12px;
+}
+
+.card-event-long__more {
+  color: #828282;
 }

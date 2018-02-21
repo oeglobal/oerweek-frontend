@@ -1,20 +1,19 @@
 <div class="grid-container">
-  <div class="grid-x grid-margin-x">
+  <div class="grid-x grid-margin-x event-upcoming">
     <div class="small-12 cell">
       <h1>Happening Right Now</h1>
     </div>
 
-    {{#each (take 1 upcomingEvents 1) as |event|}}
-      {{event-card-small event=event}}
+    {{#each currentEvents as |event|}}
+      {{event-card-small event=event currentTime=currentTime}}
     {{/each}}
 
     <div class="small-12 cell">
-      <h1>Even more events</h1>
+      <h1>Upcoming Events</h1>
     </div>
-    <div class="small-12 cell">
-      {{#each (drop 1 upcomingEvents) as |event|}}
-        {{event.title}}
-      {{/each}}
-    </div>
+
+    {{#each (take 3 upcomingEvents) as |event|}}
+      {{event-card-small event=event currentTime=currentTime}}
+    {{/each}}
   </div>
 </div>

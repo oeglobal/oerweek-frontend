@@ -1,6 +1,8 @@
 import Component from '@ember/component';
-import {computed} from '@ember/object';
+import {computed, observer} from '@ember/object';
 import {inject as service} from '@ember/service';
+import {once} from '@ember/runloop';
+
 import moment from 'moment';
 
 export default Component.extend({
@@ -8,8 +10,40 @@ export default Component.extend({
 
   nextEvent: null,
 
-  upcomingEvents: computed(function () {
-    let current_time = moment('2018-03-06 15:10');
-    return this.get('store').query('event', {'special': 'current'});
+  currentTime: computed(function () {
+    return moment('2018-03-06 15:10');
+  }),
+
+  events: null,
+
+  didReceiveAttrs() {
+    this._super(...arguments);
+    this.get('store').query('event', {'special': 'current'}).then((data) => {
+      this.set('events', data);
+    });
+  },
+
+  currentEvents: computed('events', function () {
+    let currentTime = this.get('currentTime'),
+      events = this.get('events');
+
+    if (events) {
+      return events.filter((event, i) => {
+        return currentTime.diff(moment(event.get('event_time')), 'minutes') > 5;
+      })
+    }
+    return [];
+  }),
+
+  upcomingEvents: computed('events', function () {
+    let currentTime = this.get('currentTime'),
+      events = this.get('events');
+
+    if (events) {
+      return events.filter((event, i) => {
+        return currentTime.diff(moment(event.get('event_time')), 'minutes') < 5;
+      })
+    }
+    return [];
   })
 });

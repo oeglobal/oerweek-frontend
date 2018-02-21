@@ -1,3 +1,7 @@
-{{#link-to 'events.event' event.slug class="card-event-small cell small-12 medium-4"}}
-  {{event.title}}
+{{#link-to 'events.event' event.slug class="card-event-small cell small-12 medium-4 grid-y align-justify"}}
+  <span class="cell shrink">{{event.title}}</span>
+  <span class="card-event-small__language cell shrink grid-x align-justify">
+    <span class="cell shrink">{{svg-jar 'flag'}} {{event.form_language}}</span>
+    <span class="cell shrink">{{svg-jar 'clock'}} {{timeDiff}}</span>
+  </span>
 {{/link-to}}

@@ -9,12 +9,14 @@ let TabDate = EmberObject.extend({
 });
 
 export default Component.extend({
+  tagName: '',
+
   dates: A([
-    TabDate.create({value: '2018-03-05', text: 'Monday, 5.3',     isActive: true}),
-    TabDate.create({value: '2018-03-06', text: 'Tuesday, 6.3',    isActive: false}),
-    TabDate.create({value: '2018-03-07', text: 'Wednesday, 7.3',  isActive: false}),
-    TabDate.create({value: '2018-03-08', text: 'Thursday, 8.3',  isActive: false}),
-    TabDate.create({value: '2018-03-09', text: 'Friday, 9.3',    isActive: false}),
+    TabDate.create({value: '2018-03-05', isActive: true}),
+    TabDate.create({value: '2018-03-06', isActive: false}),
+    TabDate.create({value: '2018-03-07', isActive: false}),
+    TabDate.create({value: '2018-03-08', isActive: false}),
+    TabDate.create({value: '2018-03-09', isActive: false}),
   ]),
   event_type: 'local',
 
