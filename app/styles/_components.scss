@@ -480,17 +480,27 @@ footer {
   background-color: #F4F4F4;
 }
 
-.schedule-header__online {
+.schedule__container.offline {
+  background-color: #EEEEEE;
+}
+
+.schedule-header {
   margin-bottom: 20px;
-  color: #1FB9A5;
   font-size: 20px;
   font-weight: bold;
-
   line-height: 60px;
 
   > svg {
     margin-right: 17px;
     vertical-align: middle;
+  }
+
+  .online & {
+    color: #1FB9A5;
+  }
+
+  .offline & {
+    color: $dark-orange;
   }
 }
 
@@ -504,23 +514,28 @@ footer {
   padding-right: 20px;
 }
 
-
-.schedule--menu__button {
-
-}
 .schedule--menu button {
   position: relative;
+  border-bottom: 3px solid transparent;
+  color: #888888;
 }
 
 .schedule--menu.online button {
-  color: #888888;
-  border-bottom: 3px solid transparent;
-
   &.active,
   &:hover,
   &:focus {
     color: $blue;
     border-bottom:: 3px solid $blue;
+    cursor: pointer;
+  }
+}
+
+.schedule--menu.offline button {
+  &.active,
+  &:hover,
+  &:focus {
+    color: $dark-orange;
+    border-bottom:: 3px solid $dark-orange;
     cursor: pointer;
   }
 }
@@ -707,6 +722,10 @@ footer {
 
   min-height: 150px;
   font-size: 18px;
+  
+  &.local {
+    border-left: 10px solid $dark-orange;
+  }
 }
 
 .card-event-small__language {
@@ -727,7 +746,7 @@ footer {
   @extend .card-event-small;
 
   padding: 0 12px;
-  min-height: 110px;
+  min-height: 100px;
 }
 
 .card-event-long__desc {

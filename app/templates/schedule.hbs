@@ -4,10 +4,24 @@
       {{schedule-action-tabs selectDate='selectDate' event_type='online'}}
 
       <div class="small-12 cell">
-        <h1 class="schedule-header__online">{{svg-jar 'online'}} Online Events</h1>
+        <h1 class="schedule-header">{{svg-jar 'online'}} Online Events</h1>
       </div>
 
       {{schedule-table filteredEvent=filteredOnlineEvent}}
+    </div>
+  </div>
+</div>
+
+<div class="schedule__container offline">
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x">
+      {{schedule-action-tabs selectDate='selectDate' event_type='offline'}}
+
+      <div class="small-12 cell">
+        <h1 class="schedule-header">{{svg-jar 'offline'}} Offline Events</h1>
+      </div>
+
+      {{schedule-table filteredEvent=filteredLocalEvent}}
     </div>
   </div>
 </div>

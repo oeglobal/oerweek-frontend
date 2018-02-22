@@ -1,4 +1,4 @@
-{{#link-to 'events.event' event.slug class="card-event-long cell expanded grid-x align-justify"}}
+{{#link-to 'events.event' event.slug class=(concat "card-event-long cell expanded grid-x align-justify " event.event_type)}}
   <span class="cell auto grid-y align-justify card-event-long__desc">
     <span class="cell shrink">{{event.title}}</span>
     <span class="card-event-small__language cell shrink grid-x grid-margin-x align-left">
