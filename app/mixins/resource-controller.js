@@ -3,8 +3,8 @@ import { computed } from '@ember/object';
 
 export default Mixin.create({
   queryParams: ['page'],
-  years: ['2015', '2016', '2017'],
-  yearselected: '2017',
+  years: ['2015', '2016', '2017', '2018'],
+  yearselected: '2018',
 
   page: 1,
   pageCount: computed('filteredResources.content.meta.count', function(){
