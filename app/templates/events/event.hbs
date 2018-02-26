@@ -1,66 +1,108 @@
-<div class="grid-x grid-margin-x title--container">
-  <div class="small-12 cell">
-    <h1>{{uc-words model.post_type}}</h1>
+<div class="content-highlight {{model.event_type}}">
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x">
+      <div class="cell expanded content-higlight__breadcrumbs">
+        {{#link-to 'index'}}{{svg-jar 'building'}}{{/link-to}} {{link-to 'Event Schedule' 'schedule'}} <span
+        class="divider">|</span> {{uc-words
+        model.event_type}} Event
+      </div>
+    </div>
+    <div class="grid-x grid-margin-x content-higlight__main">
+      {{#if model.image_url}}
+        <div class="small-12 large-4 cell content-higlight__image">
+          <img src="{{{model.image_url}}}" alt="{{model.title}}"/>
+        </div>
+      {{/if}}
+      <div class="small-12 large-6 cell content-highlight__title">
+        {{{model.title}}}
+
+        <div class="grid-x grid-margin-x content-highlight__cta">
+          {{#if model.link }}
+            <div class="cell shrink"><a href="{{model.link}}" class="button orange-dark">Visit Website</a></div>
+          {{/if}}
+          {{# if model.linkwebroom}}
+            <div class="cell shrink"><a href="{{model.linkwebroom}}" class="button orange-light">Join Webinar</a></div>
+          {{/if}}
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="grid-x grid-margin-x content--container">
-  <div class="small-4 cell">
-    <div class="box">
-      <dl class="box--meta">
-        <dd><i class="icon-flag"></i> Language</dd>
-        <dt>{{model.form_language}}</dt>
+<div class="grid-container content-meta">
+  <div class="grid-x grid-margin-x align-center">
+    <div class="cell medium-10">
+      <div class="grid-container">
+        <div class="grid-x grid-margin-x content-meta__items">
+          <div class="cell medium-6 large-4">
+            <div class="meta-label">
+              <i class="icon-clock"></i> Date and time:<br/>
+            </div>
+            <div class="meta-content">
+              {{#if (or (eq model.event_type 'webinar') (eq model.event_type 'online'))}}
+                {{moment-format model.event_time 'YYYY-MM-DD HH:mm a'}}
+              {{else}}
+                {{model.event_source_datetime}}
+              {{/if}}
+            </div>
 
-        <dd><i class="icon-user"></i> Submitter</dd>
-        <dt>{{model.contact}}</dt>
+            <div class="meta-label">
+              <i class="icon-flag"></i> Language:
+            </div>
+            <div class="meta-content">
+              {{model.form_language}}
+            </div>
+          </div>
+          <div class="cell medium-6 large-3">
+            <div class="meta-label">
+              <i class="icon-location"></i> Location:
+            </div>
+            <div class="meta-content">
+              {{model.country}}, {{model.city}}
+            </div>
 
-        <dd><i class="icon-info-circled"></i> Institution</dd>
-        <dt>{{model.institution}}</dt>
-      </dl>
+            {{#if model.event_facilitator}}
+              <div class="meta-label">
+                {{svg-jar 'user-circle'}} Facilitator:
+              </div>
+              <div class="meta-content">
+                {{model.event_facilitator}}
+              </div>
+            {{/if}}
+          </div>
+
+          <div class="cell medium-6 large-5">
+            <div class="meta-label">
+              <i class="icon-info-circled"></i> Institution:
+            </div>
+            <div class="meta-content">
+              {{model.institution}}
+            </div>
+
+            <div class="meta-label">
+              <i class="icon-user"></i> Submitter<br/>
+            </div>
+            <div class="meta-content">
+              {{model.contact}}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="box">
-      <dl class="box--meta">
-        <dd><i class="icon-clock"></i> Date and time</dd>
-        {{#if (or (eq model.event_type 'webinar') (eq model.event_type 'online'))}}
-          <dt>
-            {{moment-format model.event_time 'YYYY-MM-DD HH:mm a'}}
-
-            <span class='box--meta--notice'>
-                Time of event is adjusted to your local time. Please double check it on the site of the event.
-            </span>
-          </dt>
-        {{else}}
-          <dt>
-            {{model.event_source_datetime}}<br />
-          </dt>
-          <dd><i class="icon-globe"></i>Timezone</dd>
-          <dt>
-            {{model.event_source_timezone}}
-          </dt>
-        {{/if}}
-      </dl>
-    </div>
-
   </div>
 
-  <div class="small-8 cell">
-    <div class="box--image">
-      {{#if model.image_url}}
-        <img src="{{{model.image_url}}}" alt="{{model.title}}" />
-      {{/if}}
+  <div class="content-meta__divider"></div>
+
+  <div class="grid-x grid-margin-x align-center">
+    <div class="cell medium-10">
+      {{{model.content}}}
     </div>
-    <div class="box box--with-image">
-      <h2 class="box--title">{{{model.title}}}</h2>
-      <div class="box--divider"></div>
-      <div class="box--content">
-        {{{model.content}}}
-      </div>
-      {{#if model.link}}
-        <div class="box--divider"></div>
-        <div class="box--content">
-          <a class="button" href="{{model.link}}" target="_blank">View site</a>
-        </div>
+  </div>
+
+  <div class="grid-x grid-margin-x align-center content--notice">
+    <div class="cell medium-10">
+      {{#if (or (eq model.event_type 'webinar') (eq model.event_type 'online'))}}
+        Time of event is adjusted to your local time. Please double check it on the site of the event.
       {{/if}}
     </div>
   </div>

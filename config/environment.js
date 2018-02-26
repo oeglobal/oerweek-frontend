@@ -22,13 +22,6 @@ module.exports = function (environment) {
       API_NAMESPACE: 'api'
     },
 
-    typekit: {
-      options: {
-        kitId: 'nyd6mie',
-        async: true
-      }
-    },
-
     fastboot: {
       hostWhitelist: [/^localhost:\d+$/, 'www.openeducationweek.org']
     },

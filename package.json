@@ -37,7 +37,6 @@
     "ember-cli-sass": "^7.1.1",
     "ember-cli-shims": "^1.1.0",
     "ember-cli-sri": "^2.1.0",
-    "ember-cli-typekit-utils": "^0.0.3",
     "ember-cli-uglify": "^2.0.0",
     "ember-composable-helpers": "^2.0.3",
     "ember-cp-validations": "^3.5.1",

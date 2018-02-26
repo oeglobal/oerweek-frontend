@@ -1,63 +1,50 @@
-<header class="grid-container">
-  <div class="grid-x grid-margin-x">
-    <div class="medium-2 cell">
-      {{#link-to "index"}}<img src="/assets/images/logo.svg"/>{{/link-to}}
-    </div>
-    <div class="medium-9 medium-offset-1 cell">
-      {{#zf-dropdown-menu}}
+<div class="header-wrapper">
+  <header class="grid-container">
+    <div class="grid-x grid-margin-x">
+      <div class="medium-2 cell">
+        {{#link-to "index"}}<img src="/assets/images/logo.svg"/>{{/link-to}}
+      </div>
+      <div class="medium-9 medium-offset-1 cell">
+        {{#zf-dropdown-menu}}
+          <li>
+            <a href="#">About</a>
+            <ul class="menu">
+              <li>{{#link-to "page" "what-is-open-education"}}What is Open Education{{/link-to}}</li>
+              <li>{{#link-to "page" "what-is-open-education-week"}}What is Open Education Week{{/link-to}}</li>
+              <li>{{#link-to "page" "faq"}}FAQ{{/link-to}}</li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#">Call for Participation</a>
+            <ul class="menu">
+              <li>{{#link-to "page" "call-for-participation"}}Call for Participation{{/link-to}}</li>
+              <li>{{#link-to 'submit'}}Submit your Entry{{/link-to}}</li>
+              <li>{{#link-to "page" "faq"}}FAQ{{/link-to}}</li>
+            </ul>
+          </li>
+          <li>
+            <a href="https://goo.gl/3DKYHn" target="_blank">Promo material</a>
+          </li>
+
+        {{!--
+        <li>{{#link-to 'resources'}}Projects &amp; Resources{{/link-to}}</li>
+
+        <li>{{#link-to 'events'}}Events{{/link-to}}</li>
+        --}}
+        {{!--
         <li>
-          <a href="#">About</a>
+          <a href="#">Events</a>
           <ul class="menu">
-            <li>{{#link-to "page" "what-is-open-education"}}What is Open Education{{/link-to}}</li>
-            <li>{{#link-to "page" "what-is-open-education-week"}}What is Open Education Week{{/link-to}}</li>
-            {{!-- <li>{{#link-to "page" "call-for-participation"}}Call for Participation{{/link-to}}</li> --}}
-            <li>{{#link-to "page" "faq"}}FAQ{{/link-to}}</li>
+            <li>{{#link-to 'schedule.local'}}Local Events{{/link-to}}</li>
+            <li>{{#link-to 'schedule.online'}}Online Events{{/link-to}}</li>
+            <li>{{#link-to 'events'}}Browse All{{/link-to}}</li>
           </ul>
         </li>
+        --}}
 
-        <li>
-          <a href="#">Call for Participation</a>
-          <ul class="menu">
-            <li>{{#link-to "page" "call-for-participation"}}Call for Participation{{/link-to}}</li>
-            <li>{{#link-to 'submit'}}Submit your Entry{{/link-to}}</li>
-            <li>{{#link-to "page" "faq"}}FAQ{{/link-to}}</li>
-          </ul>
-        </li>
-        <li>
-          <a href="https://goo.gl/3DKYHn" target="_blank">Promo material</a>
-        </li>
-
-      {{!--
-      <li>{{#link-to 'resources'}}Projects &amp; Resources{{/link-to}}</li>
-
-      <li>{{#link-to 'events'}}Events{{/link-to}}</li>
-      --}}
-      {{!--
-      <li>
-        <a href="#">Events</a>
-        <ul class="menu">
-          <li>{{#link-to 'schedule.local'}}Local Events{{/link-to}}</li>
-          <li>{{#link-to 'schedule.online'}}Online Events{{/link-to}}</li>
-          <li>{{#link-to 'events'}}Browse All{{/link-to}}</li>
-        </ul>
-      </li>
-      --}}
-
-      {{!--
-      <li>
-        <a href="#">Picture Yourself Open</a>
-        <ul class="menu">
-          <li>{{#link-to "picture-yourself-open"}}Map of Pictures{{/link-to}}</li>
-          <li>{{#link-to "picture-yourself-open.submit"}}Submit your own{{/link-to}}</li>
-        </ul>
-      </li>
-      --}}
-
-      {{!-- <li>{{#link-to "open-education-initiatives"}}Interviews with Open Educators{{/link-to}}</li> --}}
-      {{/zf-dropdown-menu}}
+        {{/zf-dropdown-menu}}
+      </div>
     </div>
-    {{!-- <div class="medium-1 columns">
-      {{#link-to 'submit' class="button cyan header--submit"}}Submit{{/link-to}}
-    </div> --}}
-  </div>
-</header>
+  </header>
+</div>

@@ -14,6 +14,7 @@ export default Mixin.create({
   form_language: attr('string'),
   license: attr('string'),
   link: attr('string'),
+  linkwebroom: attr('string'),
   categories: attr(),
   tags: attr(),
   image_url: attr('string'),
@@ -22,5 +23,6 @@ export default Mixin.create({
   event_time: attr('string'),
   event_type: attr('string'),
   event_source_datetime: attr('string'),
-  event_source_timezone: attr('string')
+  event_source_timezone: attr('string'),
+  event_facilitator: attr('string')
 });
