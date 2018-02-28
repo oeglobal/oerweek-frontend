@@ -7,7 +7,7 @@
         <h1 class="schedule-header">{{svg-jar 'online'}} Online Events</h1>
       </div>
 
-      {{schedule-table filteredEvent=filteredOnlineEvent}}
+      {{schedule-table filteredEvent=filteredOnlineEvent isDateOther=isDateOther}}
 
       <div class="small-12 cell">
         <div class="content--notice">Time of event is adjusted to your local time. Please double check it on the site of the event.</div>
@@ -25,7 +25,7 @@
         <h1 class="schedule-header">{{svg-jar 'offline'}} Local Events</h1>
       </div>
 
-      {{schedule-table filteredEvent=filteredLocalEvent}}
+      {{schedule-table filteredEvent=filteredLocalEvent isDateOther=isDateOther}}
     </div>
   </div>
 </div>

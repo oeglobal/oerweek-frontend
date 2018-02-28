@@ -7,6 +7,8 @@ export default Component.extend({
 
   date: '2018-03-05',
 
+  isDateOther: computed.equal('date', 'other'),
+
   filteredLocalEvent: computed('date', 'model', function(){
     return this.get('store').query('event', {
       'event_type': 'local',
