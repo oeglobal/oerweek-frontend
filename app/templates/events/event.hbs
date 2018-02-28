@@ -39,11 +39,7 @@
               <i class="icon-clock"></i> Date and time:<br/>
             </div>
             <div class="meta-content">
-              {{#if (or (eq model.event_type 'webinar') (eq model.event_type 'online'))}}
-                {{moment-format model.event_time 'YYYY-MM-DD HH:mm a'}}
-              {{else}}
-                {{model.event_source_datetime}}
-              {{/if}}
+              {{moment-format model.event_time 'YYYY-MM-DD HH:mm a'}}
             </div>
 
             <div class="meta-label">
@@ -101,9 +97,7 @@
 
   <div class="grid-x grid-margin-x align-center content--notice">
     <div class="cell medium-10">
-      {{#if (or (eq model.event_type 'webinar') (eq model.event_type 'online'))}}
-        Time of event is adjusted to your local time. Please double check it on the site of the event.
-      {{/if}}
+      Time of event is adjusted to your local time. Please double check it on the site of the event.
     </div>
   </div>
 </div>

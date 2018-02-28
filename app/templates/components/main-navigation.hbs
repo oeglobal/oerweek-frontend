@@ -15,34 +15,35 @@
             </ul>
           </li>
 
-          <li>
-            <a href="#">Call for Participation</a>
-            <ul class="menu">
-              <li>{{#link-to "page" "call-for-participation"}}Call for Participation{{/link-to}}</li>
-              <li>{{#link-to 'submit'}}Submit your Entry{{/link-to}}</li>
-              <li>{{#link-to "page" "faq"}}FAQ{{/link-to}}</li>
-            </ul>
-          </li>
+          <li>{{#link-to 'submit'}}Submit your Entry{{/link-to}}</li>
+          {{!--
+            <li>
+              <a href="#">Call for Participation</a>
+              <ul class="menu">
+                <li>{{#link-to "page" "call-for-participation"}}Call for Participation{{/link-to}}</li>
+                <li>{{#link-to 'submit'}}Submit your Entry{{/link-to}}</li>
+                <li>{{#link-to "page" "faq"}}FAQ{{/link-to}}</li>
+              </ul>
+            </li>
+           --}}
+
           <li>
             <a href="https://goo.gl/3DKYHn" target="_blank">Promo material</a>
           </li>
 
+          <li>{{#link-to 'resources'}}Projects &amp; Resources{{/link-to}}</li>
 
-        <li>{{#link-to 'resources'}}Projects &amp; Resources{{/link-to}}</li>
+          {{!--
+          <li>{{#link-to 'events'}}Events{{/link-to}}</li>
+          --}}
 
-        {{!--
-        <li>{{#link-to 'events'}}Events{{/link-to}}</li>
-        --}}
-        {{!--
-        <li>
-          <a href="#">Events</a>
-          <ul class="menu">
-            <li>{{#link-to 'schedule.local'}}Local Events{{/link-to}}</li>
-            <li>{{#link-to 'schedule.online'}}Online Events{{/link-to}}</li>
-            <li>{{#link-to 'events'}}Browse All{{/link-to}}</li>
-          </ul>
-        </li>
-        --}}
+          <li>
+            {{#link-to 'schedule'}}Events{{/link-to}}
+            <ul class="menu">
+              <li>{{#link-to 'schedule'}}2018 Events{{/link-to}}</li>
+              <li>{{#link-to 'events'}}Past Events{{/link-to}}</li>
+            </ul>
+          </li>
 
         {{/zf-dropdown-menu}}
       </div>

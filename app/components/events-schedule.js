@@ -5,32 +5,27 @@ import {inject as service} from '@ember/service';
 export default Component.extend({
   store: service(),
 
-  localDate: '2018-03-05',
-  onlineDate: '2018-03-05',
+  date: '2018-03-05',
 
-  filteredLocalEvent: computed('localDate', 'model', function(){
+  filteredLocalEvent: computed('date', 'model', function(){
     return this.get('store').query('event', {
       'event_type': 'local',
       'page_size': 99,
-      'date': this.get('localDate')
+      'date': this.get('date')
     });
   }),
 
-  filteredOnlineEvent: computed('onlineDate', 'model', function(){
+  filteredOnlineEvent: computed('date', 'model', function(){
     return this.get('store').query('event', {
       'event_type': 'online',
       'page_size': 99,
-      'date': this.get('onlineDate')
+      'date': this.get('date')
     });
   }),
 
   actions: {
-    selectDate(selectedTab, event_type) {
-      if ( event_type === 'online') {
-        this.set('onlineDate', selectedTab.get('value'));
-      } else {
-        this.set('localDate', selectedTab.get('value'));
-      }
+    selectDate(selectedTab, _) {
+      this.set('date', selectedTab.get('value'));
     }
   }
 });
