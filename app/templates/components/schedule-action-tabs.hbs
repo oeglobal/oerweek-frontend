@@ -1,10 +1,9 @@
 <div class="cell auto text-center schedule--menu {{event_type}} grid-x">
   {{#each dates as |date index|}}
     <div class="schedule--menu__button cell auto">
-      <button {{action 'selectDate' date}} class="{{if date.isActive 'active'}}">
+      <button {{action 'selectDate' date}} class="{{if date.isActive 'active'}} date-{{date.value}}">
         {{#if (eq date.value 'other')}}
-          <span class="schedule--menu__day1">OTHER</span>
-          <span class="schedule--menu__day2">DAYS</span>
+          <span class="schedule--menu__day1">OTHER<br />DAYS</span>
         {{else}}
           <span class="schedule--menu__day1">{{moment-format date.value 'ddd'}}</span>
           <span class="schedule--menu__day2">{{moment-format date.value 'DD'}}</span>
