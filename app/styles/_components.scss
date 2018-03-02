@@ -561,6 +561,10 @@ a.schedule-header {
 
 .schedule--menu__button {
   position: relative;
+
+  @include breakpoint(small only) {
+    margin-bottom: 20px;
+  }
 }
 
 .schedule--menu__button::before {
@@ -768,8 +772,11 @@ a.schedule-header {
 
 .card-event-long__desc {
   padding: 12px 0;
-  border-right: 1px solid $medium-gray;
-  margin-right: 12px;
+
+  @include breakpoint(medium) {
+    border-right: 1px solid $medium-gray;
+    margin-right: 12px;
+  }
 }
 
 .card-event-long__more {

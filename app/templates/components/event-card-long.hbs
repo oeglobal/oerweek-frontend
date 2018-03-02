@@ -3,7 +3,7 @@
   <span class="cell auto grid-y align-justify card-event-long__desc">
     <span class="cell shrink">{{event.title}}</span>
     <span class="card-event-small__language cell shrink grid-x grid-margin-x align-left">
-      <span class="cell shrink">{{svg-jar 'globe'}} {{event.country}}, {{event.city}}</span>
+      <span class="cell small-12 medium-shrink">{{svg-jar 'globe'}} {{event.country}}, {{event.city}}</span>
       <span class="cell shrink">{{svg-jar 'flag'}} {{event.form_language}}</span>
       {{#if isDateOther}}
         <span class="cell shrink">{{svg-jar 'clock'}} {{moment-format event.event_time 'YYYY-MM-DD HH:mm'}} </span>
@@ -12,5 +12,5 @@
       {{/if}}
     </span>
   </span>
-  <span class="cell shrink align-self-middle card-event-long__more">Read Details</span>
+  <span class="cell shrink align-self-middle card-event-long__more hide-for-small-only">Read Details</span>
 {{/link-to}}
