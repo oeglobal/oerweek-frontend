@@ -89,7 +89,6 @@ export default DS.Model.extend(Validations, {
   imageUrl: DS.attr('string'),
 
   slug: DS.attr('string'),
-  imageUrl: DS.attr('string'),
 
   permalink: computed('slug', function() {
     if (this.get('eventtype') === 'event') {

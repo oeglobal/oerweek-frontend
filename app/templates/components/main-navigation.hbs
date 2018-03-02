@@ -5,16 +5,21 @@
         {{#link-to "index"}}<img src="/assets/images/logo.svg"/>{{/link-to}}
       </div>
       <div class="medium-9 medium-offset-1 cell">
-        {{#zf-dropdown-menu}}
-          <li>
-            <a href="#">About</a>
-            <ul class="menu">
-              <li>{{#link-to "page" "what-is-open-education"}}What is Open Education{{/link-to}}</li>
-              <li>{{#link-to "page" "what-is-open-education-week"}}What is Open Education Week{{/link-to}}</li>
-              <li>{{#link-to "page" "faq"}}FAQ{{/link-to}}</li>
-            </ul>
-          </li>
 
+        {{!-- {{#zf-dropdown-menu}} --}}
+        <ul class="dropdown menu">
+          {{#basic-dropdown-hover as |dd|}}
+            <li>
+              {{#dd.trigger}}<a href="#">About</a>{{/dd.trigger}}
+              {{#dd.content}}
+                <ul class="menu submenu is-dropdown-submenu first-sub vertica">
+                  <li>{{#link-to "page" "what-is-open-education"}}What is Open Education{{/link-to}}</li>
+                  <li>{{#link-to "page" "what-is-open-education-week"}}What is Open Education Week{{/link-to}}</li>
+                  <li>{{#link-to "page" "faq"}}FAQ{{/link-to}}</li>
+                </ul>
+              {{/dd.content}}
+            </li>
+          {{/basic-dropdown-hover}}
           <li>{{#link-to 'submit'}}Submit your Entry{{/link-to}}</li>
           {{!--
             <li>
@@ -37,15 +42,21 @@
           <li>{{#link-to 'events'}}Events{{/link-to}}</li>
           --}}
 
-          <li>
-            {{#link-to 'schedule'}}Events{{/link-to}}
-            <ul class="menu">
-              <li>{{#link-to 'schedule'}}2018 Events{{/link-to}}</li>
-              <li>{{#link-to 'events'}}Past Events{{/link-to}}</li>
-            </ul>
-          </li>
-
-        {{/zf-dropdown-menu}}
+          {{#basic-dropdown-hover as |dd|}}
+            <li>
+              {{#dd.trigger}}
+                {{#link-to 'schedule'}}Events{{/link-to}}
+              {{/dd.trigger}}
+              {{#dd.content}}
+                <ul class="menu submenu is-dropdown-submenu first-sub vertica">
+                  <li>{{#link-to 'schedule'}}2018 Events{{/link-to}}</li>
+                  <li>{{#link-to 'events'}}Past Events{{/link-to}}</li>
+                </ul>
+              {{/dd.content}}
+            </li>
+          {{/basic-dropdown-hover}}
+        </ul>
+        {{!-- {{/zf-dropdown-menu}} --}}
       </div>
     </div>
   </header>

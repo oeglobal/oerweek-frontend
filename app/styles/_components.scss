@@ -45,7 +45,8 @@ body.event .header-wrapper {
 }
 
 .menu.is-dropdown-submenu {
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16)
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
+  display: block;
 }
 
 .menu.is-dropdown-submenu li a {
@@ -508,6 +509,19 @@ footer {
   }
 }
 
+a.schedule-header {
+  .offline &:active,
+  .offline &:focus,
+  .offline &:hover {
+    color: darken($dark-orange, 10%);
+
+    svg g {
+      fill: darken($dark-orange, 10%);
+      stroke: darken($dark-orange, 10%);
+    }
+  }
+}
+
 .schedule-action-tabs {
   margin: auto 20px;
 }
@@ -522,6 +536,7 @@ footer {
   position: relative;
   border-bottom: 3px solid transparent;
   color: #888888;
+  border-radius: 0;
 }
 
 .schedule--menu.online button {
@@ -529,7 +544,7 @@ footer {
   &:hover,
   &:focus {
     color: $blue;
-    border-bottom:: 3px solid $blue;
+    border-bottom: 3px solid $blue;
     cursor: pointer;
   }
 }
@@ -539,7 +554,7 @@ footer {
   &:hover,
   &:focus {
     color: $dark-orange;
-    border-bottom:: 3px solid $dark-orange;
+    border-bottom: 3px solid $dark-orange;
     cursor: pointer;
   }
 }
@@ -559,7 +574,6 @@ footer {
   pointer-events: none;
 }
 
-//
 .schedule--menu__button:last-child::after {
   content: '';
   position: absolute;
