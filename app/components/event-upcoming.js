@@ -11,7 +11,7 @@ export default Component.extend({
   nextEvent: null,
 
   currentTime: computed(function () {
-    return moment('2018-03-06 15:10');
+    return moment();
   }),
 
   events: null,
@@ -28,7 +28,7 @@ export default Component.extend({
       events = this.get('events');
 
     if (events) {
-      return events.filter((event, i) => {
+      return events.filter((event) => {
         return currentTime.diff(moment(event.get('event_time')), 'minutes') > 5;
       })
     }
@@ -40,7 +40,7 @@ export default Component.extend({
       events = this.get('events');
 
     if (events) {
-      return events.filter((event, i) => {
+      return events.filter((event) => {
         return currentTime.diff(moment(event.get('event_time')), 'minutes') < 5;
       })
     }
