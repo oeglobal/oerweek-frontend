@@ -507,6 +507,21 @@ footer {
   .offline & {
     color: $dark-orange;
   }
+
+  &.resources {
+    color: $red;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: darken($red, 10%) !important;
+    }
+  }
+
+  &.resources svg {
+    height: 48px;
+    fill: $red;
+  }
 }
 
 a.schedule-header {
