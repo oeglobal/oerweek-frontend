@@ -3,5 +3,5 @@ import ResourceControllerMixin from '../../mixins/resource-controller';
 
 export default Controller.extend(ResourceControllerMixin, {
   modelName: 'event',
-  yearselected: '2017',
+  yearselected: '2018',
 });

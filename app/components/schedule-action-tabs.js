@@ -16,7 +16,7 @@ export default Component.extend({
     TabDate.create({value: '2018-03-06', isActive: false}),
     TabDate.create({value: '2018-03-07', isActive: false}),
     TabDate.create({value: '2018-03-08', isActive: false}),
-    TabDate.create({value: '2018-03-09', isActive: false}),
+    TabDate.create({value: '2018-03-09', isActive: true}),
     TabDate.create({value: 'other', isActive: false}),
   ]),
   event_type: 'local',

@@ -64,9 +64,8 @@ module.exports = function (environment) {
   };
 
   if (environment === 'development') {
-    ENV.APP.API_HOST = 'http://localhost:8000';
-    // ENV.APP.API_HOST = 'https://api.openeducationweek.org';
-
+    // ENV.APP.API_HOST = 'http://localhost:8000';
+    ENV.APP.API_HOST = 'https://api.openeducationweek.org';
   }
 
   if (environment === 'test') {
