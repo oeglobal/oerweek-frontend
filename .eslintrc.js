@@ -14,6 +14,9 @@ module.exports = {
   rules: {
     'ember/closure-actions': 0
   },
+  globals: {
+    'window': true
+  },
   overrides: [
     // node files
     {
