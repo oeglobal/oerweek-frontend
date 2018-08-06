@@ -17,7 +17,7 @@ export default Mixin.create({
     let page = this.page,
       year = this.yearselected;
 
-    return this.store.query(this.modelName, {page, year});
+    return this.store.query(this.modelName, {'page[number]': page, year});
   }),
 
   actions: {

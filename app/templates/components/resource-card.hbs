@@ -1,8 +1,8 @@
 <div class="medium-4 cell">
   <div class="box--image">
-    {{#if resource.image_url}}
+    {{#if resource.imageUrl}}
       {{#link-to "resources.resource" resource.slug}}
-        <img src="{{{resource.image_url}}}" alt="{{resource.title}}" />
+        <img src="{{{resource.imageUrl}}}" alt="{{resource.title}}" />
       {{/link-to}}
     {{/if}}
   </div>
@@ -12,14 +12,14 @@
     </h2>
     <div class="box--divider"></div>
     <div class="box--content">
-      {{{resource.content_excerpt}}}
+      {{{resource.contentExcerpt}}}
     </div>
     <div class="box--divider"></div>
     <div class="box--meta box--meta--small">
-      {{#if resource.form_language}}
+      {{#if resource.formLanguage}}
         <div>
           <span class="box--meta--icon"><i class="icon-flag"></i></span>
-          <span class="box--meta--text">{{{resource.form_language}}}</span>
+          <span class="box--meta--text">{{{resource.formLanguage}}}</span>
         </div>
       {{/if}}
       <div>

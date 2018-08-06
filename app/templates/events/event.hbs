@@ -8,9 +8,9 @@
       </div>
     </div>
     <div class="grid-x grid-margin-x content-higlight__main">
-      {{#if model.image_url}}
+      {{#if model.imageUrl}}
         <div class="small-12 large-4 cell content-higlight__image">
-          <img src="{{{model.image_url}}}" alt="{{model.title}}"/>
+          <img src="{{{model.imageUrl}}}" alt="{{model.title}}"/>
         </div>
       {{/if}}
       <div class="small-12 large-6 cell content-highlight__title">
@@ -39,14 +39,14 @@
               <i class="icon-clock"></i> Date and time:<br/>
             </div>
             <div class="meta-content">
-              {{moment-format model.event_time 'YYYY-MM-DD HH:mm a'}}
+              {{moment-format model.eventTime 'YYYY-MM-DD HH:mm a'}}
             </div>
 
             <div class="meta-label">
               <i class="icon-flag"></i> Language:
             </div>
             <div class="meta-content">
-              {{model.form_language}}
+              {{model.formLanguage}}
             </div>
           </div>
           <div class="cell medium-6 large-3">
@@ -57,12 +57,12 @@
               {{model.country}}, {{model.city}}
             </div>
 
-            {{#if model.event_facilitator}}
+            {{#if model.eventFacilitator}}
               <div class="meta-label">
                 {{svg-jar 'user-circle'}} Facilitator:
               </div>
               <div class="meta-content">
-                {{model.event_facilitator}}
+                {{model.eventFacilitator}}
               </div>
             {{/if}}
           </div>
