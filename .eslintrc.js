@@ -12,6 +12,7 @@ module.exports = {
     browser: true
   },
   rules: {
+    'ember/closure-actions': 0
   },
   overrides: [
     // node files

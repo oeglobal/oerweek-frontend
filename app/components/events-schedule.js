@@ -27,7 +27,7 @@ export default Component.extend({
   }),
 
   actions: {
-    selectDate(selectedTab, _) {
+    selectDate(selectedTab, /* _ */) {
       this.set('date', selectedTab.get('value'));
     }
   }

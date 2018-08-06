@@ -7,7 +7,7 @@ import {
   alias
 } from '@ember/object/computed';
 import Component from '@ember/component';
-import { defineProperty, computed } from '@ember/object';
+import { defineProperty } from '@ember/object';
 
 export default Component.extend({
   classNames: ['validated-input'],

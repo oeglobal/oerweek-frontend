@@ -1,7 +1,6 @@
 import Component from '@ember/component';
-import { computed, observer } from '@ember/object';
+import { computed } from '@ember/object';
 import { inject as service } from '@ember/service';
-import { once } from '@ember/runloop';
 
 import moment from 'moment';
 
