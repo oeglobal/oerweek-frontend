@@ -6,8 +6,8 @@ export default Controller.extend({
   postStatus: null,
 
   filteredSubmissions: computed('postStatus', 'model.@each.postStatus', function() {
-    let postStatus = this.get('postStatus');
-    let submissions = this.get('model');
+    let postStatus = this.postStatus;
+    let submissions = this.model;
 
     if (postStatus) {
       return submissions.filterBy('postStatus', postStatus);

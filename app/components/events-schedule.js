@@ -1,27 +1,28 @@
+import { equal } from '@ember/object/computed';
 import Component from '@ember/component';
 import { computed } from '@ember/object';
-import {inject as service} from '@ember/service';
+import { inject as service } from '@ember/service';
 
 export default Component.extend({
   store: service(),
 
   date: '2018-03-05',
 
-  isDateOther: computed.equal('date', 'other'),
+  isDateOther: equal('date', 'other'),
 
   filteredLocalEvent: computed('date', 'model', function(){
-    return this.get('store').query('event', {
+    return this.store.query('event', {
       'event_type': 'local',
       'page_size': 99,
-      'date': this.get('date')
+      'date': this.date
     });
   }),
 
   filteredOnlineEvent: computed('date', 'model', function(){
-    return this.get('store').query('event', {
+    return this.store.query('event', {
       'event_type': 'online',
       'page_size': 99,
-      'date': this.get('date')
+      'date': this.date
     });
   }),
 

@@ -1,4 +1,4 @@
-import {helper} from '@ember/component/helper';
+import { helper } from '@ember/component/helper';
 
 export function simpleTemplate(params, hash) {
   let templateString = hash.templateString,

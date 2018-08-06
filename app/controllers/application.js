@@ -1,6 +1,6 @@
 import Controller from '@ember/controller';
-import {equal} from '@ember/object/computed';
-import {inject as service} from '@ember/service';
+import { equal } from '@ember/object/computed';
+import { inject as service } from '@ember/service';
 
 export default Controller.extend({
   session: service('session'),
@@ -9,7 +9,7 @@ export default Controller.extend({
 
   actions: {
     logout() {
-      this.get('session').invalidate();
+      this.session.invalidate();
     }
   }
 });

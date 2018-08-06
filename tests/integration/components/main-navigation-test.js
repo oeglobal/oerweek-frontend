@@ -1,24 +1,26 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render, find } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('main-navigation', 'Integration | Component | main navigation', {
-  integration: true
-});
+module('Integration | Component | main navigation', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  test('it renders', async function(assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{main-navigation}}`);
+    await render(hbs`{{main-navigation}}`);
 
-  assert.equal(this.$().text().trim(), '');
+    assert.dom('*').hasText('');
 
-  // Template block usage:
-  this.render(hbs`
-    {{#main-navigation}}
-      template block text
-    {{/main-navigation}}
-  `);
+    // Template block usage:
+    await render(hbs`
+      {{#main-navigation}}
+        template block text
+      {{/main-navigation}}
+    `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+    assert.dom('*').hasText('template block text');
+  });
 });

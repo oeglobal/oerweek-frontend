@@ -23,10 +23,10 @@ export default Component.extend({
 
   actions: {
     selectDate(selectedTab) {
-      this.get('dates').setEach('isActive', false);
+      this.dates.setEach('isActive', false);
       selectedTab.set('isActive', true);
 
-      this.sendAction('selectDate', selectedTab, this.get('event_type'));
+      this.sendAction('selectDate', selectedTab, this.event_type);
     }
   }
 });

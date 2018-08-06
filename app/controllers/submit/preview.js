@@ -7,7 +7,7 @@ export default Controller.extend({
 
   actions: {
     submitForm() {
-      this.get('model').save().then(() => {
+      this.model.save().then(() => {
         this.transitionToRoute('submit.confirmation');
       }).catch(() => {
         this.transitionToRoute('submit.error');

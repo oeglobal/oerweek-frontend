@@ -91,10 +91,10 @@ export default DS.Model.extend(Validations, {
   slug: DS.attr('string'),
 
   permalink: computed('slug', function() {
-    if (this.get('eventtype') === 'event') {
-      return `https://www.openeducationweek.org/events/${this.get('slug')}`;
+    if (this.eventtype === 'event') {
+      return `https://www.openeducationweek.org/events/${this.slug}`;
     } else {
-      return `https://www.openeducationweek.org/resources/${this.get('slug')}`;
+      return `https://www.openeducationweek.org/resources/${this.slug}`;
     }
   })
 });

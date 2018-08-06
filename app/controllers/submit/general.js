@@ -10,9 +10,9 @@ export default Controller.extend({
 
   actions: {
     validateForm(route) {
-      let fields = this.get('fields');
+      let fields = this.fields;
 
-      this.get('model').validate({'on': fields}).then(({validations}) => {
+      this.model.validate({'on': fields}).then(({validations}) => {
         this.set('didValidate', true);
 
         if (validations.get('isValid')) {

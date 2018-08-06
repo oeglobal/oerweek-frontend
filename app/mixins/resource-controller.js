@@ -14,10 +14,10 @@ export default Mixin.create({
   }),
 
   filteredResources: computed('yearselected', 'page', 'model', function() {
-    let page = this.get('page'),
-      year = this.get('yearselected');
+    let page = this.page,
+      year = this.yearselected;
 
-    return this.store.query(this.get('modelName'), {page, year});
+    return this.store.query(this.modelName, {page, year});
   }),
 
   actions: {
@@ -26,7 +26,7 @@ export default Mixin.create({
 
       this.transitionToRoute({
         queryParams: {
-          page: this.get('page')
+          page: this.page
         }
       });
     },

@@ -1,7 +1,7 @@
 import Component from '@ember/component';
-import {computed, observer} from '@ember/object';
-import {inject as service} from '@ember/service';
-import {once} from '@ember/runloop';
+import { computed, observer } from '@ember/object';
+import { inject as service } from '@ember/service';
+import { once } from '@ember/runloop';
 
 import moment from 'moment';
 
@@ -18,14 +18,14 @@ export default Component.extend({
 
   didReceiveAttrs() {
     this._super(...arguments);
-    this.get('store').query('event', {'special': 'current'}).then((data) => {
+    this.store.query('event', {'special': 'current'}).then((data) => {
       this.set('events', data);
     });
   },
 
   currentEvents: computed('events', function () {
-    let currentTime = this.get('currentTime'),
-      events = this.get('events');
+    let currentTime = this.currentTime,
+      events = this.events;
 
     if (events) {
       return events.filter((event) => {
@@ -36,8 +36,8 @@ export default Component.extend({
   }),
 
   upcomingEvents: computed('events', function () {
-    let currentTime = this.get('currentTime'),
-      events = this.get('events');
+    let currentTime = this.currentTime,
+      events = this.events;
 
     if (events) {
       return events.filter((event) => {

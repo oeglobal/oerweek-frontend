@@ -1,5 +1,5 @@
 import Controller from '@ember/controller';
-import {inject as service} from '@ember/service';
+import { inject as service } from '@ember/service';
 
 export default Controller.extend({
   session: service('session'),
@@ -10,7 +10,7 @@ export default Controller.extend({
       let credentials = this.getProperties('identification', 'password'),
         authenticator = 'authenticator:token';
 
-      this.get('session').authenticate(authenticator, credentials)
+      this.session.authenticate(authenticator, credentials)
         .then(() => {
           this.transitionToRoute('submissions');
         }).catch(resp => {

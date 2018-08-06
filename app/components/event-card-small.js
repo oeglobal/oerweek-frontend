@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import {computed} from '@ember/object';
+import { computed } from '@ember/object';
 import moment from 'moment';
 
 export default Component.extend({
@@ -7,7 +7,7 @@ export default Component.extend({
   currentTime: null,
 
   timeDiff: computed('currentTime', function(){
-    let currentTime = this.get('currentTime'),
+    let currentTime = this.currentTime,
       eventTime = moment(this.get('event.event_time'));
 
     let timeDiff = currentTime.diff(eventTime, 'minutes');

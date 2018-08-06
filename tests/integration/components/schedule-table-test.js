@@ -1,24 +1,26 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render, find } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('schedule-table', 'Integration | Component | schedule table', {
-  integration: true
-});
+module('Integration | Component | schedule table', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  test('it renders', async function(assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{schedule-table}}`);
+    await render(hbs`{{schedule-table}}`);
 
-  assert.equal(this.$().text().trim(), '');
+    assert.dom('*').hasText('');
 
-  // Template block usage:
-  this.render(hbs`
-    {{#schedule-table}}
-      template block text
-    {{/schedule-table}}
-  `);
+    // Template block usage:
+    await render(hbs`
+      {{#schedule-table}}
+        template block text
+      {{/schedule-table}}
+    `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+    assert.dom('*').hasText('template block text');
+  });
 });
