@@ -3,6 +3,7 @@ import config from './config/environment';
 import RouterScroll from 'ember-router-scroll';
 import { inject as service } from '@ember/service';
 import { scheduleOnce } from '@ember/runloop';
+import canUseDOM from './utils/can-use-dom';
 
 const Router = EmberRouter.extend(RouterScroll, {
   location: config.locationType,
@@ -11,7 +12,9 @@ const Router = EmberRouter.extend(RouterScroll, {
   metrics: service(),
   didTransition() {
     this._super(...arguments);
-    this._trackPage();
+    if (canUseDOM) {
+      this._trackPage();
+    }
   },
 
   _trackPage() {

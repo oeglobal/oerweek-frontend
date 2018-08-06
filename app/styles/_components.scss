@@ -25,6 +25,10 @@ header .dropdown.menu {
   margin-top: 15px;
 }
 
+header .dropdown.menu a {
+  background-color: transparent;
+}
+
 header .dropdown.menu li {
   @include breakpoint(small only) {
     display: block;
