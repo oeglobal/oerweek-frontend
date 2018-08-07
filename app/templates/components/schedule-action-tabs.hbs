@@ -1,4 +1,4 @@
-<div class="cell auto text-center schedule--menu {{event_type}} grid-x">
+<div class="cell auto text-center schedule--menu {{eventType}} grid-x">
   {{#each dates as |date index|}}
     <div class="schedule--menu__button cell small-6 medium-auto">
       <button {{action 'selectDate' date}} class="{{if date.isActive 'active'}} date-{{date.value}}">

@@ -19,14 +19,14 @@ export default Component.extend({
     TabDate.create({value: '2018-03-09', isActive: true}),
     TabDate.create({value: 'other', isActive: false}),
   ]),
-  event_type: 'local',
+  eventType: 'local',
 
   actions: {
     selectDate(selectedTab) {
       this.dates.setEach('isActive', false);
       selectedTab.set('isActive', true);
 
-      this.sendAction('selectDate', selectedTab, this.event_type);
+      this.sendAction('selectDate', selectedTab, this.eventType);
     }
   }
 });
