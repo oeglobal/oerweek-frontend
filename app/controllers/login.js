@@ -7,7 +7,7 @@ export default Controller.extend({
 
   actions: {
     authenticate() {
-      let credentials = this.getProperties('identification', 'password'),
+      let credentials = this.getProperties('username', 'password'),
         authenticator = 'authenticator:token';
 
       this.session.authenticate(authenticator, credentials)
