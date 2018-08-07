@@ -12,7 +12,7 @@ module('Integration | Helper | uc-words', function(hooks) {
   setupRenderingTest(hooks);
 
   test('all lower case', async function(assert) {
-    this.set('inputValue', 'hellow world');
+    this.set('inputValue', 'hello world');
     await render(hbs`{{uc-words inputValue}}`);
 
     assert.equal(this.element.textContent.trim(), 'Hello World');

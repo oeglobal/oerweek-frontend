@@ -1,6 +1,8 @@
 import DS from 'ember-data';
+/*
 import TokenAuthorizerMixin from 'ember-simple-auth-token/mixins/token-authorizer';
 import CachedShoe   from 'ember-cached-shoe'
+*/
 import ENV from 'frontend/config/environment';
 import Inflector from 'ember-inflector';
 
