@@ -10,7 +10,7 @@ export default Controller.extend({
     this.set('didValidate', null);
     this.set('languages', getLanguages());
     this.set('openTags', getOpenTags());
-    this.set('fields', ['eventtype', 'title', 'facilitator', 'description', 'eventTime', 'link', 'linkwebroom', 'language', 'openags'])
+    this.set('fields', ['eventType', 'title', 'eventFacilitator', 'description', 'eventTime', 'link', 'linkwebroom', 'language', 'openags'])
   },
 
   actions: {

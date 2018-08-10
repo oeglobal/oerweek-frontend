@@ -48,7 +48,7 @@ var Validations = buildValidations({
   opentags: [
     validator('presence', true),
   ],
-  eventtype: [
+  eventType: [
     validator('presence', true),
   ],
   institutionurl: [
@@ -72,12 +72,12 @@ export default DS.Model.extend(Validations, {
   language: DS.attr('string'),
   postType: DS.attr('string'),
 
-  eventtype: DS.attr('string'),
+  eventType: DS.attr('string'),
   title: DS.attr('string'),
   description: DS.attr('string'),
   eventTime: DS.attr('string'),
 
-  facilitator: DS.attr('string'),
+  eventFacilitator: DS.attr('string'),
   directions: DS.attr('string'),
   link: DS.attr('string'),
   linkwebroom: DS.attr('string'),
@@ -91,7 +91,7 @@ export default DS.Model.extend(Validations, {
   slug: DS.attr('string'),
 
   permalink: computed('slug', function() {
-    if (this.eventtype === 'event') {
+    if (this.eventType === 'event') {
       return `https://www.openeducationweek.org/events/${this.slug}`;
     } else {
       return `https://www.openeducationweek.org/resources/${this.slug}`;

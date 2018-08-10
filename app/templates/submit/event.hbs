@@ -3,7 +3,7 @@
 {{validated-input
   label='Type of Event *'
   model=model
-  valuePath='eventtype'
+  valuePath='eventType'
   values=(array
     (hash value='local' label='Local')
     (hash value='online' label='Online')
@@ -13,7 +13,7 @@
 }}
 
 {{validated-input model=model valuePath='title' label='Title of Event *' didValidate=didValidate}}
-{{validated-input model=model valuePath='facilitator' label='Facilitator' didValidate=didValidate}}
+{{validated-input model=model valuePath='eventFacilitator' label='Facilitator' didValidate=didValidate}}
 {{validated-input model=model valuePath='description' label='Short description of the event *' type='textarea'
                   didValidate=didValidate}}
 
