@@ -19,13 +19,13 @@
 
 <label>Event starts at *</label>
 {{ember-flatpickr
-  date=(readonly model.datetime)
+  date=(readonly model.eventTime)
   enableTime=true
   dateFormat='Y-m-d h:i K'
   onChange=(action 'updateDatetime')
 }}
 
-{{#if model.datetime}}
+{{#if model.eventTime}}
   <p>Event will be submitted using your local timezone at the time: {{timezone}}</p>
 {{/if}}
 

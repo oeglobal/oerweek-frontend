@@ -10,7 +10,7 @@ export default Controller.extend({
     this.set('didValidate', null);
     this.set('languages', getLanguages());
     this.set('openTags', getOpenTags());
-    this.set('fields', ['eventtype', 'title', 'facilitator', 'description', 'datetime', 'link', 'linkwebroom', 'language', 'openags'])
+    this.set('fields', ['eventtype', 'title', 'facilitator', 'description', 'eventTime', 'link', 'linkwebroom', 'language', 'openags'])
   },
 
   actions: {
@@ -28,7 +28,7 @@ export default Controller.extend({
 
     updateDatetime(val) {
       let newDateTime = moment(val[0]);
-      this.set('model.datetime', newDateTime.toISOString());
+      this.set('model.eventTime', newDateTime.toISOString());
       this.set('timezone', 'GMT' + newDateTime.format('Z'));
     },
   }

@@ -36,7 +36,7 @@ var Validations = buildValidations({
   description: [
     validator('presence', true),
   ],
-  datetime: [
+  eventTime: [
     validator('presence', true),
   ],
   archive: [
@@ -75,7 +75,7 @@ export default DS.Model.extend(Validations, {
   eventtype: DS.attr('string'),
   title: DS.attr('string'),
   description: DS.attr('string'),
-  datetime: DS.attr('string'),
+  eventTime: DS.attr('string'),
 
   facilitator: DS.attr('string'),
   directions: DS.attr('string'),

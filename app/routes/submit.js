@@ -5,7 +5,8 @@ export default Route.extend({
 
   model() {
     return this.store.createRecord('submission', {
-      'datetime': '2018-03-11T09:00:00.000Z'
+      'eventTime': '2018-03-11T09:00:00.000Z',
+      'postStatus': 'draft'
     });
   },
 
@@ -14,7 +15,7 @@ export default Route.extend({
     if (submissions.get('length') > 1) {
       let prevSubmission = submissions.slice(-2)[0];
       model.setProperties({
-        datetime: prevSubmission.get('datetime'),
+        eventTime: prevSubmission.get('eventTime'),
         firstname: prevSubmission.get('firstname'),
         lastname: prevSubmission.get('lastname'),
         email: prevSubmission.get('email'),
