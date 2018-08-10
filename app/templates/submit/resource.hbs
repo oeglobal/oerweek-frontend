@@ -3,15 +3,9 @@
 {{validated-input model=model valuePath='title' label='Title *' didValidate=didValidate}}
 {{validated-input model=model valuePath='description' label='Short description *' type='textarea'
                   didValidate=didValidate}}
-{{validated-input model=model valuePath='link' label='Link to Resource *' didValidate=didValidate}}
-{{validated-input
-  model=model
-  options=licenses
-  valuePath='license'
-  label='License *'
-  type='power-select'
-  didValidate=didValidate
-}}
+{{validated-input model=model valuePath='link' label='Link to Resource *' type='url' didValidate=didValidate}}
+{{validated-input model=model options=licenses valuePath='license' label='License *' type='power-select'
+                  didValidate=didValidate}}
 
 {{validated-input model=model options=languages valuePath='language' label='Primary Language *'
                   placeholder='Select language ...' type='power-select' didValidate=didValidate}}

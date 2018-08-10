@@ -11,7 +11,7 @@
 
 {{validated-input model=model valuePath='email' label='Email *' didValidate=didValidate}}
 {{validated-input model=model valuePath='institution' label='Institution or Organization' didValidate=didValidate}}
-{{validated-input model=model valuePath='institutionurl' label='Website of Institution or Organization'
+{{validated-input model=model valuePath='institutionurl' label='Website of Institution or Organization' type='url'
                   didValidate=didValidate}}
 
 {{validated-input
@@ -29,7 +29,7 @@
 {{validated-input
   label='Type of Contribution *'
   model=model
-  valuePath='contributiontype'
+  valuePath='postType'
   values=(array
     (hash value='event' label='Event')
     (hash value='resource' label='Resource')
@@ -40,9 +40,9 @@
 
 <div class="grid-x grid-margin-x align-justify">
   <div class="cell shrink">
-    {{#if (eq model.contributiontype 'event')}}
+    {{#if (eq model.postType 'event')}}
       <button class="button" {{action 'validateForm' 'submit.event'}}>Next Page</button>
-    {{else if (eq model.contributiontype 'resource')}}
+    {{else if (eq model.postType 'resource')}}
       <button class="button" {{action 'validateForm' 'submit.resource'}}>Next Page</button>
     {{else}}
       <button class="button" {{action 'validateForm'}}>Next Page</button>

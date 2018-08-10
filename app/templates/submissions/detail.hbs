@@ -10,7 +10,7 @@
           <a href="https://api.openeducationweek.org/admin/web/resource/{{model.id}}/change/" target="_blank"
              class='button secondary'>Edit</a>
           {{#if (eq model.postStatus 'publish')}}
-            {{#if (eq model.contributiontype 'resource')}}
+            {{#if (eq model.postType 'resource')}}
               {{#link-to 'resources.resource' model.slug class='button primary'}}View{{/link-to}}
             {{else}}
               {{#link-to 'events.event' model.slug class='button primary'}}View{{/link-to}}
@@ -90,7 +90,7 @@
         </div>
 
         <div class="small-12 cell">
-          {{#if (or (eq model.contributiontype 'event_local') (eq model.contributiontype 'event_online'))}}
+          {{#if (eq model.postType 'event')}}
             <h4>Event Information</h4>
 
             <dl class="box--submission">
@@ -121,7 +121,7 @@
               <dt>Open tag(s) related to your submission</dt>
               <dd>{{join ', ' model.opentags}}</dd>
             </dl>
-          {{else if (eq model.contributiontype 'resource')}}
+          {{else if (eq model.postType 'resource')}}
             <h4>Resource Information</h4>
             <dl class="box--submission">
               <dt>Title</dt>

@@ -19,7 +19,7 @@
   <dd>{{model.institutionurl}}</dd>
 </dl>
 
-{{#if (eq model.contributiontype 'event')}}
+{{#if (eq model.postType 'event')}}
   <h4>Event Information</h4>
 
   <dl>
@@ -50,7 +50,7 @@
     <dt>Open tag(s) related to your submission</dt>
     <dd>{{join ', ' model.opentags}}</dd>
   </dl>
-{{else if (eq model.contributiontype 'resource')}}
+{{else if (eq model.postType 'resource')}}
   <h4>Resource Information</h4>
   <dl>
     <dt>Title</dt>
@@ -75,7 +75,7 @@
 
 <div class="grid-x grid-margin-x align-justify">
   <div class="cell shrink">
-    {{#if (eq model.contributiontype 'event')}}
+    {{#if (eq model.postType 'event')}}
       {{#link-to 'submit.event' class="button"}}Previous Page{{/link-to}}
     {{else}}
       {{#link-to 'submit.resource' class="button"}}Previous Page{{/link-to}}

@@ -21,7 +21,7 @@ var Validations = buildValidations({
   language: [
     validator('presence', true),
   ],
-  contributiontype: [
+  postType: [
     validator('presence', true),
   ],
   link: [
@@ -70,7 +70,7 @@ export default DS.Model.extend(Validations, {
   country: DS.attr('string'),
   city: DS.attr('string'),
   language: DS.attr('string'),
-  contributiontype: DS.attr('string'),
+  postType: DS.attr('string'),
 
   eventtype: DS.attr('string'),
   title: DS.attr('string'),

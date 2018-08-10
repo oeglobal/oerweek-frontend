@@ -6,7 +6,7 @@ export default Route.extend({
 
     // for events
     // model.city = 'Ljubljana';
-    // model.contributiontype = 'event';
+    // model.postType = 'event';
     // model.country = 'Slovenia';
     // model.datetime = '2018-03-11T09:00:00.000Z';
     // model.description = 'Accusamus quo ipsam ipsum occaecat eum eos temporibus omnis quo libero recusandae Lorem facere';

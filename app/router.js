@@ -46,14 +46,14 @@ Router.map(function () {
 
   this.route('not-found');
 
-  // this.route('submit', function () {
-  //   this.route('general');
-  //   this.route('event');
-  //   this.route('preview');
-  //   this.route('confirmation');
-  //   this.route('resource');
-  //   this.route('error');
-  // });
+  this.route('submit', function () {
+    this.route('general');
+    this.route('event');
+    this.route('preview');
+    this.route('confirmation');
+    this.route('resource');
+    this.route('error');
+  });
 
   this.route('login');
   this.route('submissions', function() {

@@ -29,8 +29,8 @@
   <p>Event will be submitted using your local timezone at the time: {{timezone}}</p>
 {{/if}}
 
-{{validated-input model=model valuePath='link' label='Link to the event *' didValidate=didValidate}}
-{{validated-input model=model valuePath='linkwebroom' label='Link to the webroom (if applicable)'
+{{validated-input model=model valuePath='link' label='Link to the event *' type='url' didValidate=didValidate}}
+{{validated-input model=model valuePath='linkwebroom' label='Link to the webroom (if applicable)' type='url'
                   didValidate=didValidate}}
 
 {{validated-input model=model options=languages valuePath='language' label='Primary Language *'
