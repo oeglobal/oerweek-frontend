@@ -32,7 +32,7 @@ module.exports = function (environment) {
     metricsAdapters: [
       {
         name: 'GoogleAnalytics',
-        environments: ['all'],
+        environments: ['production'],
         config: {
           id: 'UA-4248822-6'
         }

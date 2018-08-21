@@ -4,6 +4,7 @@
       <h1>Submissions</h1>
     </div>
 
+    {{#if isStaff}}
     <div class="small-12 columns">
       <ul class="breadcrumbs">
         <li>{{#link-to "submissions.index" (query-params postStatus=null)}}All{{/link-to}}</li>
@@ -12,13 +13,14 @@
         <li>{{#link-to "submissions.index" (query-params postStatus="trash")}}Trash{{/link-to}}</li>
       </ul>
     </div>
+    {{/if}}
 
     <table class="table table--submissions">
       <thead>
       <tr class="text-left">
         <th>ID</th>
         <th>Title</th>
-        <th>Status</th>
+        <th>Submission Status</th>
       </tr>
       </thead>
       <tbody>
@@ -26,7 +28,7 @@
         <tr>
           <td>{{submission.id}}</td>
           <td>{{#link-to 'submissions.detail' submission.id}}{{submission.title}}{{/link-to}}</td>
-          <td>{{submission.postStatus}}</td>
+          <td>{{submission.postStatusFriendly}}</td>
         </tr>
       {{/each}}
       </tbody>

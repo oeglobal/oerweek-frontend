@@ -86,6 +86,7 @@ export default DS.Model.extend(Validations, {
 
   license: DS.attr('string'),
   postStatus: DS.attr('string'),
+  postStatusFriendly: DS.attr('string'),
   imageUrl: DS.attr('string'),
 
   slug: DS.attr('string'),

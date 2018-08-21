@@ -43,35 +43,36 @@
           </dl>
         </div>
 
-        <div class="small-4 cell box--meta box--meta--actions">
-          <dd>Current status</dd>
-          <dt>
-            <h5>{{model.postStatus}}</h5>
-          </dt>
+        {{#if isStaff}}
+          <div class="small-4 cell box--meta box--meta--actions">
+            <dd>Current status</dd>
+            <dt>
+              <h5>{{model.postStatus}}</h5>
+            </dt>
 
-          <dt class="box--meta--actions--buttons">
-            {{#if (not-eq model.postStatus 'publish')}}
-              <button class="button" {{action 'changeSubmissionStatus' model 'publish'}}>Publish</button>
-            {{else}}
-              <button class="button disabled">Publish</button>
-            {{/if}}
+            <dt class="box--meta--actions--buttons">
+              {{#if (not-eq model.postStatus 'publish')}}
+                <button class="button" {{action 'changeSubmissionStatus' model 'publish'}}>Publish</button>
+              {{else}}
+                <button class="button disabled">Publish</button>
+              {{/if}}
 
-            {{#if (not-eq model.postStatus 'draft')}}
-              <button class="button cyan" {{action 'changeSubmissionStatus' model 'draft'}}>Draft</button>
-            {{else}}
-              <button class="button cyan disabled">Draft</button>
-            {{/if}}
+              {{#if (not-eq model.postStatus 'draft')}}
+                <button class="button cyan" {{action 'changeSubmissionStatus' model 'draft'}}>Draft</button>
+              {{else}}
+                <button class="button cyan disabled">Draft</button>
+              {{/if}}
 
-            {{#if (not-eq model.postStatus 'trash')}}
-              <button class="button secondary" {{action 'changeSubmissionStatus' model 'trash'}}>Trash</button>
-            {{else}}
-              <button class="button secondary disabled">Trash</button>
-            {{/if}}
-          </dt>
-          <dd>Email Templates</dd>
-          <dt>
-            {{#each templates as |template|}}
-              <a href="mailto:{{model.email}}?subject={{simple-template
+              {{#if (not-eq model.postStatus 'trash')}}
+                <button class="button secondary" {{action 'changeSubmissionStatus' model 'trash'}}>Trash</button>
+              {{else}}
+                <button class="button secondary disabled">Trash</button>
+              {{/if}}
+            </dt>
+            <dd>Email Templates</dd>
+            <dt>
+              {{#each templates as |template|}}
+                <a href="mailto:{{model.email}}?subject={{simple-template
                 templateString=template.subject
                 props=(hash
                   title=model.title
@@ -84,10 +85,11 @@
                   link=model.permalink
                   name=model.firstname)
               }}"
-                 class="button primary">{{template.name}}</a><br/>
-            {{/each}}
-          </dt>
-        </div>
+                class="button primary">{{template.name}}</a><br/>
+              {{/each}}
+            </dt>
+          </div>
+        {{/if}}
 
         <div class="small-12 cell">
           {{#if (eq model.postType 'event')}}
@@ -147,7 +149,7 @@
         <div class="small-6 cell">
           {{#if model.imageUrl}}
             <h4>Image</h4>
-            <img src="{{{model.imageUrl}}}" alt="{{model.title}}" />
+            <img src="{{{model.imageUrl}}}" alt="{{model.title}}"/>
           {{else}}
             <h4>No Image 😔</h4>
           {{/if}}

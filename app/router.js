@@ -62,6 +62,8 @@ Router.map(function () {
     });
   });
   this.route('schedule');
+  this.route('user-login');
+  this.route('logout');
 });
 
 export default Router;
