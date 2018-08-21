@@ -9,7 +9,7 @@
   </div>
 </div>
 
-{{validated-input model=model valuePath='email' label='Email *' didValidate=didValidate}}
+{{validated-input model=model valuePath='email' label='Email *' didValidate=didValidate readonly=isEditing}}
 {{validated-input model=model valuePath='institution' label='Institution or Organization' didValidate=didValidate}}
 {{validated-input model=model valuePath='institutionurl' label='Website of Institution or Organization' type='url'
                   didValidate=didValidate}}
@@ -36,6 +36,7 @@
   )
   type='radio'
   didValidate=didValidate
+  readonly=isEditing
 }}
 
 <div class="grid-x grid-margin-x align-justify">

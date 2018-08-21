@@ -8,7 +8,8 @@
   {{/if}}
 
   {{#if (eq type 'textarea') }}
-    {{textarea type=type value=value placeholder=placeholder class="form-control" name=valuePath id=(concat elementId '-name')}}
+    {{textarea type=type value=value placeholder=placeholder class="form-control" name=valuePath
+               id=(concat elementId '-name')}}
   {{else if (eq type 'checkbox') }}
     <label>
       {{input type=type checked=value class="form-control" name=valuePath id=(concat elementId '-name')}}
@@ -36,18 +37,26 @@
     {{/power-select-multiple}}
   {{else if (eq type 'radio') }}
     {{#each values as |radio|}}
-
       {{#radio-button
         value=radio.value
         groupValue=(readonly (get model valuePath))
         changed=(action 'radioChanged')
         radioClass=radio.value
+        disabled=readonly
       }}
         {{radio.label}}
       {{/radio-button}}
     {{/each}}
   {{else}}
-    {{input type=type value=value placeholder=placeholder class="form-control" name=valuePath id=(concat elementId '-name')}}
+    {{input
+      type=type
+      value=value
+      placeholder=placeholder
+      class="form-control"
+      name=valuePath
+      id=(concat elementId '-name')
+      readonly=readonly
+    }}
   {{/if}}
 
   {{#if isValid}}

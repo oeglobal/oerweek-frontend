@@ -1,8 +1,8 @@
 import EmberRouter from '@ember/routing/router';
 import config from './config/environment';
 import RouterScroll from 'ember-router-scroll';
-import { inject as service } from '@ember/service';
-import { scheduleOnce } from '@ember/runloop';
+import {inject as service} from '@ember/service';
+import {scheduleOnce} from '@ember/runloop';
 import canUseDOM from './utils/can-use-dom';
 
 const Router = EmberRouter.extend(RouterScroll, {
@@ -22,7 +22,7 @@ const Router = EmberRouter.extend(RouterScroll, {
       const page = this.url;
       const title = this.getWithDefault('currentRouteName', 'unknown');
 
-      this.metrics.trackPage({ page, title });
+      this.metrics.trackPage({page, title});
     });
   }
 });
@@ -46,17 +46,21 @@ Router.map(function () {
 
   this.route('not-found');
 
-  this.route('submit', function () {
+  this.route('submit', {'path': '/submit'}, function () {
     this.route('general');
     this.route('event');
     this.route('preview');
     this.route('confirmation');
     this.route('resource');
     this.route('error');
+
+    this.route('edit', {
+      path: ':submission_id'
+    });
   });
 
   this.route('login');
-  this.route('submissions', function() {
+  this.route('submissions', function () {
     this.route('detail', {
       path: 'detail/:id'
     });

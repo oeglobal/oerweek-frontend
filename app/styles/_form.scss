@@ -75,3 +75,18 @@
 .submit dd {
   margin-bottom: 15px;
 }
+
+input[readonly] {
+  &:focus {
+    background-color: $input-background-disabled;
+    cursor: $input-cursor-disabled;
+  }
+}
+
+.flatpickr-input[readonly] {
+  background-color: $input-background;
+
+  &:focus {
+    background-color: $input-background;
+  }
+}
