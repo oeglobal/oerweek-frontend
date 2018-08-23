@@ -1,0 +1,47 @@
+{{#if model.imageUrl}}
+  <img class="form-image" src="{{model.imageUrl}}"/>
+  <button
+    {{action "removeImage"}}
+    class="button"
+  >Change image
+  </button>
+{{else}}
+  {{#file-dropzone
+    name="image"
+    class="dropzone-upload-area grid-x align-center-middle text-center"
+    ondragenter=(action "resetDropzone")
+  as |dropzone queue|
+  }}
+    <div class="cell">
+      {{#if dropzone.active}}
+        {{#if dropzone.valid}}
+          Drop to upload
+        {{else}}
+          Invalid
+        {{/if}}
+      {{else if (and queue.files.length (not errors))}}
+        Uploading your file. ({{queue.progress}}%)
+      {{else}}
+        <h4>Upload Image</h4>
+        <p>Please upload at least <b>800x600 px</b> image.<br/>If you don't provide one, we'll create a screenshot of
+          your web site.</p>
+        <p>
+          {{#if dropzone.supported}}
+            Drag and drop onto this area to upload or
+          {{/if}}
+
+          {{#file-upload name="image"
+                         accept="image/*"
+                         multiple=false
+                         onfileadd=(action "uploadImage")
+          }}
+            <a id="upload-image" class="button" tabindex=0>Select an Image</a>
+          {{/file-upload}}
+        </p>
+      {{/if}}
+      {{#if errors}}
+        <p class="error">{{join ', ' errors}}. Please upload a different image.</p>
+      {{/if}}
+    </div>
+  {{/file-dropzone}}
+{{/if}}

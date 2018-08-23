@@ -40,13 +40,23 @@
                   label='Open tag(s) related to your submission. Please select all that apply. *'
                   type='power-select-multiple' didValidate=didValidate}}
 
-<br />
+<br/>
+
+<label>Image for the OEW site</label>
+{{image-upload model=model}}
+
+<br/>
+
 <div class="grid-x grid-margin-x align-justify">
   <div class="cell shrink">
     {{#link-to 'submit.general' class="button"}}Previous Page{{/link-to}}
   </div>
   <div class="cell shrink">
-    <button class="button" {{action 'validateForm' 'submit.preview'}}>Preview Submission</button>
+    {{#if isUploading}}
+      <button class="button disabled" disabled>Waiting for upload to complete ...</button>
+    {{else}}
+      <button class="button" {{action 'validateForm' 'submit.preview'}}>Preview Submission</button>
+    {{/if}}
   </div>
 </div>
 

@@ -2,16 +2,24 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
   model() {
-    let isEditing = this.controllerFor('submit').get('isEditing');
+    let isEditing = this.controllerFor('submit').get('isEditing'),
+      resolvedModel;
+
     if (isEditing) {
-      return this.modelFor('submit.edit');
+      resolvedModel = this.modelFor('submit.edit');
     } else {
-      return this.modelFor('submit.index');
+      resolvedModel = this.modelFor('submit.index');
+    }
+
+    if (!resolvedModel) {
+      this.transitionTo('submit');
+    } else {
+      return resolvedModel;
     }
   },
 
   afterModel(model) {
-    if ( ! model.get('firstname') ) {
+    if (!model.get('firstname')) {
       this.transitionTo('submit');
     }
   },

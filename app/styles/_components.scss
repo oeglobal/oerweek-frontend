@@ -879,3 +879,21 @@ a.schedule-header {
   max-height: 18px;
   display: inline;
 }
+
+.dropzone-upload-area {
+  border: 4px dotted #BBB;
+  border-radius: 10px;
+  height: 300px;
+  &.active {
+    border-color: rgb(41,253,54);
+  }
+}
+
+.dropzone-upload-area .error {
+  text-align: center;
+  color: get-color(alert);
+}
+
+.form-image {
+  max-width: 400px;
+}

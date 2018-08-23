@@ -1,9 +1,18 @@
 import Controller from '@ember/controller';
+import {inject as service} from '@ember/service';
+import {computed} from '@ember/object';
+
 import moment from 'moment';
 import getLanguages from 'frontend/utils/get-languages';
 import getOpenTags from 'frontend/utils/get-open-tags';
 
 export default Controller.extend({
+  uploader: service('file-queue'),
+  isUploading: computed('uploader.progress', function () {
+    let progress = this.get('uploader.progress');
+    return !(progress === 100 || progress === 0);
+  }),
+
   init() {
     this._super(...arguments);
 
