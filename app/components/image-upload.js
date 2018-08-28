@@ -15,7 +15,7 @@ export default Component.extend({
 
     try {
       file.readAsDataURL();
-      let response = yield file.upload(`${ENV.APP.API_HOST}/${ENV.APP.API_NAMESPACE}/resource-image`, {
+      yield file.upload(`${ENV.APP.API_HOST}/${ENV.APP.API_NAMESPACE}/resource-image`, {
         fileKey: 'image'
       }).then(data => {
         this.set('model.image', data.body.id);

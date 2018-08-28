@@ -73,6 +73,15 @@
   </dl>
 {{/if}}
 
+<div class="grid-x grid-margin-x">
+  <div class="cell small-12 medium-4">
+    {{#if model.imageUrl}}
+      <img src="{{model.imageUrl}}"/>
+    {{/if}}
+  </div>
+</div>
+
+
 <div class="grid-x grid-margin-x align-justify">
   <div class="cell shrink">
     {{#if (eq model.postType 'event')}}
