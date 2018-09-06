@@ -4,5 +4,8 @@
   {{#if (divisible-by index 3)}}
     <div class="medium-12 cell"></div>
   {{/if}}
+{{else}}
+  <div class="medium-12 cell text-center">
+    <h4>Sorry, no results. Try removing one of the filters.</h4>
+  </div>
 {{/each}}
-{{yield}}

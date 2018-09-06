@@ -1,27 +1,51 @@
 import Mixin from '@ember/object/mixin';
-import { computed } from '@ember/object';
+import {computed} from '@ember/object';
+import getOpenTags from 'frontend/utils/get-open-tags';
+import getActiveLanguages from 'frontend/utils/get-active-languages';
 
 export default Mixin.create({
   queryParams: ['page'],
   years: ['2015', '2016', '2017', '2018'],
   yearselected: '2018',
+  opentag: null,
+  language: null,
 
   page: 1,
-  pageCount: computed('filteredResources.content.meta.count', function(){
-    if ( this.get('filteredResources.content.meta.count') ) {
-      return Math.ceil(this.get('filteredResources.content.meta.count') / 9);
-    }
+  pageCount: computed('filteredResources.meta.pagination.count', function () {
+    return this.get('filteredResources.meta.pagination.pages');
   }),
 
-  filteredResources: computed('yearselected', 'page', 'model', function() {
+  filteredResources: computed('yearselected', 'page', 'opentag', 'language', 'model', function () {
     let page = this.page,
-      year = this.yearselected;
+      year = this.yearselected,
+      opentag = this.opentag,
+      language = this.language;
 
-    return this.store.query(this.modelName, {'page[number]': page, year});
+    let params = {'page[number]': page};
+
+    if (year) {
+      params['year'] = year;
+    }
+
+    if (opentag) {
+      params['opentags'] = opentag;
+    }
+
+    if (language) {
+      params['form_language'] = language;
+    }
+
+    return this.store.query(this.modelName, params);
   }),
+
+  init() {
+    this._super(...arguments);
+    this.set('opentags', getOpenTags());
+    this.set('languages', getActiveLanguages());
+  },
 
   actions: {
-    previousPage: function() {
+    previousPage: function () {
       this.decrementProperty('page');
 
       this.transitionToRoute({
@@ -31,7 +55,7 @@ export default Mixin.create({
       });
     },
 
-    nextPage: function(){
+    nextPage: function () {
       this.transitionToRoute({
         queryParams: {
           page: this.incrementProperty('page')
@@ -41,6 +65,16 @@ export default Mixin.create({
 
     selectYear(year) {
       this.set('yearselected', year);
+      this.set('page', 1);
+    },
+
+    selectOpentag(opentag) {
+      this.set('opentag', opentag);
+      this.set('page', 1);
+    },
+
+    selectLanguage(language) {
+      this.set('language', language);
       this.set('page', 1);
     }
   }

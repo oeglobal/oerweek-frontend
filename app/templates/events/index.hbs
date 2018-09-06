@@ -6,14 +6,26 @@
   </div>
 
   <div class="grid-x grid-margin-x">
-    <div class="medium-3 medium-offset-9 cell">
+    <div class="medium-3 cell">
       <label>Filter by year</label>
       {{#power-select
         options=years
         selected=yearselected
         searchEnabled=false
+        allowClear=true
         onchange=(action "selectYear") as |year|}}
         {{year}}
+      {{/power-select}}
+    </div>
+    <div class="medium-3 cell">
+      <label>Filter by Language</label>
+      {{#power-select
+        options=languages
+        selected=language
+        searchEnabled=false
+        allowClear=true
+        onchange=(action "selectLanguage") as |language|}}
+        {{language}}
       {{/power-select}}
     </div>
   </div>

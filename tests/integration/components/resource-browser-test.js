@@ -7,20 +7,7 @@ module('Integration | Component | resource browser', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.on('myAction', function(val) { ... });
-
     await render(hbs`{{resource-browser}}`);
-
-    assert.dom('*').hasText('');
-
-    // Template block usage:
-    await render(hbs`
-      {{#resource-browser}}
-        template block text
-      {{/resource-browser}}
-    `);
-
-    assert.dom('*').hasText('template block text');
+    assert.dom('*').hasText('Sorry, no results. Try removing one of the filters.');
   });
 });
