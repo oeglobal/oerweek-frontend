@@ -5,6 +5,9 @@ const mergeTrees = require('broccoli-merge-trees');
 const path = require('path');
 const Funnel = require('broccoli-funnel');
 
+const autoprefixer = require('autoprefixer');
+const purgecss = require('@fullhuman/postcss-purgecss')
+
 module.exports = function (defaults) {
   let options = {
     fingerprint: {
@@ -21,6 +24,29 @@ module.exports = function (defaults) {
     },
     sassOptions: {
       includePaths: []
+    },
+    postcssOptions: {
+      compile: {
+        enabled: false
+      },
+      filter: {
+        enabled: true,
+        plugins: [
+          {
+            module: autoprefixer,
+            options: {
+              browsers: ['last 2 versions', 'ie >= 10', 'safari >= 10'],
+            }
+          },
+          {
+            module: purgecss,
+            options: {
+              content: ['./app/**/*.hbs', './app/**/.js'],
+              whitelistPatternsChildren: ['/ember/']  // try to catch addons that use classnames with 'ember' in them
+            }
+          }
+        ]
+      }
     }
   };
 
