@@ -6,7 +6,7 @@ const path = require('path');
 const Funnel = require('broccoli-funnel');
 
 const autoprefixer = require('autoprefixer');
-const purgecss = require('@fullhuman/postcss-purgecss')
+const purgecss = require('@fullhuman/postcss-purgecss');
 
 module.exports = function (defaults) {
   let isProductionLikeBuild = ['production', 'staging'].indexOf(EmberApp.env()) > -1;
@@ -44,7 +44,6 @@ module.exports = function (defaults) {
             module: purgecss,
             options: {
               content: ['./app/**/*.hbs', './app/**/.js'],
-              whitelistPatternsChildren: ['/ember/']  // try to catch addons that use classnames with 'ember' in them
             }
           }
         ]

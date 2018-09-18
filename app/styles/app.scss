@@ -47,6 +47,8 @@
 @include foundation-visibility-classes;
 @include foundation-float-classes;
 
+/*! purgecss start ignore */
+
 @import "ember-power-select";
 
 @import '_fontello';
@@ -54,4 +56,5 @@
 @import '_components';
 @import '_form';
 
+/*! purgecss end ignore */
 
