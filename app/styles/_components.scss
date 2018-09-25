@@ -111,7 +111,11 @@ footer {
   font-weight: 700;
   text-transform: uppercase;
 }
-
+a.footer--logo {
+  max-width: 280px;
+  display: inline-block;
+  margin: 0 1em 2em 0;
+}
 .footer--navigation--menu a {
   font-size: rem-calc(14);
   line-height: rem-calc(19);
