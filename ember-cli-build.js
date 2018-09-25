@@ -32,7 +32,7 @@ module.exports = function (defaults) {
         enabled: false
       },
       filter: {
-        enabled: isProductionLikeBuild,
+        enabled: false /* isProductionLikeBuild */,
         plugins: [
           {
             module: autoprefixer,
