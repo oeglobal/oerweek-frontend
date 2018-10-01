@@ -68,6 +68,7 @@ Router.map(function () {
   this.route('schedule');
   this.route('user-login');
   this.route('logout');
+  this.route('request-access');
 });
 
 export default Router;
