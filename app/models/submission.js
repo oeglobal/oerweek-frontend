@@ -57,6 +57,13 @@ var Validations = buildValidations({
       type: 'url'
     })
   ],
+  twitter: [
+    validator('format', {
+      allowBlank: true,
+      regex: /^@[A-Za-z0-9_]{1,15}$/,
+      message: 'Twitter username has to start with @'
+    })
+  ]
 }, {
   debounce: 500
 });
@@ -91,6 +98,7 @@ export default DS.Model.extend(Validations, {
   image: DS.attr(),
 
   slug: DS.attr('string'),
+  twitter: DS.attr('string'),
 
   permalink: computed('slug', function() {
     if (this.eventType === 'event') {
