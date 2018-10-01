@@ -9,7 +9,7 @@ const autoprefixer = require('autoprefixer');
 const purgecss = require('@fullhuman/postcss-purgecss');
 
 module.exports = function (defaults) {
-  // let isProductionLikeBuild = ['production', 'staging'].indexOf(EmberApp.env()) > -1;
+  let isProductionLikeBuild = ['production', 'staging'].indexOf(EmberApp.env()) > -1;
 
   let options = {
     fingerprint: {
@@ -32,7 +32,7 @@ module.exports = function (defaults) {
         enabled: false
       },
       filter: {
-        enabled: false /* isProductionLikeBuild */,
+        enabled: isProductionLikeBuild,
         plugins: [
           {
             module: autoprefixer,
