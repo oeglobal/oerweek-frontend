@@ -26,7 +26,7 @@
 }}
 
 {{#if model.eventTime}}
-  <p>Event will be submitted using your local timezone at the time: {{timezone}}</p>
+  <p>Event will be submitted using your current timezone at the time: {{timezone}}</p>
 {{/if}}
 
 {{validated-input model=model valuePath='link' label='Link to the event *' type='url' didValidate=didValidate}}
