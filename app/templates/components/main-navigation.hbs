@@ -16,12 +16,24 @@
                   <li>{{#link-to "page" "what-is-open-education"}}What is Open Education{{/link-to}}</li>
                   <li>{{#link-to "page" "what-is-open-education-week"}}What is Open Education Week{{/link-to}}</li>
                   <li>{{#link-to "page" "faq"}}FAQ{{/link-to}}</li>
-                  <li>{{#link-to "page" "materials"}}Promotion materials{{/link-to}}</li>
                 </ul>
               {{/dd.content}}
             </li>
           {{/basic-dropdown-hover}}
-          <li>{{#link-to 'submit'}}Submit your Entry{{/link-to}}</li>
+
+          {{#basic-dropdown-hover as |dd|}}
+            <li>
+              {{#dd.trigger}}<a href="#">How to participate</a>{{/dd.trigger}}
+              {{#dd.content}}
+                <ul class="menu submenu is-dropdown-submenu first-sub vertica">
+                  <li>{{#link-to "page" "contribute"}}Ways to contribute{{/link-to}}</li>
+                  <li>{{#link-to 'submit'}}Submit your Entry{{/link-to}}</li>
+                  <li>{{#link-to "page" "materials"}}Promo materials{{/link-to}}</li>
+                </ul>
+              {{/dd.content}}
+            </li>
+          {{/basic-dropdown-hover}}
+
           {{!--
             <li>
               <a href="#">Call for Participation</a>
