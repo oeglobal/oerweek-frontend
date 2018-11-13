@@ -7,6 +7,7 @@ const Funnel = require('broccoli-funnel');
 
 const autoprefixer = require('autoprefixer');
 const purgecss = require('@fullhuman/postcss-purgecss');
+const nodeSass = require('node-sass');
 
 module.exports = function (defaults) {
   /* let isProductionLikeBuild = ['production', 'staging'].indexOf(EmberApp.env()) > -1; */
@@ -25,7 +26,8 @@ module.exports = function (defaults) {
       ]
     },
     sassOptions: {
-      includePaths: []
+      includePaths: [],
+      implementation: nodeSass
     },
     postcssOptions: {
       compile: {

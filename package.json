@@ -70,14 +70,16 @@
     "eslint-plugin-ember": "^5.0.1",
     "foundation-sites": "6.5.0-rc.2",
     "loader.js": "^4.2.3",
-    "qunit-dom": "^0.7.1"
+    "qunit-dom": "^0.7.1",
+    "sass": "^1.14.3"
   },
   "engines": {
     "node": "6.* || 8.* || >= 10.*"
   },
   "dependencies": {
     "abortcontroller-polyfill": "^1.1.9",
-    "fastboot-app-server": "^1.1.2-beta.1"
+    "fastboot-app-server": "^1.1.2-beta.1",
+    "node-sass": "^4.10.0"
   },
   "resolutions": {
     "ember-data": "3.3.1"
