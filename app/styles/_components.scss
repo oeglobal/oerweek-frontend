@@ -945,3 +945,16 @@ a.schedule-header {
   background: url('/assets/svg/checkmark.svg') no-repeat;
 }
 
+.qa * {
+  display: none;
+}
+
+.qa .question,
+.qa .question * {
+  display: block;
+  cursor: pointer;
+}
+
+.qa.visible * {
+  display: block;
+}

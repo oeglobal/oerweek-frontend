@@ -1,3 +1,7 @@
+{{ui-hooks
+  did-insert=(action 'activateFaq' model.slug)
+  will-destroy=(action 'deactivateFaq' model.slug)}}
+
 <div class="grid-container">
   <div class="grid-x grid-margin-x align-center">
     <div class="title--container cell expanded text-center">
