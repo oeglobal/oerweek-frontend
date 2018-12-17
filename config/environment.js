@@ -65,9 +65,9 @@ module.exports = function (environment) {
   if (environment === 'development') {
     // ENV.APP.API_HOST = 'http://localhost:8000';
 
-    ENV.APP.API_HOST = 'https://api.openeducationweek.org';
-    ENV['ember-simple-auth-token']['serverTokenEndpoint'] = 'https://api.openeducationweek.org/api-token-auth/';
-    ENV['ember-simple-auth-token']['serverTokenRefreshEndpoint'] = 'https://api.openeducationweek.org/api-token-refresh/';
+    // ENV.APP.API_HOST = 'https://api.openeducationweek.org';
+    // ENV['ember-simple-auth-token']['serverTokenEndpoint'] = 'https://api.openeducationweek.org/api-token-auth/';
+    // ENV['ember-simple-auth-token']['serverTokenRefreshEndpoint'] = 'https://api.openeducationweek.org/api-token-refresh/';
   }
 
   if (environment === 'test') {
