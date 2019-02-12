@@ -6,7 +6,7 @@ import { inject as service } from '@ember/service';
 export default Component.extend({
   store: service(),
 
-  date: '2018-03-05',
+  date: '2019-03-04',
 
   isDateOther: equal('date', 'other'),
 
