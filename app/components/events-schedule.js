@@ -12,7 +12,7 @@ export default Component.extend({
 
   filteredLocalEvent: computed('date', 'model', function(){
     return this.store.query('event', {
-      'eventType': 'local',
+      'event_type': 'local',
       'page_size': 99,
       'date': this.date
     });
@@ -20,7 +20,7 @@ export default Component.extend({
 
   filteredOnlineEvent: computed('date', 'model', function(){
     return this.store.query('event', {
-      'eventType': 'online',
+      'event_type': 'online',
       'page_size': 99,
       'date': this.date
     });
