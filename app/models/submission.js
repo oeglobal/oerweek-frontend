@@ -11,6 +11,7 @@ var Validations = buildValidations({
   ],
   email: [
     validator('presence', true),
+    validator('format', { type: 'email' })
   ],
   country: [
     validator('presence', true),
