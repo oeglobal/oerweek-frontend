@@ -227,8 +227,8 @@ a.footer--logo {
 .graphic--world {
   margin-bottom: rem-calc(25);
 
-  width: 130%;
-  max-width: 130%;
+  width: 100%;
+  max-width: 100%;
 
   @include breakpoint(small only) {
     max-width: 80%;
@@ -237,7 +237,20 @@ a.footer--logo {
 
   @include breakpoint(medium) {
     // margin-left: rem-calc(100);
+    margin-top: 24px;
   }
+}
+
+.graphic--stats {
+  @include breakpoint(medium) {
+    margin-top: 0;
+    margin-left: 36px;
+    height: 100%;
+  }
+}
+
+.home-stats {
+  margin: 48px auto 32px;
 }
 
 .home-first--subtitle {
@@ -285,12 +298,24 @@ a.footer--logo {
 }
 
 .home--second-left {
+  margin-top: 36px;
+
+  img {
+    margin-bottom: 18px;
+  }
+
   @include breakpoint(small only) {
     background-color: rgba(48, 196, 191, 1);
   }
 }
 
 .home--second-right {
+  margin-top: 36px;
+
+  img {
+    margin-bottom: 12px;
+  }
+
   @include breakpoint(small only) {
     background-color: rgba(218, 81, 27, 1);
   }
@@ -918,6 +943,14 @@ a.schedule-header {
   color: $red;
 }
 
+.text-green {
+  color: $blue;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
 .submit-highlight {
   background-color: $green-light;
   border-radius: 8px;
@@ -957,4 +990,21 @@ a.schedule-header {
 
 .qa.visible * {
   display: block;
+}
+
+/* Thanks on Schedule Page */
+.thanks-top {
+  color: #E25E3B;
+  font-size: 43px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.box--thanks {
+  margin: 8px auto 36px;
+  padding: 24px 36px;
+
+  border-radius: 5px;
+  font-size: 18px;
+  background-color: $white;
 }

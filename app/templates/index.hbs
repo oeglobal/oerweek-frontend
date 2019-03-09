@@ -1,23 +1,27 @@
-{{events-schedule}}
-
 {{!--
+{{events-schedule}}
+--}}
+
 <div class="home-second--container">
   <div class="grid-container">
     <div class="grid-x text-center">
       <div class="medium-6 cell clearfix home--second-left">
-        <h1 class="home-second--title">Events</h1>
-        <p>Review OEW events and get ideas about what you can do in your institution/organization.</p>
-        {{#link-to "events" class="button red"}}Browse Events{{/link-to}}
+        {{#link-to "schedule"}}
+          <img src="/assets/images/events-icon.svg" alt="Icon showing calendar of events"/>
+        {{/link-to}}
+        <p>Take a look at the vast calendar of events hosted all <br />around the world during Open Education Week 2019.</p>
+        {{#link-to "schedule" class="button red"}}Browse Events{{/link-to}}
       </div>
       <div class="medium-6 cell clearfix home--second-right">
-        <h1 class="home-second--title">Projects &amp; Resources</h1>
-        <p>Learn and get inspired by the work of the Open Education Community.</p>
+        {{#link-to "resources"}}
+          <img src="/assets/images/resources-icon.svg" alt="Icon showing box of resources"/>
+        {{/link-to}}
+        <p>Learn about the wonderful resources <br />shared by the community through the years.</p>
         {{#link-to "resources" class="button cyan"}}Browse Resources{{/link-to}}
       </div>
     </div>
   </div>
 </div>
---}}
 
 
 <div class="home-third--container">
