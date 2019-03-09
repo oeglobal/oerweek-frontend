@@ -305,6 +305,7 @@ a.footer--logo {
   }
 
   @include breakpoint(small only) {
+    padding: 16px;
     background-color: rgba(48, 196, 191, 1);
   }
 }
@@ -317,6 +318,7 @@ a.footer--logo {
   }
 
   @include breakpoint(small only) {
+    padding: 16px;
     background-color: rgba(218, 81, 27, 1);
   }
 }
