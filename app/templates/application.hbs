@@ -4,15 +4,20 @@
   <div class="home-first--container">
     {{main-navigation rootURL=rootURL}}
     {{!-- {{first-container}} --}}
-    {{event-upcoming}}
+    {{!-- {{event-upcoming}} --}}
   </div>
 {{else if isSchedule}}
   <div class="home-first--container">
     {{main-navigation rootURL=rootURL}}
     {{!-- {{event-upcoming}} --}}
+    {{event-thanks}}
   </div>
 {{else}}
   {{main-navigation}}
+{{/if}}
+
+{{#if isHomepage}}
+  {{first-container}}
 {{/if}}
 
 {{outlet}}
