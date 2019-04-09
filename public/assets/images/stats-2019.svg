@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="437px" height="317px" viewBox="0 0 437 317" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="349px" height="174px" viewBox="0 0 349 174" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
     <title>hero-graphic</title>
     <desc>Created with Sketch.</desc>
@@ -8,120 +8,95 @@
             <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
             <stop stop-color="#E1F2F1" offset="100%"></stop>
         </linearGradient>
-        <path d="M13.8265472,1.54397233 L29.8265472,1.54397233 C36.4539642,1.54397233 41.8265472,6.91655533 41.8265472,13.5439723 L41.8265472,32.5439723 C41.8265472,39.1713893 36.4539642,44.5439723 29.8265472,44.5439723 L13.8265472,44.5439723 C7.19913023,44.5439723 1.82654723,39.1713893 1.82654723,32.5439723 L1.82654723,13.5439723 C1.82654723,6.91655533 7.19913023,1.54397233 13.8265472,1.54397233 Z" id="path-2"></path>
+        <path d="M11.0612378,1.23517787 L23.8612378,1.23517787 C29.1631714,1.23517787 33.4612378,5.53324427 33.4612378,10.8351779 L33.4612378,26.0351779 C33.4612378,31.3371115 29.1631714,35.6351779 23.8612378,35.6351779 L11.0612378,35.6351779 C5.75930419,35.6351779 1.46123779,31.3371115 1.46123779,26.0351779 L1.46123779,10.8351779 C1.46123779,5.53324427 5.75930419,1.23517787 11.0612378,1.23517787 Z" id="path-2"></path>
         <linearGradient x1="50%" y1="3.061617e-15%" x2="50%" y2="100%" id="linearGradient-4">
             <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
             <stop stop-color="#E1F2F1" offset="100%"></stop>
         </linearGradient>
-        <rect id="path-5" x="0.9" y="12.15" width="164.7" height="55.8" rx="1.8"></rect>
-        <text id="text-6" font-family="Helvetica-BoldOblique, Helvetica" font-size="33.48" font-style="italic" font-weight="bold" letter-spacing="0.404999989" fill="#20AAA3">
-            <tspan x="45.8525391" y="50.55">201</tspan>
-            <tspan x="102.92748" y="50.55">9</tspan>
-        </text>
-        <filter x="-1.4%" y="-3.7%" width="102.7%" height="107.3%" filterUnits="objectBoundingBox" id="filter-7">
-            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
-            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
-        </filter>
     </defs>
     <g id="2019-after" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="home-after-week" transform="translate(-480.000000, -135.000000)">
-            <g id="hero-graphic" transform="translate(480.000000, 135.000000)">
-                <g id="Group-6" transform="translate(0.000000, 6.000000)">
-                    <rect id="Rectangle" stroke="#BAE1DF" stroke-width="2" fill="#E1F2F1" fill-rule="nonzero" x="1" y="1" width="240" height="201" rx="6"></rect>
-                    <polyline id="Line" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" stroke-linejoin="round" fill-rule="nonzero" points="80 113.5 119.705078 92.5 159.410156 113.5"></polyline>
-                    <text id="6,494" font-family="Montserrat-Bold, Montserrat" font-size="31.198" font-weight="bold" fill="#DC765A">
-                        <tspan x="115.044514" y="59">6,494</tspan>
+        <g id="home-after-week" transform="translate(-575.000000, -163.000000)">
+            <g id="hero-graphic" transform="translate(575.000000, 163.000000)">
+                <g id="Group-6" transform="translate(0.000000, 4.800000)">
+                    <rect id="Rectangle" fill="#E1F2F1" fill-rule="nonzero" x="0" y="0" width="193.6" height="162.4" rx="4.8"></rect>
+                    <polyline id="Line" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="round" fill-rule="nonzero" points="64 90.8 95.7640625 74 127.528125 90.8"></polyline>
+                    <text id="6,494" font-family="Montserrat-Bold, Montserrat" font-size="24.9584" font-weight="bold" fill="#DC765A">
+                        <tspan x="93.8201368" y="48.2">6,494</tspan>
                     </text>
-                    <g id="org" transform="translate(50.000000, 42.000000)">
-                        <path d="M14.8265472,0.543972332 L29.8265472,0.543972332 C37.5585337,0.543972332 43.8265472,6.81198583 43.8265472,14.5439723 L43.8265472,32.5439723 C43.8265472,40.2759588 37.5585337,46.5439723 29.8265472,46.5439723 L14.8265472,46.5439723 C7.09456073,46.5439723 0.826547231,40.2759588 0.826547231,32.5439723 L0.826547231,14.5439723 C0.826547231,6.81198583 7.09456073,0.543972332 14.8265472,0.543972332 Z" id="Rectangle-path" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
+                    <g id="org" transform="translate(40.000000, 33.600000)">
+                        <path d="M11.8612378,0.435177866 L23.8612378,0.435177866 C30.046827,0.435177866 35.0612378,5.44958867 35.0612378,11.6351779 L35.0612378,26.0351779 C35.0612378,32.2207671 30.046827,37.2351779 23.8612378,37.2351779 L11.8612378,37.2351779 C5.67564859,37.2351779 0.661237785,32.2207671 0.661237785,26.0351779 L0.661237785,11.6351779 C0.661237785,5.44958867 5.67564859,0.435177866 11.8612378,0.435177866 Z" id="Rectangle-path" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
                         <mask id="mask-3" fill="white">
                             <use xlink:href="#path-2"></use>
                         </mask>
                         <use id="Rectangle-path" fill="#20AAA3" fill-rule="nonzero" xlink:href="#path-2"></use>
                         <g id="Group-5" mask="url(#mask-3)" fill="#FFFFFF" fill-rule="nonzero">
-                            <g transform="translate(1.000000, 11.000000)">
-                                <path d="M9,7 L31,7 L31,18.0043645 C27.3333333,19.3347882 23.6666667,20 20,20 C16.3333333,20 12.6666667,19.3347882 9,18.0043645 L9,7 Z" id="Rectangle-8" stroke="none"></path>
-                                <path d="M-2.66653167,4.26845943 L20.5615317,-0.781319013 L43.1428985,4.26896656 L20.563371,12.690989 L-2.66653167,4.26845943 Z" id="Rectangle-7" stroke="#20AAA3" stroke-width="2" stroke-linecap="round"></path>
-                                <rect id="Rectangle-9" stroke="none" x="36" y="5" width="1" height="11"></rect>
-                                <polygon id="Rectangle-9" stroke="none" points="34.939566 20 38 20 37.2124504 16 35.7271157 16"></polygon>
+                            <g transform="translate(0.800000, 8.800000)">
+                                <path d="M7.2,5.6 L24.8,5.6 L24.8,14.4034916 C21.8666667,15.4678305 18.9333333,16 16,16 C13.0666667,16 10.1333333,15.4678305 7.2,14.4034916 L7.2,5.6 Z" id="Rectangle-8" stroke="none"></path>
+                                <path d="M-2.13322534,3.41476755 L16.4492254,-0.625055211 L34.5143188,3.41517325 L16.4506968,10.1527912 L-2.13322534,3.41476755 Z" id="Rectangle-7" stroke="#20AAA3" stroke-width="1.6" stroke-linecap="round"></path>
+                                <rect id="Rectangle-9" stroke="none" x="28.8" y="4" width="1" height="8.8"></rect>
+                                <polygon id="Rectangle-9" stroke="none" points="27.9516528 16 30.4 16 29.7699603 12.8 28.5816926 12.8"></polygon>
                             </g>
                         </g>
                     </g>
-                    <g id="user" transform="translate(17.000000, 23.000000)" fill-rule="nonzero">
-                        <path d="M14.8265472,0.543972332 L29.8265472,0.543972332 C37.5585337,0.543972332 43.8265472,6.81198583 43.8265472,14.5439723 L43.8265472,32.5439723 C43.8265472,40.2759588 37.5585337,46.5439723 29.8265472,46.5439723 L14.8265472,46.5439723 C7.09456073,46.5439723 0.826547231,40.2759588 0.826547231,32.5439723 L0.826547231,14.5439723 C0.826547231,6.81198583 7.09456073,0.543972332 14.8265472,0.543972332 Z" id="Rectangle-path" fill="url(#linearGradient-4)"></path>
-                        <path d="M13.8265472,1.54397233 L29.8265472,1.54397233 C36.4539642,1.54397233 41.8265472,6.91655533 41.8265472,13.5439723 L41.8265472,32.5439723 C41.8265472,39.1713893 36.4539642,44.5439723 29.8265472,44.5439723 L13.8265472,44.5439723 C7.19913023,44.5439723 1.82654723,39.1713893 1.82654723,32.5439723 L1.82654723,13.5439723 C1.82654723,6.91655533 7.19913023,1.54397233 13.8265472,1.54397233 Z" id="Rectangle-path" fill="#20AAA3"></path>
-                        <path d="M14.6021047,20.2462195 C14.0284799,19.0902077 13.7647569,17.7943052 13.8387399,16.4951391 C13.9205535,15.1886416 14.4893107,13.9672776 15.42352,13.0919412 C16.4655274,12.1662714 17.8790584,11.8395644 19.2432463,11.7246119 C20.6074343,11.6096595 21.99194,11.6792359 23.3358103,11.403955 C25.5787866,10.9306788 27.5462645,9.54040849 28.7983673,7.54397233 C28.933125,8.63424986 28.9233584,9.73866401 28.769342,10.8261677 C28.5661651,11.9030907 28.0350025,12.9618634 27.1381215,13.548726 C28.2236668,13.0253898 28.1075657,14.2535661 27.8695585,14.9886569 C28.4094286,15.6662714 29.715566,15.7781988 29.7823242,16.6554676 C29.8914564,17.5299348 29.7978973,18.4189263 29.5094866,19.2479481 C29.181501,20.0556404 29.5327068,21.480446 28.6938763,21.5439723" id="Shape" stroke="#FFFFFF" fill="#FFFFFF"></path>
-                        <path d="M25.3263622,32.2043133 L25.3263622,30.6651218 C30.2017682,29.4421064 33.3805792,24.887752 32.7461101,20.0346813 C32.111641,15.1816106 27.8618449,11.5439723 22.8265472,11.5439723 C17.7912496,11.5439723 13.5414535,15.1816106 12.9069844,20.0346813 C12.2725153,24.887752 15.4513262,29.4421064 20.3267322,30.6651218 L20.3267322,32.2043133 C16.0969496,33.3150288 13.1541275,37.0368437 13.1397641,41.2937396 L13.1397641,45.5439723 L32.5133303,45.5439723 L32.5133303,41.2937396 C32.498967,37.0368437 29.5561448,33.3150288 25.3263622,32.2043133 L25.3263622,32.2043133 Z" id="Shape" fill="#FFFFFF"></path>
-                        <path d="M28,12 C28,12 33.5156145,12.4423821 29.5893017,20" id="Shape" fill="#FFFFFF"></path>
+                    <g id="user" transform="translate(13.600000, 18.400000)" fill-rule="nonzero">
+                        <path d="M11.8612378,0.435177866 L23.8612378,0.435177866 C30.046827,0.435177866 35.0612378,5.44958867 35.0612378,11.6351779 L35.0612378,26.0351779 C35.0612378,32.2207671 30.046827,37.2351779 23.8612378,37.2351779 L11.8612378,37.2351779 C5.67564859,37.2351779 0.661237785,32.2207671 0.661237785,26.0351779 L0.661237785,11.6351779 C0.661237785,5.44958867 5.67564859,0.435177866 11.8612378,0.435177866 Z" id="Rectangle-path" fill="url(#linearGradient-4)"></path>
+                        <path d="M11.0612378,1.23517787 L23.8612378,1.23517787 C29.1631714,1.23517787 33.4612378,5.53324427 33.4612378,10.8351779 L33.4612378,26.0351779 C33.4612378,31.3371115 29.1631714,35.6351779 23.8612378,35.6351779 L11.0612378,35.6351779 C5.75930419,35.6351779 1.46123779,31.3371115 1.46123779,26.0351779 L1.46123779,10.8351779 C1.46123779,5.53324427 5.75930419,1.23517787 11.0612378,1.23517787 Z" id="Rectangle-path" fill="#20AAA3"></path>
+                        <path d="M11.6816837,16.1969756 C11.222784,15.2721662 11.0118055,14.2354442 11.0709919,13.1961113 C11.1364428,12.1509133 11.5914486,11.173822 12.338816,10.473553 C13.1724219,9.73301711 14.3032467,9.4716515 15.3945971,9.37968953 C16.4859475,9.28772756 17.593552,9.34338876 18.6686482,9.12316404 C20.4630293,8.74454301 22.0370116,7.63232679 23.0386938,6.03517787 C23.1465,6.90739989 23.1386867,7.79093121 23.0154736,8.66093413 C22.8529321,9.52247259 22.428002,10.3694907 21.7104972,10.8389808 C22.5789335,10.4203118 22.4860526,11.4028529 22.2956468,11.9909255 C22.7275429,12.5330171 23.7724528,12.622559 23.8258593,13.3243741 C23.9131651,14.0239478 23.8383178,14.735141 23.6075893,15.3983585 C23.3452008,16.0445124 23.6261654,17.1843568 22.9551011,17.2351779" id="Shape" stroke="#FFFFFF" stroke-width="0.8" fill="#FFFFFF"></path>
+                        <path d="M20.2610898,25.7634506 L20.2610898,24.5320975 C24.1614146,23.5536851 26.7044634,19.9102016 26.1968881,16.027745 C25.6893128,12.1452885 22.2894759,9.23517787 18.2612378,9.23517787 C14.2329997,9.23517787 10.8331628,12.1452885 10.3255875,16.027745 C9.81801221,19.9102016 12.361061,23.5536851 16.2613858,24.5320975 L16.2613858,25.7634506 C12.8775597,26.6520231 10.523302,29.629475 10.5118113,33.0349917 L10.5118113,36.4351779 L26.0106643,36.4351779 L26.0106643,33.0349917 C25.9991736,29.629475 23.6449159,26.6520231 20.2610898,25.7634506 L20.2610898,25.7634506 Z" id="Shape" fill="#FFFFFF"></path>
+                        <path d="M22.4,9.6 C22.4,9.6 26.8124916,9.95390565 23.6714414,16" id="Shape" fill="#FFFFFF"></path>
                     </g>
-                    <text id="123" font-family="Montserrat-Bold, Montserrat" font-size="31.198" font-weight="bold" fill="#20AAA3">
-                        <tspan x="40.947174" y="151">123</tspan>
+                    <text id="123" font-family="Montserrat-Bold, Montserrat" font-size="24.9584" font-weight="bold" fill="#20AAA3">
+                        <tspan x="32.807656" y="121.8">123</tspan>
                     </text>
-                    <text id="18" font-family="Montserrat-Bold, Montserrat" font-size="31.198" font-weight="bold" fill="#20AAA3">
-                        <tspan x="153.089852" y="151">18</tspan>
+                    <text id="18" font-family="Montserrat-Bold, Montserrat" font-size="24.9584" font-weight="bold" fill="#20AAA3">
+                        <tspan x="122.446923" y="121.8">18</tspan>
                     </text>
-                    <text id="participants" font-family="Montserrat-Bold, Montserrat" font-size="18" font-weight="bold" fill="#20AAA3">
-                        <tspan x="103.53" y="79">participants</tspan>
+                    <text id="participants" font-family="Montserrat-Bold, Montserrat" font-size="14.4" font-weight="bold" fill="#20AAA3">
+                        <tspan x="83.4936" y="63.6">participants</tspan>
                     </text>
-                    <text id="countries" font-family="Montserrat-Bold, Montserrat" font-size="18" font-weight="bold" fill="#20AAA3">
-                        <tspan x="20.923" y="169">countries</tspan>
+                    <text id="countries" font-family="Montserrat-Bold, Montserrat" font-size="14.4" font-weight="bold" fill="#20AAA3">
+                        <tspan x="17.6744" y="135.6">countries</tspan>
                     </text>
-                    <text id="languages" font-family="Montserrat-Bold, Montserrat" font-size="16" font-weight="bold" fill="#20AAA3">
-                        <tspan x="125.7" y="168">languages</tspan>
+                    <text id="languages" font-family="Montserrat-Bold, Montserrat" font-size="12.8" font-weight="bold" fill="#20AAA3">
+                        <tspan x="101.8976" y="135.4">languages</tspan>
                     </text>
                 </g>
-                <g id="#oew" transform="translate(133.000000, 194.000000)">
-                    <ellipse id="Oval" fill="#E1F2F1" fill-rule="nonzero" cx="85.5" cy="108.45" rx="85.5" ry="14.4"></ellipse>
-                    <polyline id="Path" stroke="#20AAA3" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" fill-rule="nonzero" points="40.44375 106.03125 83.25 46.35 125.729297 106.2"></polyline>
-                    <path d="M83.0865234,46.35 L83.7,106.2" id="Path-2" stroke="#20AAA3" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" fill-rule="nonzero"></path>
-                    <path d="M95.7664434,11.25 C95.102111,5.92247937 90.5574838,1.8 85.05,1.8 C79.5425162,1.8 74.997889,5.92247937 74.3335566,11.25 L95.7664434,11.25 Z" id="Shape" stroke="#20AAA3" stroke-width="2.7" fill-rule="nonzero"></path>
-                    <g id="Rectangle-12" stroke-linecap="round" stroke-linejoin="round" fill-rule="nonzero">
-                        <use fill="#FFFFFF" xlink:href="#path-5"></use>
-                        <rect stroke="#20AAA3" stroke-width="1.8" x="0" y="11.25" width="166.5" height="57.6" rx="1.8"></rect>
-                        <rect stroke="#E1F2F1" stroke-width="3.6" stroke-linejoin="square" x="2.7" y="13.95" width="161.1" height="52.2" rx="1.8"></rect>
-                    </g>
-                    <g id="2019" opacity="0.537713914" fill="#20AAA3" fill-opacity="1">
-                        <use filter="url(#filter-7)" xlink:href="#text-6"></use>
-                        <use xlink:href="#text-6"></use>
-                    </g>
-                </g>
-                <g id="Group" transform="translate(256.000000, 0.000000)">
+                <g id="Group" transform="translate(204.800000, 0.000000)">
                     <g id="Group-8">
-                        <ellipse id="Oval" stroke="#BAE1DF" stroke-width="2.2" fill="#E1F2F1" fill-rule="nonzero" cx="65.45" cy="66" rx="64.35" ry="64.9"></ellipse>
-                        <text id="190" font-family="Montserrat-Bold, Montserrat" font-size="34.3178" font-weight="bold" fill="#E25E3B">
-                            <tspan x="35.0425988" y="61.6">190</tspan>
+                        <ellipse id="Oval" fill="#E1F2F1" fill-rule="nonzero" cx="52.36" cy="52.8" rx="52.36" ry="52.8"></ellipse>
+                        <text id="190" font-family="Montserrat-Bold, Montserrat" font-size="27.45424" font-weight="bold" fill="#E25E3B">
+                            <tspan x="27.4987214" y="50.88">190</tspan>
                         </text>
-                        <text id="events" font-family="Montserrat-Bold, Montserrat" font-size="19.8" font-weight="bold" fill="#20AAA3">
-                            <tspan x="27.8817" y="81.7">events</tspan>
-                        </text>
-                    </g>
-                    <g id="Group-4" transform="translate(110.000000, 4.000000)">
-                        <circle id="Oval" fill="#20AAA3" fill-rule="nonzero" cx="30.8" cy="30.8" r="30.8"></circle>
-                        <text id="81" font-family="Montserrat-Bold, Montserrat" font-size="28.82" font-weight="bold" fill="#EDEDED">
-                            <tspan x="16.19068" y="32.4">81</tspan>
-                        </text>
-                        <text id="local" font-family="Montserrat-Bold, Montserrat" font-size="16.5" font-weight="bold" fill="#EDEDED">
-                            <tspan x="11.56375" y="45.7">local</tspan>
+                        <text id="events" font-family="Montserrat-Bold, Montserrat" font-size="15.84" font-weight="bold" fill="#20AAA3">
+                            <tspan x="23.26368" y="66.16">events</tspan>
                         </text>
                     </g>
-                    <g id="Group-7" transform="translate(102.000000, 61.000000)">
-                        <ellipse id="Oval" fill="#20AAA3" fill-rule="nonzero" cx="39.05" cy="39.6" rx="39.05" ry="39.6"></ellipse>
-                        <text id="109" font-family="Montserrat-Bold, Montserrat" font-size="34.3178" font-weight="bold" fill="#EDEDED">
-                            <tspan x="9.7425988" y="42.9">109</tspan>
+                    <g id="Group-4" transform="translate(88.000000, 3.200000)">
+                        <circle id="Oval" fill="#20AAA3" fill-rule="nonzero" cx="24.64" cy="24.64" r="24.64"></circle>
+                        <text id="81" font-family="Montserrat-Bold, Montserrat" font-size="23.056" font-weight="bold" fill="#EDEDED">
+                            <tspan x="12.929488" y="26.52">81</tspan>
                         </text>
-                        <text id="online" font-family="Montserrat-Bold, Montserrat" font-size="17.6" font-weight="bold" fill="#E1F2F1">
-                            <tspan x="9.724" y="61">online</tspan>
+                        <text id="local" font-family="Montserrat-Bold, Montserrat" font-size="13.2" font-weight="bold" fill="#EDEDED">
+                            <tspan x="9.4094" y="36.76">local</tspan>
+                        </text>
+                    </g>
+                    <g id="Group-7" transform="translate(81.600000, 48.800000)">
+                        <ellipse id="Oval" fill="#20AAA3" fill-rule="nonzero" cx="31.24" cy="31.68" rx="31.24" ry="31.68"></ellipse>
+                        <text id="109" font-family="Montserrat-Bold, Montserrat" font-size="27.45424" font-weight="bold" fill="#EDEDED">
+                            <tspan x="7.25872136" y="35.92">109</tspan>
+                        </text>
+                        <text id="online" font-family="Montserrat-Bold, Montserrat" font-size="14.08" font-weight="bold" fill="#E1F2F1">
+                            <tspan x="8.15232" y="49.2">online</tspan>
                         </text>
                     </g>
                 </g>
-                <g id="Group-2" transform="translate(274.000000, 131.000000)">
-                    <ellipse id="Oval" stroke="#BAE1DF" stroke-width="2.2" fill="#E1F2F1" fill-rule="nonzero" cx="54.45" cy="55" rx="53.35" ry="53.9"></ellipse>
-                    <text id="73" font-family="Montserrat-Bold, Montserrat" font-size="34.3178" font-weight="bold" fill="#E25E3B">
-                        <tspan x="33.6534132" y="52.8">73</tspan>
+                <g id="Group-2" transform="translate(215.000000, 86.000000)">
+                    <ellipse id="Oval" fill="#E1F2F1" fill-rule="nonzero" cx="43.56" cy="44" rx="43.56" ry="44"></ellipse>
+                    <text id="73" font-family="Montserrat-Bold, Montserrat" font-size="27.45424" font-weight="bold" fill="#E25E3B">
+                        <tspan x="27.7463578" y="43.84">73</tspan>
                     </text>
-                    <text id="resources" font-family="Montserrat-Bold, Montserrat" font-size="16.5" font-weight="bold" fill="#20AAA3">
-                        <tspan x="13.31825" y="71">resources</tspan>
+                    <text id="resources" font-family="Montserrat-Bold, Montserrat" font-size="13.2" font-weight="bold" fill="#20AAA3">
+                        <tspan x="11.7964" y="57">resources</tspan>
                     </text>
                 </g>
             </g>
