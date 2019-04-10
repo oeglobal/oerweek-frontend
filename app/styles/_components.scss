@@ -1058,3 +1058,13 @@ a.schedule-header {
   font-size: 18px;
   background-color: $white;
 }
+
+// Infographic Page
+.infographic {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: inline-block;
+  border: 2px solid #D1D1D1;
+  margin-bottom: 40px;
+}
