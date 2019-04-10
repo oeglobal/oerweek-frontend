@@ -7,7 +7,10 @@
     <div class="medium-6 cell text-center">
       <img src="assets/images/stats-2019.svg" class="graphic--world graphic--stats"/>
       <div class="summary--button">
-        <a href="/page/summary">2019 Summary<br><span>Click to view full stats</span></a>
+        {{#link-to "page" "summary"}}
+          2019 Summary<br/>
+          <span>Click to view full stats</span>
+        {{/link-to}}
       </div>
     </div>
   </div>
