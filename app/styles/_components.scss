@@ -242,16 +242,66 @@ a.footer--logo {
 }
 
 .graphic--stats {
+  margin-top: 40px;
+  
   @include breakpoint(medium) {
     margin-top: 0;
-    margin-left: 36px;
-    height: 100%;
   }
 }
 
 .home-stats {
   margin: 48px auto 32px;
+  text-align: center;
+  
+  img {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+  }
 }
+
+.summary--button {
+
+  a {
+    background: #20AAA3;
+    border: 2px solid #158983;
+    border-radius: 4px;
+    padding: 16px 64px 16px 16px;
+    display: inline-block;
+    color: #E1F2F1;
+    text-align: left;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: .8;
+    position: relative;
+    transition: .2s transform;
+
+    span {
+      font-size: 12px;
+      font-weight: 400;
+      font-style: italic;
+      color: #0A5753;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      right: 0; 
+      top: 0;
+      height: 100%;
+      width: 48px;
+      background: #158983 url("svg/graph-icon.svg") no-repeat center center;
+    }
+
+    &:hover {
+      transform: translateY(-8px);
+      border-bottom: 8px solid #158983;
+    }
+  }
+}
+
+
 
 .home-first--subtitle {
   color: $white;
@@ -1009,4 +1059,14 @@ a.schedule-header {
   border-radius: 5px;
   font-size: 18px;
   background-color: $white;
+}
+
+// Infographic Page
+.infographic {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: inline-block;
+  border: 2px solid #D1D1D1;
+  margin-bottom: 40px;
 }
