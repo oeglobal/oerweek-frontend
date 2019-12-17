@@ -221,7 +221,7 @@ a.footer--logo {
 
 /* Home */
 .home-first--container {
-  background: linear-gradient(135deg, rgba(250, 217, 97, 1) 21%, rgba(247, 107, 28, 1) 100%);
+  background: white;
 }
 
 .graphic--world {
@@ -243,7 +243,7 @@ a.footer--logo {
 
 .graphic--stats {
   margin-top: 40px;
-  
+
   @include breakpoint(medium) {
     margin-top: 0;
   }
@@ -252,13 +252,23 @@ a.footer--logo {
 .home-stats {
   margin: 48px auto 32px;
   text-align: center;
-  
+
   img {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
     display: inline-block;
   }
+}
+
+.home-opens--wrapper {
+  background: rgb(236,232,229);
+  background: radial-gradient(circle, rgba(236,232,229,1) 60%, rgba(230,226,222,1) 60%);
+}
+
+.home-opens {
+  padding: 64px 0 48px;
+  font-size: 22px;
 }
 
 .summary--button {
@@ -287,7 +297,7 @@ a.footer--logo {
     &:after {
       content: "";
       position: absolute;
-      right: 0; 
+      right: 0;
       top: 0;
       height: 100%;
       width: 48px;
