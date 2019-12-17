@@ -8,8 +8,9 @@ import canUseDOM from './utils/can-use-dom';
 const Router = EmberRouter.extend(RouterScroll, {
   location: config.locationType,
   rootURL: config.rootURL,
-
+  headData: service(),
   metrics: service(),
+
   didTransition() {
     this._super(...arguments);
     if (canUseDOM) {
@@ -26,12 +27,8 @@ const Router = EmberRouter.extend(RouterScroll, {
     });
   },
 
-  title: function (tokens) {
-    if (tokens.length) {
-      return tokens.join(' - ') + ' - Open Education Week';
-    }
-
-    return 'Open Education Week';
+  setTitle: function (title) {
+    this.get('headData').set('title', title);
   }
 });
 
