@@ -102,7 +102,7 @@ export default DS.Model.extend(Validations, {
   twitter: DS.attr('string'),
 
   permalink: computed('slug', function() {
-    if (this.eventType === 'event') {
+    if (this.postType === 'event') {
       return `https://www.openeducationweek.org/events/${this.slug}`;
     } else {
       return `https://www.openeducationweek.org/resources/${this.slug}`;
