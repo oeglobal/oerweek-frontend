@@ -7,7 +7,7 @@ export default Controller.extend({
       let owner = getOwner(this);
       owner.lookup('route:submit').refresh();
 
-      this.transitionToRoute('submit.general');
+      this.transitionToRoute('submit.index');
     }
   }
 });
