@@ -3,6 +3,7 @@
 export default function getActiveLanguages() {
   return [
     'Arabic',
+    'Burmese',
     'Croatian',
     'Dutch',
     'English',
