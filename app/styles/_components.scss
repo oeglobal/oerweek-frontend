@@ -262,13 +262,21 @@ a.footer--logo {
 }
 
 .home-opens--wrapper {
-  background: rgb(236,232,229);
-  background: radial-gradient(circle, rgba(236,232,229,1) 60%, rgba(230,226,222,1) 60%);
+  background-color: $white;
 }
 
 .home-opens {
   padding: 64px 0 48px;
-  font-size: 22px;
+  font-size: 20px;
+}
+
+.home-opens__card {
+  display: inline-block;
+  padding: 16px;
+
+  border: 1px solid $violet;
+  border-radius: 4px;
+  background-color: $violetLight;
 }
 
 .summary--button {
@@ -1009,9 +1017,14 @@ a.schedule-header {
   color: $blue;
 }
 
+.text-violet {
+  color: $violet;
+}
+
 .text-bold {
   font-weight: bold;
 }
+
 
 .submit-highlight {
   background-color: $green-light;

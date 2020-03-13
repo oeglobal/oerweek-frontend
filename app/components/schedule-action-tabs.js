@@ -12,11 +12,11 @@ export default Component.extend({
   tagName: '',
 
   dates: A([
-    TabDate.create({value: '2020-03-02', isActive: true}),
+    TabDate.create({value: '2020-03-02', isActive: false}),
     TabDate.create({value: '2020-03-03', isActive: false}),
     TabDate.create({value: '2020-03-04', isActive: false}),
     TabDate.create({value: '2020-03-05', isActive: false}),
-    TabDate.create({value: '2020-03-06', isActive: false}),
+    TabDate.create({value: '2020-03-06', isActive: true}),
     TabDate.create({value: 'other', isActive: false}),
   ]),
   eventType: 'local',
