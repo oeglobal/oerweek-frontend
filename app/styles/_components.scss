@@ -280,12 +280,14 @@ a.footer--logo {
 }
 
 .summary--button {
+  margin-top: 30px;
+  height: 150px;
 
   a {
     background: #20AAA3;
     border: 2px solid #158983;
     border-radius: 4px;
-    padding: 16px 64px 16px 16px;
+    padding: 8px 64px 16px 16px;
     display: inline-block;
     color: #E1F2F1;
     text-align: left;
@@ -293,9 +295,10 @@ a.footer--logo {
     font-weight: 700;
     line-height: .8;
     position: relative;
-    transition: .2s transform;
 
     span {
+      display: block;
+      margin: 8px auto;
       font-size: 12px;
       font-weight: 400;
       font-style: italic;
@@ -313,8 +316,8 @@ a.footer--logo {
     }
 
     &:hover {
-      transform: translateY(-8px);
-      border-bottom: 8px solid #158983;
+      background: lighten(#20AAA3, 4%);
+      color: lighten(#E1F2F1, 5%);
     }
   }
 }
