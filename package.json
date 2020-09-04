@@ -79,7 +79,7 @@
   "dependencies": {
     "abortcontroller-polyfill": "^1.1.9",
     "fastboot-app-server": "^1.1.2-beta.1",
-    "node-sass": "^4.10.0"
+    "node-sass": "^4.13.1"
   },
   "resolutions": {
     "ember-data": "3.3.1"
