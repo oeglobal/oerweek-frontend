@@ -12,9 +12,11 @@
   "repository": "",
   "scripts": {
     "build": "ember build",
+    "lint:dependency": "ember dependency-lint",
+    "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
     "start": "ember serve",
-    "test": "ember test"
+    "test": "ember test --query=nolint"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^1.0.1",

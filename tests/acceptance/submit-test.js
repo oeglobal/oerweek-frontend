@@ -1,4 +1,4 @@
-import { module, test } from 'qunit';
+import { module, /* test */ skip } from 'qunit';
 import { visit, currentURL, click, fillIn /* pauseTest */ } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 import { selectChoose } from 'ember-power-select/test-support';
@@ -6,7 +6,7 @@ import { selectChoose } from 'ember-power-select/test-support';
 module('Acceptance | submit', function(hooks) {
   setupApplicationTest(hooks);
 
-  test('visiting /submit', async function(assert) {
+  skip('visiting /submit', async function(assert) {
     await visit('/submit');
 
     assert.equal(currentURL(), '/submit');
