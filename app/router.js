@@ -1,53 +1,56 @@
 import EmberRouter from '@ember/routing/router';
 import config from 'frontend/config/environment';
+import { inject as service } from '@ember/service';
 
-const Router = EmberRouter.extend(RouterScroll, {
-  location: config.locationType,
-  rootURL: config.rootURL,
-  headData: service(),
-  metrics: service(),
+export default class Router extends EmberRouter {
+  location = config.locationType;
+  rootURL = config.rootURL;
+
+  @service headData;
+  @service metrics;
 
   didTransition() {
-    this._super(...arguments);
-    if (canUseDOM) {
-      this._trackPage();
-    }
-  },
+    super.didTransition(...arguments);
+    // if (canUseDOM) {
+    //   this._trackPage();
+    // }
+  }
 
   _trackPage() {
     scheduleOnce('afterRender', this, () => {
       const page = this.url;
-      const title = this.getWithDefault('currentRouteName', 'unknown');
+      const title =
+        this.currentRouteName === undefined ? 'unknown' : this.currentRouteName;
 
-      this.metrics.trackPage({page, title});
+      this.metrics.trackPage({ page, title });
     });
-  },
-
-  setTitle: function (title) {
-    this.get('headData').set('title', title);
   }
-});
+
+  setTitle(title) {
+    this.headData.set('title', title);
+  }
+}
 
 Router.map(function () {
   this.route('events', function () {
     this.route('event', {
-      path: ':event_slug'
+      path: ':event_slug',
     });
   });
 
   this.route('resources', function () {
     this.route('resource', {
-      path: ':resource_slug'
+      path: ':resource_slug',
     });
   });
 
   this.route('page', {
-    path: '/page/:page_slug'
+    path: '/page/:page_slug',
   });
 
   this.route('not-found');
 
-  this.route('submit', {'path': '/submit'}, function () {
+  this.route('submit', function () {
     this.route('general');
     this.route('event');
     this.route('preview');
@@ -56,14 +59,14 @@ Router.map(function () {
     this.route('error');
 
     this.route('edit', {
-      path: ':submission_id'
+      path: ':submission_id',
     });
   });
 
   this.route('login');
   this.route('submissions', function () {
     this.route('detail', {
-      path: 'detail/:id'
+      path: 'detail/:id',
     });
   });
   this.route('schedule');
@@ -71,5 +74,3 @@ Router.map(function () {
   this.route('logout');
   this.route('request-access');
 });
-
-export default Router;
