@@ -25,6 +25,9 @@ You will need the following things properly installed on your computer.
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 * Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 
+### Code Generators
+
+Make use of the many generators for code, try `ember help generate` for more details
 
 ### Running Tests
 
@@ -33,8 +36,9 @@ You will need the following things properly installed on your computer.
 
 ### Linting
 
-* `npm run lint:js`
-* `npm run lint:js -- --fix`
+* `yarn lint:hbs`
+* `yarn lint:js`
+* `yarn lint:js --fix`
 
 ### Building
 
@@ -44,8 +48,6 @@ You will need the following things properly installed on your computer.
 ### Deploying
 
 Specify what it takes to deploy your app.
-
-
 
 ## Further Reading / Useful Links
 

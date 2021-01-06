@@ -1,9 +1,5 @@
 import EmberRouter from '@ember/routing/router';
-import config from './config/environment';
-import RouterScroll from 'ember-router-scroll';
-import {inject as service} from '@ember/service';
-import {scheduleOnce} from '@ember/runloop';
-import canUseDOM from './utils/can-use-dom';
+import config from 'frontend/config/environment';
 
 const Router = EmberRouter.extend(RouterScroll, {
   location: config.locationType,
