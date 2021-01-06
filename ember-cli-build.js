@@ -27,10 +27,25 @@ module.exports = function (defaults) {
               path: ['node_modules'],
             },
           },
+          require('postcss-nested'),
           require('tailwindcss')('./app/tailwind.config.js'),
           ...(isProduction ? [purgeCSS] : []),
         ],
       },
+      filter: {
+        enabled: true,
+        plugins: [
+          {
+            module: require('autoprefixer'),
+            options: {
+              browsers: ['last 2 versions'], // this will override the config, but just for this plugin
+            },
+          },
+        ],
+      },
+    },
+    'ember-power-select': {
+      theme: false,
     },
   });
   return app.toTree();

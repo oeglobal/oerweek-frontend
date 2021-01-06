@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /*global module*/
 
 module.exports = {
@@ -9,5 +10,9 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
-}
+
+  plugins: [
+    // https://josemarluedke.github.io/tailwindcss-ember-power-select/
+    require('tailwindcss-ember-power-select').plugin({}),
+  ],
+};

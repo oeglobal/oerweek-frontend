@@ -1,3 +1,12 @@
+/*@import "ember-power-select";*/
+
+/*@import '_fontello';*/
+/*@import '_type';*/
+/*@import '_components';*/
+/*@import '_form';*/
+
+/*!*! purgecss end ignore *!*/
+
 @import "tailwindcss/base";
 
 @import "tailwindcss/components";

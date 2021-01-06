@@ -88,7 +88,8 @@
     "qunit": "^2.13.0",
     "qunit-dom": "^1.6.0",
     "sass": "^1.14.3",
-    "tailwindcss": "^2.0.2"
+    "tailwindcss": "^2.0.2",
+    "tailwindcss-ember-power-select": "^0.4.0"
   },
   "engines": {
     "node": "10.* || >= 12"
@@ -98,7 +99,8 @@
   },
   "dependencies": {
     "abortcontroller-polyfill": "^1.1.9",
-    "node-sass": "^5.0.0"
+    "node-sass": "^5.0.0",
+    "postcss-nested": "^5.0.3"
   },
   "resolutions": {
     "ember-data": "3.3.1"
