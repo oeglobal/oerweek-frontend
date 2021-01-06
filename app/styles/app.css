@@ -1,3 +1,7 @@
-body {
-  display: block;
-}
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+@import "components.css";
+
+@import "tailwindcss/utilities";
+@import "utilities.css";
