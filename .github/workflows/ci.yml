@@ -94,11 +94,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-${{ matrix.node-version }}-nodemodules-
 
-        - name: Install dependencies
-          run: yarn install --frozen-lockfile
-          if: |
-            steps.cache-yarn-cache.outputs.cache-hit != 'true' ||
-            steps.cache-node-modules.outputs.cache-hit != 'true'
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+        if: |
+          steps.cache-yarn-cache.outputs.cache-hit != 'true' ||
+          steps.cache-node-modules.outputs.cache-hit != 'true'
 
       - name: Test Ember app
         run: yarn test
