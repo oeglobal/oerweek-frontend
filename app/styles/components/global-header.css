@@ -1,0 +1,12 @@
+.global-header__item {
+  @apply inline-flex text-blue-900 flex-initial px-4 pt-1 h-6 tracking-widest;
+
+  &:hover,
+  &:active {
+    @apply bg-blue-500;
+  }
+}
+
+.global-header__item.active {
+  @apply bg-blue-500;
+}

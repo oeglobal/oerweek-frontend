@@ -1,5 +1,22 @@
 {{head-layout}}
 
+<header class="header shadow-md z-50 bg-white">
+  <div class="global-header bg-blue-400
+            w-full hidden md:flex flex-row items-center align-center justify-end
+            lg:h-6
+            uppercase text-2xs lg:text-xs font-sans text-right">
+    <div class="container">
+      <a class="global-header__item" href="https://www.oeglobal.org">OE Global</a>
+      <a class="global-header__item" href="https://www.oelatam.org">OE LATAM</a>
+      <a class="global-header__item" href="https://www.cccoer.org">CCCOER</a>
+      <a class="global-header__item" href="https://conference.oeglobal.org">OE Global Conference</a>
+      <a class="global-header__item active" href="https://www.openeducationweek.org">OE Week</a>
+      <a class="global-header__item" href="https://awards.oeglobal.org">OE Awards</a>
+    </div>
+  </div>
+</header>
+
+
 {{#if isHomepage}}
   <div class="home-first--container">
     {{main-navigation rootURL=rootURL}}
@@ -38,9 +55,10 @@
         <a class="footer--logo" href="https://conference.oeconsortium.org/" target="_blank"><img
           src="/assets/svg/logo-oeglobal-2019.svg"/></a>
         --}}
-        <a class="footer--logo" href="https://www.cccoer.org/" target="_blank"><img src="/assets/svg/logo-cccoer.svg"/></a>
+        <a class="footer--logo" href="https://www.cccoer.org/" target="_blank"><img src="/assets/svg/logo-cccoer.svg"
+                                                                                    alt="CCCOER"/></a>
         <a class="footer--logo" href="https://www.oelatam.org/" target="_blank"><img
-                src="/assets/svg/oelatam.svg"/></a>
+                src="/assets/svg/oelatam.svg" alt="OE LATAM"/></a>
       </div>
     </div>
   </div>
@@ -54,7 +72,7 @@
         <div class="footer--license grid-x grid-margin-x">
           <div class="shrink cell">
             <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License"
-                                                                                      style="border-width:0"
+                                                                                      class="border-none"
                                                                                       src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a>
           </div>
           <div class="auto cell">

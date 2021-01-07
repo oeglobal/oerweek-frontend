@@ -9,23 +9,6 @@ export default class Router extends EmberRouter {
   @service headData;
   @service metrics;
 
-  didTransition() {
-    super.didTransition(...arguments);
-    // if (canUseDOM) {
-    //   this._trackPage();
-    // }
-  }
-
-  _trackPage() {
-    scheduleOnce('afterRender', this, () => {
-      const page = this.url;
-      const title =
-        this.currentRouteName === undefined ? 'unknown' : this.currentRouteName;
-
-      this.metrics.trackPage({ page, title });
-    });
-  }
-
   setTitle(title) {
     this.headData.set('title', title);
   }

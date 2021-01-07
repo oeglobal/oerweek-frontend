@@ -14,3 +14,5 @@
 
 @import "tailwindcss/utilities";
 @import "utilities.css";
+
+@import "components/global-header.css";

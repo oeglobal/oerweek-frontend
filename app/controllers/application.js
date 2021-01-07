@@ -1,16 +1,35 @@
 import Controller from '@ember/controller';
-import {equal} from '@ember/object/computed';
-import {inject as service} from '@ember/service';
+import { inject as service } from '@ember/service';
+import { action } from '@ember/object';
 
-export default Controller.extend({
-  session: service('session'),
-  user: service(),
-  isHomepage: equal('currentRouteName', 'index'),
-  isSchedule: equal('currentRouteName', 'schedule'),
+export default class ApplicationController extends Controller {
+  @service session;
+  @service user;
+  @service router;
+  @service metrics;
 
-  actions: {
-    logout() {
-      this.session.invalidate();
-    }
+  get isHomepage() {
+    return this.router.currentRouteName === 'index';
   }
-});
+
+  get isSchedule() {
+    return this.router.currentRouteName === 'schedule';
+  }
+
+  constructor() {
+    super(...arguments);
+
+    let router = this.router;
+    router.on('routeDidChange', () => {
+      const page = router.currentURL;
+      const title = router.currentRouteName || 'unknown';
+
+      this.metrics.trackPage({ page, title });
+    });
+  }
+
+  @action
+  logout() {
+    this.session.invalidate();
+  }
+}
