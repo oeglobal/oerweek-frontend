@@ -79,3 +79,6 @@ module.exports = {
     require('tailwindcss-ember-power-select').plugin({}),
   ],
 };
+
+module.exports.theme.colors.primary = module.exports.theme.colors.blue['500'];
+module.exports.theme.colors.menuHover = module.exports.theme.colors.blue['900'];

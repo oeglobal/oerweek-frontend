@@ -10,7 +10,7 @@
         <ul class="dropdown menu">
           {{#basic-dropdown-hover as |dd|}}
             <li>
-              {{#dd.trigger}}<a href="#">About</a>{{/dd.trigger}}
+              {{#dd.trigger}}<button class="menu-item">About</button>{{/dd.trigger}}
               {{#dd.content}}
                 <ul class="menu submenu is-dropdown-submenu first-sub vertica">
                   <li>{{#link-to "page" "what-is-open-education"}}What is Open Education{{/link-to}}</li>
@@ -23,7 +23,7 @@
 
           {{#basic-dropdown-hover as |dd|}}
             <li>
-              {{#dd.trigger}}<a href="#">How to participate</a>{{/dd.trigger}}
+              {{#dd.trigger}}<button>How to participate</button>{{/dd.trigger}}
               {{#dd.content}}
                 <ul class="menu submenu is-dropdown-submenu first-sub vertica">
                   <li>{{#link-to "page" "contribute"}}Ways to contribute{{/link-to}}</li>

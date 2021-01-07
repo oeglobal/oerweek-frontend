@@ -27,6 +27,7 @@ module.exports = function (defaults) {
               path: ['node_modules'],
             },
           },
+          require('postcss-nested-ancestors'),
           require('postcss-nested'),
           require('tailwindcss')('./app/tailwind.config.js'),
           ...(isProduction ? [purgeCSS] : []),
