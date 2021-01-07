@@ -287,7 +287,7 @@ a.footer--logo {
     background: #20AAA3;
     border: 2px solid #158983;
     border-radius: 4px;
-    padding: 8px 64px 16px 16px;
+    padding: 16px;
     display: inline-block;
     color: #E1F2F1;
     text-align: left;
@@ -303,16 +303,6 @@ a.footer--logo {
       font-weight: 400;
       font-style: italic;
       color: #0A5753;
-    }
-
-    &:after {
-      content: "";
-      position: absolute;
-      right: 0;
-      top: 0;
-      height: 100%;
-      width: 48px;
-      background: #158983 url("svg/graph-icon.svg") no-repeat center center;
     }
 
     &:hover {
