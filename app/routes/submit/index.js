@@ -5,7 +5,7 @@ export default Route.extend({
 
   model() {
     return this.store.createRecord('submission', {
-      'eventTime': '2020-03-02T09:00:00.000Z',
+      'eventTime': '2020-03-01T09:00:00.000Z',
       'postStatus': 'draft'
     });
   },
