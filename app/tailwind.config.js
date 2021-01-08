@@ -30,6 +30,7 @@ module.exports = {
         900: '#cfdefc',
       },
       red: {
+        400: '#ce1222',
         600: '#ff5547',
       },
       green: {

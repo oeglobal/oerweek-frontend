@@ -1,7 +1,24 @@
+<div class="bg-purple-900 h-64 home--main home--bg">
+  <div class="lg:container flex justify-end items-center h-full flex-col">
+    <div class="shadow bg-white flex gap-8 p-8 items-center flex-col lg:flex-row w-full lg:w-3/4">
+      <div>The week-long event spotlights amazing work from over a dozen categories including live, face-to-face events,
+        webinars, projects, and resources. The Best-of-the-Best participate in Open Education Week. ​
+      </div>
+      <div>
+        <LinkTo @route="page" @model="contribute" class="button-main">Contribute</LinkTo>
+      </div>
+    </div>
+    <div class="mt-8 mb-10 hidden lg:block">
+      {{svg-jar "chevron-circle-down-light" class="text-black h-10 w-10"}}
+    </div>
+  </div>
+</div>
+
 {{!--
 {{events-schedule}}
 --}}
 
+{{!--
 <div class="home-second--container">
   <div class="grid-container">
     <div class="grid-x text-center">
@@ -92,3 +109,4 @@
     </div>
   </div>
 </div>
+--}}
