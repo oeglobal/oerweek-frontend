@@ -67,6 +67,7 @@ module.exports = {
           xl: '1280px',
         },
       },
+      typography: {},
     },
   },
   variants: {

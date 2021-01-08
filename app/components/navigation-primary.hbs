@@ -19,7 +19,6 @@
         {{#link-to "index" class="brand"}}{{svg-jar 'logo' class="nav-logo"}}{{/link-to}}
 
         <nav role="navigation" class="nav-primary lg:block flex {{if (eq this.isMobileOpen false) "hidden"}}">
-          {{log this.isMobileOpen}}
           <ul class="nav nav-dropdown flex gap-4 flex-col lg:flex-row">
             <BasicDropdown
                     @renderInPlace={{true}}

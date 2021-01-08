@@ -5,11 +5,9 @@ export default class PageRoute extends Route {
   classNames = ['page'];
 
   model(params) {
-    console.log(params);
     return this.store
       .query('page', { slug: params.page_slug })
       .then(function (pages) {
-        console.log(pages);
         if (pages.content.length) {
           return pages.get('firstObject');
         }
