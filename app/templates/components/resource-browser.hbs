@@ -1,11 +1,9 @@
-{{#each resources as |resource index|}}
-  {{resource-card resource=resource}}
-
-  {{#if (divisible-by index 3)}}
-    <div class="medium-12 cell"></div>
-  {{/if}}
-{{else}}
-  <div class="medium-12 cell text-center">
-    <h4>Sorry, no results. Try removing one of the filters.</h4>
-  </div>
-{{/each}}
+<div class="grid grid-cols-4 gap-4 auto-rows-max">
+  {{#each resources as |resource index|}}
+    {{resource-card resource=resource}}
+  {{else}}
+    <div class="text-center">
+      <h4>Sorry, no results. Try removing one of the filters.</h4>
+    </div>
+  {{/each}}
+</div>

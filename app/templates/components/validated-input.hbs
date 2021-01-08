@@ -18,7 +18,7 @@
   {{else if (eq type 'power-select') }}
     {{#power-select
       options=options
-      onchange=(action 'valueChanged')
+      onChange=(action 'valueChanged')
       selected=(readonly (get model valuePath))
       placeholder=placeholder
       renderInPlace=true
@@ -30,7 +30,7 @@
     {{#power-select-multiple
       options=options
       selected=(readonly (get model valuePath))
-      onchange=(action 'valueChanged')
+      onChange=(action 'valueChanged')
     as |option|
     }}
       {{option}}

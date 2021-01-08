@@ -1,11 +1,11 @@
 import Mixin from '@ember/object/mixin';
-import {computed} from '@ember/object';
+import { computed } from '@ember/object';
 import getOpenTags from 'frontend/utils/get-open-tags';
 import getActiveLanguages from 'frontend/utils/get-active-languages';
 
 export default Mixin.create({
   queryParams: ['page'],
-  years: ['2015', '2016', '2017', '2018', '2019', '2020'],
+  years: ['2015', '2016', '2017', '2018', '2019', '2020', '2021'],
   yearselected: '2020',
   opentag: null,
   language: null,
@@ -15,28 +15,35 @@ export default Mixin.create({
     return this.get('filteredResources.meta.pagination.pages');
   }),
 
-  filteredResources: computed('yearselected', 'page', 'opentag', 'language', 'model', function () {
-    let page = this.page,
-      year = this.yearselected,
-      opentag = this.opentag,
-      language = this.language;
+  filteredResources: computed(
+    'yearselected',
+    'page',
+    'opentag',
+    'language',
+    'model',
+    function () {
+      let page = this.page,
+        year = this.yearselected,
+        opentag = this.opentag,
+        language = this.language;
 
-    let params = {'page[number]': page};
+      let params = { 'page[number]': page };
 
-    if (year) {
-      params['year'] = year;
+      if (year) {
+        params['year'] = year;
+      }
+
+      if (opentag) {
+        params['opentags'] = opentag;
+      }
+
+      if (language) {
+        params['form_language'] = language;
+      }
+
+      return this.store.query(this.modelName, params);
     }
-
-    if (opentag) {
-      params['opentags'] = opentag;
-    }
-
-    if (language) {
-      params['form_language'] = language;
-    }
-
-    return this.store.query(this.modelName, params);
-  }),
+  ),
 
   init() {
     this._super(...arguments);
@@ -50,16 +57,16 @@ export default Mixin.create({
 
       this.transitionToRoute({
         queryParams: {
-          page: this.page
-        }
+          page: this.page,
+        },
       });
     },
 
     nextPage: function () {
       this.transitionToRoute({
         queryParams: {
-          page: this.incrementProperty('page')
-        }
+          page: this.incrementProperty('page'),
+        },
       });
     },
 
@@ -76,6 +83,6 @@ export default Mixin.create({
     selectLanguage(language) {
       this.set('language', language);
       this.set('page', 1);
-    }
-  }
+    },
+  },
 });

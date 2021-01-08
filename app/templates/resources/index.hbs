@@ -1,61 +1,57 @@
-<div class="grid-x grid-margin-x title--container">
-  <div class="cell auto text-center">
-    <h1>Projects &amp; Resources</h1>
+<div class="">
+  <div class="content pt-20 mb-10">
+    <h1 class="text-center">Library</h1>
   </div>
 </div>
 
-<div class="grid-x grid-margin-x">
-  <div class="medium-3 cell">
-    <label>Filter by year</label>
-    {{#power-select
-      options=years
-      selected=yearselected
-      searchEnabled=false
-      allowClear=true
-      onchange=(action "selectYear") as |year|}}
-      {{year}}
-    {{/power-select}}
-  </div>
-  <div class="medium-3 cell">
-    <label>Filter by Open tag</label>
-    {{#power-select
-      options=opentags
-      selected=opentag
-      searchEnabled=false
-      allowClear=true
-      onchange=(action "selectOpentag") as |opentag|}}
-      {{opentag}}
-    {{/power-select}}
-  </div>
-  <div class="medium-3 cell">
-    <label>Filter by Language</label>
-    {{#power-select
-      options=languages
-      selected=language
-      searchEnabled=false
-      allowClear=true
-      onchange=(action "selectLanguage") as |language|}}
-      {{language}}
-    {{/power-select}}
+
+<div class="bg-red-600 text-white p-4">
+  <div class="grid grid-cols-3 justify-between gap-16">
+    <div>
+      <label>Filter by year</label>
+      {{#power-select
+              options=years
+              selected=yearselected
+              searchEnabled=false
+              allowClear=true
+              onChange=(action "selectYear") as |year|}}
+        {{year}}
+      {{/power-select}}
+    </div>
+    <div class="">
+      <label>Filter by Open tag</label>
+      {{#power-select
+              options=opentags
+              selected=opentag
+              searchEnabled=false
+              allowClear=true
+              onChange=(action "selectOpentag") as |opentag|}}
+        {{opentag}}
+      {{/power-select}}
+    </div>
+    <div class="">
+      <label>Filter by Language</label>
+      {{#power-select
+              options=languages
+              selected=language
+              searchEnabled=false
+              allowClear=true
+              onChange=(action "selectLanguage") as |language|}}
+        {{language}}
+      {{/power-select}}
+    </div>
   </div>
 </div>
 
-<div class="grid-x grid-margin-x">
-  {{resource-pagination
-    page=page
-    pageCount=pageCount
-    previousPage=(action "previousPage")
-    nextPage=(action "nextPage")
-  }}
-
+<div class="my-10">
   {{resource-browser resources=filteredResources}}
 
   {{#if filteredResources}}
     {{resource-pagination
-      page=page
-      pageCount=pageCount
-      previousPage=(action "previousPage")
-      nextPage=(action "nextPage")
+            page=page
+            pageCount=pageCount
+            previousPage=(action "previousPage")
+            nextPage=(action "nextPage")
     }}
   {{/if}}
 </div>
