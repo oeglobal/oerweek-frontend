@@ -77,6 +77,7 @@ module.exports = {
   plugins: [
     // https://josemarluedke.github.io/tailwindcss-ember-power-select/
     require('tailwindcss-ember-power-select').plugin({}),
+    require('@tailwindcss/typography'),
   ],
 };
 

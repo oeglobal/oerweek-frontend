@@ -1,0 +1,7 @@
+.content h1 {
+  @apply text-3xl text-gray-200 font-bold mb-10;
+
+  @screen lg {
+    @apply text-4xl;
+  }
+}

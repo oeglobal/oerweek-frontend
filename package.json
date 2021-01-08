@@ -37,7 +37,6 @@
     "ember-basic-dropdown": "^3.0.11",
     "ember-basic-dropdown-hover": "^0.6.0",
     "ember-body-class": "^2.0.0",
-    "ember-cached-shoe": "^0.2.1",
     "ember-cli": "~3.24.0",
     "ember-cli-app-version": "^4.0.0",
     "ember-cli-babel": "^7.23.0",
@@ -99,7 +98,9 @@
     "edition": "octane"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.3.1",
     "abortcontroller-polyfill": "^1.1.9",
+    "ember-cli-update": "^0.55.2",
     "node-sass": "^5.0.0",
     "postcss-nested": "^5.0.3"
   },

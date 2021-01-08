@@ -1,14 +1,13 @@
 {{ui-hooks
-  did-insert=(action 'activateFaq' model.slug)
-  will-destroy=(action 'deactivateFaq' model.slug)}}
+        did-insert=(action 'activateFaq' model.slug)
+        will-destroy=(action 'deactivateFaq' model.slug)}}
 
-<div class="grid-container">
-  <div class="grid-x grid-margin-x align-center">
-    <div class="title--container cell expanded text-center">
-      <h1>{{model.title}}</h1>
-    </div>
-    <div class="content--container medium-8 cell">
-      <div class="box">
+<div class="bg-gray-900">
+  <div class="container">
+    <div class="hidden lg:block py-5 pt-20">Home | Pages </div>
+    <div class="lg:w-7/12 lg:ml-32 mt-10 pb-20 content">
+      <h1>{{{model.title}}}</h1>
+      <div class="prose">
         {{{model.content}}}
       </div>
     </div>
