@@ -67,7 +67,19 @@ module.exports = {
           xl: '1280px',
         },
       },
-      typography: {},
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            a: {
+              color: theme('colors.black'),
+            },
+            strong: {
+              color: theme('colors.black'),
+              fontWeight: '700',
+            },
+          },
+        },
+      }),
     },
   },
   variants: {
