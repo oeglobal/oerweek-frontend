@@ -9,104 +9,33 @@
       </div>
     </div>
     <div class="mt-8 mb-10 hidden lg:block">
-      {{svg-jar "chevron-circle-down-light" class="text-black h-10 w-10"}}
+      {{svg-jar "fa/chevron-circle-down-light" class="text-black h-10 w-10"}}
     </div>
   </div>
 </div>
 
-{{!--
-{{events-schedule}}
---}}
-
-{{!--
-<div class="home-second--container">
-  <div class="grid-container">
-    <div class="grid-x text-center">
-      <div class="medium-6 cell clearfix home--second-left">
-        {{#link-to "schedule"}}
-          <img src="/assets/images/events-icon.svg" alt="Icon showing calendar of events"/>
-        {{/link-to}}
-        <p>Take a look at the vast calendar of events hosted all <br class="hide-for-small-only" />around the world during past Open Education Week editions.</p>
-        {{#link-to "events" class="button red"}}Browse Events{{/link-to}}
-      </div>
-      <div class="medium-6 cell clearfix home--second-right">
-        {{#link-to "resources"}}
-          <img src="/assets/images/resources-icon.svg" alt="Icon showing box of resources"/>
-        {{/link-to}}
-        <p>Learn about the wonderful resources <br class="hide-for-small-only" />shared by the community through the years.</p>
-        {{#link-to "resources" class="button cyan"}}Browse Resources{{/link-to}}
-      </div>
-    </div>
+<div class="container my-10">
+  <div class="grid grid-cols-1 lg:grid-cols-4 lg:gap-4">
+    <LinkTo @route="resources" class="bg-red-600 p-8 flex flex-col gap-4 text-white items-center justify-center hover:opacity-80">
+      {{svg-jar "icon-library" class="h-44 w-auto"}}
+      <h2 class="font-bold text-xl">Library</h2>
+      <p class="text-sm">Learn about the wonderful resources shared by the community through the years.</p>
+    </LinkTo>
+    <LinkTo @route="events" class="bg-green-500 p-8 flex flex-col gap-4 text-white items-center justify-center hover:opacity-80">
+      {{svg-jar "icon-events" class="h-44 w-auto"}}
+      <h2 class="font-bold text-xl">Schedule</h2>
+      <p class="text-sm">Learn about the wonderful resources shared by the community through the years.</p>
+    </LinkTo>
+    <a href="https://connect.oeglobal.org" target="_blank" rel="noopener"
+       class="bg-white p-8 flex flex-col gap-4 items-center justify-center hover:opacity-80">
+      {{svg-jar "icon-connect" class="h-auto"}}
+      <h2 class="font-bold text-xl text-red-600">#OEWeek at Connect</h2>
+      <p class="text-sm">Connect with fellow participants with hashtag and through our social media accounts.</p>
+    </a>
+    <LinkTo @route="page" @model="materials" class="bg-white p-8 flex flex-col gap-4 items-center justify-center hover:opacity-80">
+      {{svg-jar "icon-materials" class="h-auto"}}
+      <h2 class="font-bold text-xl text-green-500">Promo Materials</h2>
+      <p class="text-sm">Spread the word with the exclusive and customizable graphic materials</p>
+    </LinkTo>
   </div>
 </div>
-
-<div class="home-third--container">
-  <div class="grid-container">
-    <div class="grid-x grid-margin-x align-center">
-      <div class="small-12 cell text-center">
-        <h1 class="home-third--title">Promoting Open Education Week</h1>
-      </div>
-      <div class="small-12 medium-6 cell text-center">
-        <h1 class="home-third--title cell expand">Social Media</h1>
-        <p class="home-third--p cell expand">
-          Connect with fellow participants with hashtag and through our social media accounts
-        </p>
-        <p class="home-third--social cell expand">
-          <a class="social-icon" href="https://twitter.com/search?q=%23OEWeek" target="_blank">{{svg-jar "hashtag"}}</a>
-          <a class="social-icon" href="https://www.facebook.com/openeducationwk" target="_blank"><img
-            src="/assets/svg/icon-facebook.svg"/></a>
-          <a class="social-icon" href="https://twitter.com/OEWeek" target="_blank"><img
-            src="/assets/svg/icon-twitter.svg"/></a>
-          <a class="social-icon" href="https://www.youtube.com/user/openeducationweek/" target="_blank"><img
-            src="/assets/svg/icon-youtube.svg"/></a>
-        </p>
-      </div>
-
-      <div class="small-12 medium-4 cell text-center">
-        <h1 class="home-third--title cell expand">Promo Materials</h1>
-        <p class="home-third--p cell expand">
-          Spread the word with the exclusive and customizable graphic materials
-        </p>
-        <p>
-          {{#link-to "page" "materials" class="button cyan"}}Download{{/link-to}}
-        </p>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<div class="home-eight--container container">
-  <div class="grid-container">
-    <div class="grid-x grid-margin-x align-center">
-      <div class="small-12 text-center">
-        <h1>Sign up for Open Education Newsletter</h1>
-        <p>Find out about the latest trends in open education. <br/> (<a
-          href="https://www.oeglobal.org/communication/oeg-newsletter/" target="_blank" class="link-white">Preview previous
-          editions</a>)</p>
-      </div>
-
-      <div class="small-12 medium-6 medium-centered text-center cell">
-        <div id="mc_embed_signup">
-          <form id="mc-embedded-subscribe-form" class="validate form-horizontal"
-                action="https://ocwconsortium.us1.list-manage.com/subscribe/post?u=1a209e9010b861e3abfd5c609&amp;id=4e4d1b9eba"
-                method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
-            <div class="form-group">
-
-              <input id="mce-EMAIL" class="form-control required email" name="EMAIL" type="email" value=""
-                     placeholder="Email Address *"/>
-              <input id="mce-FNAME" class="form-control required" name="FNAME" type="text" value=""
-                     placeholder="First Name *"/>
-              <input id="mce-LNAME" class="form-control required" name="LNAME" type="text" value=""
-                     placeholder="Last Name *"/>
-
-              <div class="col-sm-offset-7"><input id="mc-embedded-subscribe" class="button cyan" name="subscribe"
-                                                  type="submit" value="Subscribe"/></div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
---}}

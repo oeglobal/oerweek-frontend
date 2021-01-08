@@ -34,7 +34,7 @@ module.exports = {
         600: '#ff5547',
       },
       green: {
-        500: '2daa2a',
+        500: '#2daa2a',
       },
     },
     extend: {
