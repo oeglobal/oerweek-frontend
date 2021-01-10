@@ -1,0 +1,16 @@
+.resource__meta {
+  @apply text-sm rounded border-purple-500 border;
+}
+
+.resource__meta dd {
+  @apply text-purple-500 mb-2;
+}
+
+.resource__meta dt,
+.resource__meta .resource__meta-single {
+  @apply mb-4;
+}
+
+.resource__meta :last-child {
+  @apply mb-0;
+}

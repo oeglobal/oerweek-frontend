@@ -2,10 +2,25 @@
   @apply bg-red-600 text-white border-red-400 border px-4 py-3 rounded;
 
   &:hover {
-    @apply opacity-80
+    @apply opacity-80;
   }
 
   &:active {
     @apply bg-white border-red-600 text-red-600 opacity-100;
+  }
+}
+
+.button-outline {
+  @apply text-base text-gray-200 font-bold px-4 py-3;
+
+  line-height: 1.65rem;
+  border: 3px solid theme('colors.gray.200');
+
+  &:hover {
+    @apply opacity-80;
+  }
+
+  &:active {
+    @apply bg-gray-200 text-gray-900 opacity-100;
   }
 }
