@@ -42,7 +42,7 @@ module.exports = {
     extend: {
       fontSize: {
         lg: ['1.25rem', { lineHeight: '1.5rem' }],
-        sm: ['1.176470588rem', { lineHeight: '0.840336134rem' }],
+        sm: ['0.85rem', { lineHeight: '1.19rem' }],
       },
       fontFamily: {
         sans: [
