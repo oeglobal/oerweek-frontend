@@ -1,99 +1,98 @@
 <h1>Preview Submission</h1>
-
-
-<h4>General Information</h4>
-<dl>
-  <dt>Name</dt>
-  <dd>{{model.firstname}} {{model.lastname}}</dd>
-
-  <dt>Email</dt>
-  <dd>{{model.email}}</dd>
-
-  <dt>Twitter</dt>
-  <dd>{{model.twitter}}</dd>
-
-  <dt>City and Country</dt>
-  <dd>{{model.city}}, {{model.country}}</dd>
-
-  <dt>Institution or Organization</dt>
-  <dd>{{model.institution}}</dd>
-
-  <dt>Website of Institution or Organization</dt>
-  <dd>{{model.institutionurl}}</dd>
-</dl>
-
-{{#if (eq model.postType 'event')}}
-  <h4>Event Information</h4>
-
+<div class="prose">
+  <h4>General Information</h4>
   <dl>
-    <dt>Type of Event</dt>
-    <dd>{{uc-words model.eventType}}</dd>
+    <dt>Name</dt>
+    <dd>{{model.firstname}} {{model.lastname}}</dd>
 
-    <dt>Title</dt>
-    <dd>{{model.title}}</dd>
+    <dt>Email</dt>
+    <dd>{{model.email}}</dd>
 
-    <dt>Facilitator</dt>
-    <dd>{{model.eventFacilitator}}</dd>
+    <dt>Twitter</dt>
+    <dd>{{model.twitter}}</dd>
 
-    <dt>Description</dt>
-    <dd>{{model.description}}</dd>
+    <dt>City and Country</dt>
+    <dd>{{model.city}}, {{model.country}}</dd>
 
-    <dt>Event starts at</dt>
-    <dd>{{moment-format model.eventTime 'YYYY-MM-DD HH:mm a'}}</dd>
+    <dt>Institution or Organization</dt>
+    <dd>{{model.institution}}</dd>
 
-    <dt>Link to the Event Page</dt>
-    <dd>{{model.link}}</dd>
-
-    <dt>Optional link to the Web room of the event</dt>
-    <dd>{{model.linkwebroom}}</dd>
-
-    <dt>Language</dt>
-    <dd>{{model.language}}</dd>
-
-    <dt>Open tag(s) related to your submission</dt>
-    <dd>{{join ', ' model.opentags}}</dd>
+    <dt>Website of Institution or Organization</dt>
+    <dd>{{model.institutionurl}}</dd>
   </dl>
-{{else if (eq model.postType 'resource')}}
-  <h4>Resource Information</h4>
-  <dl>
-    <dt>Title</dt>
-    <dd>{{model.title}}</dd>
 
-    <dt>Description</dt>
-    <dd>{{model.description}}</dd>
+  {{#if (eq model.postType 'event')}}
+    <h4>Event Information</h4>
 
-    <dt>Link to the Resource</dt>
-    <dd>{{model.link}}</dd>
+    <dl>
+      <dt>Type of Event</dt>
+      <dd>{{uc-words model.eventType}}</dd>
 
-    <dt>License</dt>
-    <dd>{{model.license}}</dd>
+      <dt>Title</dt>
+      <dd>{{model.title}}</dd>
 
-    <dt>Primary Language</dt>
-    <dd>{{model.language}}</dd>
+      <dt>Facilitator</dt>
+      <dd>{{model.eventFacilitator}}</dd>
 
-    <dt>Open tag(s) related to your submission</dt>
-    <dd>{{join ', ' model.opentags}}</dd>
-  </dl>
-{{/if}}
+      <dt>Description</dt>
+      <dd>{{model.description}}</dd>
 
-<div class="grid-x grid-margin-x">
-  <div class="cell small-12 medium-4">
-    {{#if model.imageUrl}}
-      <img src="{{model.imageUrl}}"/>
-    {{/if}}
+      <dt>Event starts at</dt>
+      <dd>{{moment-format model.eventTime 'YYYY-MM-DD HH:mm a'}}</dd>
+
+      <dt>Link to the Event Page</dt>
+      <dd>{{model.link}}</dd>
+
+      <dt>Optional link to the Web room of the event</dt>
+      <dd>{{model.linkwebroom}}</dd>
+
+      <dt>Language</dt>
+      <dd>{{model.language}}</dd>
+
+      <dt>Open tag(s) related to your submission</dt>
+      <dd>{{join ', ' model.opentags}}</dd>
+    </dl>
+  {{else if (eq model.postType 'resource')}}
+    <h4>Resource Information</h4>
+    <dl>
+      <dt>Title</dt>
+      <dd>{{model.title}}</dd>
+
+      <dt>Description</dt>
+      <dd>{{model.description}}</dd>
+
+      <dt>Link to the Resource</dt>
+      <dd>{{model.link}}</dd>
+
+      <dt>License</dt>
+      <dd>{{model.license}}</dd>
+
+      <dt>Primary Language</dt>
+      <dd>{{model.language}}</dd>
+
+      <dt>Open tag(s) related to your submission</dt>
+      <dd>{{join ', ' model.opentags}}</dd>
+    </dl>
+  {{/if}}
+
+  <div class="grid-x grid-margin-x">
+    <div class="cell small-12 medium-4">
+      {{#if model.imageUrl}}
+        <img src="{{model.imageUrl}}"/>
+      {{/if}}
+    </div>
   </div>
 </div>
 
-
-<div class="grid-x grid-margin-x align-justify">
-  <div class="cell shrink">
+<div class="flex justify-between mt-10">
+  <div class="">
     {{#if (eq model.postType 'event')}}
-      {{#link-to 'submit.event' class="button"}}Previous Page{{/link-to}}
+      {{#link-to 'submit.event' class="button-main"}}Previous Page{{/link-to}}
     {{else}}
-      {{#link-to 'submit.resource' class="button"}}Previous Page{{/link-to}}
+      {{#link-to 'submit.resource' class="button-main"}}Previous Page{{/link-to}}
     {{/if}}
   </div>
-  <div class="cell shrink">
-    <button class="button next-page" {{action 'submitForm'}}>Submit</button>
+  <div class="">
+    <button class="button-main" {{action 'submitForm'}}>Submit</button>
   </div>
 </div>

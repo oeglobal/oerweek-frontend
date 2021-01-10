@@ -1,6 +1,6 @@
 import Controller from '@ember/controller';
-import {inject as service} from '@ember/service';
-import {computed} from '@ember/object';
+import { inject as service } from '@ember/service';
+import { computed } from '@ember/object';
 
 import moment from 'moment';
 import getLanguages from 'frontend/utils/get-languages';
@@ -19,14 +19,24 @@ export default Controller.extend({
     this.set('didValidate', null);
     this.set('languages', getLanguages());
     this.set('openTags', getOpenTags());
-    this.set('fields', ['eventType', 'title', 'eventFacilitator', 'description', 'eventTime', 'link', 'linkwebroom', 'language', 'openags'])
+    this.set('fields', [
+      'eventType',
+      'title',
+      'eventFacilitator',
+      'description',
+      'eventTime',
+      'link',
+      'linkwebroom',
+      'language',
+      'openags',
+    ]);
   },
 
   actions: {
     validateForm(route) {
       let fields = this.fields;
 
-      this.model.validate({'on': fields}).then(({validations}) => {
+      this.model.validate({ on: fields }).then(({ validations }) => {
         this.set('didValidate', true);
 
         if (validations.get('isValid')) {
@@ -40,5 +50,5 @@ export default Controller.extend({
       this.set('model.eventTime', newDateTime.toISOString());
       this.set('timezone', 'GMT' + newDateTime.format('Z'));
     },
-  }
+  },
 });

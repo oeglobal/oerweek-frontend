@@ -1,43 +1,44 @@
 <h1>Submission Successful!</h1>
+<div class="prose">
+  {{#if isEditing}}
+    <p>Thank you for your contribution to Open Education Week. Your changes will be visible on the site in a few
+      minutes.</p>
 
-{{#if isEditing}}
-  <p>Thank you for your contribution to Open Education Week. Your changes will be visible on the site in a few
-    minutes.</p>
+    <p>You may now close this browser window or <br/>
+      {{#link-to 'submissions' class='button'}}Go back to your Submissions{{/link-to}}
+    </p>
 
-  <p>You may now close this browser window or <br/>
-    {{#link-to 'submissions' class='button'}}Go back to your Submissions{{/link-to}}
-  </p>
+  {{else}}
 
-{{else}}
+    <p>Thank you for your contribution to the Open Education Week. You will receive a confirmation email shortly.</p>
 
-  <p>Thank you for your contribution to the Open Education Week. You will receive a confirmation email shortly.</p>
+    <p>You may contact us at <a href="mailto:info@openeducationweek.org">info@openeducationweek.org</a> if you have any
+      questions or updates to your submission.</p>
 
-  <p>You may contact us at <a href="mailto:info@openeducationweek.org">info@openeducationweek.org</a> if you have any
-    questions or updates to your submission.</p>
+    <p>You may now close this browser window or
+      <button class="button new-submission" {{action 'newSubmission'}}>Submit another Entry</button>
+    </p>
+  {{/if}}
 
-  <p>You may now close this browser window or
-    <button class="button new-submission" {{action 'newSubmission'}}>Submit another Entry</button>
-  </p>
-{{/if}}
+  <hr/>
 
-<hr/>
+  <p>Follow us on <a href="https://www.facebook.com/openeducationwk">Facebook</a> and <a
+          href="https://twitter.com/OEWeek">Twitter!</a></p>
 
-<p>Follow us on <a href="https://www.facebook.com/openeducationwk">Facebook</a> and <a
-  href="https://twitter.com/OEWeek">Twitter!</a></p>
+  <hr/>
 
-<hr/>
+  <h1 class="text-black">Supporting all Learners</h1>
+  <p>We seek to ensure that all Open Education Week activities and contributions are accessible to all learners. The
+    following best practices from the National Center for Disabilities and Access to Education are highly
+    recommended:</p>
 
-<h1>Supporting all Learners</h1>
-<p>We seek to ensure that all Open Education Week activities and contributions are accessible to all learners. The
-  following best practices from the National Center for Disabilities and Access to Education are highly
-  recommended:</p>
-
-<ul>
-  <li>Provide alternative text for non-textual items including images and audio</li>
-  <li>Make sure that content is well structured and clearly written</li>
-  <li>Provide headers for data tables</li>
-  <li>Ensure hyperlinks make sense out of context</li>
-  <li>Caption and/or provide transcripts for videos</li>
-  <li>Do not rely on color alone to convey meaning</li>
-  <li>Ensure users can complete and submit all forms</li>
-</ul>
+  <ul>
+    <li>Provide alternative text for non-textual items including images and audio</li>
+    <li>Make sure that content is well structured and clearly written</li>
+    <li>Provide headers for data tables</li>
+    <li>Ensure hyperlinks make sense out of context</li>
+    <li>Caption and/or provide transcripts for videos</li>
+    <li>Do not rely on color alone to convey meaning</li>
+    <li>Ensure users can complete and submit all forms</li>
+  </ul>
+</div>

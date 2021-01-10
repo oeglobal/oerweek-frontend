@@ -1,61 +1,78 @@
-<h1>Event Information (Step 2/2)</h1>
+<h1 class="text-xl text-bold">Event Information (Step 2/2)</h1>
 
-{{validated-input
-  label='Type of Event *'
-  model=model
-  valuePath='eventType'
-  values=(array
-    (hash value='local' label='Local')
-    (hash value='online' label='Online')
-  )
-  type='radio'
-  didValidate=didValidate
-}}
-
-{{validated-input model=model valuePath='title' label='Title of Event *' didValidate=didValidate}}
-{{validated-input model=model valuePath='eventFacilitator' label='Facilitator' didValidate=didValidate}}
-{{validated-input model=model valuePath='description' label='Short description of the event *' type='textarea'
-                  didValidate=didValidate}}
-
-<label>Event starts at *</label>
-{{ember-flatpickr
-  date=(readonly model.eventTime)
-  enableTime=true
-  dateFormat='Y-m-d h:i K'
-  onChange=(action 'updateDatetime')
-}}
-
-{{#if model.eventTime}}
-  <p>Event will be submitted using your current timezone at the time: {{timezone}}</p>
-{{/if}}
-
-{{validated-input model=model valuePath='link' label='Link to the event *' type='url' didValidate=didValidate}}
-{{validated-input model=model valuePath='linkwebroom' label='Link to the webroom (if applicable)' type='url'
-                  didValidate=didValidate}}
-
-{{validated-input model=model options=languages valuePath='language' label='Primary Language *'
-                  placeholder='Select language ...' type='power-select' didValidate=didValidate}}
-
-{{validated-input model=model options=openTags valuePath='opentags'
-                  label='Open tag(s) related to your submission. Please select all that apply. *'
-                  type='power-select-multiple' didValidate=didValidate}}
-
-<br/>
-
-<label>Image for the OEW site</label>
-{{image-upload model=model}}
-
-<br/>
-
-<div class="grid-x grid-margin-x align-justify">
-  <div class="cell shrink">
-    {{#link-to 'submit.general' class="button"}}Previous Page{{/link-to}}
+<div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+  <div class="sm:col-span-6">
+    {{validated-input
+            label='Type of Event *'
+            model=model
+            valuePath='eventType'
+            values=(array
+                    (hash value='local' label='Local')
+                    (hash value='online' label='Online')
+            )
+            type='radio'
+            didValidate=didValidate
+    }}
   </div>
-  <div class="cell shrink">
+  <div class="sm:col-span-6">
+    {{validated-input model=model valuePath='title' label='Title of Event *' didValidate=didValidate}}
+  </div>
+  <div class="sm:col-span-6">
+    {{validated-input model=model valuePath='eventFacilitator' label='Facilitator' didValidate=didValidate}}
+  </div>
+  <div class="sm:col-span-6">
+    {{validated-input model=model valuePath='description' label='Short description of the event *' type='textarea'
+                      didValidate=didValidate}}
+  </div>
+
+  <div class="sm:col-span-6">
+    <label>Event starts at *</label>
+    {{ember-flatpickr
+            date=(readonly model.eventTime)
+            enableTime=true
+            dateFormat='Y-m-d h:i K'
+            onChange=(action 'updateDatetime')
+    }}
+
+    {{#if model.eventTime}}
+      <p>Event will be submitted using your current local time</p>
+    {{/if}}
+  </div>
+
+  <div class="sm:col-span-6">
+    {{validated-input model=model valuePath='link' label='Link to the event *' type='url' didValidate=didValidate}}
+  </div>
+
+  <div class="sm:col-span-6">
+    {{validated-input model=model valuePath='linkwebroom' label='Link to the webroom (if applicable)' type='url'
+                      didValidate=didValidate}}
+  </div>
+
+  <div class="sm:col-span-6">
+    {{validated-input model=model options=languages valuePath='language' label='Primary Language *'
+                      placeholder='Select language ...' type='power-select' didValidate=didValidate}}
+  </div>
+
+  <div class="sm:col-span-6">
+    {{validated-input model=model options=openTags valuePath='opentags'
+                      label='Open tag(s) related to your submission. Please select all that apply. *'
+                      type='power-select-multiple' didValidate=didValidate}}
+  </div>
+
+  <div class="sm:col-span-6">
+    <label>Image for the OEW site</label>
+    {{image-upload model=model}}
+  </div>
+
+  <div class="sm:col-span-6">
+    {{#link-to 'submit.general' class="button-main"}}Previous Page{{/link-to}}
+  </div>
+
+  <div class="sm:col-span-6 text-right">
     {{#if isUploading}}
-      <button class="button disabled" disabled>Waiting for upload to complete ...</button>
+      <button class="button-main" disabled>Waiting for upload to complete ...</button>
     {{else}}
-      <button class="button" {{action 'validateForm' 'submit.preview'}}>Preview Submission</button>
+      <button class="button-main" {{action 'validateForm' 'submit.preview'}}>Preview Submission</button>
     {{/if}}
   </div>
 </div>
