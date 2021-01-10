@@ -1,40 +1,37 @@
-<div>
-  <div class="content pt-20 mb-10">
-    <h1 class="text-center">Submit Your Entry</h1>
+<div class="content mb-10 text-center">
+  <h1 class="text-center">Submit Your Entry</h1>
+</div>
+
+<div class="text-bold p-4 text-center">
+  <p>Submit an Open Education Week entry in two easy steps: </p>
+</div>
+
+<div class="grid grid-cols-2 my-10 text-center">
+  <div class="">
+    {{svg-jar "step1" class="h-auto inline-block"}}
+    <p class="mt-4">Tell us about yourself and<br/> your institution</p>
+  </div>
+  <div class="">
+    {{svg-jar "step2" class="h-auto inline-block"}}
+    <p class="mt-4">Describe your event/resource,<br/> provide a link, and upload an image.</p>
   </div>
 </div>
 
-<div class="bg-white rounded shadow py-4 px-8 text-center w-full lg:w-3/4 mx-auto">
-  <div class="text-bold p-4">
-    <p>Submit an Open Education Week entry in two easy steps: </p>
-  </div>
+<div class="submit-highlight p-4 bg-turq-800 text-left flex flex-col gap-8">
+  <p>Other important information regarding your submission:</p>
 
-  <div class="grid grid-cols-2 my-10">
-    <div class="">
-      {{svg-jar "step1" class="h-auto inline-block"}}
-      <p class="mt-4">Tell us about yourself and<br/> your institution</p>
-    </div>
-    <div class="">
-      {{svg-jar "step2" class="h-auto inline-block"}}
-      <p class="mt-4">Describe your event/resource,<br/> provide a link, and upload an image.</p>
-    </div>
-  </div>
-
-  <div class="submit-highlight p-4 bg-turq-800 text-left flex flex-col gap-8">
-    <p>Other important information regarding your submission:</p>
-
-    <p class="checkmark">All entries must be CC licensed.</p>
-    <p class="checkmark">Once your entry is approved, you’ll receive a confirmation email including a link to edit your
-      entry.</p>
-    <p class="checkmark">The data collected by the Open Education Consortium is specifically used for Open Education Week
-      (OEW) operational purposes and will be displayed on the OEW site.</p>
-    <p class="checkmark pb-4">
-      {{!-- Entries must be submitted by <b>February 25th, 2019</b> to be featured. --}}
-      For questions, please contact us at <a href="mailto:info@openeducationweek.org">info@openeducationweek.org</a>;
-      we'll be happy to assist you.</p>
-  </div>
-
-  <div class="pb-4">
-    <LinkTo @route="submit.general" class="button-main">Get started</LinkTo>
-  </div>
+  <p class="checkmark">All entries must be CC licensed.</p>
+  <p class="checkmark">Once your entry is approved, you’ll receive a confirmation email including a link to edit your
+    entry.</p>
+  <p class="checkmark">The data collected by the Open Education Consortium is specifically used for Open Education Week
+    (OEW) operational purposes and will be displayed on the OEW site.</p>
+  <p class="checkmark pb-4">
+    {{!-- Entries must be submitted by <b>February 25th, 2019</b> to be featured. --}}
+    For questions, please contact us at <a href="mailto:info@openeducationweek.org">info@openeducationweek.org</a>;
+    we'll be happy to assist you.</p>
 </div>
+
+<div class="pb-4 text-center">
+  <LinkTo @route="submit.general" class="button-main">Get started</LinkTo>
+</div>
+

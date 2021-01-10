@@ -107,6 +107,7 @@ module.exports = {
     require('tailwindcss-ember-power-select').plugin({}),
     require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/forms'),
   ],
 };
 

@@ -24,3 +24,11 @@
   height: 17px;
   background: url('/assets/svg/checkmark.svg') no-repeat;
 }
+
+.ember-radio-button {
+  @apply block mt-2;
+}
+
+.ember-radio-button input {
+  @apply text-sm font-medium mr-1;
+}

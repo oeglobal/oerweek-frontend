@@ -1,34 +1,48 @@
-<h1>Resource Information (Step 2/2)</h1>
-
-{{validated-input model=model valuePath='title' label='Title *' didValidate=didValidate}}
-{{validated-input model=model valuePath='description' label='Short description *' type='textarea'
-                  didValidate=didValidate}}
-{{validated-input model=model valuePath='link' label='Link to Resource *' type='url' didValidate=didValidate}}
-{{validated-input model=model options=licenses valuePath='license' label='License *' type='power-select'
-                  didValidate=didValidate}}
-
-{{validated-input model=model options=languages valuePath='language' label='Primary Language *'
-                  placeholder='Select language ...' type='power-select' didValidate=didValidate}}
-
-{{validated-input model=model options=openTags valuePath='opentags'
-                  label='Open tag(s) related to your submission. Please select all that apply. *'
-                  type='power-select-multiple' didValidate=didValidate}}
-
-<br/>
-<label>Image for the OEW site</label>
-{{image-upload model=model}}
-
-<br/>
-
-<div class="grid-x grid-margin-x align-justify">
-  <div class="cell shrink">
-    {{#link-to 'submit.general' class="button"}}Previous Page{{/link-to}}
+<h1 class="text-xl text-bold">Resource Information (Step 2/2)</h1>
+<div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+  <div class="sm:col-span-6">
+  {{validated-input model=model valuePath='title' label='Title *' didValidate=didValidate}}
   </div>
-  <div class="cell shrink">
-    {{#if isUploading}}
-      <button class="button disabled" disabled>Waiting for upload to complete ...</button>
-    {{else}}
-      <button class="button next-page" {{action 'validateForm' 'submit.preview'}}>Preview Submission</button>
-    {{/if}}
+
+  <div class="sm:col-span-6">
+  {{validated-input model=model valuePath='description' label='Short description *' type='textarea'
+                    didValidate=didValidate}}
+  </div>
+
+  <div class="sm:col-span-6">
+  {{validated-input model=model valuePath='link' label='Link to Resource *' type='url' didValidate=didValidate}}
+  </div>
+
+  <div class="sm:col-span-3">
+  {{validated-input model=model options=licenses valuePath='license' label='License *' type='power-select'
+                    didValidate=didValidate}}
+  </div>
+
+  <div class="sm:col-span-3">
+  {{validated-input model=model options=languages valuePath='language' label='Primary Language *'
+                    placeholder='Select language ...' type='power-select' didValidate=didValidate}}
+  </div>
+
+  <div class="sm:col-span-6">
+  {{validated-input model=model options=openTags valuePath='opentags'
+                    label='Open tag(s) related to your submission. Please select all that apply. *'
+                    type='power-select-multiple' didValidate=didValidate}}
+  </div>
+
+  <div class="sm:col-span-6">
+  <label>Image for the OEW site</label>
+  {{image-upload model=model}}
+  </div>
+
+  <div class="sm:col-span-3">
+      {{#link-to 'submit.general' class="button-main"}}Previous Page{{/link-to}}
+  </div>
+
+  <div class="sm:col-span-3 text-right">
+      {{#if isUploading}}
+        <button class="button-main disabled" disabled>Waiting for upload to complete ...</button>
+      {{else}}
+        <button class="button-main" {{action 'validateForm' 'submit.preview'}}>Preview Submission</button>
+      {{/if}}
   </div>
 </div>

@@ -1,18 +1,18 @@
-<div class="form-group {{valuePath}}">
+<div class="mb-2 {{valuePath}}">
   {{#if (and
           label
           (not-eq type 'checkbox')
         )
   }}
-    <label for="{{concat elementId '-name'}}">{{label}}</label>
+    <label for="{{concat elementId '-name'}}" class="block text-sm font-medium text-gray-700 mb-1">{{label}}</label>
   {{/if}}
 
   {{#if (eq type 'textarea') }}
-    {{textarea type=type value=value placeholder=placeholder class="form-control" name=valuePath
+    {{textarea type=type value=value placeholder=placeholder class="shadow-sm focus:border-purple-500 focus:border-purple-500 block w-full sm:text-sm border-gray-300 rounded-md" name=valuePath
                id=(concat elementId '-name')}}
   {{else if (eq type 'checkbox') }}
     <label>
-      {{input type=type checked=value class="form-control" name=valuePath id=(concat elementId '-name')}}
+      {{input type=type checked=value class="shadow-sm focus:border-purple-500 focus:border-purple-500 block w-full sm:text-sm border-gray-300 rounded-md" name=valuePath id=(concat elementId '-name')}}
       {{label}}
     </label>
   {{else if (eq type 'power-select') }}
@@ -52,7 +52,7 @@
       type=type
       value=value
       placeholder=placeholder
-      class="form-control"
+      class="shadow-sm focus:border-purple-500 focus:border-purple-500 block w-full sm:text-sm border-gray-300 rounded-md"
       name=valuePath
       id=(concat elementId '-name')
       readonly=readonly
@@ -63,7 +63,7 @@
     <span class="valid-input fa fa-check"></span>
   {{/if}}
 
-  <div class="input-error">
+  <div class="text-red-400">
     {{#if showErrorMessage}}
       <div class="error">
         {{v-get model valuePath 'message'}}
@@ -71,7 +71,7 @@
     {{/if}}
 
     {{#if showWarningMessage}}
-      <div class="warning">
+      <div class="text-red-400">
         {{v-get model valuePath 'warningMessage'}}
       </div>
     {{/if}}

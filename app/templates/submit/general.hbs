@@ -1,66 +1,66 @@
-<h1>General Information (Step 1/2)</h1>
+<h1 class="text-xl text-bold">General Information (Step 1/2)</h1>
 
-<div class="grid-x grid-margin-x">
-  <div class="medium-6 cell">
+<div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+  <div class="sm:col-span-3">
     {{validated-input model=model valuePath='firstname' label='First Name *' didValidate=didValidate}}
   </div>
-  <div class="medium-6 cell">
+  <div class="sm:col-span-3">
     {{validated-input model=model valuePath='lastname' label='Last Name *' didValidate=didValidate}}
   </div>
-</div>
 
-<div class="grid-x grid-margin-x">
-  <div class="medium-6 cell">
+  <div class="sm:col-span-3">
     {{validated-input model=model valuePath='email' label='Email *' didValidate=didValidate readonly=isEditing}}
   </div>
-  <div class="medium-6 cell">
+  <div class="sm:col-span-3">
     {{validated-input model=model valuePath='twitter' label='Twitter' didValidate=didValidate readonly=isEditing placeholder='@username'}}
   </div>
-</div>
 
-<div class="grid-x grid-margin-x">
-  <div class="medium-6 cell">
+  <div class="sm:col-span-3">
     {{validated-input model=model valuePath='institution' label='Institution or Organization' didValidate=didValidate}}
   </div>
-  <div class="medium-6 cell">
+  <div class="sm:col-span-3">
     {{validated-input model=model valuePath='institutionurl' label='Website of Institution or Organization' type='url'
                       didValidate=didValidate}}
   </div>
-</div>
+  <div class="sm:col-span-3">
+    {{validated-input
+            model=model
+            options=countries
+            valuePath='country'
+            placeholder="Select your country ..."
+            label='Country *'
+            type='power-select'
+            didValidate=didValidate
+    }}
+  </div>
 
-{{validated-input
-  model=model
-  options=countries
-  valuePath='country'
-  placeholder="Select your country ..."
-  label='Country *'
-  type='power-select'
-  didValidate=didValidate
-}}
+  <div class="sm:col-span-3">
+    {{validated-input model=model valuePath='city' label='City, State *' didValidate=didValidate}}
+  </div>
 
-{{validated-input model=model valuePath='city' label='City, State *' didValidate=didValidate}}
+  <div class="sm:col-span-3">
+    {{validated-input
+            label='Type of Contribution *'
+            model=model
+            valuePath='postType'
+            values=(array
+                    (hash value='event' label='Event')
+                    (hash value='resource' label='Resource')
+            )
+            type='radio'
+            didValidate=didValidate
+            readonly=isEditing
+    }}
+  </div>
 
-{{validated-input
-  label='Type of Contribution *'
-  model=model
-  valuePath='postType'
-  values=(array
-    (hash value='event' label='Event')
-    (hash value='resource' label='Resource')
-  )
-  type='radio'
-  didValidate=didValidate
-  readonly=isEditing
-}}
-
-<div class="grid-x grid-margin-x align-justify">
-  <div class="cell shrink next-page">
+  <div class="sm:col-span-6">
     {{#if (eq model.postType 'event')}}
-      <button class="button" {{action 'validateForm' 'submit.event'}}>Next Page</button>
+      <button class="button-main" {{action 'validateForm' 'submit.event'}}>Next Page</button>
     {{else if (eq model.postType 'resource')}}
-      <button class="button" {{action 'validateForm' 'submit.resource'}}>Next Page</button>
+      <button class="button-main" {{action 'validateForm' 'submit.resource'}}>Next Page</button>
     {{else}}
-      <button class="button" {{action 'validateForm'}}>Next Page</button>
+      <button class="button-main" {{action 'validateForm'}}>Next Page</button>
     {{/if}}
   </div>
 </div>
+
