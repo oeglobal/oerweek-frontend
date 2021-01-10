@@ -16,6 +16,7 @@ module.exports = {
         200: '#333333',
         300: '#4d4d4d',
         600: '#999999',
+        800: '#D9D9D9',
         900: '#f5f5f5',
       },
       purple: {
@@ -27,6 +28,7 @@ module.exports = {
         300: '#1f377a',
         400: '#1952b3',
         500: '#0d59f2',
+        600: '#3B80F7',
         900: '#cfdefc',
       },
       red: {
@@ -38,6 +40,10 @@ module.exports = {
       },
     },
     extend: {
+      fontSize: {
+        lg: ['1.25rem', { lineHeight: '1.5rem' }],
+        sm: ['1.176470588rem', { lineHeight: '0.840336134rem' }],
+      },
       fontFamily: {
         sans: [
           'Montserrat',
@@ -84,7 +90,11 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      borderColor: ['hover', 'active'],
+      borderWidth: ['hover'],
+      backgroundColor: ['hover'],
+    },
     container: ['responsive'],
   },
 

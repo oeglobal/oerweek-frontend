@@ -1,6 +1,6 @@
-<div class="grid grid-cols-4 gap-4 auto-rows-max">
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-4 auto-rows-max">
   {{#each resources as |resource index|}}
-    {{resource-card resource=resource}}
+    <ResourceCard @resource={{resource}} />
   {{else}}
     <div class="text-center">
       <h4>Sorry, no results. Try removing one of the filters.</h4>

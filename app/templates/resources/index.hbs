@@ -4,9 +4,8 @@
   </div>
 </div>
 
-
 <div class="bg-red-600 text-white p-4">
-  <div class="grid grid-cols-3 justify-between gap-16">
+  <div class="grid grid-cols-1 lg:grid-cols-3 justify-between gap-4 lg:gap-16">
     <div>
       <label>Filter by year</label>
       {{#power-select
@@ -43,15 +42,15 @@
   </div>
 </div>
 
-<div class="my-10">
-  {{resource-browser resources=filteredResources}}
+<div class="py-10">
+  <ResourceBrowser @resources={{filteredResources}}/>
 
   {{#if filteredResources}}
-    {{resource-pagination
-            page=page
-            pageCount=pageCount
-            previousPage=(action "previousPage")
-            nextPage=(action "nextPage")
-    }}
+    <ResourcePagination
+            @page={{page}}
+            @pageCount={{pageCount}}
+            @previousPage={{action "previousPage"}}
+            @nextPage={{action "nextPage"}}
+    />
   {{/if}}
 </div>

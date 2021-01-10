@@ -1,0 +1,24 @@
+<LinkTo router="resources.resource" @model={{resource.slug}}
+        class="bg-white shadow rounded flex flex-col hover:text-white hover:bg-blue-600 group">
+  <div class="aspect-w-16 aspect-h-9 overflow-hidden h-16">
+    {{#if @resource.imageUrl}}
+      {{#link-to "resources.resource" @resource.slug}}
+        <img src="{{{@resource.imageUrl}}}" alt="{{@resource.title}}" class="object-fill"/>
+      {{/link-to}}
+    {{/if}}
+  </div>
+  <div class="p-4 flex flex-col gap-2 mt-4 flex-grow flex justify-between">
+    <h3 class="text-lg font-bold group:text-white">
+      {{{@resource.title}}}
+    </h3>
+    <div class="prose flex-grow group-hover:text-white">
+      {{{@resource.contentExcerpt}}}
+    </div>
+    <dl class="flex flex-col gap-2 text-gray-300 mt-2 group-hover:text-white">
+      {{#if @resource.formLanguage}}
+        <dd>{{svg-jar "flag-light" class="h-4 inline mr-2"}} {{@resource.formLanguage}}</dd>
+      {{/if}}
+      <dd>{{svg-jar "building-light" class="h-4 inline-block mr-2"}} {{@resource.institution}}</dd>
+    </dl>
+  </div>
+</LinkTo>
