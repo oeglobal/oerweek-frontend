@@ -1,5 +1,5 @@
 <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 auto-rows-max">
-  {{#each resources as |event index|}}
+  {{#each resources as |event|}}
     <EventCard @resource={{event}} />
   {{else}}
     <div class="text-center">
