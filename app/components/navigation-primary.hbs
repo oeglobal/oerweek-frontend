@@ -19,7 +19,7 @@
         {{#link-to "index" class="brand"}}{{svg-jar 'logo' class="nav-logo"}}{{/link-to}}
 
         <nav role="navigation" class="nav-primary lg:block flex {{if (eq this.isMobileOpen false) "hidden"}}">
-          <ul class="nav nav-dropdown flex gap-4 flex-col lg:flex-row">
+          <ul class="nav nav-dropdown flex gap-4 flex-col lg:flex-row lg:items-center">
             <BasicDropdown
                     @renderInPlace={{true}}
                     as |dd|>
@@ -68,6 +68,7 @@
 
             <li class="menu-item"><LinkTo @route="resources">Projects &amp; Resources</LinkTo></li>
             <li class="menu-item"><LinkTo @route="events">Events</LinkTo></li>
+            <li class=""><LinkTo @route="submit" class="button-outline">Submit Entry</LinkTo></li>
           </ul>
         </nav>
         <button

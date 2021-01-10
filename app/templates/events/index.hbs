@@ -1,54 +1,46 @@
-<div class="grid-container">
-  <div class="grid-x grid-margin-x title--container">
-    <div class="cell auto text-center">
-      <h1>Events</h1>
-    </div>
+<div>
+  <div class="content pt-20 mb-10">
+    <h1 class="text-center">Archive of Events</h1>
   </div>
+</div>
 
-  <div class="grid-x grid-margin-x">
-    <div class="medium-3 cell">
+<div class="bg-red-600 text-white p-4">
+  <div class="grid grid-cols-1 lg:grid-cols-3 justify-between gap-4 lg:gap-16">
+    <div>
       <label>Filter by year</label>
       {{#power-select
-        options=years
-        selected=yearselected
-        searchEnabled=false
-        allowClear=true
-        onChange=(action "selectYear") as |year|}}
+              options=years
+              selected=yearselected
+              searchEnabled=false
+              allowClear=true
+              onChange=(action "selectYear") as |year|}}
         {{year}}
       {{/power-select}}
     </div>
     <div class="medium-3 cell">
       <label>Filter by Language</label>
       {{#power-select
-        options=languages
-        selected=language
-        searchEnabled=false
-        allowClear=true
-        onChange=(action "selectLanguage") as |language|}}
+              options=languages
+              selected=language
+              searchEnabled=false
+              allowClear=true
+              onChange=(action "selectLanguage") as |language|}}
         {{language}}
       {{/power-select}}
     </div>
   </div>
+</div>
 
-  <div class="grid-x grid-margin-x">
-    {{resource-pagination
-      page=page
-      pageCount=pageCount
-      previousPage=(action "previousPage")
-      nextPage=(action "nextPage")
-    }}
 
-    {{event-browser resources=filteredResources}}
+<div class="py-10">
+  <EventBrowser @resources={{filteredResources}} />
 
-    {{#if filteredResources}}
-      {{resource-pagination
-        page=page
-        pageCount=pageCount
-        previousPage=(action "previousPage")
-        nextPage=(action "nextPage")
-      }}
-    {{/if}}
-  </div>
-
-  {{outlet}}
+  {{#if filteredResources}}
+    <ResourcePagination
+            @page={{page}}
+            @pageCount={{pageCount}}
+            @previousPage={{action "previousPage"}}
+            @nextPage={{action "nextPage"}}
+    />
+  {{/if}}
 </div>
