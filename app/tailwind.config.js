@@ -37,6 +37,7 @@ module.exports = {
       green: {
         400: '#2daa2a',
         800: '#B9EDB6',
+        900: '#DBF5D6',
       },
       turq: {
         800: '#A4EADC',

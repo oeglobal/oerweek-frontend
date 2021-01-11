@@ -1,30 +1,3 @@
-.submit-highlight {
-  background-color: $green-light;
-  border-radius: 8px;
-  padding: 28px 24px 10px;
-  margin-bottom: 30px;
-  margin-top: 20px;
-}
-.submit-highlight p {
-  line-height: 25px;
-}
-
-.submit-highlight .checkmark {
-  margin-left: 25px;
-  position: relative;
-}
-
-.submit-highlight .checkmark::before {
-  content: "";
-  display: block;
-  position: absolute;
-  left: -25px;
-  top: 3px;
-  width: 17px;
-  height: 17px;
-  background: url('/assets/svg/checkmark.svg') no-repeat;
-}
-
 .ember-radio-button {
   @apply block mt-2;
 }
