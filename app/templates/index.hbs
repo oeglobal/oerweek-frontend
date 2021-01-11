@@ -1,8 +1,11 @@
 <div class="bg-purple-900 h-64 home--main home--bg">
   <div class="lg:container flex justify-end items-center h-full flex-col">
-    <div class="shadow bg-white flex gap-8 p-8 items-center flex-col lg:flex-row w-full lg:w-3/4">
-      <div>The week-long event spotlights amazing work from over a dozen categories including live, face-to-face events,
-        webinars, projects, and resources. The Best-of-the-Best participate in Open Education Week. ​
+    <div class="shadow rounded bg-white flex gap-8 p-8 items-center flex-col lg:flex-row w-full lg:w-3/4">
+      <div class="font-bold flex flex-col gap-4">
+        <p class="text-base">An annual celebration, Open Education Week (OEW) is an opportunity for actively sharing and learning about
+          the latest achievements in Open Education worldwide.</p>
+
+        <p class="text-base text-purple-500">Now accepting submissions for Open Education Week 2021</p>
       </div>
       <div>
         <LinkTo @route="page" @model="contribute" class="button-main">Contribute</LinkTo>
@@ -16,12 +19,14 @@
 
 <div class="lg:container lg:my-10">
   <div class="grid grid-cols-1 lg:grid-cols-4 lg:gap-4">
-    <LinkTo @route="resources" class="bg-red-600 p-8 flex flex-col gap-4 text-white items-center justify-center hover:opacity-80">
+    <LinkTo @route="resources"
+            class="bg-red-600 p-8 flex flex-col gap-4 text-white items-center justify-center hover:opacity-80">
       {{svg-jar "icon-library" class="h-44 w-auto"}}
       <h2 class="font-bold text-xl">Library</h2>
       <p class="text-sm">Learn about the wonderful resources shared by the community through the years.</p>
     </LinkTo>
-    <LinkTo @route="events" class="bg-green-400 p-8 flex flex-col gap-4 text-white items-center justify-center hover:opacity-80">
+    <LinkTo @route="events"
+            class="bg-green-400 p-8 flex flex-col gap-4 text-white items-center justify-center hover:opacity-80">
       {{svg-jar "icon-events" class="h-44 w-auto"}}
       <h2 class="font-bold text-xl">Schedule</h2>
       <p class="text-sm">Learn about the wonderful resources shared by the community through the years.</p>
@@ -32,7 +37,8 @@
       <h2 class="font-bold text-xl text-red-600">#OEWeek at Connect</h2>
       <p class="text-sm">Connect with fellow participants with hashtag and through our social media accounts.</p>
     </a>
-    <LinkTo @route="page" @model="materials" class="bg-white p-8 flex flex-col gap-4 items-center justify-center hover:opacity-80">
+    <LinkTo @route="page" @model="materials"
+            class="bg-white p-8 flex flex-col gap-4 items-center justify-center hover:opacity-80">
       {{svg-jar "icon-materials" class="h-auto"}}
       <h2 class="font-bold text-xl text-green-400">Promo Materials</h2>
       <p class="text-sm">Spread the word with the exclusive and customizable graphic materials</p>

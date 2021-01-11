@@ -45,6 +45,7 @@ module.exports = {
     extend: {
       fontSize: {
         lg: ['1.25rem', { lineHeight: '1.5rem' }],
+        base: ['1rem', { lineHeight: '1.6rem' }],
         sm: ['0.85rem', { lineHeight: '1.19rem' }],
       },
       fontFamily: {
@@ -76,6 +77,9 @@ module.exports = {
           lg: '1024px',
           xl: '1280px',
         },
+      },
+      boxShadow: {
+        DEFAULT: '0px 4px 4px rgba(0, 0, 0, 0.25)',
       },
       typography: (theme) => ({
         DEFAULT: {

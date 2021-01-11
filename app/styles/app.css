@@ -18,3 +18,7 @@
 @import "components/pagination.css";
 @import "components/resources.css";
 @import "components/submit.css";
+
+html {
+  @apply antialiased;
+}
