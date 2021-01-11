@@ -1,5 +1,4 @@
 /*global module, require */
-
 const colors = require('tailwindcss/colors');
 
 module.exports = {
@@ -97,8 +96,26 @@ module.exports = {
     extend: {
       borderColor: ['hover', 'active'],
       borderWidth: ['hover'],
-      backgroundColor: ['hover'],
+      backgroundColor: ['hover', 'group-active', 'active'],
+      opacity: [
+        'responsive',
+        'group-hover',
+        'focus-within',
+        'hover',
+        'focus',
+        'group-active',
+      ],
     },
+    textColor: [
+      'responsive',
+      'dark',
+      'group-hover',
+      'focus-within',
+      'hover',
+      'focus',
+      'group-active',
+    ],
+
     container: ['responsive'],
   },
 
@@ -108,6 +125,7 @@ module.exports = {
     require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/forms'),
+    require('tailwindcss-interaction-variants'),
   ],
 };
 

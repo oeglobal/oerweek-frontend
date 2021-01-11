@@ -1,19 +1,19 @@
-<LinkTo class="bg-white shadow rounded flex flex-col hover:text-white hover:bg-blue-600 group"
+<LinkTo class="bg-white shadow rounded flex flex-col hover:text-white active:bg-blue-600 group"
         @route="resources.resource" @model={{@resource.slug}}
 >
-  <div class="aspect-w-16 aspect-h-9 overflow-hidden h-16">
+  <div class="aspect-w-16 aspect-h-9 overflow-hidden h-16 group-hover:opacity-80 group-active:opacity-100">
     {{#if @resource.imageUrl}}
         <img src="{{{@resource.imageUrl}}}" alt="{{@resource.title}}" class="object-fill"/>
     {{/if}}
   </div>
-  <div class="p-4 flex flex-col gap-2 mt-4 flex-grow flex justify-between">
-    <h3 class="text-lg font-bold group:text-white">
+  <div class="p-4 flex flex-col gap-4 mt-4 flex-grow flex justify-between">
+    <h3 class="text-lg font-bold group-active:text-white group-hover:text-blue-600">
       {{{@resource.title}}}
     </h3>
-    <div class="prose flex-grow group-hover:text-white">
+    <div class="prose flex-grow group-active:text-white">
       {{{@resource.contentExcerpt}}}
     </div>
-    <dl class="flex flex-col gap-2 text-gray-300 mt-2 group-hover:text-white">
+    <dl class="flex flex-col gap-2 text-gray-300 group-active:text-white">
       {{#if @resource.formLanguage}}
         <dd>{{svg-jar "flag-light" class="h-4 inline mr-2"}} {{@resource.formLanguage}}</dd>
       {{/if}}

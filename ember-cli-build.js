@@ -30,7 +30,11 @@ module.exports = function (defaults) {
           require('postcss-nested-ancestors'),
           require('postcss-nested'),
           require('tailwindcss')('./app/tailwind.config.js'),
-          ...(isProduction ? [purgeCSS] : []),
+          ...(isProduction
+            ? [
+                /* purgeCSS */
+              ]
+            : []),
         ],
       },
       filter: {

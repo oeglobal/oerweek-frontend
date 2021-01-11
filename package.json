@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "1.0.0",
   "private": true,
-  "description": "Open Education Week Fronteed",
+  "description": "Open Education Week Frontend",
   "repository": "",
   "license": "MIT",
   "author": "",
@@ -89,7 +89,9 @@
     "qunit-dom": "^1.6.0",
     "sass": "^1.14.3",
     "tailwindcss": "^2.0.2",
-    "tailwindcss-ember-power-select": "^0.4.0"
+    "tailwindcss-ember-power-select": "^0.4.0",
+    "tailwindcss-interaction-variants": "^5.0.0",
+    "yarn": "^1.22.10"
   },
   "engines": {
     "node": "10.* || >= 12"
