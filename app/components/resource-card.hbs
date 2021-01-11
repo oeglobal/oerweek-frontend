@@ -17,7 +17,12 @@
       {{#if @resource.formLanguage}}
         <dd>{{svg-jar "flag-light" class="h-4 inline mr-2"}} {{@resource.formLanguage}}</dd>
       {{/if}}
-      <dd>{{svg-jar "building-light" class="h-4 inline-block mr-2"}} {{@resource.institution}}</dd>
+      <dd class="flex flex-row justify-start items-baseline">
+        <span class="inline-flex w-4 mr-3">
+          {{svg-jar "building-light" class="h-4 flex-shrink"}}
+        </span>
+        <span class="inline-flex">{{@resource.institution}}</span>
+      </dd>
     </dl>
   </div>
 </LinkTo>
