@@ -47,6 +47,8 @@ module.exports = {
         lg: ['1.25rem', { lineHeight: '1.5rem' }],
         base: ['1rem', { lineHeight: '1.6rem' }],
         sm: ['0.85rem', { lineHeight: '1.19rem' }],
+        '3xl': ['1.75rem', { lineHeight: '2.1rem', letterSpacing: '-0.1px' }],
+        '4xl': ['2.75rem', { lineHeight: '3.3rem', letterSpacing: '-0.35px' }],
       },
       fontFamily: {
         sans: [
