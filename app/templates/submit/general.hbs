@@ -1,4 +1,8 @@
-<h1 class="text-xl text-bold">General Information (Step 1/2)</h1>
+<div class="content mb-10">
+  <h1>Submit Your Entry</h1>
+</div>
+
+<h2 class="text-3xl font-bold mb-10">General Information (Step 1/2)</h2>
 
 <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
   <div class="sm:col-span-3">
@@ -38,7 +42,7 @@
     {{validated-input model=model valuePath='city' label='City, State *' didValidate=didValidate}}
   </div>
 
-  <div class="sm:col-span-3">
+  <div class="sm:col-span-6">
     {{validated-input
             label='Type of Contribution *'
             model=model
@@ -54,12 +58,14 @@
   </div>
 
   <div class="sm:col-span-6">
+    {{#link-to 'submit.index' class="button-main"}}Back{{/link-to}}
+
     {{#if (eq model.postType 'event')}}
-      <button class="button-main" {{action 'validateForm' 'submit.event'}}>Next Page</button>
+      <button class="button-main" {{action 'validateForm' 'submit.event'}}>Next</button>
     {{else if (eq model.postType 'resource')}}
-      <button class="button-main" {{action 'validateForm' 'submit.resource'}}>Next Page</button>
+      <button class="button-main" {{action 'validateForm' 'submit.resource'}}>Next</button>
     {{else}}
-      <button class="button-main" {{action 'validateForm'}}>Next Page</button>
+      <button class="button-main" {{action 'validateForm'}}>Next</button>
     {{/if}}
   </div>
 </div>

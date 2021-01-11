@@ -2,17 +2,17 @@
   <img class="max-w-lg" src="{{model.imageUrl}}"/>
   <button
     {{action "removeImage"}}
-    class="button"
+    class="button-outline"
   >Change image
   </button>
 {{else}}
   {{#file-dropzone
     name="image"
-    class="dropzone-upload-area flex flex-col justify-center items-center text-center"
+    class="dropzone-upload-area flex flex-col justify-center items-center text-center bg-green-900 rounded py-10"
     ondragenter=(action "resetDropzone")
   as |dropzone queue|
   }}
-    <div class="">
+    <div class="h-36">
       {{#if dropzone.active}}
         {{#if dropzone.valid}}
           Drop to upload
@@ -35,7 +35,7 @@
                          multiple=false
                          onfileadd=(action "uploadImage")
           }}
-            <a id="upload-image" class="button" tabindex=0>Select an Image</a>
+            <a id="upload-image" class="button-primary" tabindex=0>Select an Image</a>
           {{/file-upload}}
         </p>
       {{/if}}

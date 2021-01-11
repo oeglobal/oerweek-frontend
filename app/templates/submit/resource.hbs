@@ -35,14 +35,12 @@
   </div>
 
   <div class="sm:col-span-3">
-      {{#link-to 'submit.general' class="button-main"}}Previous Page{{/link-to}}
-  </div>
+      {{#link-to 'submit.general' class="button-main"}}Back{{/link-to}}
 
-  <div class="sm:col-span-3 text-right">
       {{#if isUploading}}
         <button class="button-main disabled" disabled>Waiting for upload to complete ...</button>
       {{else}}
-        <button class="button-main" {{action 'validateForm' 'submit.preview'}}>Preview Submission</button>
+        <button class="button-main" {{action 'validateForm' 'submit.preview'}}>Preview</button>
       {{/if}}
   </div>
 </div>

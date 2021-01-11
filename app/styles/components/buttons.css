@@ -1,5 +1,5 @@
 .button-main {
-  @apply bg-red-600 text-gray-900 border-red-400 border px-4 py-3 rounded font-bold;
+  @apply bg-red-600 text-gray-900 border-red-400 border px-4 py-3 rounded font-bold inline-block;
 
   &:hover {
     @apply opacity-80;
@@ -11,7 +11,7 @@
 }
 
 .button-outline {
-  @apply text-base text-gray-200 font-bold px-4 py-3;
+  @apply text-base text-gray-200 font-bold px-4 py-3 inline-block;
 
   line-height: 1.65rem;
   border: 3px solid theme('colors.gray.200');
