@@ -104,6 +104,7 @@
     "@tailwindcss/typography": "^0.3.1",
     "abortcontroller-polyfill": "^1.7.1",
     "ember-cli-update": "^0.55.2",
+    "fastboot-app-server": "^3.0.0",
     "postcss-nested": "^5.0.3"
   },
   "resolutions": {

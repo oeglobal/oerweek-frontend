@@ -5,8 +5,8 @@ export default Route.extend({
 
   model() {
     return this.store.createRecord('submission', {
-      'eventTime': '2020-03-02T09:00:00.000Z',
-      'postStatus': 'draft'
+      eventTime: '2020-03-01T09:00:00.000Z',
+      postStatus: 'draft',
     });
   },
 
@@ -22,7 +22,7 @@ export default Route.extend({
         country: prevSubmission.get('country'),
         city: prevSubmission.get('city'),
         institution: prevSubmission.get('institution'),
-        institutionurl: prevSubmission.get('institutionurl')
+        institutionurl: prevSubmission.get('institutionurl'),
       });
     }
   },
@@ -30,5 +30,5 @@ export default Route.extend({
   setupController(controller, model) {
     this._super(controller, model);
     this.controllerFor('submit').set('isEditing', false);
-  }
+  },
 });
