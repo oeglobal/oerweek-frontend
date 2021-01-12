@@ -1,18 +1,23 @@
 import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
 
-export default Route.extend({
-  titleToken: 'New Submission',
+export default class IndexRoute extends Route {
+  titleToken = 'New Submission';
+
+  @service fastboot;
 
   model() {
-    return this.store.createRecord('submission', {
-      eventTime: '2020-03-01T09:00:00.000Z',
-      postStatus: 'draft',
-    });
-  },
+    if (!this.fastboot.isFastBoot) {
+      return this.store.createRecord('submission', {
+        eventTime: '2021-03-01T09:00:00.000Z',
+        postStatus: 'draft',
+      });
+    }
+  }
 
   afterModel(model) {
     let submissions = this.store.peekAll('submission');
-    if (submissions.get('length') > 1) {
+    if (submissions && submissions.length > 1) {
       let prevSubmission = submissions.slice(-2)[0];
       model.setProperties({
         eventTime: prevSubmission.get('eventTime'),
@@ -25,10 +30,11 @@ export default Route.extend({
         institutionurl: prevSubmission.get('institutionurl'),
       });
     }
-  },
+  }
 
-  setupController(controller, model) {
-    this._super(controller, model);
-    this.controllerFor('submit').set('isEditing', false);
-  },
-});
+  setupController(controller, ...args) {
+    super.setupController(controller, ...args);
+    controller.isEditing = false;
+    // this.controllerFor('submit').set('isEditing', false);
+  }
+}

@@ -1,4 +1,4 @@
+import classic from 'ember-classic-decorator';
 import Route from '@ember/routing/route';
 
-export default Route.extend({
-});
+export default class ErrorRoute extends Route {}

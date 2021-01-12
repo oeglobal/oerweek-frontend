@@ -1,6 +1,6 @@
 import Route from '@ember/routing/route';
 
-export default Route.extend({
+export default class GeneralRoute extends Route {
   model() {
     let isEditing = this.controllerFor('submit').get('isEditing'),
       resolvedModel;
@@ -16,10 +16,11 @@ export default Route.extend({
     } else {
       return resolvedModel;
     }
-  },
-
-  setupController(controller/*, model*/) {
-    this._super(...arguments);
-    controller.set('isEditing', this.controllerFor('submit').get('isEditing'))
   }
-});
+
+  setupController(controller /*, model*/) {
+    super.setupController(...arguments);
+    let parentController = this.controllerFor('submit');
+    controller.isEditing = parentController.isEditing;
+  }
+}
