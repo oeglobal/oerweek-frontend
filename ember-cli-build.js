@@ -62,6 +62,9 @@ module.exports = function (defaults) {
     'ember-power-select': {
       theme: false,
     },
+    fingerprint: {
+      exclude: ['assets/images/oew*.png'],
+    },
   });
   return app.toTree();
 };
