@@ -18,6 +18,16 @@ const purgeCSS = {
 
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
+    babel: {
+      plugins: [require.resolve('ember-auto-import/babel-plugin')],
+    },
+    autoImport: {
+      webpack: {
+        node: {
+          path: true,
+        },
+      },
+    },
     postcssOptions: {
       compile: {
         plugins: [
