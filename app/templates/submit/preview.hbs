@@ -1,5 +1,9 @@
-<h1>Preview Submission</h1>
-<div class="prose">
+<div class="content mb-10">
+  <h1>Submit Your Entry</h1>
+</div>
+
+<h2 class="text-3xl font-bold mb-10">Preview Submission</h2>
+<div class="content__preview mt-6">
   <h4>General Information</h4>
   <dl>
     <dt>Name</dt>
@@ -84,15 +88,11 @@
   </div>
 </div>
 
-<div class="flex justify-between mt-10">
-  <div class="">
-    {{#if (eq model.postType 'event')}}
-      {{#link-to 'submit.event' class="button-main"}}Previous Page{{/link-to}}
-    {{else}}
-      {{#link-to 'submit.resource' class="button-main"}}Previous Page{{/link-to}}
-    {{/if}}
-  </div>
-  <div class="">
-    <button class="button-main" {{action 'submitForm'}}>Submit</button>
-  </div>
+<div class="mt-10">
+  {{#if (eq model.postType 'event')}}
+    {{#link-to 'submit.event' class="button-main"}}Back{{/link-to}}
+  {{else}}
+    {{#link-to 'submit.resource' class="button-main"}}Back{{/link-to}}
+  {{/if}}
+  <button class="button-main" {{action 'submitForm'}}>Submit</button>
 </div>

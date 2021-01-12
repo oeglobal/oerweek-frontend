@@ -12,10 +12,13 @@ module.exports = {
       white: colors.white,
 
       gray: {
+        100: '#1A1A1A',
         200: '#333333',
         300: '#4d4d4d',
+        400: '#666666',
         500: '#808080',
         600: '#999999',
+        700: '#B3B3B3',
         800: '#D9D9D9',
         900: '#f5f5f5',
       },
@@ -88,12 +91,25 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            color: theme('colors.black'),
             a: {
               color: theme('colors.black'),
             },
             strong: {
               color: theme('colors.black'),
               fontWeight: '700',
+            },
+            h1: {
+              color: theme('colors.black'),
+            },
+            h2: {
+              color: theme('colors.black'),
+            },
+            h3: {
+              color: theme('colors.black'),
+            },
+            h4: {
+              color: theme('colors.black'),
             },
           },
         },

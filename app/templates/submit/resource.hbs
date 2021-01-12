@@ -1,4 +1,8 @@
-<h1 class="text-xl text-bold">Resource Information (Step 2/2)</h1>
+<div class="content mb-10">
+  <h1>Submit Your Entry</h1>
+</div>
+
+<h2 class="text-3xl font-bold mb-10">Resource Information (Step 2/2)</h2>
 <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
   <div class="sm:col-span-6">
   {{validated-input model=model valuePath='title' label='Title *' didValidate=didValidate}}
@@ -30,7 +34,7 @@
   </div>
 
   <div class="sm:col-span-6">
-  <label>Image for the OEW site</label>
+  <label class="block text-sm font-medium text-gray-500 mb-1">Image to display on Open Education Week site</label>
   {{image-upload model=model}}
   </div>
 

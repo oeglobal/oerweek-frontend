@@ -2,17 +2,17 @@
   <img class="max-w-lg" src="{{model.imageUrl}}"/>
   <button
     {{action "removeImage"}}
-    class="button-outline"
+          class="button-outline"
   >Change image
   </button>
 {{else}}
   {{#file-dropzone
-    name="image"
-    class="dropzone-upload-area flex flex-col justify-center items-center text-center bg-green-900 rounded py-10"
-    ondragenter=(action "resetDropzone")
+          name="image"
+          class="dropzone-upload-area flex flex-col justify-center items-center text-center bg-green-900 rounded py-10"
+          ondragenter=(action "resetDropzone")
   as |dropzone queue|
   }}
-    <div class="h-36">
+    <div class="h-36 flex flex-col gap-4">
       {{#if dropzone.active}}
         {{#if dropzone.valid}}
           Drop to upload
@@ -22,7 +22,7 @@
       {{else if (and queue.files.length (not errors))}}
         Uploading your file. ({{queue.progress}}%)
       {{else}}
-        <h4>Upload Image</h4>
+        <h4 class="font-bold mb-4">Upload Image</h4>
         <p>Please upload at least <b>800x600 px</b> image.<br/>If you don't provide one, we'll create a screenshot of
           your web site.</p>
         <p>
@@ -30,13 +30,13 @@
             Drag and drop onto this area to upload or
           {{/if}}
 
-          {{#file-upload name="image"
-                         accept="image/*"
-                         multiple=false
-                         onfileadd=(action "uploadImage")
-          }}
-            <a id="upload-image" class="button-primary" tabindex=0>Select an Image</a>
-          {{/file-upload}}
+          <FileUpload @name="image"
+                      @accept="image/*"
+                      @multiple={{false}}
+                      @onfileadd={{action 'uploadImage'}}
+          >
+            <a id="upload-image" class="ml-4 button-main" tabindex=0>Select an Image</a>
+          </FileUpload>
         </p>
       {{/if}}
       {{#if errors}}
