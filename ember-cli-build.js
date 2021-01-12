@@ -63,7 +63,7 @@ module.exports = function (defaults) {
       theme: false,
     },
     fingerprint: {
-      exclude: ['assets/images/oew*.png'],
+      exclude: ['*.png', '*.ico', 'assets/images/oew*.png'],
     },
   });
   return app.toTree();
