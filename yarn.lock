@@ -6734,10 +6734,24 @@ ember-simple-auth-token@^5.2.0:
     ember-get-config "^0.2.4"
     ember-simple-auth "^1.6.0 || ^2.0.0 || ^3.0.0"
 
-"ember-simple-auth@^1.6.0 || ^2.0.0 || ^3.0.0", ember-simple-auth@^3.0.1:
+"ember-simple-auth@^1.6.0 || ^2.0.0 || ^3.0.0":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/ember-simple-auth/-/ember-simple-auth-3.0.1.tgz#78bcd8e3d04da43154cf105931c0d3620a9f0694"
   integrity sha512-7D5s23nA5Nsonf37CyeQtksadV6Rgiz2rgCgRDnUObp3xnV71ljPtaUcZuq6kqqaZANYJi3uM8i4zVzmAHlKFQ==
+  dependencies:
+    base-64 "^0.1.0"
+    broccoli-file-creator "^2.0.0"
+    broccoli-funnel "^1.2.0 || ^2.0.0"
+    broccoli-merge-trees "^2.0.0 || ^3.0.0"
+    ember-cli-babel "^7.20.5"
+    ember-cli-is-package-missing "^1.0.0"
+    ember-cookies "^0.5.0"
+    silent-error "^1.0.0"
+
+ember-simple-auth@^3.1.0-beta.1:
+  version "3.1.0-beta.1"
+  resolved "https://registry.yarnpkg.com/ember-simple-auth/-/ember-simple-auth-3.1.0-beta.1.tgz#22df3007aa2897d213dc05532bfcfbff7b853622"
+  integrity sha512-Wg9AUfIcY6nbj4nBSdvMu+juW5GdZH+lztRRu14BjUx39btNpOm5Fe76BiU/ST0PLhGyXPCs1npgT6RBp7CdRg==
   dependencies:
     base-64 "^0.1.0"
     broccoli-file-creator "^2.0.0"

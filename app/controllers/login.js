@@ -10,16 +10,18 @@ export default Controller.extend({
       let credentials = this.getProperties('username', 'password'),
         authenticator = 'authenticator:token';
 
-      this.session.authenticate(authenticator, credentials)
+      this.session
+        .authenticate(authenticator, credentials)
         .then(() => {
           this.transitionToRoute('submissions');
-        }).catch(resp => {
-        if (resp['non_field_errors']) {
-          this.set('errorMessage', resp['non_field_errors']);
-        } else {
-          this.set('errorMessage', resp);
-        }
-      });
+        })
+        .catch((resp) => {
+          if (resp['non_field_errors']) {
+            this.set('errorMessage', resp['non_field_errors']);
+          } else {
+            this.set('errorMessage', resp);
+          }
+        });
     },
-  }
+  },
 });
