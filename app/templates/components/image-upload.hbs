@@ -1,8 +1,7 @@
 {{#if model.imageUrl}}
   <img class="max-w-lg" src="{{model.imageUrl}}"/>
   <button
-    {{action "removeImage"}}
-          class="button-outline"
+    class="button-outline" type="button" {{action "removeImage"}}
   >Change image
   </button>
 {{else}}

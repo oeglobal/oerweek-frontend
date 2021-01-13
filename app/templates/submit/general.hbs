@@ -61,11 +61,11 @@
     {{#link-to 'submit.index' class="button-main"}}Back{{/link-to}}
 
     {{#if (eq model.postType 'event')}}
-      <button class="button-main" {{action 'validateForm' 'submit.event'}}>Next</button>
+      <button class="button-main" type="button" {{action 'validateForm' 'submit.event'}}>Next</button>
     {{else if (eq model.postType 'resource')}}
-      <button class="button-main" {{action 'validateForm' 'submit.resource'}}>Next</button>
+      <button class="button-main" type="button" {{action 'validateForm' 'submit.resource'}}>Next</button>
     {{else}}
-      <button class="button-main" {{action 'validateForm'}}>Next</button>
+      <button class="button-main" type="button" {{action 'validateForm'}}>Next</button>
     {{/if}}
   </div>
 </div>

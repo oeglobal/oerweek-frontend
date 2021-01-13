@@ -25,7 +25,7 @@
                     as |dd|>
               <dd.Trigger>
                 <li class="menu-item has-children">
-                  <button>About</button>
+                  <button type="button">About</button>
                   <dd.Content>
                     <ul class="sub-menu">
                       <li class="menu-item-child">
@@ -45,7 +45,7 @@
                     as |dd|>
               <dd.Trigger>
                 <li class="menu-item has-children">
-                  <button>How to participate</button>
+                  <button type="button">How to participate</button>
                   <dd.Content>
                     <ul class="sub-menu">
                       <li class="menu-item-child">
@@ -69,8 +69,7 @@
           </ul>
         </nav>
         <button
-                class="toggle-menu flex items-center justify-center lg:hidden text-purple-500"
-          {{on "click" this.toggleMobileOpen}}
+                class="toggle-menu flex items-center justify-center lg:hidden text-purple-500" type="button" {{on "click" this.toggleMobileOpen}}
         >
           {{svg-jar "menu" class="menu"}}
         </button>

@@ -1,7 +1,7 @@
 <ul class="pagination pt-10" role="navigation" aria-label="Pagination">
   {{#if hasPreviousPage}}
     <li class="pagination-previous">
-      <button {{action previousPage}} aria-label="Previous page">← Prev</button>
+      <button aria-label="Previous page" type="button" {{action previousPage}}>← Prev</button>
     </li>
   {{/if}}
 
@@ -27,7 +27,7 @@
 
   {{#if hasNextPage}}
     <li class="pagination-next">
-      <button {{action nextPage}} aria-label="Next page">Next →</button>
+      <button aria-label="Next page" type="button" {{action nextPage}}>Next →</button>
     </li>
   {{/if}}
 </ul>

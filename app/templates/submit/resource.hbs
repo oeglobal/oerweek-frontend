@@ -42,9 +42,9 @@
       {{#link-to 'submit.general' class="button-main"}}Back{{/link-to}}
 
       {{#if isUploading}}
-        <button class="button-main disabled" disabled>Waiting for upload to complete ...</button>
+        <button class="button-main disabled" disabled type="button">Waiting for upload to complete ...</button>
       {{else}}
-        <button class="button-main" {{action 'validateForm' 'submit.preview'}}>Preview</button>
+        <button class="button-main" type="button" {{action 'validateForm' 'submit.preview'}}>Preview</button>
       {{/if}}
   </div>
 </div>

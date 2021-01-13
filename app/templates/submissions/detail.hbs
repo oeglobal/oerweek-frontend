@@ -54,21 +54,21 @@
 
             <dt class="box--meta--actions--buttons">
               {{#if (not-eq model.postStatus 'publish')}}
-                <button class="button" {{action 'changeSubmissionStatus' model 'publish'}}>Publish</button>
+                <button class="button" type="button" {{action 'changeSubmissionStatus' model 'publish'}}>Publish</button>
               {{else}}
-                <button class="button disabled">Publish</button>
+                <button class="button disabled" type="button">Publish</button>
               {{/if}}
 
               {{#if (not-eq model.postStatus 'draft')}}
-                <button class="button cyan" {{action 'changeSubmissionStatus' model 'draft'}}>Draft</button>
+                <button class="button cyan" type="button" {{action 'changeSubmissionStatus' model 'draft'}}>Draft</button>
               {{else}}
-                <button class="button cyan disabled">Draft</button>
+                <button class="button cyan disabled" type="button">Draft</button>
               {{/if}}
 
               {{#if (not-eq model.postStatus 'trash')}}
-                <button class="button secondary" {{action 'changeSubmissionStatus' model 'trash'}}>Trash</button>
+                <button class="button secondary" type="button" {{action 'changeSubmissionStatus' model 'trash'}}>Trash</button>
               {{else}}
-                <button class="button secondary disabled">Trash</button>
+                <button class="button secondary disabled" type="button">Trash</button>
               {{/if}}
             </dt>
             <dd>Email Templates</dd>
