@@ -50,11 +50,11 @@ jobs:
       - name: lint:dependency
         run: yarn lint:dependency
 
-      - name: lint:hbs
-        run: yarn lint:hbs
+#      - name: lint:hbs
+#        run: yarn lint:hbs
 
-      - name: lint:js
-        run: yarn lint:js
+#      - name: lint:js
+#        run: yarn lint:js
 
   test:
     name: Run tests
@@ -62,7 +62,7 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
-        node-version: [ 12.x ]
+        node-version: [ 14.x ]
     steps:
       - name: Check out a copy of the repo
         uses: actions/checkout@v2
@@ -100,5 +100,5 @@ jobs:
           steps.cache-yarn-cache.outputs.cache-hit != 'true' ||
           steps.cache-node-modules.outputs.cache-hit != 'true'
 
-      - name: Test Ember app
-        run: yarn test
+#      - name: Test Ember app
+#        run: yarn test
