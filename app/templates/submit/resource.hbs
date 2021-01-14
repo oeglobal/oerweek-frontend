@@ -5,46 +5,41 @@
 <h2 class="text-3xl font-bold mb-10">Resource Information (Step 2/2)</h2>
 <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
   <div class="sm:col-span-6">
-  {{validated-input model=model valuePath='title' label='Title *' didValidate=didValidate}}
+  <ValidatedInput @model={{model}} @valuePath="title" @label="Title *" @didValidate={{didValidate}} />
   </div>
 
   <div class="sm:col-span-6">
-  {{validated-input model=model valuePath='description' label='Short description *' type='textarea'
-                    didValidate=didValidate}}
+  <ValidatedInput @model={{model}} @valuePath="description" @label="Short description *" @type="textarea" @didValidate={{didValidate}} />
   </div>
 
   <div class="sm:col-span-6">
-  {{validated-input model=model valuePath='link' label='Link to Resource *' type='url' didValidate=didValidate}}
+  <ValidatedInput @model={{model}} @valuePath="link" @label="Link to Resource *" @type="url" @didValidate={{didValidate}} />
   </div>
 
   <div class="sm:col-span-3">
-  {{validated-input model=model options=licenses valuePath='license' label='License *' type='power-select'
-                    didValidate=didValidate}}
+  <ValidatedInput @model={{model}} @options={{licenses}} @valuePath="license" @label="License *" @type="power-select" @didValidate={{didValidate}} />
   </div>
 
   <div class="sm:col-span-3">
-  {{validated-input model=model options=languages valuePath='language' label='Primary Language *'
-                    placeholder='Select language ...' type='power-select' didValidate=didValidate}}
+  <ValidatedInput @model={{model}} @options={{languages}} @valuePath="language" @label="Primary Language *" @placeholder="Select language ..." @type="power-select" @didValidate={{didValidate}} />
   </div>
 
   <div class="sm:col-span-6">
-  {{validated-input model=model options=openTags valuePath='opentags'
-                    label='Open tag(s) related to your submission. Please select all that apply. *'
-                    type='power-select-multiple' didValidate=didValidate}}
+  <ValidatedInput @model={{model}} @options={{openTags}} @valuePath="opentags" @label="Open tag(s) related to your submission. Please select all that apply. *" @type="power-select-multiple" @didValidate={{didValidate}} />
   </div>
 
   <div class="sm:col-span-6">
   <label class="block text-sm font-medium text-gray-500 mb-1">Image to display on Open Education Week site</label>
-  {{image-upload model=model}}
+  <ImageUpload @model={{model}} />
   </div>
 
   <div class="sm:col-span-3">
-      {{#link-to 'submit.general' class="button-main"}}Back{{/link-to}}
+      <LinkTo @route="submit.general" class="button-main">Back</LinkTo>
 
       {{#if isUploading}}
         <button class="button-main disabled" disabled type="button">Waiting for upload to complete ...</button>
       {{else}}
-        <button class="button-main" type="button" {{action 'validateForm' 'submit.preview'}}>Preview</button>
+        <button class="button-main" type="button" {{on 'click' (fn this.validateForm 'submit.preview')}}>Preview</button>
       {{/if}}
   </div>
 </div>

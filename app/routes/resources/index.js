@@ -1,7 +1,9 @@
+import classic from 'ember-classic-decorator';
 import Route from '@ember/routing/route';
 
-export default Route.extend({
-  titleToken: function() {
-    return "Projects and Resources";
-  },
-});
+@classic
+export default class IndexRoute extends Route {
+  titleToken() {
+    return 'Projects and Resources';
+  }
+}

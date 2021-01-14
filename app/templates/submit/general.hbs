@@ -6,59 +6,39 @@
 
 <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
   <div class="sm:col-span-3">
-    {{validated-input model=model valuePath='firstname' label='First Name *' didValidate=didValidate}}
+    <ValidatedInput @model={{model}} @valuePath="firstname" @label="First Name *" @didValidate={{didValidate}} />
   </div>
   <div class="sm:col-span-3">
-    {{validated-input model=model valuePath='lastname' label='Last Name *' didValidate=didValidate}}
-  </div>
-
-  <div class="sm:col-span-3">
-    {{validated-input model=model valuePath='email' label='Email *' didValidate=didValidate readonly=isEditing}}
-  </div>
-  <div class="sm:col-span-3">
-    {{validated-input model=model valuePath='twitter' label='Twitter' didValidate=didValidate readonly=isEditing placeholder='@username'}}
+    <ValidatedInput @model={{model}} @valuePath="lastname" @label="Last Name *" @didValidate={{didValidate}} />
   </div>
 
   <div class="sm:col-span-3">
-    {{validated-input model=model valuePath='institution' label='Institution or Organization' didValidate=didValidate}}
+    <ValidatedInput @model={{model}} @valuePath="email" @label="Email *" @didValidate={{didValidate}} @readonly={{isEditing}} />
   </div>
   <div class="sm:col-span-3">
-    {{validated-input model=model valuePath='institutionurl' label='Website of Institution or Organization' type='url'
-                      didValidate=didValidate}}
-  </div>
-  <div class="sm:col-span-3">
-    {{validated-input
-            model=model
-            options=countries
-            valuePath='country'
-            placeholder="Select your country ..."
-            label='Country *'
-            type='power-select'
-            didValidate=didValidate
-    }}
+    <ValidatedInput @model={{model}} @valuePath="twitter" @label="Twitter" @didValidate={{didValidate}} @readonly={{isEditing}} @placeholder="@username" />
   </div>
 
   <div class="sm:col-span-3">
-    {{validated-input model=model valuePath='city' label='City, State *' didValidate=didValidate}}
+    <ValidatedInput @model={{model}} @valuePath="institution" @label="Institution or Organization" @didValidate={{didValidate}} />
+  </div>
+  <div class="sm:col-span-3">
+    <ValidatedInput @model={{model}} @valuePath="institutionurl" @label="Website of Institution or Organization" @type="url" @didValidate={{didValidate}} />
+  </div>
+  <div class="sm:col-span-3">
+    <ValidatedInput @model={{model}} @options={{countries}} @valuePath="country" @placeholder="Select your country ..." @label="Country *" @type="power-select" @didValidate={{didValidate}} />
+  </div>
+
+  <div class="sm:col-span-3">
+    <ValidatedInput @model={{model}} @valuePath="city" @label="City, State *" @didValidate={{didValidate}} />
   </div>
 
   <div class="sm:col-span-6">
-    {{validated-input
-            label='Type of Contribution *'
-            model=model
-            valuePath='postType'
-            values=(array
-                    (hash value='event' label='Event')
-                    (hash value='resource' label='Resource')
-            )
-            type='radio'
-            didValidate=didValidate
-            readonly=isEditing
-    }}
+    <ValidatedInput @label="Type of Contribution *" @model={{model}} @valuePath="postType" @values={{array (hash value="event" label="Event") (hash value="resource" label="Resource")}} @type="radio" @didValidate={{didValidate}} @readonly={{isEditing}} />
   </div>
 
   <div class="sm:col-span-6">
-    {{#link-to 'submit.index' class="button-main"}}Back{{/link-to}}
+    <LinkTo @route="submit.index" class="button-main">Back</LinkTo>
 
     {{#if (eq model.postType 'event')}}
       <button class="button-main" type="button" {{action 'validateForm' 'submit.event'}}>Next</button>

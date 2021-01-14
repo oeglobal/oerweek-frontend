@@ -1,6 +1,8 @@
+import classic from 'ember-classic-decorator';
 import Route from '@ember/routing/route';
 
-export default Route.extend({
+@classic
+export default class ResourceRoute extends Route {
   model() {
     let isEditing = this.controllerFor('submit').get('isEditing'),
       resolvedModel;
@@ -16,10 +18,10 @@ export default Route.extend({
     } else {
       return resolvedModel;
     }
-  },
+  }
 
   setupController(controller/*, model*/) {
-    this._super(...arguments);
+    super.setupController(...arguments);
     controller.set('isEditing', this.controllerFor('submit').get('isEditing'))
   }
-});
+}

@@ -1,37 +1,59 @@
-<div class="grid-container box">
-  <div class="grid-x grid-margin-x">
-    <div class="small-12 columns text-center">
-      <h1>Submissions</h1>
-    </div>
+<h1 class="font-bold text-3xl">Submissions</h1>
 
-    {{#if isStaff}}
-    <div class="small-12 columns">
-      <ul class="breadcrumbs">
-        <li>{{#link-to "submissions.index" (query-params postStatus=null)}}All{{/link-to}}</li>
-        <li>{{#link-to "submissions.index" (query-params postStatus="draft")}}Draft{{/link-to}}</li>
-        <li>{{#link-to "submissions.index" (query-params postStatus="publish")}}Published{{/link-to}}</li>
-        <li>{{#link-to "submissions.index" (query-params postStatus="trash")}}Trash{{/link-to}}</li>
-      </ul>
-    </div>
-    {{/if}}
+{{#if isStaff}}
+  <div class="small-12 columns">
+    <ul class="breadcrumbs">
+      <li>{{#link-to "submissions.index" (query-params postStatus=null)}}All{{/link-to}}</li>
+      <li>{{#link-to "submissions.index" (query-params postStatus="draft")}}Draft{{/link-to}}</li>
+      <li>{{#link-to "submissions.index" (query-params postStatus="publish")}}Published{{/link-to}}</li>
+      <li>{{#link-to "submissions.index" (query-params postStatus="trash")}}Trash{{/link-to}}</li>
+    </ul>
+  </div>
+{{/if}}
 
-    <table class="table table--submissions">
-      <thead>
-      <tr class="text-left">
-        <th>ID</th>
-        <th>Title</th>
-        <th>Submission Status</th>
-      </tr>
-      </thead>
-      <tbody>
-      {{#each filteredSubmissions as |submission|}}
-        <tr>
-          <td>{{submission.id}}</td>
-          <td>{{#link-to 'submissions.detail' submission.id}}{{submission.title}}{{/link-to}}</td>
-          <td>{{submission.postStatusFriendly}}</td>
-        </tr>
-      {{/each}}
-      </tbody>
-    </table>
+<div class="hidden sm:block mt-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col mt-2">
+      <div class="align-middle min-w-full overflow-x-auto shadow overflow-hidden sm:rounded-lg">
+        <table class="min-w-full divide-y divide-gray-200">
+
+          <thead>
+          <tr>
+            <th class="px-6 py-3 bg-white text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              ID
+            </th>
+            <th class="px-6 py-3 bg-white text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Title
+            </th>
+            <th class="hidden px-6 py-3 bg-white text-left text-xs font-medium text-gray-500 uppercase tracking-wider md:block text-right">
+              Status
+            </th>
+          </tr>
+          </thead>
+
+          <tbody>
+          {{#each filteredSubmissions as |submission|}}
+
+            <tr class="bg-white">
+              <td class="px-6 py-4 text-right whitespace-nowrap text-sm">
+                <span class="text-black font-medium">{{submission.id}}</span>
+              </td>
+              <td class="max-w-0 w-full px-6 py-4 whitespace-nowrap text-sm">
+                <div class="flex">
+                  <LinkTo @route='submissions.detail' @model={{submission}} class="group inline-flex space-x-2 truncate text-sm">
+                    {{submission.title}}
+                  </LinkTo>
+                </div>
+              </td>
+              <td class="px-6 py-4 text-right whitespace-nowrap text-sm text-gray-500">
+                {{submission.postStatusFriendly}}
+              </td>
+            </tr>
+          {{/each}}
+          </tbody>
+
+        </table>
+      </div>
+    </div>
   </div>
 </div>

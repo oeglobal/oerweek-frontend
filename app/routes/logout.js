@@ -1,13 +1,16 @@
+import classic from 'ember-classic-decorator';
+import { action } from '@ember/object';
+import { inject as service } from '@ember/service';
 import Route from '@ember/routing/route';
-import {inject as service} from '@ember/service';
 
-export default Route.extend({
-  session: service('session'),
+@classic
+export default class LogoutRoute extends Route {
+  @service('session')
+  session;
 
-  actions: {
-    didTransition() {
-      this.get('session').invalidate();
-      this.transitionTo('index');
-    }
+  @action
+  didTransition() {
+    this.get('session').invalidate();
+    this.transitionTo('index');
   }
-});
+}

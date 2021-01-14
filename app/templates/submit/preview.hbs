@@ -90,9 +90,9 @@
 
 <div class="mt-10">
   {{#if (eq model.postType 'event')}}
-    {{#link-to 'submit.event' class="button-main"}}Back{{/link-to}}
+    <LinkTo @route="submit.event" class="button-main">Back</LinkTo>
   {{else}}
-    {{#link-to 'submit.resource' class="button-main"}}Back{{/link-to}}
+    <LinkTo @route="submit.resource" class="button-main">Back</LinkTo>
   {{/if}}
   <button class="button-main" type="button" {{action 'submitForm'}}>Submit</button>
 </div>

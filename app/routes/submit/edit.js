@@ -1,15 +1,16 @@
+import classic from 'ember-classic-decorator';
 import Route from '@ember/routing/route';
 
-export default Route.extend({
-  titleToken: 'Edit Submission',
+@classic
+export default class EditRoute extends Route {
+  titleToken = 'Edit Submission';
 
   model(params) {
     return this.store.find('submission', params.submission_id);
-  },
-
-  setupController(controller, model) {
-    this._super(controller, model);
-    this.controllerFor('submit').set('isEditing', true);
   }
 
-});
+  setupController(controller, model) {
+    super.setupController(controller, model);
+    this.controllerFor('submit').set('isEditing', true);
+  }
+}

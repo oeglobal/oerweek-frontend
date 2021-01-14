@@ -1,6 +1,8 @@
+import classic from 'ember-classic-decorator';
 import Route from '@ember/routing/route';
 
-export default Route.extend({
+@classic
+export default class ConfirmationRoute extends Route {
   model() {
     let isEditing = this.controllerFor('submit').get('isEditing');
     if (isEditing) {
@@ -8,10 +10,10 @@ export default Route.extend({
     } else {
       return this.modelFor('submit.index');
     }
-  },
+  }
 
   setupController(controller/*, model*/) {
-    this._super(...arguments);
+    super.setupController(...arguments);
     controller.set('isEditing', this.controllerFor('submit').get('isEditing'))
   }
-});
+}
