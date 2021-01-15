@@ -2,72 +2,49 @@ import DS from 'ember-data';
 import { validator, buildValidations } from 'ember-cp-validations';
 import { computed } from '@ember/object';
 
-var Validations = buildValidations({
-  firstname: [
-    validator('presence', true),
-  ],
-  lastname: [
-    validator('presence', true),
-  ],
-  email: [
-    validator('presence', true),
-    validator('format', { type: 'email' })
-  ],
-  country: [
-    validator('presence', true),
-  ],
-  city: [
-    validator('presence', true),
-  ],
-  language: [
-    validator('presence', true),
-  ],
-  postType: [
-    validator('presence', true),
-  ],
-  link: [
-    validator('presence', true),
-    validator('format', {
-      type: 'url'
-    })
-  ],
-  title: [
-    validator('presence', true),
-  ],
-  description: [
-    validator('presence', true),
-  ],
-  eventTime: [
-    validator('presence', true),
-  ],
-  archive: [
-    validator('presence', true),
-  ],
-  license: [
-    validator('presence', true),
-  ],
-  opentags: [
-    validator('presence', true),
-  ],
-  eventType: [
-    validator('presence', true),
-  ],
-  institutionurl: [
-    validator('format', {
-      allowBlank: true,
-      type: 'url'
-    })
-  ],
-  twitter: [
-    validator('format', {
-      allowBlank: true,
-      regex: /^@[A-Za-z0-9_]{1,15}$/,
-      message: 'Twitter username has to start with @'
-    })
-  ]
-}, {
-  debounce: 500
-});
+var Validations = buildValidations(
+  {
+    firstname: [validator('presence', true)],
+    lastname: [validator('presence', true)],
+    email: [
+      validator('presence', true),
+      validator('format', { type: 'email' }),
+    ],
+    country: [validator('presence', true)],
+    city: [validator('presence', true)],
+    language: [validator('presence', true)],
+    postType: [validator('presence', true)],
+    link: [
+      validator('presence', true),
+      validator('format', {
+        type: 'url',
+      }),
+    ],
+    title: [validator('presence', true)],
+    description: [validator('presence', true)],
+    eventTime: [validator('presence', true)],
+    archive: [validator('presence', true)],
+    license: [validator('presence', true)],
+    opentags: [validator('presence', true)],
+    eventType: [validator('presence', true)],
+    institutionurl: [
+      validator('format', {
+        allowBlank: true,
+        type: 'url',
+      }),
+    ],
+    twitter: [
+      validator('format', {
+        allowBlank: true,
+        regex: /^@[A-Za-z0-9_]{1,15}$/,
+        message: 'Twitter username has to start with @',
+      }),
+    ],
+  },
+  {
+    debounce: 500,
+  }
+);
 
 export default DS.Model.extend(Validations, {
   firstname: DS.attr('string'),
@@ -101,11 +78,11 @@ export default DS.Model.extend(Validations, {
   slug: DS.attr('string'),
   twitter: DS.attr('string'),
 
-  permalink: computed('slug', function() {
+  permalink: computed('slug', function () {
     if (this.postType === 'event') {
       return `https://www.openeducationweek.org/events/${this.slug}`;
     } else {
       return `https://www.openeducationweek.org/resources/${this.slug}`;
     }
-  })
+  }),
 });

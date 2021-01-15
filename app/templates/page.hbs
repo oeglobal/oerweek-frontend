@@ -1,10 +1,9 @@
 <div class="bg-gray-900 py-20">
   <div class="container">
-<!--    <div class="hidden lg:block py-5 pt-20">Home | Pages </div>-->
     <div class="lg:w-7/12 lg:ml-32 content">
-      <h1>{{{model.title}}}</h1>
+      <h1>{{this.model.title}}</h1>
       <div class="prose">
-        {{{model.content}}}
+        {{this.model.contentSafe}}
       </div>
     </div>
   </div>

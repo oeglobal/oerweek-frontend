@@ -1,8 +1,12 @@
-import Model from 'ember-data/model';
-import attr from 'ember-data/attr';
+import Model, { attr } from '@ember-data/model';
+import { htmlSafe } from '@ember/template';
 
-export default Model.extend({
-  title: attr('string'),
-  slug: attr('string'),
-  content: attr('string'),
-});
+export default class PageModel extends Model {
+  @attr('string') title;
+  @attr('string') slug;
+  @attr('string') content;
+
+  get contentSafe() {
+    return htmlSafe(this.content);
+  }
+}
