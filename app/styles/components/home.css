@@ -8,11 +8,12 @@
 
 .home--bg {
   background-image: url("images/hero-2021-sm.png");
-  background-position: center top;
+  background-position: center 80px;
   background-size: contain;
   background-repeat: no-repeat;
 
   @screen lg {
     background-image: url("images/hero-2021.png");
+    background-position: center 60px;
   }
 }
