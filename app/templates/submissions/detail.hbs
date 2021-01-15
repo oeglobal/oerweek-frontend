@@ -31,37 +31,37 @@
       {{/if}}
 
       {{#if user.isStaff}}
-        <div class="mt-10">
+        <div class="mt-10 content__preview">
           <dd>Current status</dd>
-          <dt>
-            <h5>{{model.postStatus}}</h5>
+          <dt class="mb-4">
+            <h5 class="text-bold text-2xl">{{model.postStatus}}</h5>
           </dt>
 
-          <dt class="box--meta--actions--buttons">
+          <dt class="flex flex-row gap-4">
             {{#if (not-eq model.postStatus 'publish')}}
-              <button class="button" type="button" {{action 'changeSubmissionStatus' model 'publish'}}>Publish
+              <button class="button-outline" type="button" {{action 'changeSubmissionStatus' model 'publish'}}>Publish
               </button>
             {{else}}
-              <button class="button disabled" type="button">Publish</button>
+              <button class="button-outline disabled" disabled type="button">Publish</button>
             {{/if}}
 
             {{#if (not-eq model.postStatus 'draft')}}
-              <button class="button cyan" type="button" {{action 'changeSubmissionStatus' model 'draft'}}>Draft
+              <button class="button-outline" type="button" {{action 'changeSubmissionStatus' model 'draft'}}>Draft
               </button>
             {{else}}
-              <button class="button cyan disabled" type="button">Draft</button>
+              <button class="button-outline" type="button">Draft</button>
             {{/if}}
 
             {{#if (not-eq model.postStatus 'trash')}}
-              <button class="button secondary" type="button" {{action 'changeSubmissionStatus' model 'trash'}}>Trash
+              <button class="button-outline" type="button" {{action 'changeSubmissionStatus' model 'trash'}}>Trash
               </button>
             {{else}}
-              <button class="button secondary disabled" type="button">Trash</button>
+              <button class="button-outline disabled" disabled type="button">Trash</button>
             {{/if}}
           </dt>
-          <dd>Email Templates</dd>
+          <dd class="text-bold mt-10">Email Templates</dd>
           <dt>
-            <div class="flex flex-row gap-2 justify-end">
+            <div class="flex flex-row gap-2">
               {{#each templates as |template|}}
                 <a href="mailto:{{model.email}}?subject={{simple-template
                       templateString=template.subject
@@ -105,7 +105,7 @@
       </dl>
 
 
-      <div class="small-12 cell">
+      <div class="content__preview">
         {{#if (eq model.postType 'event')}}
           <h4>Event Information</h4>
 

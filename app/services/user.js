@@ -1,6 +1,7 @@
 import Service from '@ember/service';
-import {inject as service} from '@ember/service';
-import {computed} from '@ember/object';
+import { inject as service } from '@ember/service';
+import { computed } from '@ember/object';
+import atob from 'atob';
 
 export default Service.extend({
   session: service('session'),
@@ -10,5 +11,4 @@ export default Service.extend({
 
     return tokenData['staff'];
   }),
-
 });

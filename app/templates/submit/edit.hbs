@@ -1,9 +1,18 @@
-<h1>Editing submission <em>{{model.title}}</em></h1>
+<div class="content mb-10">
+  <h1>Editing submission <em>{{model.title}}</em></h1>
+</div>
 
-<p>Please continue to next page to edit your submission. Once done editing, the changes will be reflected in a few
-  minutes.</p>
+<div class="content__preview mt-6">
+  <div class="prose">
+    <p>Please continue to next page to edit your submission. Once done editing, the changes will be
+      reflected in a few
+      minutes.</p>
 
-<p>If you want to change contact email or type of submission, please submit a new entry and email us to remove the
-  previous submission.</p>
-
-<LinkTo @route="submit.general" class="button">Next Page</LinkTo>
+    <p>If you want to change contact email or type of submission, please submit a new entry and email us to
+      remove the
+      previous submission.</p>
+  </div>
+  <div class="mt-4">
+    <LinkTo @route="submit.general" class="button-main">Next</LinkTo>
+  </div>
+</div>
