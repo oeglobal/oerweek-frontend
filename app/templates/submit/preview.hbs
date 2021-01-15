@@ -26,10 +26,10 @@
   </dl>
 
   {{#if (eq model.postType 'event')}}
-    <h4>Event Information</h4>
+    <h4>Activity Information</h4>
 
     <dl>
-      <dt>Type of Event</dt>
+      <dt>Type of Activity</dt>
       <dd>{{uc-words model.eventType}}</dd>
 
       <dt>Title</dt>
@@ -57,7 +57,7 @@
       <dd>{{join ', ' model.opentags}}</dd>
     </dl>
   {{else if (eq model.postType 'resource')}}
-    <h4>Resource Information</h4>
+    <h4>Open Asset Information</h4>
     <dl>
       <dt>Title</dt>
       <dd>{{model.title}}</dd>
@@ -79,13 +79,11 @@
     </dl>
   {{/if}}
 
-  <div class="grid-x grid-margin-x">
-    <div class="cell small-12 medium-4">
-      {{#if model.imageUrl}}
-        <img src="{{model.imageUrl}}"/>
-      {{/if}}
+  {{#if model.imageUrl}}
+    <div class="h-40 w-auto">
+      <img src="{{model.imageUrl}}" alt=""/>
     </div>
-  </div>
+  {{/if}}
 </div>
 
 <div class="mt-10">

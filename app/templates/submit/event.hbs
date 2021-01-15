@@ -2,33 +2,33 @@
   <h1>Submit Your Entry</h1>
 </div>
 
-<h2 class="text-3xl font-bold mb-10">Event Information (Step 2/2)</h2>
+<h2 class="text-3xl font-bold mb-10">Activity Information (Step 2/2)</h2>
 
 <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
   <div class="sm:col-span-6">
-    <ValidatedInput @label="Type of Event *" @model={{model}} @valuePath="eventType" @values={{array (hash value="local" label="Local") (hash value="online" label="Online") (hash value="anytime" label="Anytime (asynchronous)")}} @type="radio" @didValidate={{didValidate}} />
+    <ValidatedInput @label="Type of Activity *" @model={{model}} @valuePath="eventType" @values={{array (hash value="local" label="Local") (hash value="online" label="Online") (hash value="anytime" label="Anytime (asynchronous)")}} @type="radio" @didValidate={{didValidate}} />
   </div>
   <div class="sm:col-span-6">
-    <ValidatedInput @model={{model}} @valuePath="title" @label="Title of Event *" @didValidate={{didValidate}} />
+    <ValidatedInput @model={{model}} @valuePath="title" @label="Title of Activity *" @didValidate={{didValidate}} />
   </div>
   <div class="sm:col-span-6">
     <ValidatedInput @model={{model}} @valuePath="eventFacilitator" @label="Facilitator" @didValidate={{didValidate}} />
   </div>
   <div class="sm:col-span-6">
-    <ValidatedInput @model={{model}} @valuePath="description" @label="Short description of the event *" @type="textarea" @didValidate={{didValidate}} />
+    <ValidatedInput @model={{model}} @valuePath="description" @label="Short description of the activity *" @type="textarea" @didValidate={{didValidate}} />
   </div>
 
   <div class="sm:col-span-6">
-    <label class="block text-sm font-medium text-gray-500 mb-1">Event starts at *</label>
+    <label class="block text-sm font-medium text-gray-500 mb-1">Activity starts at *</label>
     <EmberFlatpickr @date={{readonly model.eventTime}} @enableTime={{true}} @dateFormat="Y-m-d h:i K" @onChange={{action "updateDatetime"}} />
 
     {{#if model.eventTime}}
-      <p class="text-sm mt-2">Event will be submitted using your current local time</p>
+      <p class="text-sm mt-2">Submission will be posted using your current local time. For anytime (asynchronous) activities leave default date and time.</p>
     {{/if}}
   </div>
 
   <div class="sm:col-span-6">
-    <ValidatedInput @model={{model}} @valuePath="link" @label="Link to the event *" @type="url" @didValidate={{didValidate}} />
+    <ValidatedInput @model={{model}} @valuePath="link" @label="Link to the activity *" @type="url" @didValidate={{didValidate}} />
   </div>
 
   <div class="sm:col-span-6">

@@ -13,20 +13,25 @@
   </div>
 
   <div class="sm:col-span-3">
-    <ValidatedInput @model={{model}} @valuePath="email" @label="Email *" @didValidate={{didValidate}} @readonly={{isEditing}} />
+    <ValidatedInput @model={{model}} @valuePath="email" @label="Email *" @didValidate={{didValidate}}
+                    @readonly={{isEditing}} />
   </div>
   <div class="sm:col-span-3">
-    <ValidatedInput @model={{model}} @valuePath="twitter" @label="Twitter" @didValidate={{didValidate}} @readonly={{isEditing}} @placeholder="@username" />
+    <ValidatedInput @model={{model}} @valuePath="twitter" @label="Twitter" @didValidate={{didValidate}}
+                    @readonly={{isEditing}} @placeholder="@username"/>
   </div>
 
   <div class="sm:col-span-3">
-    <ValidatedInput @model={{model}} @valuePath="institution" @label="Institution or Organization" @didValidate={{didValidate}} />
+    <ValidatedInput @model={{model}} @valuePath="institution" @label="Institution or Organization"
+                    @didValidate={{didValidate}} />
   </div>
   <div class="sm:col-span-3">
-    <ValidatedInput @model={{model}} @valuePath="institutionurl" @label="Website of Institution or Organization" @type="url" @didValidate={{didValidate}} />
+    <ValidatedInput @model={{model}} @valuePath="institutionurl" @label="Website of Institution or Organization"
+                    @type="url" @didValidate={{didValidate}} />
   </div>
   <div class="sm:col-span-3">
-    <ValidatedInput @model={{model}} @options={{countries}} @valuePath="country" @placeholder="Select your country ..." @label="Country *" @type="power-select" @didValidate={{didValidate}} />
+    <ValidatedInput @model={{model}} @options={{countries}} @valuePath="country" @placeholder="Select your country ..."
+                    @label="Country *" @type="power-select" @didValidate={{didValidate}} />
   </div>
 
   <div class="sm:col-span-3">
@@ -34,7 +39,9 @@
   </div>
 
   <div class="sm:col-span-6">
-    <ValidatedInput @label="Type of Contribution *" @model={{model}} @valuePath="postType" @values={{array (hash value="event" label="Event") (hash value="resource" label="Resource")}} @type="radio" @didValidate={{didValidate}} @readonly={{isEditing}} />
+    <ValidatedInput @label="Type of Contribution *" @model={{model}} @valuePath="postType" @values={{array
+            (hash value="event" label="Activity") (hash value="resource" label="Open Asset")}} @type="radio"
+                    @didValidate={{didValidate}} @readonly={{isEditing}} />
   </div>
 
   <div class="sm:col-span-6">
