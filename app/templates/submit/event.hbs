@@ -6,7 +6,7 @@
 
 <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
   <div class="sm:col-span-6">
-    <ValidatedInput @label="Type of Event *" @model={{model}} @valuePath="eventType" @values={{array (hash value="local" label="Local") (hash value="online" label="Online")}} @type="radio" @didValidate={{didValidate}} />
+    <ValidatedInput @label="Type of Event *" @model={{model}} @valuePath="eventType" @values={{array (hash value="local" label="Local") (hash value="online" label="Online") (hash value="anytime" label="Anytime (asynchronous)")}} @type="radio" @didValidate={{didValidate}} />
   </div>
   <div class="sm:col-span-6">
     <ValidatedInput @model={{model}} @valuePath="title" @label="Title of Event *" @didValidate={{didValidate}} />
