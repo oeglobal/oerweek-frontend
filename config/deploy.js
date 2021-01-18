@@ -2,12 +2,9 @@
 'use strict';
 
 module.exports = function (deployTarget) {
-  var ENV = {
+  let ENV = {
     build: {
       environment: deployTarget,
-    },
-    'revision-data': {
-      type: 'git-commit',
     },
   };
 
@@ -23,17 +20,15 @@ module.exports = function (deployTarget) {
 
   if (deployTarget === 'production') {
     ENV.build.environment = 'production';
-    console.log(process.env);
-    ENV['scp'] = {
-      nodes: [
-        {
-          username: process.env.DEPLOY_USERNAME,
-          host: process.env.DEPLOY_HOST,
-          path: process.env.DEPLOY_PATH,
-          port: process.env.DEPLOY_PORT,
-          displayCommands: true,
-        },
-      ],
+    ENV['simply-ssh'] = {
+      connection: {
+        username: process.env.DEPLOY_USERNAME,
+        host: process.env.DEPLOY_HOST,
+        port: process.env.DEPLOY_PORT,
+        privateKey: process.env.DEPLOY_SSH_KEY,
+      },
+      dir: process.env.DEPLOY_PATH,
+      keep: 5,
     };
   }
 
