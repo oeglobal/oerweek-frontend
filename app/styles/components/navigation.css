@@ -100,7 +100,7 @@
   }
 
   .banner .nav a {
-    @apply inline-block pl-2 pr-4 py-2 border-none text-gray-200 no-underline font-sans;
+    @apply inline-block pl-2 pr-4 py-2 border-none text-gray-800 no-underline font-sans;
   }
 
   .banner .nav .menu-item {

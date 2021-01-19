@@ -8,11 +8,11 @@
   {{/if}}
 
   {{#if (eq type 'textarea') }}
-    {{textarea type=type value=value placeholder=placeholder class="shadow-sm focus:border-purple-500 focus:border-purple-500 block w-full sm:text-sm lg:text-base border-gray-300 rounded-md" name=valuePath
+    {{textarea type=type value=value placeholder=placeholder class="shadow-sm focus:border-purple-500 focus:border-purple-500 block w-full sm:text-sm lg:text-base border-gray-700 rounded-md" name=valuePath
                id=(concat elementId '-name')}}
   {{else if (eq type 'checkbox') }}
     <label>
-      {{input type=type checked=value class="shadow-sm focus:border-purple-500 focus:border-purple-500 block w-full sm:text-sm lg:text-base border-gray-300 rounded-md" name=valuePath id=(concat elementId '-name')}}
+      {{input type=type checked=value class="shadow-sm focus:border-purple-500 focus:border-purple-500 block w-full sm:text-sm lg:text-base border-gray-700 rounded-md" name=valuePath id=(concat elementId '-name')}}
       {{label}}
     </label>
   {{else if (eq type 'power-select') }}
@@ -52,7 +52,7 @@
       type=type
       value=value
       placeholder=placeholder
-      class="shadow-sm focus:border-purple-500 focus:border-purple-500 block w-full sm:text-sm lg:text-base border-gray-300 rounded-md"
+      class="shadow-sm focus:border-purple-500 focus:border-purple-500 block w-full sm:text-sm lg:text-base border-gray-700 rounded-md"
       name=valuePath
       id=(concat elementId '-name')
       readonly=readonly
@@ -63,7 +63,7 @@
     <span class="valid-input fa fa-check"></span>
   {{/if}}
 
-  <div class="text-red-400">
+  <div class="text-red-600">
     {{#if showErrorMessage}}
       <div class="error">
         {{v-get model valuePath 'message'}}
@@ -71,7 +71,7 @@
     {{/if}}
 
     {{#if showWarningMessage}}
-      <div class="text-red-400">
+      <div class="text-red-600">
         {{v-get model valuePath 'warningMessage'}}
       </div>
     {{/if}}
