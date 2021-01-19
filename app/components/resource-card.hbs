@@ -1,4 +1,4 @@
-<LinkTo class="bg-white shadow rounded flex flex-col hover:text-white active:bg-blue-600 group"
+<LinkTo class="bg-white shadow rounded flex flex-col hover:text-white active:bg-blue-400 group"
         @route="resources.resource" @model={{@resource.slug}}
 >
   <div class="aspect-w-16 aspect-h-9 overflow-hidden h-16 group-hover:opacity-80 group-active:opacity-100">
@@ -7,13 +7,13 @@
     {{/if}}
   </div>
   <div class="p-4 flex flex-col gap-4 mt-4 flex-grow flex justify-between">
-    <h3 class="text-lg font-bold group-active:text-white group-hover:text-blue-600">
+    <h3 class="text-lg font-bold group-active:text-white group-hover:text-blue-400">
       {{@resource.title}}
     </h3>
     <div class="prose flex-grow group-active:text-white">
       {{@resource.contentExcerpt}}
     </div>
-    <dl class="flex flex-col gap-2 text-gray-300 group-active:text-white">
+    <dl class="flex flex-col gap-2 text-gray-700 group-active:text-white">
       {{#if @resource.formLanguage}}
         <dd>{{svg-jar "flag-light" class="h-4 inline mr-2"}} {{@resource.formLanguage}}</dd>
       {{/if}}

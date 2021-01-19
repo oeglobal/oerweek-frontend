@@ -1,5 +1,5 @@
 .global-header__item {
-  @apply inline-flex text-blue-900 flex-initial pt-1 h-6 tracking-widest px-1 lg:px-4;
+  @apply inline-flex text-blue-100 flex-initial pt-1 h-6 tracking-widest px-1 lg:px-4;
 
   &:hover,
   &:active {

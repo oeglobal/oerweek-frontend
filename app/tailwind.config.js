@@ -12,39 +12,64 @@ module.exports = {
       white: colors.white,
 
       gray: {
-        100: '#1A1A1A',
-        200: '#333333',
-        300: '#4d4d4d',
-        400: '#666666',
+        900: '#1a1a1a',
+        800: '#333333',
+        700: '#4d4d4d',
+        600: '#666666',
         500: '#808080',
-        600: '#999999',
-        700: '#B3B3B3',
-        800: '#D9D9D9',
-        900: '#f5f5f5',
+        400: '#999999',
+        300: '#b2b2b2',
+        200: '#d9d9d9',
+        100: '#f5f5f5',
       },
       purple: {
+        800: '#221155',
         500: '#664bda',
-        900: '#dbd5f6',
+        100: '#dbd5f6',
       },
       blue: {
-        200: '#1c2b5a',
-        300: '#1f377a',
-        400: '#1952b3',
+        900: '#0d1530',
+        800: '#1c2b5a',
+        700: '#1f377a',
+        600: '#1a52b2',
         500: '#0d59f2',
-        600: '#3B80F7',
-        900: '#cfdefc',
+        400: '#3b80f7',
+        300: '#6ca0f9',
+        200: '#9ec1fa',
+        100: '#d8e7fd',
       },
       red: {
-        400: '#ce1222',
-        600: '#ff5547',
+        900: '#600623',
+        800: '#7d081f',
+        700: '#af0821',
+        600: '#ce1222',
+        500: '#e51a1a',
+        400: '#ff5547',
+        300: '#ff8670',
+        200: '#ffaa99',
+        100: '#ffdacc',
       },
       green: {
-        400: '#2daa2a',
-        800: '#B9EDB6',
-        900: '#DBF5D6',
+        900: '#134912',
+        800: '#1e721d',
+        700: '#268f24',
+        600: '#2daa2a',
+        500: '#34c431',
+        400: '#4ed24b',
+        300: '#8be085',
+        200: '#b9edb6',
+        100: '#dbf5d6',
       },
       turq: {
-        800: '#A4EADC',
+        900: '#0d454a',
+        800: '#115e5f',
+        700: '#1a8f83',
+        600: '#1fad98',
+        500: '#26d7b2',
+        400: '#4be7c5',
+        300: '#80e5cf',
+        200: '#a4eadc',
+        100: '#cef8ef',
       },
     },
     extend: {
@@ -91,25 +116,25 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.black'),
+            color: theme('colors.gray.800'),
             a: {
-              color: theme('colors.black'),
+              color: theme('colors.gray.800'),
             },
             strong: {
-              color: theme('colors.black'),
+              color: theme('colors.gray.800'),
               fontWeight: '700',
             },
             h1: {
-              color: theme('colors.black'),
+              color: theme('colors.gray.800'),
             },
             h2: {
-              color: theme('colors.black'),
+              color: theme('colors.gray.800'),
             },
             h3: {
-              color: theme('colors.black'),
+              color: theme('colors.gray.800'),
             },
             h4: {
-              color: theme('colors.black'),
+              color: theme('colors.gray.800'),
             },
           },
         },
@@ -154,4 +179,4 @@ module.exports = {
 };
 
 module.exports.theme.colors.primary = module.exports.theme.colors.blue['500'];
-module.exports.theme.colors.menuHover = module.exports.theme.colors.blue['900'];
+module.exports.theme.colors.menuHover = module.exports.theme.colors.blue['100'];

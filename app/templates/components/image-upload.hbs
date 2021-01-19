@@ -7,7 +7,7 @@
 {{else}}
   {{#file-dropzone
           name="image"
-          class="dropzone-upload-area flex flex-col justify-center items-center text-center bg-green-900 rounded py-10"
+          class="dropzone-upload-area flex flex-col justify-center items-center text-center bg-green-100 rounded py-10"
           ondragenter=(action "resetDropzone")
   as |dropzone queue|
   }}
@@ -39,7 +39,7 @@
         </p>
       {{/if}}
       {{#if errors}}
-        <p class="text-red-400">{{join ', ' errors}}. Please upload a different image.</p>
+        <p class="text-red-600">{{join ', ' errors}}. Please upload a different image.</p>
       {{/if}}
     </div>
   {{/file-dropzone}}
