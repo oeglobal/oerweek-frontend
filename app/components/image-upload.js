@@ -2,6 +2,7 @@ import Component from '@ember/component';
 import { task } from 'ember-concurrency';
 import { inject as service } from '@ember/service';
 import { get } from '@ember/object';
+import { flatMap } from 'lodash';
 
 import ENV from 'frontend/config/environment';
 
@@ -29,7 +30,7 @@ export default Component.extend({
 
       this.set(
         'errors',
-        e.body.map((i) => i.detail)
+        flatMap(e.body, (k) => k)
       );
     }
   })
