@@ -50,9 +50,15 @@ module.exports = {
         100: '#ffdacc',
       },
       green: {
-        400: '#2daa2a',
-        800: '#B9EDB6',
-        900: '#DBF5D6',
+        900: '#134912',
+        800: '#1e721d',
+        700: '#268f24',
+        600: '#2daa2a',
+        500: '#34c431',
+        400: '#4ed24b',
+        300: '#8be085',
+        200: '#b9edb6',
+        100: '#dbf5d6',
       },
       turq: {
         900: '#0d454a',
@@ -110,25 +116,25 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.black'),
+            color: theme('colors.gray.800'),
             a: {
-              color: theme('colors.black'),
+              color: theme('colors.gray.800'),
             },
             strong: {
-              color: theme('colors.black'),
+              color: theme('colors.gray.800'),
               fontWeight: '700',
             },
             h1: {
-              color: theme('colors.black'),
+              color: theme('colors.gray.800'),
             },
             h2: {
-              color: theme('colors.black'),
+              color: theme('colors.gray.800'),
             },
             h3: {
-              color: theme('colors.black'),
+              color: theme('colors.gray.800'),
             },
             h4: {
-              color: theme('colors.black'),
+              color: theme('colors.gray.800'),
             },
           },
         },
