@@ -202,3 +202,15 @@
     @apply static mt-4;
   }
 }
+
+.site--footer {
+  .sub-menu {
+    a {
+      @apply py-1 px-2 bg-blue-700 rounded;
+
+      &:hover {
+        @apply bg-blue-600;
+      }
+    }
+  }
+}
