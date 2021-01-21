@@ -11,24 +11,25 @@
 }
 
 .menu-item {
-  @apply px-3 py-4 relative flex items-center;
+  @apply px-3 py-4 relative flex items-center tracking-widest;
 
   position: relative;
 
   &:hover,
   &:focus {
-    background-color: theme("colors.menuHover");
+    @apply bg-purple-100;
   }
 }
 
 .menu-item.has-children {
-  @apply pr-6;
+  @apply pr-8;
 
   &::after {
     content: "+";
     position: absolute;
     right: 0.5rem;
-    top: calc(50% - 0.75em);
+    top: calc(50% - 0.5em);
+    @apply text-lg leading-none;
   }
 }
 
@@ -38,7 +39,7 @@
 }
 
 .menu-item.active {
-  border-bottom: 2px solid theme("colors.primary");
+  border-bottom: 2px solid theme("colors.purple.100");
 }
 
 .nav .ember-basic-dropdown-trigger[aria-expanded="true"] .menu-item.has-children {
@@ -51,7 +52,7 @@
   @apply block pl-4 pr-8 py-2 flex items-center leading-relaxed w-full;
 
   &:hover {
-    background-color: theme("colors.menuHover");
+    background-color: theme("colors.purple.100");
   }
 }
 
@@ -61,18 +62,20 @@
 }
 
 .menu-open .toggle-menu {
-  background-color: theme("colors.menuHover");
+  background-color: theme("colors.purple.500");
+  fill: white;
+  color: white;
 }
 
 .toggle-menu {
   height: 80px;
   width: 80px;
-  color: theme("colors.primary");
+  color: theme("colors.purple.500");
 }
 
 .toggle-menu svg {
   #menu-path {
-    fill: theme("colors.primary");
+    fill: theme("colors.purple.500");
   }
 }
 
@@ -94,7 +97,7 @@
 
 .menu-open {
   .banner .nav {
-    background-color: theme("colors.menuHover");
+    background-color: theme("colors.purple.100");
 
     @apply flex flex-wrap px-6 pt-4 pb-8;
   }
@@ -200,5 +203,17 @@
 
   .ember-basic-dropdown-content {
     @apply static mt-4;
+  }
+}
+
+.site--footer {
+  .sub-menu {
+    a {
+      @apply py-1 px-2 bg-blue-700 rounded;
+
+      &:hover {
+        @apply bg-blue-600;
+      }
+    }
   }
 }
