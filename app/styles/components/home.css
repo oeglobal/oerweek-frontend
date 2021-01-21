@@ -1,5 +1,6 @@
 .home--main {
   min-height: 70vh;
+  height: calc(100vh - 80px);
 
   @screen lg {
     min-height: calc(100vh - 120px);
