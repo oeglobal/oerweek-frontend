@@ -1,9 +1,11 @@
-<div class="grid grid-cols-1 lg:grid-cols-4 gap-4 auto-rows-max">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-4 xl:gap-x-6 auto-rows-max">
   {{#each resources as |event|}}
     <EventCard @resource={{event}} />
   {{else}}
-    <div class="text-center">
-      <h4>Sorry, no results. Try removing one of the filters.</h4>
+    <div class="text-left bg-white shadow border-gray-800 mx-auto p-8 rounded col-span-4">
+      {{svg-jar "grimace-light" class="h-24 float-left mr-4"}}
+      <h4 class="text-lg font-bold mb-2">Oops... Nothing Found</h4>
+      <p>Sorry, no results. Try removing one of the filters.</p>
     </div>
   {{/each}}
 </div>
