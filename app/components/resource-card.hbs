@@ -7,13 +7,13 @@
     {{/if}}
   </div>
   <div class="p-4 flex flex-col gap-4 mt-4 flex-grow flex justify-between">
-    <h3 class="text-lg font-bold group-active:text-white group-hover:text-blue-400">
+    <h3 class="text-lg font-bold group-active:text-white group-hover:text-blue-500">
       {{@resource.title}}
     </h3>
-    <div class="prose flex-grow group-active:text-white">
+    <div class="prose hidden md:block flex-grow text-sm leading-snug group-active:text-white">
       {{@resource.contentExcerpt}}
     </div>
-    <dl class="flex flex-col gap-2 text-gray-700 group-active:text-white">
+    <dl class="flex flex-col gap-2 text-gray-500 group-active:text-white">
       {{#if @resource.formLanguage}}
         <dd>{{svg-jar "flag-light" class="h-4 inline mr-2"}} {{@resource.formLanguage}}</dd>
       {{/if}}

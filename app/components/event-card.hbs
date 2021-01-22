@@ -10,10 +10,10 @@
     <h3 class="text-lg font-bold group-hover:text-blue-400 group-active:text-white">
       {{@resource.title}}
     </h3>
-    <div class="prose flex-grow group-active:text-white">
+    <div class="prose hidden md:block flex-grow text-sm leading-snug group-active:text-white">
       {{@resource.contentExcerptSafe}}
     </div>
-    <dl class="flex flex-col gap-2 text-gray-700 group-active:text-white">
+    <dl class="flex flex-col gap-2 text-gray-500 group-active:text-white">
       <dd>{{svg-jar "globe-light" class="h-4 inline mr-2"}}
         {{#if (eq @resource.eventType "local") }}
           {{@resource.city}}, {{@resource.country}}
