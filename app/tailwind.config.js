@@ -119,22 +119,13 @@ module.exports = {
             color: theme('colors.gray.800'),
             a: {
               color: theme('colors.gray.800'),
+              '&:hover': {
+                color: theme('colors.purple.500'),
+              },
             },
             strong: {
               color: theme('colors.gray.800'),
               fontWeight: '700',
-            },
-            h1: {
-              color: theme('colors.gray.800'),
-            },
-            h2: {
-              color: theme('colors.gray.800'),
-            },
-            h3: {
-              color: theme('colors.gray.800'),
-            },
-            h4: {
-              color: theme('colors.gray.800'),
             },
           },
         },
