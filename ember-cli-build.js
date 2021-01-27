@@ -11,6 +11,8 @@ const purgeCSS = {
       './app/index.html',
       './app/templates/**/*.hbs',
       './app/components/**/*.hbs',
+      './node_modules/ember-power-select/**/*',
+      './node_modules/tailwindcss-ember-power-select/**/*',
     ],
     defaultExtractor: (content) => content.match(/[A-Za-z0-9-_:/]+/g) || [],
   },
