@@ -11,6 +11,8 @@ const purgeCSS = {
       './app/index.html',
       './app/templates/**/*.hbs',
       './app/components/**/*.hbs',
+      './node_modules/ember-power-select/**/*',
+      './node_modules/tailwindcss-ember-power-select/**/*',
     ],
     defaultExtractor: (content) => content.match(/[A-Za-z0-9-_:/]+/g) || [],
   },
@@ -40,11 +42,7 @@ module.exports = function (defaults) {
           require('postcss-nested-ancestors'),
           require('postcss-nested'),
           require('tailwindcss')('./app/tailwind.config.js'),
-          ...(isProduction
-            ? [
-                /* purgeCSS */
-              ]
-            : []),
+          ...(isProduction ? [purgeCSS] : []),
         ],
       },
       filter: {
