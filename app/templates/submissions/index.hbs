@@ -1,10 +1,10 @@
 <h1 class="font-bold text-3xl">{{this.humanPostStatus}}</h1>
 
-<div class="hidden sm:block mt-10">
+<div class="block mt-10">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     {{#if user.isStaff}}
       <div class="flex justify-end">
-        <ul class="breadcrumbs flex justify-end gap-4 mt-4 bg-white p-4 inline-flex rounded shadow-sm">
+        <ul class="flex justify-end gap-4 mt-4 bg-white p-4 flex flex-col md:flex-row md:inline-flex rounded shadow-sm">
           <li class="button-simple">{{#link-to "submissions.index" (query-params postStatus=null)}}All{{/link-to}}</li>
           <li class="button-simple">{{#link-to "submissions.index" (query-params postStatus="draft")}}
             Draft{{/link-to}}</li>
