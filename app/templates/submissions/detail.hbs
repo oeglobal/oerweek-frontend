@@ -1,69 +1,66 @@
-<div class="flex bg-white shadow-sm rounded justify-between py-4 px-2 mb-10">
-  <div class="">
+<ul class="breadcrumbs flex justify-between w-full my-4 md:ml-auto bg-white p-4 rounded shadow-sm">
+  <li class="mx-2">
     {{#link-to 'submissions.index' (query-params postStatus='draft') class='button-simple'}}
-      Back to submissions{{/link-to}}
-  </div>
-  <div class="">
+    Back to submissions{{/link-to}}
+  </li>
+  <li class="mx-2">
     {{#link-to 'submit.edit' model.id class="button-simple"}}Edit{{/link-to}}
     {{#if (eq model.postStatus 'publish')}}
-      {{#if (eq model.postType 'resource')}}
-        {{#link-to 'resources.resource' model.slug class='button primary'}}View{{/link-to}}
-      {{else}}
-        {{#link-to 'events.event' model.slug class='button primary'}}View{{/link-to}}
-      {{/if}}
+    {{#if (eq model.postType 'resource')}}
+    {{#link-to 'resources.resource' model.slug class='button primary'}}View{{/link-to}}
+    {{else}}
+    {{#link-to 'events.event' model.slug class='button primary'}}View{{/link-to}}
     {{/if}}
-  </div>
-</div>
+    {{/if}}
+  </li>
+</ul>
 
 <h1 class="font-bold text-3xl">#{{model.id}} - {{{model.title}}}</h1>
 
 
-<div class="bg-purple-100 p-4 lg:p-8 mt-8 pb-24 rounded">
+<div class="bg-purple-100 border-purple-800 border-2 p-4 lg:p-8 mt-8 pb-24 rounded">
   <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
     <div class="col-span-5">
       {{#if model.imageUrl}}
-        <h4>Image</h4>
-        <img src="{{{model.imageUrl}}}" alt="{{model.title}}"/>
+      <h4 class="mb-4">Image:</h4>
+      <img src="{{{model.imageUrl}}}" alt="{{model.title}}" />
       {{else}}
-        <div class="h-30 bg-purple-500 text-white py-10 px-4">
-          <h4 class="text-center">No Image</h4>
-        </div>
+      <div class="h-30 bg-purple-500 text-white py-10 px-4">
+        <h4 class="text-center text-red-500">No Image</h4>
+      </div>
       {{/if}}
 
       {{#if user.isStaff}}
-        <div class="mt-10 content__preview">
-          <dd>Current status</dd>
-          <dt class="mb-4">
-            <h5 class="text-bold text-2xl">{{model.postStatus}}</h5>
-          </dt>
+      <div class="mt-10 content__preview">
+        <p class="mb-4">Current status: <strong class="capitalize">{{model.postStatus}}</strong></p>
+        
 
-          <dt class="flex flex-row gap-4">
-            {{#if (not-eq model.postStatus 'publish')}}
-              <button class="button-outline" type="button" {{action 'changeSubmissionStatus' model 'publish'}}>Publish
-              </button>
-            {{else}}
-              <button class="button-outline disabled" disabled type="button">Publish</button>
-            {{/if}}
+        <nav class="flex flex-row gap-2">
+          {{#if (not-eq model.postStatus 'publish')}}
+          <button class="button-simple" type="button" {{action 'changeSubmissionStatus' model 'publish' }}>Publish
+          </button>
+          {{else}}
+          <button class="button-simple disabled" disabled type="button">Publish</button>
+          {{/if}}
 
-            {{#if (not-eq model.postStatus 'draft')}}
-              <button class="button-outline" type="button" {{action 'changeSubmissionStatus' model 'draft'}}>Draft
-              </button>
-            {{else}}
-              <button class="button-outline" type="button">Draft</button>
-            {{/if}}
+          {{#if (not-eq model.postStatus 'draft')}}
+          <button class="button-simple" type="button" {{action 'changeSubmissionStatus' model 'draft' }}>Draft
+          </button>
+          {{else}}
+          <button class="button-simple" type="button">Draft</button>
+          {{/if}}
 
-            {{#if (not-eq model.postStatus 'trash')}}
-              <button class="button-outline" type="button" {{action 'changeSubmissionStatus' model 'trash'}}>Trash
-              </button>
-            {{else}}
-              <button class="button-outline disabled" disabled type="button">Trash</button>
-            {{/if}}
-          </dt>
-          <dd class="text-bold mt-10">Email Templates</dd>
-          <dt>
-            <div class="flex flex-row gap-2">
-              {{#each templates as |template|}}
-                <a href="mailto:{{model.email}}?subject={{simple-template
+          {{#if (not-eq model.postStatus 'trash')}}
+          <button class="button-simple" type="button" {{action 'changeSubmissionStatus' model 'trash' }}>Trash
+          </button>
+          {{else}}
+          <button class="button-simple disabled" disabled type="button">Trash</button>
+          {{/if}}
+        </nav>
+        <p class="text-bold mt-10 mb-4">Use email template:</p>
+          <nav class="flex flex-row gap-2">
+            {{#each templates as |template|}}
+            <a href="mailto:{{model.email}}?subject={{simple-template
                       templateString=template.subject
                       props=(hash
                               title=model.title
@@ -75,89 +72,87 @@
                               title=model.title
                               link=model.permalink
                               name=model.firstname)
-              }}"
-                class="button-outline">{{template.name}}</a><br/>
-              {{/each}}
-            </div>
-          </dt>
-        </div>
+              }}" class="button-simple font-normal">{{template.name}}</a><br />
+            {{/each}}
+          </nav>
+      </div>
       {{/if}}
     </div>
-    <div class="flex flex-col col-span-7 gap-8">
-      <dl class="bg-white w-full p-4 text-sm resource__meta">
+    <div class="flex flex-col col-span-7 gap-8 prose lg:prose-lg">
+      <dl class="bg-white w-full p-4 resource__meta">
 
-        <dd class="">{{svg-jar "user-circle-solid" class="h-4 inline-block current-color"}} Submitted by</dd>
+        <dd class="">{{svg-jar "user-circle-solid" class="h-4 inline-block current-color mr-1"}} Submitted by</dd>
         <dt>{{model.contact}} (<a href="mailto:{{model.email}}">{{model.email}}</a>)</dt>
 
-        <dd>{{svg-jar "graduation-cap-solid" class="h-4 inline-block current-color"}} Institution</dd>
+        <dd>{{svg-jar "graduation-cap-solid" class="h-4 inline-block current-color mr-1"}} Institution</dd>
         <dt>{{model.institution}}</dt>
 
         <dd class="resource__meta-single">{{svg-jar "globe-solid"
-                                                    class="h-4 inline-block current-color"}} {{model.formLanguage}}</dd>
+          class="h-4 inline-block current-color mr-1"}} {{model.formLanguage}}</dd>
         {{#if model.country}}
-          <dd class="resource__meta-single">{{svg-jar "graduation-cap-solid" class="h-4 inline-block current-color"}}
-            {{#if model.city}}
-              {{model.city}},
-            {{/if}}
-            {{model.country}}
-          </dd>
+        <dd class="resource__meta-single">{{svg-jar "graduation-cap-solid" class="h-4 inline-block current-color mr-1"}}
+          {{#if model.city}}
+          {{model.city}},
+          {{/if}}
+          {{model.country}}
+        </dd>
         {{/if}}
       </dl>
 
 
       <div class="content__preview">
         {{#if (eq model.postType 'event')}}
-          <h4>Event Information</h4>
+        <h4><span class="bg-green-200 px-1">Event</span> Information</h4>
 
-          <dl class="box--submission">
-            <dt>Type of Event</dt>
-            <dd>{{uc-words model.eventType}}</dd>
+        <dl class="box--submission">
+          <dt>Type of Event</dt>
+          <dd>{{uc-words model.eventType}}</dd>
 
-            <dt>Title</dt>
-            <dd>{{model.title}}</dd>
+          <dt>Title</dt>
+          <dd>{{model.title}}</dd>
 
-            <dt>Facilitator</dt>
-            <dd>{{model.eventFacilitator}}</dd>
+          <dt>Facilitator</dt>
+          <dd>{{model.eventFacilitator}}</dd>
 
-            <dt>Description</dt>
-            <dd>{{model.description}}</dd>
+          <dt>Description</dt>
+          <dd>{{model.description}}</dd>
 
-            <dt>Event starts at</dt>
-            <dd>{{moment-format model.eventTime 'YYYY-MM-DD HH:mm a'}}</dd>
+          <dt>Event starts at</dt>
+          <dd>{{moment-format model.eventTime 'YYYY-MM-DD HH:mm a'}}</dd>
 
-            <dt>Link to the Event Page</dt>
-            <dd><a href="{{model.link}}">{{model.link}}</a></dd>
+          <dt>Link to the Event Page</dt>
+          <dd><a href="{{model.link}}">{{model.link}}</a></dd>
 
-            <dt>Optional link to the Web room of the event</dt>
-            <dd><a href="{{model.linkwebroom}}">{{model.linkwebroom}}</a></dd>
+          <dt>Optional link to the Web room of the event</dt>
+          <dd><a href="{{model.linkwebroom}}">{{model.linkwebroom}}</a></dd>
 
-            <dt>Language</dt>
-            <dd>{{model.language}}</dd>
+          <dt>Language</dt>
+          <dd>{{model.language}}</dd>
 
-            <dt>Open tag(s) related to your submission</dt>
-            <dd>{{join ', ' model.opentags}}</dd>
-          </dl>
+          <dt>Open tag(s) related to your submission</dt>
+          <dd>{{join ', ' model.opentags}}</dd>
+        </dl>
         {{else if (eq model.postType 'resource')}}
-          <h4>Resource Information</h4>
-          <dl class="box--submission">
-            <dt>Title</dt>
-            <dd>{{model.title}}</dd>
+        <h4><span class="bg-red-200 px-1">Resource</span> Information</h4>
+        <dl class="box--submission">
+          <dt>Title</dt>
+          <dd>{{model.title}}</dd>
 
-            <dt>Description</dt>
-            <dd>{{model.description}}</dd>
+          <dt>Description</dt>
+          <dd>{{model.description}}</dd>
 
-            <dt>Link to the Resource</dt>
-            <dd><a href="{{model.link}}">{{model.link}}</a></dd>
+          <dt>Link to the Resource</dt>
+          <dd><a href="{{model.link}}">{{model.link}}</a></dd>
 
-            <dt>License</dt>
-            <dd>{{model.license}}</dd>
+          <dt>License</dt>
+          <dd>{{model.license}}</dd>
 
-            <dt>Primary Language</dt>
-            <dd>{{model.language}}</dd>
+          <dt>Primary Language</dt>
+          <dd>{{model.language}}</dd>
 
-            <dt>Open tag(s) related to your submission</dt>
-            <dd>{{join ', ' model.opentags}}</dd>
-          </dl>
+          <dt>Open tag(s) related to your submission</dt>
+          <dd>{{join ', ' model.opentags}}</dd>
+        </dl>
         {{/if}}
       </div>
     </div>
