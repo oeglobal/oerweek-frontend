@@ -1,26 +1,23 @@
 <h1 class="font-bold text-3xl">{{this.humanPostStatus}}</h1>
 
-<div class="block mt-10">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    {{#if user.isStaff}}
-      <div class="flex justify-end">
-        <ul class="breadcrumbs flex justify-end gap-4 mt-4 bg-white p-4 inline-flex rounded shadow-sm">
-          <li class="button-simple">{{#link-to "submissions.index" (query-params postStatus=null)}}All{{/link-to}}</li>
-          <li class="button-simple">{{#link-to "submissions.index" (query-params postStatus="draft")}}
-            Draft{{/link-to}}</li>
-          <li class="button-simple">{{#link-to "submissions.index" (query-params postStatus="publish")}}
-            Published{{/link-to}}</li>
-          <li class="button-simple">{{#link-to "submissions.index" (query-params postStatus="trash")}}
-            Rejected{{/link-to}}</li>
-        </ul>
-      </div>
-    {{/if}}
+<div class="block mt-10 max-w-5xl mx-auto">
+  {{#if user.isStaff}}
+  <ul class="breadcrumbs flex justify-start w-full my-4 bg-white p-4 rounded shadow-sm">
+    <li class="button-simple mx-2">{{#link-to "submissions.index" (query-params postStatus=null)}}All{{/link-to}}</li>
+    <li class="button-simple mx-2">{{#link-to "submissions.index" (query-params postStatus="draft")}}
+      Draft{{/link-to}}</li>
+    <li class="button-simple mx-2">{{#link-to "submissions.index" (query-params postStatus="publish")}}
+      Published{{/link-to}}</li>
+    <li class="button-simple mx-2">{{#link-to "submissions.index" (query-params postStatus="trash")}}
+      Rejected{{/link-to}}</li>
+  </ul>
+  {{/if}}
 
-    <div class="flex flex-col mt-2">
-      <div class="align-middle min-w-full overflow-x-auto shadow overflow-hidden sm:rounded-lg">
-        <table class="min-w-full divide-y divide-gray-800">
+  <div class="flex flex-col mt-2">
+    <div class="align-middle min-w-full overflow-x-auto shadow overflow-hidden sm:rounded-lg">
+      <table class="min-w-full divide-y divide-gray-800">
 
-          <thead>
+        <thead>
           <tr>
             <th class="px-6 py-3 bg-white text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
               ID
@@ -28,36 +25,36 @@
             <th class="px-6 py-3 bg-white text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
               Title
             </th>
-            <th class="hidden px-6 py-3 bg-white text-left text-xs font-medium text-gray-500 uppercase tracking-wider md:block text-right">
+            <th
+              class="hidden px-6 py-3 bg-white text-left text-xs font-medium text-gray-500 uppercase tracking-wider md:block text-right">
               Status
             </th>
           </tr>
-          </thead>
+        </thead>
 
-          <tbody>
+        <tbody>
           {{#each filteredSubmissions as |submission|}}
 
-            <tr class="bg-white hover:bg-blue-100">
-              <td class="px-6 py-4 text-right whitespace-nowrap text-sm">
-                <span class="text-black font-medium">{{submission.id}}</span>
-              </td>
-              <td class="max-w-0 w-full whitespace-nowrap text-sm">
-                <div class="flex">
-                  <LinkTo @route='submissions.detail' @model={{submission}}
-                          class="group inline-flex space-x-2 truncate text-sm w-full px-6 py-4">
-                    {{submission.title}}
-                  </LinkTo>
-                </div>
-              </td>
-              <td class="px-6 py-4 text-right whitespace-nowrap text-sm {{submission.postStatusColor}} ">
-                {{submission.postStatusFriendly}}
-              </td>
-            </tr>
+          <tr class="bg-white hover:bg-blue-100">
+            <td class="px-6 py-4 text-right whitespace-nowrap text-sm">
+              <span class="text-black font-medium">{{submission.id}}</span>
+            </td>
+            <td class="max-w-0 w-full whitespace-nowrap text-sm">
+              <div class="flex">
+                <LinkTo @route='submissions.detail' @model={{submission}}
+                  class="group inline-flex space-x-2 truncate text-sm w-full px-6 py-4">
+                  {{submission.title}}
+                </LinkTo>
+              </div>
+            </td>
+            <td class="px-6 py-4 text-right whitespace-nowrap text-sm {{submission.postStatusColor}} ">
+              {{submission.postStatusFriendly}}
+            </td>
+          </tr>
           {{/each}}
-          </tbody>
+        </tbody>
 
-        </table>
-      </div>
+      </table>
     </div>
   </div>
 </div>
