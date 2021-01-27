@@ -1,43 +1,62 @@
-<div class="prose max-w-none mt-10">
+<div class="content mb-10">
   <h1>Submission Successful!</h1>
+</div>
 
-  {{#if isEditing}}
-    <p>Thank you for your contribution to Open Education Week. Your changes will be visible on the site in a few
-      minutes.</p>
+<div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+  <div class="sm:col-span-4 flex justify-between gap-8 border border-gray-100 shadow-sm p-4">
+    <div class="">
+      {{svg-jar "ballot-check-light" class="text-purple-500 h-20"}}
+    </div>
 
-    <p>You may now close this browser window or <br/>
-      <LinkTo @route="submissions" class="button">Go back to your Submissions</LinkTo>
-    </p>
+    <div class="">
+      {{#if isEditing}}
+        <p class="font-bold mb-4">Thank you for your contribution to Open Education Week. Your changes will be visible
+          on the
+          site in a few
+          minutes.</p>
 
-  {{else}}
+        <p class="mb-6">You may now keep browsing or
+          <LinkTo @route="submissions" class="button-simple">go back to your submissions.</LinkTo>
+        </p>
+      {{else}}
+        <p class="font-bold mb-4">Thank you for your contribution to the Open Education Week. You will receive a
+          confirmation
+          email shortly.</p>
 
-    <p>Thank you for your contribution to the Open Education Week. You will receive a confirmation email shortly.</p>
+        <p class="mb-4">You may contact us at <a class="font-bold" href="mailto:info@openeducationweek.org">info@openeducationweek.org</a>
+          if you have
+          any questions or updates to your submission.</p>
 
-    <p>You may contact us at <a href="mailto:info@openeducationweek.org">info@openeducationweek.org</a> if you have any
-      questions or updates to your submission.</p>
+        <p class="mb-6">You may now keep browsing or submit another entry.</p>
+        <button class="button-outline" type="button" {{action 'newSubmission'}}>Submit New Entry</button>
 
-    <p>You may now close this browser window or
-      <button class="button-main" type="button" {{action 'newSubmission'}}>Submit another Entry</button>
-    </p>
-  {{/if}}
+      {{/if}}
+    </div>
+  </div>
 
-  <hr/>
+  <div class="sm:col-span-2 flex flex-col items-center gap-4 border border-gray-100 shadow-sm p-4">
+    {{svg-jar "oeweek-promo" class="h-44"}}
+    <p class="text-xl font-bold"><a href="https://twitter.com/OEWeek">Follow us on Twitter</a></p>
 
-  <p>Follow us on <a href="https://twitter.com/OEWeek">Twitter!</a></p>
-  <hr/>
+    <p>Use #oeweek hastag to share your resources and activities with the community.</p>
+  </div>
 
-  <h1>Supporting all Learners</h1>
-  <p>We seek to ensure that all Open Education Week activities and contributions are accessible to all learners. The
-    following best practices from the National Center for Disabilities and Access to Education are highly
-    recommended:</p>
+  <div class="sm:col-span-6 content">
+    <h2 class="font-bold text-3xl my-4">Supporting all Learners</h2>
 
-  <ul>
-    <li>Provide alternative text for non-textual items including images and audio</li>
-    <li>Make sure that content is well structured and clearly written</li>
-    <li>Provide headers for data tables</li>
-    <li>Ensure hyperlinks make sense out of context</li>
-    <li>Caption and/or provide transcripts for videos</li>
-    <li>Do not rely on color alone to convey meaning</li>
-    <li>Ensure users can complete and submit all forms</li>
-  </ul>
+    <p class="mb-4">We seek to ensure that all Open Education Week activities and contributions are accessible to all
+      learners. The
+      following best practices from the National Center for Disabilities and Access to Education are highly
+      recommended:</p>
+
+    <div class="p-4 bg-green-100 text-left flex flex-col gap-4 border border-green-400 border-1 rounded-2xl mb-10">
+      <CheckText>Provide alternative text for non-textual items including images and audio</CheckText>
+      <CheckText>Make sure that content is well structured and clearly written</CheckText>
+      <CheckText>Provide headers for data tables</CheckText>
+      <CheckText>Ensure hyperlinks make sense out of context</CheckText>
+      <CheckText>Caption and/or provide transcripts for videos</CheckText>
+      <CheckText>Do not rely on color alone to convey meaning</CheckText>
+      <CheckText>Ensure users can complete and submit all forms</CheckText>
+    </div>
+  </div>
 </div>
