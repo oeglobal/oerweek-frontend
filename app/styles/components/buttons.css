@@ -27,4 +27,11 @@
 
 .button-simple {
   @apply py-1 px-2 border bg-gray-100 border-gray-200 rounded;
+
+  @apply hover:border-blue-400;
+
+  &.disabled,
+  &[disabled] {
+    @apply text-gray-300 hover:border-gray-200;
+  }
 }
