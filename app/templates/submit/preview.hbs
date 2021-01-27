@@ -1,89 +1,92 @@
 <div class="content mb-10">
-  <h1>Submit Your Entry</h1>
+  <h1>Preview your submission</h1>
 </div>
 
-<h2 class="text-3xl font-bold mb-10">Preview Submission</h2>
-<div class="content__preview mt-6">
-  <h4>General Information</h4>
-  <dl>
-    <dt>Name</dt>
-    <dd>{{model.firstname}} {{model.lastname}}</dd>
+{{#if model.imageUrl}}
+  <div class="h-56 w-auto">
+    <img src="{{model.imageUrl}}" alt="" class="h-full"/>
+  </div>
+{{/if}}
 
-    <dt>Email</dt>
-    <dd>{{model.email}}</dd>
-
-    <dt>Twitter</dt>
-    <dd>{{model.twitter}}</dd>
-
-    <dt>City and Country</dt>
-    <dd>{{model.city}}, {{model.country}}</dd>
-
-    <dt>Institution or Organization</dt>
-    <dd>{{model.institution}}</dd>
-
-    <dt>Website of Institution or Organization</dt>
-    <dd>{{model.institutionurl}}</dd>
-  </dl>
-
-  {{#if (eq model.postType 'event')}}
-    <h4>Activity Information</h4>
-
+<div class="content__preview mt-10 grid grid-cols-1 lg:grid-cols-2 gap-4">
+  <div class="">
+    <h4>General Information</h4>
     <dl>
-      <dt>Type of Activity</dt>
-      <dd>{{uc-words model.eventType}}</dd>
+      <dt>Name</dt>
+      <dd>{{model.firstname}} {{model.lastname}}</dd>
 
-      <dt>Title</dt>
-      <dd>{{model.title}}</dd>
+      <dt>Email</dt>
+      <dd>{{model.email}}</dd>
 
-      <dt>Facilitator</dt>
-      <dd>{{model.eventFacilitator}}</dd>
+      <dt>Twitter</dt>
+      <dd>{{model.twitter}}</dd>
 
+      <dt>City and Country</dt>
+      <dd>{{model.city}}, {{model.country}}</dd>
+
+      <dt>Institution or Organization</dt>
+      <dd>{{model.institution}}</dd>
+
+      <dt>Website of Institution or Organization</dt>
+      <dd>{{model.institutionurl}}</dd>
+    </dl>
+  </div>
+
+  <div>
+    {{#if (eq model.postType 'event')}}
+      <h4>Activity Information</h4>
+
+      <dl>
+        <dt>Type of Activity</dt>
+        <dd>{{uc-words model.eventType}}</dd>
+
+        <dt>Title</dt>
+        <dd>{{model.title}}</dd>
+
+        <dt>Facilitator</dt>
+        <dd>{{model.eventFacilitator}}</dd>
+
+        <dt>Event starts at</dt>
+        <dd>{{moment-format model.eventTime 'YYYY-MM-DD HH:mm a'}}</dd>
+
+        <dt>Link to the Event Page</dt>
+        <dd>{{model.link}}</dd>
+
+        <dt>Optional link to the Web room of the event</dt>
+        <dd>{{model.linkwebroom}}</dd>
+
+        <dt>Language</dt>
+        <dd>{{model.language}}</dd>
+
+        <dt>Open tag(s) related to your submission</dt>
+        <dd>{{join ', ' model.opentags}}</dd>
+      </dl>
+    {{else if (eq model.postType 'resource')}}
+      <h4>Open Asset Information</h4>
+      <dl>
+        <dt>Title</dt>
+        <dd>{{model.title}}</dd>
+
+        <dt>Link to the Resource</dt>
+        <dd>{{model.link}}</dd>
+
+        <dt>License</dt>
+        <dd>{{model.license}}</dd>
+
+        <dt>Primary Language</dt>
+        <dd>{{model.language}}</dd>
+
+        <dt>Open tag(s) related to your submission</dt>
+        <dd>{{join ', ' model.opentags}}</dd>
+      </dl>
+    {{/if}}
+  </div>
+  <div class="col-span-2">
+    <dl>
       <dt>Description</dt>
       <dd>{{model.description}}</dd>
-
-      <dt>Event starts at</dt>
-      <dd>{{moment-format model.eventTime 'YYYY-MM-DD HH:mm a'}}</dd>
-
-      <dt>Link to the Event Page</dt>
-      <dd>{{model.link}}</dd>
-
-      <dt>Optional link to the Web room of the event</dt>
-      <dd>{{model.linkwebroom}}</dd>
-
-      <dt>Language</dt>
-      <dd>{{model.language}}</dd>
-
-      <dt>Open tag(s) related to your submission</dt>
-      <dd>{{join ', ' model.opentags}}</dd>
     </dl>
-  {{else if (eq model.postType 'resource')}}
-    <h4>Open Asset Information</h4>
-    <dl>
-      <dt>Title</dt>
-      <dd>{{model.title}}</dd>
-
-      <dt>Description</dt>
-      <dd>{{model.description}}</dd>
-
-      <dt>Link to the Resource</dt>
-      <dd>{{model.link}}</dd>
-
-      <dt>License</dt>
-      <dd>{{model.license}}</dd>
-
-      <dt>Primary Language</dt>
-      <dd>{{model.language}}</dd>
-
-      <dt>Open tag(s) related to your submission</dt>
-      <dd>{{join ', ' model.opentags}}</dd>
-    </dl>
-  {{/if}}
-
-  {{#if model.imageUrl}}
-    <div class="h-40 w-auto">
-      <img src="{{model.imageUrl}}" alt=""/>
-    </div>
-  {{/if}}
+  </div>
 </div>
 
 <div class="mt-10">

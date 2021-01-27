@@ -1,10 +1,10 @@
-<div class="grid-x grid-margin-x align-justify">
-  <div class="small-3 cell">
-    {{#link-to 'submissions.index' (query-params postStatus='draft') class='button primary'}}
+<div class="flex bg-white shadow-sm rounded justify-between py-4 px-2 mb-10">
+  <div class="">
+    {{#link-to 'submissions.index' (query-params postStatus='draft') class='button-simple'}}
       Back to submissions{{/link-to}}
   </div>
-  <div class="small-3 cell text-right">
-    {{#link-to 'submit.edit' model.id class="button secondary"}}Edit{{/link-to}}
+  <div class="">
+    {{#link-to 'submit.edit' model.id class="button-simple"}}Edit{{/link-to}}
     {{#if (eq model.postStatus 'publish')}}
       {{#if (eq model.postType 'resource')}}
         {{#link-to 'resources.resource' model.slug class='button primary'}}View{{/link-to}}
