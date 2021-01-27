@@ -24,3 +24,7 @@
     @apply bg-gray-800 text-gray-100 opacity-100;
   }
 }
+
+.button-simple {
+  @apply py-1 px-2 border bg-gray-100 border-gray-200 rounded;
+}

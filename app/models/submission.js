@@ -85,4 +85,17 @@ export default DS.Model.extend(Validations, {
       return `https://www.openeducationweek.org/resources/${this.slug}`;
     }
   }),
+
+  postStatusColor: computed('postStatus', function () {
+    switch (this.postStatus) {
+      case 'draft':
+        return 'text-blue-400';
+      case 'publish':
+        return 'text-green-400';
+      case 'trash':
+        return 'text-red-400';
+      default:
+        return 'text-gray-500';
+    }
+  }),
 });
