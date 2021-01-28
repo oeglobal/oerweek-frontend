@@ -38,3 +38,9 @@
     background-color: transparent;
   }
 }
+
+body.index {
+  .header {
+    @apply shadow-none;
+  }
+}
