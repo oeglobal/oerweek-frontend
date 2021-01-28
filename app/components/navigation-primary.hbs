@@ -1,16 +1,15 @@
-<header class="header shadow-md z-50 bg-white {{if (eq this.isMobileOpen true) "menu-open"}} {{if @isHome "bg-purple-100"}} ">
-  <div class="global-header bg-blue-600
-            w-full hidden md:flex flex-row items-center align-center justify-end
-            lg:h-6
-            uppercase text-xs font-sans text-right">
-    <div class="container">
-      <a class="global-header__item" href="https://www.oeglobal.org">OE Global</a>
-      <a class="global-header__item" href="https://www.oelatam.org">OE LATAM</a>
-      <a class="global-header__item" href="https://www.cccoer.org">CCCOER</a>
-      <a class="global-header__item" href="https://conference.oeglobal.org">OE Global Conference</a>
-      <a class="global-header__item active" href="https://www.openeducationweek.org">OE Week</a>
-      <a class="global-header__item" href="https://awards.oeglobal.org">OE Awards</a>
-    </div>
+<header class="header shadow-md z-50 bg-white {{if (eq this.isMobileOpen true) " menu-open"}} {{if
+  @isHome "bg-purple-100" }} ">
+  <div class=" global-header bg-blue-600 w-full hidden md:flex flex-row items-center align-center justify-end lg:h-6
+  uppercase text-xs font-sans text-right">
+  <div class="container">
+    <a class="global-header__item" href="https://www.oeglobal.org">OE Global</a>
+    <a class="global-header__item" href="https://www.oelatam.org">OE LATAM</a>
+    <a class="global-header__item" href="https://www.cccoer.org">CCCOER</a>
+    <a class="global-header__item" href="https://conference.oeglobal.org">OE Global Conference</a>
+    <a class="global-header__item active" href="https://www.openeducationweek.org">OE Week</a>
+    <a class="global-header__item" href="https://awards.oeglobal.org">OE Awards</a>
+  </div>
   </div>
 
   <div class="container pr-0 lg:p-4">
@@ -18,11 +17,9 @@
       <div class="flex items-center justify-between h-full">
         {{#link-to "index" class="brand"}}{{svg-jar 'logo' class="nav-logo"}}{{/link-to}}
 
-        <nav role="navigation" class="nav-primary lg:block flex {{if (eq this.isMobileOpen false) "hidden"}}">
+        <nav role="navigation" class="nav-primary lg:block flex {{if (eq this.isMobileOpen false) " hidden"}}">
           <ul class="nav nav-dropdown flex gap-4 flex-col lg:flex-row lg:items-center">
-            <BasicDropdown
-                    @renderInPlace={{true}}
-                    as |dd|>
+            <BasicDropdown @renderInPlace={{true}} as |dd|>
               <dd.Trigger>
                 <li class="menu-item has-children">
                   <button type="button">About</button>
@@ -40,9 +37,7 @@
               </dd.Trigger>
             </BasicDropdown>
 
-            <BasicDropdown
-                    @renderInPlace={{true}}
-                    as |dd|>
+            <BasicDropdown @renderInPlace={{true}} as |dd|>
               <dd.Trigger>
                 <li class="menu-item has-children">
                   <button type="button">How to participate</button>
@@ -55,7 +50,11 @@
                         <LinkTo @route="submit">Submit your Entry</LinkTo>
                       </li>
                       <li class="menu-item-child">
-                        <LinkTo @route="page" @model="materials">Promo materials</LinkTo>
+                        <a href="https://connect.oeglobal.org/c/oeweek/33/none" target="_blank"
+                          rel="noopener noreferrer">OEG Connect</a>
+                      </li>
+                      <li class="menu-item-child">
+                        <LinkTo @route="page" @model="materials">Promotional materials</LinkTo>
                       </li>
                     </ul>
                   </dd.Content>
@@ -63,14 +62,34 @@
               </dd.Trigger>
             </BasicDropdown>
 
-            <li class="menu-item"><LinkTo @route="resources">OEW Library</LinkTo></li>
-            <li class="menu-item"><LinkTo @route="events">Activities</LinkTo></li>
-            <li class=""><LinkTo @route="submit" class="button-outline">Submit Entry</LinkTo></li>
+            <li class="menu-item">
+              <LinkTo @route="resources">OEW Library</LinkTo>
+            </li>
+            
+            <BasicDropdown @renderInPlace={{true}} as |dd|>
+              <dd.Trigger>
+                <li class="menu-item has-children">
+                  <button type="button">Archive</button>
+                  <dd.Content>
+                    <ul class="sub-menu">
+                      <li class="menu-item-child">
+                        <LinkTo @route="events">Activities</LinkTo>
+                      </li>
+
+                    </ul>
+                  </dd.Content>
+                </li>
+              </dd.Trigger>
+            </BasicDropdown>
+
+          
+            <li class="">
+              <LinkTo @route="submit" class="button-outline">Submit Entry</LinkTo>
+            </li>
           </ul>
         </nav>
-        <button
-                class="toggle-menu flex items-center justify-center lg:hidden text-purple-500" type="button" {{on "click" this.toggleMobileOpen}}
-        >
+        <button class="toggle-menu flex items-center justify-center lg:hidden text-purple-500" type="button"
+          {{on "click" this.toggleMobileOpen}}>
           {{svg-jar "menu" class="menu"}}
         </button>
       </div>

@@ -208,11 +208,14 @@
 
 .site--footer {
   .sub-menu {
+    li {
+      @apply mb-2;
+    }
     a {
-      @apply py-1 px-2 bg-blue-700 rounded;
+      @apply py-1 px-2 bg-blue-600 block rounded transition-all;
 
       &:hover {
-        @apply bg-blue-600;
+        @apply bg-blue-500;
       }
     }
   }
