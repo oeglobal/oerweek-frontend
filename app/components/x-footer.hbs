@@ -1,7 +1,7 @@
 <footer class="site--footer bg-blue-800 text-gray-100 pb-10 lg:pt-20">
   <div class="container flex flex-col items-start just">
     <div class="flex flex-col lg:flex-row gap-16 w-full justify-between">
-      <div class="">
+      <div class="w-full lg:w-1/4">
         <div class="hidden lg:flex flex-col p-8 bg-white rounded lg:mb-4">
           {{svg-jar "logo" class="h-20 w-auto"}}
         </div>
@@ -15,7 +15,7 @@
         </div>
       </div>
 
-      <ul class="hidden lg:grid grid-cols-4 gap-8">
+      <ul class="hidden lg:w-3/4 ml-16 lg:grid grid-cols-4 gap-8">
         <ul class="sub-menu flex flex-col gap-3 mb-4">
           <li class="font-bold mb-2">About</li>
           <li class="mb-1">
@@ -47,7 +47,7 @@
         <ul class="sub-menu flex flex-col gap-3 mb-4">
           <li class="font-bold mb-2">Archive</li>
           <li class="mb-1">
-            <LinkTo @route="resources">OEW Library</LinkTo>
+            <LinkTo @route="resources">OE&thinsp;Week Library</LinkTo>
           </li>
           <li class="mb-1">
             <LinkTo @route="events">Activities</LinkTo>
