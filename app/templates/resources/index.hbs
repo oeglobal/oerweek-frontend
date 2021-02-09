@@ -1,5 +1,21 @@
-<div class="content">
-  <h1>OEW Library</h1>
+<div class="content mb-4">
+  <h1>OE&thinsp;Week Library</h1>
+  <div class="bg-red-400 text-white p-8 rounded mx-auto lg:w-8/12 lg:flex justify-center font-bold">
+    {{svg-jar "icon-library" class="h-32 w-auto mx-auto flex-shrink-0 lg:mr-6 mb-4"}}
+    <div>
+      <p class="mb-4">
+        Collection of open assets shared by the community in all Open
+        Education Week editions since 2015.
+      </p>
+
+      <p>
+        Open assets are what open education initiatives produce and use, tangible goods with educational purpose and
+        value. Open assets are produced, curated, and distributed in ways that make them freely accessible, usable, and
+        improvable by others. These may be: OER, open courses, open textbook, open tools, research, open practices, open
+        projects/initiatives, etc.
+      </p>
+    </div>
+  </div>
 </div>
 
 <div class="bg-red-400 text-white p-4">
@@ -7,48 +23,44 @@
     <div>
       <label>Filter by year</label>
       {{#power-select
-              options=years
-              selected=yearselected
-              searchEnabled=false
-              allowClear=true
-              onChange=(action "selectYear") as |year|}}
-        {{year}}
+      options=years
+      selected=yearselected
+      searchEnabled=false
+      allowClear=true
+      onChange=(action "selectYear") as |year|}}
+      {{year}}
       {{/power-select}}
     </div>
     <div class="">
       <label>Filter by Open tag</label>
       {{#power-select
-              options=opentags
-              selected=opentag
-              searchEnabled=false
-              allowClear=true
-              onChange=(action "selectOpentag") as |opentag|}}
-        {{opentag}}
+      options=opentags
+      selected=opentag
+      searchEnabled=false
+      allowClear=true
+      onChange=(action "selectOpentag") as |opentag|}}
+      {{opentag}}
       {{/power-select}}
     </div>
     <div class="">
       <label>Filter by Language</label>
       {{#power-select
-              options=languages
-              selected=language
-              searchEnabled=false
-              allowClear=true
-              onChange=(action "selectLanguage") as |language|}}
-        {{language}}
+      options=languages
+      selected=language
+      searchEnabled=false
+      allowClear=true
+      onChange=(action "selectLanguage") as |language|}}
+      {{language}}
       {{/power-select}}
     </div>
   </div>
 </div>
 
 <div class="pt-10">
-  <ResourceBrowser @resources={{filteredResources}}/>
+  <ResourceBrowser @resources={{filteredResources}} />
 
   {{#if filteredResources}}
-    <ResourcePagination
-            @page={{page}}
-            @pageCount={{pageCount}}
-            @previousPage={{action "previousPage"}}
-            @nextPage={{action "nextPage"}}
-    />
+  <ResourcePagination @page={{page}} @pageCount={{pageCount}} @previousPage={{action "previousPage" }}
+    @nextPage={{action "nextPage" }} />
   {{/if}}
 </div>

@@ -65,24 +65,13 @@
             <li class="menu-item">
               <LinkTo @route="resources">OE&thinsp;Week Library</LinkTo>
             </li>
-            
-            <BasicDropdown @renderInPlace={{true}} as |dd|>
-              <dd.Trigger>
-                <li class="menu-item has-children">
-                  <button type="button">Archive</button>
-                  <dd.Content>
-                    <ul class="sub-menu">
-                      <li class="menu-item-child">
-                        <LinkTo @route="events">Activities</LinkTo>
-                      </li>
 
-                    </ul>
-                  </dd.Content>
-                </li>
-              </dd.Trigger>
-            </BasicDropdown>
 
-          
+            <li class="menu-item">
+              <LinkTo @route="events">Past Activities</LinkTo>
+            </li>
+
+
             <li class="">
               <LinkTo @route="submit" class="button-outline">Submit Entry</LinkTo>
             </li>
