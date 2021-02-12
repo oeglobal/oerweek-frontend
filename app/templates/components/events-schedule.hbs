@@ -1,52 +1,21 @@
-<div class="schedule__container online">
-  <div class="grid-container">
-    <div class="grid-x grid-margin-x">
-      {{schedule-action-tabs selectDate='selectDate' eventType='online'}}
-    </div>
-
-    <div class="grid-x grid-margin-x align-justify">
-      <div class="small-12 cell medium-auto">
-        <h1 class="schedule-header">{{svg-jar 'online'}} Online Events</h1>
-      </div>
-
-      <div class="small-12 cell medium-shrink offline">
-        {{#scroll-to href='#local' class="schedule-header"}}
-          Jump to Local Events {{svg-jar 'offline'}}
-        {{/scroll-to}}
-        {{#link-to 'resources' class="schedule-header resources"}}
-          Go to Resources {{svg-jar 'cubes'}}
-        {{/link-to}}
-      </div>
-    </div>
-
-    <div class="grid-x grid-margin-x">
-      {{schedule-table filteredEvent=filteredOnlineEvent isDateOther=isDateOther}}
-
-      <div class="small-12 cell">
-        <div class="content--notice">Time of event is adjusted to your current time. Please double check it on the site of
-          the event.
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="content mb-4 flex justify-between items-start">
+  <h1>Schedule</h1>
+  <LinkTo @route="events" class="bg-white p-4 flex flex-col font-bold gap-1 -mt-4 hover:bg-purple-100">
+    {{svg-jar "th-regular" class="h-6 fill-current text-grey-800"}}
+    Archive
+  </LinkTo>
 </div>
 
-<div class="schedule__container offline" id="local">
-  <div class="grid-container">
-    <div class="grid-x grid-margin-x">
-      {{!-- {{schedule-action-tabs selectDate='selectDate' event_type='offline'}} --}}
+<div>
+  <ScheduleActionTabs @selectDate={{action this.selectDate}} />
+  <ScheduleTable
+          @filteredEvent={{filteredOnlineEvent}}
+          @isDateOther={{isDateOther}}
+          @isDateAll={{isDateAll}}
+  />
 
-      <div class="small-12 cell">
-        <h1 class="schedule-header">{{svg-jar 'offline'}} Local Events</h1>
-      </div>
+  <p>Time of event is adjusted to your current time. Please double check it on the site of
+    the event.</p>
 
-      {{schedule-table filteredEvent=filteredLocalEvent isDateOther=isDateOther}}
-
-      <div class="small-12 cell">
-        <div class="content--notice">Time of event is adjusted to your current time. Please double check it on the site of
-          the event.
-        </div>
-      </div>
-    </div>
-  </div>
+  {{log isDateAll}}
 </div>

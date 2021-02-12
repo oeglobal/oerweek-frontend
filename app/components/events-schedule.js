@@ -1,34 +1,44 @@
-import { equal } from '@ember/object/computed';
-import Component from '@ember/component';
-import { computed } from '@ember/object';
+import Component from '@glimmer/component';
 import { inject as service } from '@ember/service';
+import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
-export default Component.extend({
-  store: service(),
+export default class EventsScheduleComponent extends Component {
+  @service store;
 
-  date: '2020-03-03',
+  @tracked date = 'all';
 
-  isDateOther: equal('date', 'other'),
+  @tracked isDateOther = false;
+  @tracked isDateAll = false;
 
-  filteredLocalEvent: computed('date', 'model', function(){
-    return this.store.query('event', {
-      'event_type': 'local',
-      'page[size]': 99,
-      'date': this.date
-    });
-  }),
-
-  filteredOnlineEvent: computed('date', 'model', function(){
-    return this.store.query('event', {
-      'event_type': 'online',
-      'page[size]': 99,
-      'date': this.date
-    });
-  }),
-
-  actions: {
-    selectDate(selectedTab, /* _ */) {
-      this.set('date', selectedTab.get('value'));
-    }
+  constructor() {
+    super(...arguments);
+    this.isDateOther = this.date === 'other';
+    this.isDateAll = this.date === 'all';
   }
-});
+
+  filteredLocalEvent() {
+    return this.store.query('event', {
+      event_type: 'local',
+      'page[size]': 99,
+      date: this.date,
+    });
+  }
+
+  filteredOnlineEvent() {
+    return this.store.query('event', {
+      event_type: 'online',
+      'page[size]': 99,
+      date: this.date,
+    });
+  }
+
+  @action
+  selectDate(selectedTab) {
+    const date = selectedTab.get('value');
+    this.date = date;
+
+    this.isDateOther = date === 'other';
+    this.isDateAll = date === 'all';
+  }
+}

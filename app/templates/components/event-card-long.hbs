@@ -1,16 +1,15 @@
-{{#link-to 'events.event' event.slug
-           class=(concat "card-event-long cell expanded grid-x align-justify " event.eventType)}}
-  <span class="cell auto grid-y align-justify card-event-long__desc">
-    <span class="cell shrink">{{event.title}}</span>
-    <span class="card-event-small__language cell shrink grid-x grid-margin-x align-left">
-      <span class="cell small-12 medium-shrink">{{svg-jar 'globe'}} {{event.country}}, {{event.city}}</span>
-      <span class="cell shrink">{{svg-jar 'flag'}} {{event.formLanguage}}</span>
+<LinkTo @route="events.event" @model={{event.slug}} class="flex-col">
+  <div>
+    <span>
       {{#if isDateOther}}
-        <span class="cell shrink">{{svg-jar 'clock'}} {{moment-format event.eventTime 'YYYY-MM-DD HH:mm'}} </span>
+        {{moment-format event.eventTime 'YYYY-MM-DD HH:mm'}}
       {{else}}
-        <span class="cell shrink">{{svg-jar 'clock'}} {{moment-format event.eventTime 'HH:mm'}} </span>
+        {{moment-format event.eventTime 'HH:mm'}}
       {{/if}}
     </span>
-  </span>
-  <span class="cell shrink align-self-middle card-event-long__more hide-for-small-only">Read Details</span>
-{{/link-to}}
+    <span class="font-bold">{{event.title}}</span>
+  </div>
+  <div>
+    {{event.country}}, {{event.city}}, {{event.formLanguage}}
+  </div>
+</LinkTo>
