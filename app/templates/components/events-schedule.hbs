@@ -7,15 +7,14 @@
 </div>
 
 <div>
-  <ScheduleActionTabs @selectDate={{action this.selectDate}} />
+  <ScheduleActionTabs @selectDate={{action this.selectDate}} @selectedDate={{this.date}} @dates={{this.dates}} />
   <ScheduleTable
-          @filteredEvent={{filteredOnlineEvent}}
-          @isDateOther={{isDateOther}}
-          @isDateAll={{isDateAll}}
+          @filteredEvent={{this.filteredEvents}}
+          @isDateOther={{this.isDateOther}}
+          @isDateAll={{this.isDateAll}}
+
   />
 
   <p>Time of event is adjusted to your current time. Please double check it on the site of
     the event.</p>
-
-  {{log isDateAll}}
 </div>
