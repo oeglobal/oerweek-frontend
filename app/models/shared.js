@@ -1,5 +1,6 @@
 import Model, { attr } from '@ember-data/model';
 import { htmlSafe } from '@ember/template';
+import moment from 'moment';
 
 export default class SharedResourceModel extends Model {
   @attr('string') title;
@@ -32,5 +33,9 @@ export default class SharedResourceModel extends Model {
 
   get contentExcerptSafe() {
     return htmlSafe(this.contentExcerpt);
+  }
+
+  get eventDate() {
+    return moment(this.eventTime).format('dddd, MMMM Do YYYY');
   }
 }

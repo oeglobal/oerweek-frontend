@@ -1,3 +1,7 @@
-{{#each @filteredEvent as |event index|}}
-  {{event-card-long event=event isDateOther=isDateOther}}
-{{/each}}
+{{#each-in (group-by "eventDate" @filteredEvent) as |eventDate events|}}
+  <h2 class="font-bold text-2xl leading-loose mt-6 mb-2">{{eventDate}}</h2>
+
+  {{#each events as |event|}}
+    <EventCardLong @event={{event}} @isDateOther={{isDateOther}} />
+  {{/each}}
+{{/each-in}}
