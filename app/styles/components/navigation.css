@@ -226,11 +226,10 @@
 .mobile-nav {
 
   li.mobilemenu-item {
-    flex: 1 0 auto;
-    @apply flex-grow flex-shrink-0 w-auto border-gray-200 border inline-block bg-white h-14 text-center;
+    @apply flex-1 w-auto border-gray-200 border inline-block bg-white h-14 text-center;
 
     a {
-      @apply p-2 inline-block w-full h-full;
+      @apply p-2 inline-block w-full h-full overflow-hidden;
 
       &:active {
         @apply bg-purple-500 text-white;
