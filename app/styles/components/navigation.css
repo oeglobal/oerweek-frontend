@@ -231,7 +231,7 @@
     a {
       @apply p-2 inline-block w-full h-full overflow-hidden;
 
-      &:active {
+      &.active {
         @apply bg-purple-500 text-white;
       }
 
