@@ -25,7 +25,7 @@
   @apply pr-8;
 
   &::after {
-    content: "+";
+    content: '+';
     position: absolute;
     right: 0.5rem;
     top: calc(50% - 0.5em);
@@ -39,12 +39,14 @@
 }
 
 .menu-item.active {
-  border-bottom: 2px solid theme("colors.purple.100");
+  border-bottom: 2px solid theme('colors.purple.100');
 }
 
-.nav .ember-basic-dropdown-trigger[aria-expanded="true"] .menu-item.has-children {
+.nav
+  .ember-basic-dropdown-trigger[aria-expanded='true']
+  .menu-item.has-children {
   &::after {
-    content: "-";
+    content: '-';
   }
 }
 
@@ -52,7 +54,7 @@
   @apply block pl-4 pr-8 py-2 flex items-center leading-relaxed w-full;
 
   &:hover {
-    background-color: theme("colors.purple.100");
+    background-color: theme('colors.purple.100');
   }
 }
 
@@ -62,7 +64,7 @@
 }
 
 .menu-open .toggle-menu {
-  background-color: theme("colors.purple.500");
+  background-color: theme('colors.purple.500');
   fill: white;
   color: white;
 }
@@ -70,12 +72,12 @@
 .toggle-menu {
   height: 80px;
   width: 80px;
-  color: theme("colors.purple.500");
+  color: theme('colors.purple.500');
 }
 
 .toggle-menu svg {
   #menu-path {
-    fill: theme("colors.purple.500");
+    fill: theme('colors.purple.500');
   }
 }
 
@@ -97,7 +99,7 @@
 
 .menu-open {
   .banner .nav {
-    background-color: theme("colors.purple.100");
+    background-color: theme('colors.purple.100');
 
     @apply flex flex-wrap px-6 pt-4 pb-8;
   }
@@ -180,14 +182,14 @@
     }
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       top: calc(50% - 10px);
       right: 30px;
       width: 20px;
       height: 20px;
 
-      background-image: url("../images/icons/magnify.svg");
+      background-image: url('../images/icons/magnify.svg');
       background-size: cover;
     }
 
@@ -217,6 +219,29 @@
       &:hover {
         @apply bg-blue-500;
       }
+    }
+  }
+}
+/* Mobile menu */
+.mobile-nav {
+
+  li.mobilemenu-item {
+    @apply flex-1 w-auto border-gray-200 border inline-block bg-white h-14 text-center;
+
+    a {
+      @apply p-2 inline-block w-full h-full overflow-hidden;
+
+      &.active {
+        @apply bg-purple-500 text-white;
+      }
+
+      svg {
+        @apply h-4 w-auto mx-auto mb-1;
+      }
+    }
+
+    &:not(:first-child) {
+      margin-left: -1px;
     }
   }
 }
