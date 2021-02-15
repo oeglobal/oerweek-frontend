@@ -11,6 +11,7 @@
 @import "components/pagination.css";
 @import "components/resources.css";
 @import "components/submit.css";
+@import "components/schedule.css";
 
 html {
   @apply antialiased;

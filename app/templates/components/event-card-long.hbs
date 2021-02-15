@@ -1,17 +1,23 @@
-<LinkTo @route="events.event" @model={{event.slug}}
-        class="flex flex-col bg-white border border-gray-200 rounded p-4 mb-2">
-  <div>
-    <span>
-      {{#if isDateOther}}
-        {{moment-format event.eventTime 'YYYY-MM-DD HH:mm'}}
-      {{else}}
-        {{moment-format event.eventTime 'HH:mm'}}
-      {{/if}}
-    </span>
-    <span class="font-bold">{{event.title}}</span>
+<tr class="bg-white border event__card__long">
+  <div class="relative flex">
+    <td class="w-full">
+      <LinkTo @route="events.event" @model={{event.slug}} class="flex flex-col p-4">
+        <div>
+        <span>
+          {{#if isDateOther}}
+            {{moment-format event.eventTime 'YYYY-MM-DD HH:mm'}}
+          {{else}}
+            {{moment-format event.eventTime 'HH:mm'}}
+          {{/if}}
+        </span>
+          <span class="font-bold">{{event.title}}</span>
+        </div>
+        <div>
+          {{event.country}}, {{event.city}}, {{event.formLanguage}}
+          <span class="bg-gray-200 rounded-xl px-2 py-1">{{event.eventType}}</span>
+        </div>
+      </LinkTo>
+    </td>
+    <!--  <td>Bookmark</td>-->
   </div>
-  <div>
-    {{event.country}}, {{event.city}}, {{event.formLanguage}}
-    <span class="bg-gray-200 rounded-xl px-2 py-1">{{event.eventType}}</span>
-  </div>
-</LinkTo>
+</tr>

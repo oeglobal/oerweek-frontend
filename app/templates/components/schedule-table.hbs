@@ -1,7 +1,11 @@
 {{#each-in (group-by "eventDate" @filteredEvent) as |eventDate events|}}
   <h2 class="font-bold text-base lg:text-2xl leading-tight mt-6 mb-2">{{eventDate}}</h2>
 
-  {{#each events as |event|}}
-    <EventCardLong @event={{event}} @isDateOther={{isDateOther}} />
-  {{/each}}
+  <table class="w-full border-collapse border border-gray-200">
+    <tbody>
+    {{#each events as |event|}}
+      <EventCardLong @event={{event}} @isDateOther={{isDateOther}} />
+    {{/each}}
+    </tbody>
+  </table>
 {{/each-in}}
