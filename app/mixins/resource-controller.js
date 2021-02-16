@@ -6,7 +6,7 @@ import getActiveLanguages from 'frontend/utils/get-active-languages';
 export default Mixin.create({
   queryParams: ['page'],
   years: ['2015', '2016', '2017', '2018', '2019', '2020', '2021'],
-  yearselected: '2020',
+  yearselected: '2021',
   opentag: null,
   language: null,
 
