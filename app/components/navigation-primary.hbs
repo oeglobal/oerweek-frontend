@@ -19,6 +19,10 @@
 
         <nav role="navigation" class="nav-primary lg:block flex {{if (eq this.isMobileOpen false) " hidden"}}">
           <ul class="nav nav-dropdown flex gap-4 flex-col lg:flex-row lg:items-center">
+            <li class="menu-item">
+              <LinkTo @route="schedule">Schedule</LinkTo>
+            </li>
+
             <BasicDropdown @renderInPlace={{true}} as |dd|>
               <dd.Trigger>
                 <li class="menu-item has-children">
@@ -66,22 +70,19 @@
               <LinkTo @route="resources">OE&thinsp;Week Library</LinkTo>
             </li>
 
-
-             <BasicDropdown @renderInPlace={{true}} as |dd|>		
-               <dd.Trigger>		
-                 <li class="menu-item has-children">		
-                   <button type="button">Archive</button>		
-                   <dd.Content>		
-                     <ul class="sub-menu">		
-                       <li class="menu-item-child">		
-                         <LinkTo @route="events">Past Activities</LinkTo>		
-                       </li>		
-
- 
-                      </ul>		
-                   </dd.Content>		
-                 </li>		
-               </dd.Trigger>		
+             <BasicDropdown @renderInPlace={{true}} as |dd|>
+               <dd.Trigger>
+                 <li class="menu-item has-children">
+                   <button type="button">Archive</button>
+                   <dd.Content>
+                     <ul class="sub-menu">
+                       <li class="menu-item-child">
+                         <LinkTo @route="events">Past Activities</LinkTo>
+                       </li>
+                      </ul>
+                   </dd.Content>
+                 </li>
+               </dd.Trigger>
              </BasicDropdown>
 
 
