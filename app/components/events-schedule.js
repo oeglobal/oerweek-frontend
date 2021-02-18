@@ -12,6 +12,10 @@ export default class EventsScheduleComponent extends Component {
   @tracked isDateOther = false;
   @tracked isDateAll = false;
 
+  @tracked showOnline = true;
+  @tracked showLocal = true;
+  @tracked showAnytime = true;
+
   constructor() {
     super(...arguments);
     this.isDateOther = this.date === 'other';
@@ -32,6 +36,18 @@ export default class EventsScheduleComponent extends Component {
   get filteredEvents() {
     if (this.args.model) {
       return this.args.model.filter((item) => {
+        if (item.eventType === 'anytime' && !this.showAnytime) {
+          return false;
+        }
+
+        if (item.eventType === 'local' && !this.showLocal) {
+          return false;
+        }
+
+        if (item.eventType === 'online' && !this.showOnline) {
+          return false;
+        }
+
         if (this.date === 'anytime') {
           return item.eventType === 'anytime';
         }

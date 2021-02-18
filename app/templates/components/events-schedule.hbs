@@ -8,12 +8,25 @@
 
 <div>
   <ScheduleActionTabs @selectDate={{action this.selectDate}} @selectedDate={{this.date}} @dates={{this.dates}} />
-  <ScheduleTable
-          @filteredEvent={{this.filteredEvents}}
-          @isDateOther={{this.isDateOther}}
-          @isDateAll={{this.isDateAll}}
-  />
 
-  <p>Time of event is adjusted to your current time. Please double check it on the site of
-    the event.</p>
+  <div class="flex flex-col lg:flex-row gap-4">
+    <div class="flex-auto lg:w-1/4">
+      <ScheduleFilter
+              @showOnline={{this.showOnline}}
+              @showLocal={{this.showLocal}}
+              @showAnytime={{this.showAnytime}}
+      />
+      <p class="mt-4 text-sm">Time of event is adjusted to your current time. Please double check it on the site of
+        the event.</p>
+    </div>
+
+    <div class="w-full -mt-6">
+      <ScheduleTable
+              @filteredEvent={{this.filteredEvents}}
+              @isDateOther={{this.isDateOther}}
+              @isDateAll={{this.isDateAll}}
+      />
+
+    </div>
+  </div>
 </div>
