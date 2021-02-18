@@ -3,6 +3,8 @@ import { inject as service } from '@ember/service';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import moment from 'moment';
+import { storageFor } from 'ember-local-storage';
+import { set, get } from '@ember/object';
 
 export default class EventsScheduleComponent extends Component {
   @service store;
@@ -16,8 +18,12 @@ export default class EventsScheduleComponent extends Component {
   @tracked showLocal = true;
   @tracked showAnytime = true;
 
+  @storageFor('schedule') storage;
+
   constructor() {
     super(...arguments);
+
+    this.date = this.storage.get('date');
     this.isDateOther = this.date === 'other';
     this.isDateAll = this.date === 'all';
   }
@@ -73,6 +79,9 @@ export default class EventsScheduleComponent extends Component {
   @action
   selectDate(selectedTab) {
     this.date = selectedTab;
+
+    this.storage.set('date', this.date);
+    this.storage.content.date = this.date;
 
     this.isDateOther = this.date === 'other';
     this.isDateAll = this.date === 'all';
