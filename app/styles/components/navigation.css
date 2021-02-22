@@ -11,7 +11,7 @@
 }
 
 .menu-item {
-  @apply px-3 py-4 relative flex items-center tracking-widest;
+  @apply px-4 py-4 relative flex items-center tracking-widest;
 
   position: relative;
 
@@ -104,8 +104,9 @@
     @apply flex flex-wrap px-6 pt-4 pb-8;
   }
 
-  .banner .nav a:not(.button-outline) {
-    @apply inline-block pl-2 pr-4 py-2 border-none text-gray-800 no-underline font-sans;
+  .banner .nav a:not(.button-outline),
+  .banner .nav button {
+    @apply inline-block border-none text-gray-800 no-underline font-sans;
   }
 
   .banner .nav .menu-item {
@@ -148,12 +149,6 @@
 
   .menu-item {
     @apply w-full h-auto flex-col items-start mb-2;
-  }
-
-  .menu-item > a {
-    line-height: 30px;
-
-    @apply h-10;
   }
 
   .ember-basic-dropdown-trigger--below .menu-item .sub-menu {
