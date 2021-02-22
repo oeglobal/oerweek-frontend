@@ -104,7 +104,7 @@
     @apply flex flex-wrap px-6 pt-4 pb-8;
   }
 
-  .banner .nav a {
+  .banner .nav a:not(.button-outline) {
     @apply inline-block pl-2 pr-4 py-2 border-none text-gray-800 no-underline font-sans;
   }
 
