@@ -25,8 +25,8 @@ export default Component.extend({
           this.set('model.imageUrl', data.body.image);
         });
     } catch (e) {
-      this.set('model.image', null);
-      this.set('model.imageUrl', null);
+      this.set('model.image', '');
+      this.set('model.imageUrl', '');
 
       this.set(
         'errors',
@@ -44,7 +44,7 @@ export default Component.extend({
 
     removeImage() {
       this.model.set('imageUrl', '');
-      this.model.set('image', null);
+      this.model.set('image', '');
     },
 
     resetDropzone() {
