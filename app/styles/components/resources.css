@@ -3,7 +3,7 @@
 }
 
 .resource__meta dd {
-  @apply text-purple-500 mb-2;
+  @apply text-purple-500 mb-4;
 }
 
 .resource__meta dt,

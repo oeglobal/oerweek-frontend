@@ -11,7 +11,7 @@
 }
 
 .button-outline {
-  @apply text-base text-gray-800 font-bold px-4 py-3 inline-block;
+  @apply text-base text-gray-800 font-bold px-4 py-3 inline-block bg-white;
 
   line-height: 1.65rem;
   border: 3px solid theme('colors.gray.800');

@@ -6,22 +6,22 @@
         <img src="{{@resource.imageUrl}}" alt="{{@resource.title}}" class="object-cover" />
     {{/if}}
   </div>
-  <div class="p-4 flex flex-col gap-4 mt-4 flex-grow flex justify-between">
-    <h3 class="text-lg font-bold group-hover:text-blue-400 group-active:text-white">
+  <div class="pt-4 px-4 pb-8 mt-4 prose prose-sm">
+    <h3 class="font-bold group-hover:text-blue-400 group-active:text-white">
       {{@resource.title}}
     </h3>
-    <div class="prose hidden md:block flex-grow text-sm leading-snug group-active:text-white">
+    <div class="hidden md:block flex-grow group-active:text-white mb-4">
       {{@resource.contentExcerptSafe}}
     </div>
     <dl class="flex flex-col gap-2 text-gray-500 group-active:text-white">
-      <dd>{{svg-jar "globe-light" class="h-4 inline mr-2"}}
+      <dd class="mb-2">{{svg-jar "globe-light" class="h-4 inline mr-2"}}
         {{#if (eq @resource.eventType "local") }}
           {{@resource.city}}, {{@resource.country}}
         {{else}}
           {{uc-words @resource.eventType}}
         {{/if}}
       </dd>
-      <dd>{{svg-jar "calendar-day-light" class="h-4 inline mr-2"}}
+      <dd class="mb-2">{{svg-jar "calendar-day-light" class="h-4 inline mr-2"}}
         {{#if (or (eq @resource.eventType 'webinar') (eq @resource.eventType 'online'))}}
           {{moment-format @resource.eventTime 'YYYY-MM-DD HH:mm a'}}
         {{else}}
@@ -29,7 +29,7 @@
         {{/if}}
       </dd>
       {{#if @resource.formLanguage}}
-        <dd>{{svg-jar "flag-light" class="h-4 inline mr-2"}} {{@resource.formLanguage}}</dd>
+        <dd class="mb-2">{{svg-jar "flag-light" class="h-4 inline mr-2"}} {{@resource.formLanguage}}</dd>
       {{/if}}
       <dd class="flex flex-row justify-start items-baseline">
         <span class="inline-flex w-4 mr-3">
