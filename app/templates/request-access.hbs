@@ -1,19 +1,26 @@
-<div class="grid-container">
-  <div class="grid-x grid-margin-x">
-    <div class="medium-10 columns medium-centered">
-      <div class="box">
-        <p>Please enter email that you used for your OEW submission. We'll send you an email with a link that will allow
-          you to modify it.</p>
-        <form {{action 'requestAccess' on='submit'}}>
-          <label for="email">Login</label>
-          {{input id='email' placeholder='Enter Email' value=email}}
-          <button type="submit" class="button primary">Request Access</button>
-          {{#if errorMessage}}
-            <p class="error">{{errorMessage}}</p>
-          {{/if}}
-          {{#if message}}
-            <p>{{message}}</p>
-          {{/if}}
+<div class="bg-gray-100 py-8 lg:py-20">
+  <div class="container">
+    <div class="lg:bg-white lg:rounded lg:shadow pb-4 pt-10 pb-16 lg:px-8 w-full lg:w-5/6 mx-auto">
+      <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+        <div class="sm:col-span-6">
+          <p>Please enter email that you used for your OEW submission. We'll send you an email with a link that will
+            allow
+            you to modify it.</p>
+        </div>
+        <form {{action 'requestAccess' on='submit'}} class="sm:col-span-6">
+          <div class="sm:col-span-6">
+            <label for="email" class="block text-sm font-medium text-gray-300">Login</label>
+            {{input id='email' placeholder='Enter Email' value=email}}
+          </div>
+          <div class="sm:col-span-6 mt-4">
+            <button type="submit" class="button-main">Request Access</button>
+            {{#if errorMessage}}
+              <p class="error">{{errorMessage}}</p>
+            {{/if}}
+            {{#if message}}
+              <p>{{message}}</p>
+            {{/if}}
+          </div>
         </form>
       </div>
     </div>

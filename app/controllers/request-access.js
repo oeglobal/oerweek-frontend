@@ -1,10 +1,10 @@
 import Controller from '@ember/controller';
-import {inject as service} from '@ember/service';
+import { inject as service } from '@ember/service';
+import fetch from 'fetch';
 
 import ENV from 'frontend/config/environment';
 
 export default Controller.extend({
-  ajax: service(),
   email: null,
   errorMessage: '',
   message: '',
@@ -21,16 +21,30 @@ export default Controller.extend({
       let ajax = this.ajax,
         email = this.email;
 
-      ajax.post(`${ENV.APP.API_HOST}/api/request-access/`, {data: {email}}).then((response) => {
-        this.set('errorMessage', '');
-        this.set('message', '');
+      fetch(`${ENV.APP.API_HOST}/api/request-access/`, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json, text/plain, */*',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((response) => {
+          this.set('errorMessage', '');
+          this.set('message', '');
 
-        if (response.status !== 'ok') {
-          this.set('errorMessage', 'Invalid email');
-        } else {
-          this.set('message', 'You\'ll receive email with instructions shortly. Please also check Spam folder.');
-        }
-      });
-    }
-  }
+          if (response.status === 'invalid_email') {
+            this.set('errorMessage', 'Invalid email');
+          } else {
+            this.set(
+              'message',
+              "You'll receive email with instructions shortly. Please also check Spam folder."
+            );
+          }
+        });
+    },
+  },
 });
