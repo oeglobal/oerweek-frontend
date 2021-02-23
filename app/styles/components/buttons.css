@@ -11,9 +11,8 @@
 }
 
 .button-outline {
-  @apply text-base text-gray-800 font-bold px-4 py-3 inline-block bg-white;
+  @apply text-base text-gray-800 font-bold px-4 py-3 inline-block bg-white leading-tight;
 
-  line-height: 1.65rem;
   border: 3px solid theme('colors.gray.800');
 
   &:hover {

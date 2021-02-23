@@ -11,7 +11,7 @@
 }
 
 .menu-item {
-  @apply px-4 py-4 relative flex items-center tracking-widest;
+  @apply px-4 py-4 relative flex items-center tracking-widest leading-tight text-center;
 
   position: relative;
 

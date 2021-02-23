@@ -9,3 +9,16 @@
   z-index: 10;
   pointer-events: none;
 }
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+/* Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.sched-table h2:first-child {
+    @apply mt-0;
+}

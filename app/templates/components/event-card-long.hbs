@@ -5,18 +5,17 @@
         <div>
         <span>
           {{#if isDateOther}}
-            {{moment-format event.eventTime 'YYYY-MM-DD HH:mm'}}
+            {{moment-format event.eventTime 'YYYY-MM-DD h:mm a'}}
           {{else}}
-            {{moment-format event.eventTime 'HH:mm'}}
+            {{moment-format event.eventTime 'h:mm a'}}
           {{/if}}
-        </span>
+        </span> <span>&#10141;</span> 
           <span class="font-bold">{{event.title}}</span>
         </div>
-        <div class="leading-loose mt-2">
-          <span class="bg-gray-200 rounded-xl px-2 py-1 {{event-color event.eventType}}">{{uc-words event.eventType}}</span>
-          <span class="bg-blue-200 rounded-xl px-2 py-1">{{event.formLanguage}}</span>
-          <div class="sm:w-full lg:hidden"></div>
-          <span class="bg-red-200 rounded-xl px-2 py-1">{{event.country}}, {{event.city}}</span>
+        <div class="leading-loose mt-2 text-sm">
+          <span class="bg-gray-100 rounded py-0.5 px-1 {{event-color event.eventType}}">{{uc-words event.eventType}}</span>
+          <span class="bg-blue-100 rounded py-0.5 px-1">{{event.formLanguage}}</span>
+          <span class="bg-red-100 rounded py-0.5 px-1">{{event.country}}, {{event.city}}</span>
 
         </div>
       </LinkTo>
