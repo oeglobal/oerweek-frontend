@@ -1,6 +1,6 @@
 {{#if @filteredEvent}}
   {{#each-in (group-by "eventDate" @filteredEvent) as |eventDate events|}}
-    <h2 class="font-bold text-base lg:text-2xl leading-tight mt-6 mb-2">{{eventDate}}</h2>
+    <h2 class="font-bold text-base lg:text-xl leading-tight mt-6 mb-2">{{eventDate}}</h2>
 
     <table class="w-full border-collapse border border-gray-200">
       <tbody>
@@ -11,5 +11,5 @@
     </table>
   {{/each-in}}
 {{else}}
-  <h2 class="font-bold text-base lg:text-2xl leading-tight mt-6 mb-2">Sorry, no events match your filter settings.</h2>
+  <h2 class="font-bold text-base lg:text-xl leading-tight mt-6 mb-2">Sorry, no events match your filter settings.</h2>
 {{/if}}
