@@ -13,14 +13,21 @@
       <div
         class="lg:shadow lg:rounded bg-white border-2 border-gray-200 p-4 lg:p-8 mb items-center flex flex-col lg:flex-row lg:flex-nowrap w-full lg:w-3/4 z-10">
         <div class="font-bold prose prose-sm lg:prose-lg mb-4">
-          <p class="text-purple-800">An annual celebration, Open Education Week (OE&thinsp;Week) is an opportunity for actively sharing
+          {{!-- <p class="text-purple-800">An annual celebration, Open Education Week (OE&thinsp;Week) is an opportunity
+            for actively sharing
             and learning about the latest achievements in Open Education worldwide.</p>
 
-          <p class="text-purple-500">Now accepting submissions for Open Education Week 2021.</p>
+          <p class="text-purple-500">Now accepting submissions for Open Education Week 2021.</p> --}}
+          <p class="text-center text-lg">Welcome to Open Education Week 2021</p>
+          <p class="text-center">
+            Explore the schedule and join live activities & events from around the world, find new and exciting open
+            assets in the OE Week Library and engage in conversation with fellow participants on OEG Connect.
+          </p>
+          <p class="text-center text-purple-500">Come in and join the fun!</p>
         </div>
-        <div class="lg:ml-8">
+        {{!-- <div class="lg:ml-8">
           <LinkTo @route="page" @model="contribute" class="button-main">Contribute</LinkTo>
-        </div>
+        </div> --}}
       </div>
       <div class="mt-8 mb-10 hidden lg:block">
         {{svg-jar "chevron-circle-down-light" class="text-purple-800 h-10 w-10 animate-bounce"}}
@@ -35,21 +42,24 @@
         class="bg-red-400 p-8 text-white flex flex-col justify-center md:rounded-md border-2 border-red-400 hover:border-red-800 hover:shadow-lg">
         {{svg-jar "icon-library" class="h-44 w-auto mb-4"}}
         <h2 class="font-bold text-xl text-center mb-4">OE&thinsp;Week Library</h2>
-        <p class="text-base leading-snug">Explore the collection of <strong>resources</strong> shared by the community through the years.</p>
+        <p class="text-base leading-snug">Explore the collection of <strong>resources</strong> shared by the community
+          through the years.</p>
       </LinkTo>
       {{!-- Block 2 --}}
       <LinkTo @route="schedule"
         class="bg-green-600 p-8 text-white flex flex-col justify-center md:rounded-md border-2 border-green-600 hover:border-green-800 hover:shadow-lg">
         {{svg-jar "icon-events" class="h-44 w-auto mb-4"}}
         <h2 class="font-bold text-xl text-center mb-4">Schedule</h2>
-        <p class="text-base leading-snug">Check out the <strong>events and activities</strong> taking place during the week and don't miss out on the fun!</p>
+        <p class="text-base leading-snug">Check out the <strong>events and activities</strong> taking place during the
+          week and don't miss out on the fun!</p>
       </LinkTo>
       {{!-- Block 3 --}}
       <a href="https://connect.oeglobal.org/c/oeweek/33/none" target="_blank" rel="noopener noreferrer"
         class="bg-white p-8 md:rounded-md flex flex-col justify-center border-2 border-gray-200 hover:border-purple-500 hover:shadow-lg">
         {{svg-jar "oeweekatconnect" class="h-44 w-auto text-red-400 mx-auto mb-4"}}
         <h2 class="font-bold text-xl text-purple-500 text-center mb-4">OEG Connect</h2>
-        <p class="text-base leading-snug">Come in and say hello! Join the conversation, share your ideas and highlight your favorite topics of the week. </p>
+        <p class="text-base leading-snug">Come in and say hello! Join the conversation, share your ideas and highlight
+          your favorite topics of the week. </p>
       </a>
       {{!-- Block 4 --}}
       <LinkTo @route="page" @model="materials"
