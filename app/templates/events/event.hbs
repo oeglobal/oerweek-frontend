@@ -1,5 +1,5 @@
 <div>
-  <div class="mb-5 uppercase font-bold tracking-wider">{{uc-words model.postType}} </div>
+  <div class="mb-5 uppercase font-bold tracking-wider">{{uc-words model.postType}} - {{uc-words model.eventType}} </div>
   <h1 class="font-bold text-3xl">{{{model.title}}}</h1>
 </div>
 
@@ -11,7 +11,7 @@
       {{/if}}
     </div>
     <div class="col-span-1 md:col-span-7">
-      <dl class="bg-white w-full p-4 pb-6 text-sm resource__meta mb-10">
+      <dl class="bg-white w-full p-4 pb-6 text-sm md:text-base resource__meta mb-10">
         <dd class="resource__meta-single border-2 border-green-400 p-4">{{svg-jar "calendar-day-light"
           class="inline-block current-color h-6 mr-2 -mt-1"}} {{moment-format
           model.eventTime 'MMMM D, YYYY - h:mm a'}}</dd>
