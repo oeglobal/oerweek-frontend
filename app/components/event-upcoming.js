@@ -17,7 +17,7 @@ export default Component.extend({
 
   didReceiveAttrs() {
     this._super(...arguments);
-    this.store.query('event', {'special': 'current'}).then((data) => {
+    this.store.query('event', { special: 'current' }).then((data) => {
       this.set('events', data);
     });
   },
@@ -29,7 +29,7 @@ export default Component.extend({
     if (events) {
       return events.filter((event) => {
         return currentTime.diff(moment(event.get('event_time')), 'minutes') > 5;
-      })
+      });
     }
     return [];
   }),
@@ -41,8 +41,8 @@ export default Component.extend({
     if (events) {
       return events.filter((event) => {
         return currentTime.diff(moment(event.get('event_time')), 'minutes') < 5;
-      })
+      });
     }
     return [];
-  })
+  }),
 });

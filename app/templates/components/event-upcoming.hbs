@@ -1,23 +1,38 @@
-<div class="grid-container">
-  <div class="grid-x grid-margin-x event-upcoming">
-    {{#if currentEvents}}
-      <div class="small-12 cell">
-        <h1>Online Events Happening Right Now</h1>
-      </div>
-
-      {{#each currentEvents as |event|}}
-        {{event-card-small event=event currentTime=currentTime}}
+<div class="mb-10">
+  {{log this.currentEvents}}
+  {{#if this.currentEvents}}
+    <h2 class="text-green-600 text-3xl font-bold mb-4">Happening now</h2>
+    <div class="bg-green-100 p-4 grid grid-cols-1 md:grid-cols-2 gap-4 mb-20">
+      {{#each this.currentEvents as |event|}}
+        <div class="col-span-1">
+          <table class="w-full">
+            <EventCardLong
+                    @event={{event}}
+                    @isDateOther={{false}}
+                    @currentTime={{this.currentTime}}
+                    @showRelativeDate={{true}}
+            />
+          </table>
+        </div>
       {{/each}}
-    {{/if}}
+    </div>
+  {{/if}}
 
-    {{#if upcomingEvents}}
-      <div class="small-12 cell">
-        <h1>Upcoming Online Events</h1>
-      </div>
-    {{/if}}
-
-    {{#each (take 3 upcomingEvents) as |event|}}
-      {{event-card-small event=event currentTime=currentTime}}
-    {{/each}}
-  </div>
+  {{#if this.upcomingEvents}}
+    <h2 class="text-green-600 text-3xl font-bold mb-4">Happening next</h2>
+    <div class="bg-green-100 p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+      {{#each (take 4 this.upcomingEvents) as |event|}}
+        <div class="col-span-1">
+          <table class="w-full">
+            <EventCardLong
+                    @event={{event}}
+                    @isDateOther={{false}}
+                    @currentTime={{this.currentTime}}
+                    @showRelativeDate={{true}}
+            />
+          </table>
+        </div>
+      {{/each}}
+    </div>
+  {{/if}}
 </div>

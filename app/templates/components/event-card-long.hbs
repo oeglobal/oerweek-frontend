@@ -1,23 +1,32 @@
 <tr class="bg-white border event__card__long">
   <div class="relative flex">
     <td class="w-full">
-      <LinkTo @route="events.event" @model={{event.slug}} class="flex flex-col p-4">
+      <LinkTo @route="events.event" @model={{@event.slug}} class="flex flex-col p-4">
         <div>
         <span>
-          {{#if isDateOther}}
+          {{#if @isDateOther}}
             {{moment-format event.eventTime 'MMM D - h:mm a'}}
           {{else}}
             {{moment-format event.eventTime 'h:mm a'}}
           {{/if}}
-        </span> <span>&#10141;</span> 
+        </span> <span>&#10141;</span>
           <span class="font-bold">{{event.title}}</span>
         </div>
-        <div class="leading-loose mt-2 text-sm">
-          <span class="bg-gray-100 rounded py-0.5 px-1 {{event-color event.eventType}}">{{uc-words event.eventType}}</span>
-          <span class="bg-blue-100 rounded py-0.5 px-1">{{event.formLanguage}}</span>
-          <span class="bg-red-100 rounded py-0.5 px-1">{{event.country}}, {{event.city}}</span>
+        <div class="leading-loose mt-2 text-sm flex justify-between">
+          <div>
+          <span class="bg-gray-100 rounded py-0.5 px-1 {{event-color @event.eventType}}">{{uc-words
+                  @event.eventType}}</span>
+            <span class="bg-blue-100 rounded py-0.5 px-1">{{@event.formLanguage}}</span>
+            <span class="bg-red-100 rounded py-0.5 px-1">{{@event.country}}, {{@event.city}}</span>
+          </div>
 
+          <div>
+            {{#if @showRelativeDate}}
+              <span class="bg-purple-500 text-white rounded py-0.5 px-1">{{this.timeDiff}}</span>
+            {{/if}}
+          </div>
         </div>
+
       </LinkTo>
     </td>
     <!--  <td>Bookmark</td>-->
