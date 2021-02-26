@@ -5,7 +5,7 @@
         <div>
         <span>
           {{#if isDateOther}}
-            {{moment-format event.eventTime 'YYYY-MM-DD h:mm a'}}
+            {{moment-format event.eventTime 'MMM D - h:mm a'}}
           {{else}}
             {{moment-format event.eventTime 'h:mm a'}}
           {{/if}}
