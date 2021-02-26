@@ -5,6 +5,6 @@ import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-rout
 @classic
 export default class IndexRoute extends Route.extend(AuthenticatedRouteMixin) {
   model() {
-    return this.store.query('submission', {'page_size': 200});
+    return this.store.query('submission', { page_size: 500 });
   }
 }
