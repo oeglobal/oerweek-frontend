@@ -1,36 +1,46 @@
 <div class="">
   <div class="home--main">
-    <video autoplay loop muted playsinline preload="auto" poster="/assets/images/hero-2021-md.png">
+    {{!-- <video autoplay loop muted playsinline preload="auto" poster="/assets/images/hero-2021-md.png">
       <source src="https://www.oeglobal.org/wp-content/uploads/2021/01/banner.mp4" type="video/mp4" />
       <source src="/assets/video/banner.webm" type="video/webm" />
-    </video>
+    </video> --}}
 
     <div class="lg:container flex justify-end items-center h-full flex-col">
-      <div class="rounded bg-white px-4 py-2 mb-8 rounded-md border-2 border-purple-100 shadow">
+      {{!-- <div class="rounded bg-white px-4 py-2 mb-8 rounded-md border-2 border-purple-100 shadow">
         {{svg-jar "calendar-day-light" class="w-auto h-6 mr-1 inline-block align-baseline -mb-1"}}
         <span class="hidden">Dates: </span><time datetime="2021-03-01" class="font-bold">March 1 - 5, 2021</time>
-      </div>
+      </div> --}}
       <div
-        class="lg:shadow lg:rounded bg-white border-2 border-gray-200 p-4 lg:p-8 mb items-center flex flex-col lg:flex-row lg:flex-nowrap w-full lg:w-3/4 z-10">
+        class="lg:shadow lg:rounded bg-white border-2 border-gray-200 p-4 lg:p-8 mb items-center flex flex-col lg:flex-row lg:flex-nowrap w-full lg:w-auto z-10">
         <div class="font-bold prose prose-sm lg:prose-lg mb-4">
           {{!-- <p class="text-purple-800">An annual celebration, Open Education Week (OE&thinsp;Week) is an opportunity
             for actively sharing
-            and learning about the latest achievements in Open Education worldwide.</p>
+            and learning about the latest achievements in Open Education worldwide.</p> --}}
 
-          <p class="text-purple-500">Now accepting submissions for Open Education Week 2021.</p> --}}
-          <p class="text-center text-lg">Welcome to Open Education Week 2021</p>
+          <p class="text-purple-500 text-center">
+            Thank you for participating!<br>
+            Join us again next year:<br>
+            March 7-11, 2022
+          </p>
+
+
+          {{!-- <p class="text-purple-500">Now accepting submissions for Open Education Week 2021.</p> --}}
+          {{!-- <p class="text-center text-lg">Welcome to Open Education Week 2021</p>
           <p class="text-center">
             Explore the schedule and join live activities & events from around the world, find new and exciting open
             assets in the OE Week Library and engage in conversation with fellow participants on OEG Connect.
           </p>
-          <p class="text-center text-purple-500">Come in and join the fun!</p>
+          <p class="text-center text-purple-500">Come in and join the fun!</p> --}}
         </div>
         {{!-- <div class="lg:ml-8">
           <LinkTo @route="page" @model="contribute" class="button-main">Contribute</LinkTo>
         </div> --}}
+        <div class="lg:ml-8">
+          <LinkTo @route="page" @model="2021-summary" class="button-main">{{svg-jar "chart-pie-light" class="h-6 inline mb-1 mr-2"}}2021 Summary</LinkTo>
+        </div>
       </div>
       <div class="mt-8 mb-10 hidden lg:block">
-        {{svg-jar "chevron-circle-down-light" class="text-purple-800 h-10 w-10 animate-bounce"}}
+        {{svg-jar "chevron-circle-down-light" class="text-purple-100 h-10 w-10 animate-bounce"}}
       </div>
     </div>
   </div>
